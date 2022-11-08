@@ -2,7 +2,6 @@
 
 [![Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/release/python-370/)
 [![PyPI version](https://badge.fury.io/py/torchview.svg)](https://badge.fury.io/py/torchview)
-[![Conda version](https://img.shields.io/conda/vn/conda-forge/torchview)](https://anaconda.org/conda-forge/torchview)
 [![Build Status](https://github.com/mert-kurttutan/torchview/actions/workflows/test.yml/badge.svg)](https://github.com/mert-kurttutan/torchview/actions/workflows/test.yml)
 [![GitHub license](https://img.shields.io/github/license/mert-kurttutan/torchview)](https://github.com/mert-kurttutan/torchview/blob/main/LICENSE)
 [![codecov](https://codecov.io/gh/mert-kurttutan/torchview/branch/main/graph/badge.svg)](https://codecov.io/gh/mert-kurttutan/torchview)
@@ -24,12 +23,6 @@ For python interface of graphiz to work, you need to have dot layout command wor
 Then, continue with installing torchview
 ```
 pip install torchview
-```
-
-Alternatively, via conda:
-
-```
-conda install -c conda-forge torchview
 ```
 
 # How To Use
