@@ -48,7 +48,7 @@ model_graph.visual_graph
 
 <!-- single_input_all_cols.out -->
 
-Note: Output graphviz visuals return images with desired sizes. But sometimes, on VScode, some shapes are being cropped due to large size and svg rendering on by VSCode. To solve this, I suggest you run the following
+**Note:** Output graphviz visuals return images with desired sizes. But sometimes, on VSCode, some shapes are being cropped due to large size and svg rendering on by VSCode. To solve this, I suggest you run the following
 ```python
 import graphviz
 graphviz.set_jupyter_format('png')
