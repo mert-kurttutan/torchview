@@ -245,5 +245,5 @@ All issues and pull requests are much appreciated! If you are wondering how to b
 # References
 
 - Parts related to input processing and validation are taken/inspired from torchinfo repository!!.
-- Many of the software related parts (e.g. CI, testing) are also taken/inspired from torchinfo repository since there is a great similarity in terms of the role and structure, so big thanks to @TylerYep!!!
+- Many of the software related parts (e.g. CI, testing) are also taken/inspired from torchinfo repository. So big thanks to @TylerYep!!!
 - The mechanism of constructing visual graph is thanks to `__torch_function__` and subclassing torch.Tensor. Big thanks to all those who developed this API!!.
