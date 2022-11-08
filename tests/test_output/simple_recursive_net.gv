@@ -1,0 +1,38 @@
+strict digraph RecursiveNet {
+	graph [ordering=in size="12.0,12.0"]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	edge [fontsize=10]
+	0 [label="input-tensor-0: (1, 64, 28, 28)" fillcolor=lightyellow]
+	1 [label="RecursiveNet
+-0|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
+	2 [label="Conv2d
+-1|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
+	3 [label="ReLU
+-1|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
+	2 [label="Conv2d
+-1|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
+	2 [label="Conv2d
+-1|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
+	3 [label="ReLU
+-1|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
+	2 [label="Conv2d
+-1|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
+	2 [label="Conv2d
+-1|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
+	3 [label="ReLU
+-1|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
+	2 [label="Conv2d
+-1|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
+	4 [label="output-tensor-0: (1, 64, 28, 28)" fillcolor=lightyellow]
+	0 -> 1
+	1 -> 2
+	2 -> 3
+	3 -> 2
+	2 -> 2
+	2 -> 3 [label=" x2"]
+	3 -> 2 [label=" x2"]
+	2 -> 2 [label=" x2"]
+	2 -> 3 [label=" x3"]
+	3 -> 2 [label=" x3"]
+	2 -> 4
+}

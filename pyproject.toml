@@ -1,0 +1,97 @@
+[project]
+name = "torchview"
+version = "0.1.0"
+description = "Visualization of Pytorch Models"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {file = "LICENSE"}
+keywords = [
+    "pytorch", "visualization", "keras",
+    "torch", "deep learning", "machine learning",
+    "ml", "neural network"
+]
+authors = [
+    {email = "kurttutan.mert@gmail.com"},
+    {name = "Mert Kurttutan"}
+]
+maintainers = [
+    {name = "Mert Kurttutan", email = "kurttutan.mert@gmail.com"}
+]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+
+dependencies = [
+    "torch",
+    'graphviz',
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project.urls]
+homepage = "https://github.com/mert-kurttutan/torchview"
+repository = "https://github.com/mert-kurttutan/torchview"
+
+
+[tool.setuptools]
+# Scan the project directory with the default parameters
+packages = [
+    'torchview',
+    'torchview.computation_node'
+]  
+
+[tool.setuptools.package-data]
+torchview = ["py.typed"]
+
+[tool.mypy]
+strict = true
+implicit_reexport = true
+show_error_codes = true
+enable_error_code = 'ignore-without-code'
+allow_untyped_calls = true
+
+
+[[tool.mypy.overrides]]
+module = [
+    'graphviz',
+    'torchtext',
+    'torchvision',
+    'torchvision.models',
+    'tests.fixtures.models',
+    'tests.fixtures.u_net',
+    'tests.fixtures.dense_net',
+    'tests.fixtures.custom_attention',
+    'torchtext.functional',
+]
+ignore_missing_imports = true
+
+
+[tool.pylint."MESSAGES CONTROL"]
+extension-pkg-whitelist = "torch"
+enable = [
+    "useless-suppression",
+    "deprecated-pragma",
+    "use-symbolic-message-instead",
+]
+disable = [
+    "super-with-arguments",  # explicit is better
+    "missing-module-docstring",
+    "missing-function-docstring",
+    "too-many-instance-attributes",
+    "too-many-arguments",
+    "too-many-branches",
+    "too-many-locals",
+    "invalid-name",
+    "line-too-long",  # Covered by flake8
+    "no-member",
+    "fixme",
+    "duplicate-code",
+]

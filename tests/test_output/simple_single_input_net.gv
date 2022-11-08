@@ -1,0 +1,47 @@
+strict digraph SingleInputNet {
+	graph [ordering=in size="12.0,12.0"]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	edge [fontsize=10]
+	0 [label="input-tensor-0: (2, 1, 28, 28)" fillcolor=lightyellow]
+	1 [label="SingleInputNet
+-0|{input:|output:}|{(2, 1, 28, 28)|(2, 10)}" fillcolor=darkseagreen1]
+	2 [label="Conv2d
+-1|{input:|output:}|{(2, 1, 28, 28)|(2, 10, 24, 24)}" fillcolor=darkseagreen1]
+	3 [label="max_pool2d
+-1|{input:|output:}|{(2, 10, 24, 24)|(2, 10, 12, 12)}" fillcolor=aliceblue]
+	4 [label="relu
+-1|{input:|output:}|{(2, 10, 12, 12)|(2, 10, 12, 12)}" fillcolor=aliceblue]
+	5 [label="Conv2d
+-1|{input:|output:}|{(2, 10, 12, 12)|(2, 20, 8, 8)}" fillcolor=darkseagreen1]
+	6 [label="Dropout2d
+-1|{input:|output:}|{(2, 20, 8, 8)|(2, 20, 8, 8)}" fillcolor=darkseagreen1]
+	7 [label="max_pool2d
+-1|{input:|output:}|{(2, 20, 8, 8)|(2, 20, 4, 4)}" fillcolor=aliceblue]
+	8 [label="relu
+-1|{input:|output:}|{(2, 20, 4, 4)|(2, 20, 4, 4)}" fillcolor=aliceblue]
+	9 [label="view
+-1|{input:|output:}|{(2, 20, 4, 4)|(2, 320)}" fillcolor=aliceblue]
+	10 [label="Linear
+-1|{input:|output:}|{(2, 320)|(2, 50)}" fillcolor=darkseagreen1]
+	11 [label="relu
+-1|{input:|output:}|{(2, 50)|(2, 50)}" fillcolor=aliceblue]
+	12 [label="Linear
+-1|{input:|output:}|{(2, 50)|(2, 10)}" fillcolor=darkseagreen1]
+	13 [label="log_softmax
+-1|{input:|output:}|{(2, 10)|(2, 10)}" fillcolor=aliceblue]
+	14 [label="output-tensor-0: (2, 10)" fillcolor=lightyellow]
+	0 -> 1
+	1 -> 2
+	2 -> 3
+	3 -> 4
+	4 -> 5
+	5 -> 6
+	6 -> 7
+	7 -> 8
+	8 -> 9
+	9 -> 10
+	10 -> 11
+	11 -> 12
+	12 -> 13
+	13 -> 14
+}

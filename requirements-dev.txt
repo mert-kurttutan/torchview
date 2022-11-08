@@ -1,0 +1,10 @@
+black
+codecov
+flake8
+isort
+mypy
+pycln
+pylint
+pytest
+pytest-cov
+pre-commit

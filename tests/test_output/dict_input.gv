@@ -1,0 +1,43 @@
+strict digraph model {
+	graph [ordering=in size="12.0,12.0"]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	edge [fontsize=10]
+	0 [label="input-tensor-0: (1, 300)" fillcolor=lightyellow]
+	1 [label="input-tensor-0: (1, 300)" fillcolor=lightyellow]
+	2 [label="MultipleInputNetDifferentDtypes
+-0|{input:|output:}|{2 x (1, 300)|(2, 10)}" fillcolor=darkseagreen1]
+	3 [label="Linear
+-1|{input:|output:}|{(1, 300)|(1, 50)}" fillcolor=darkseagreen1]
+	4 [label="relu
+-1|{input:|output:}|{(1, 50)|(1, 50)}" fillcolor=aliceblue]
+	5 [label="Linear
+-1|{input:|output:}|{(1, 50)|(1, 10)}" fillcolor=darkseagreen1]
+	6 [label="cat
+-1|{input:|output:}|{2 x (1, 10)|(2, 10)}" fillcolor=aliceblue]
+	7 [label="log_softmax
+-1|{input:|output:}|{(2, 10)|(2, 10)}" fillcolor=aliceblue]
+	8 [label="output-tensor-0: (2, 10)" fillcolor=lightyellow]
+	2 [label="MultipleInputNetDifferentDtypes
+-0|{input:|output:}|{2 x (1, 300)|(2, 10)}" fillcolor=darkseagreen1]
+	9 [label="type
+-1|{input:|output:}|{(1, 300)|(1, 300)}" fillcolor=aliceblue]
+	10 [label="Linear
+-1|{input:|output:}|{(1, 300)|(1, 50)}" fillcolor=darkseagreen1]
+	11 [label="relu
+-1|{input:|output:}|{(1, 50)|(1, 50)}" fillcolor=aliceblue]
+	12 [label="Linear
+-1|{input:|output:}|{(1, 50)|(1, 10)}" fillcolor=darkseagreen1]
+	0 -> 2
+	1 -> 2
+	2 -> 3
+	3 -> 4
+	4 -> 5
+	5 -> 6
+	6 -> 7
+	7 -> 8
+	2 -> 9
+	9 -> 10
+	10 -> 11
+	11 -> 12
+	12 -> 6
+}

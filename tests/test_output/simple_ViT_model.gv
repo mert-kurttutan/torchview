@@ -1,0 +1,407 @@
+strict digraph ViT_b_16 {
+	graph [ordering=in size="80.7,80.7"]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	edge [fontsize=10]
+	0 [label="input-tensor-0: (1, 3, 224, 224)" fillcolor=lightyellow]
+	1 [label="VisionTransformer
+-0|{input:|output:}|{(1, 3, 224, 224)|(1, 1000)}" fillcolor=darkseagreen1]
+	2 [label="Conv2d
+-1|{input:|output:}|{(1, 3, 224, 224)|(1, 768, 14, 14)}" fillcolor=darkseagreen1]
+	3 [label="reshape
+-1|{input:|output:}|{(1, 768, 14, 14)|(1, 768, 196)}" fillcolor=aliceblue]
+	4 [label="permute
+-1|{input:|output:}|{(1, 768, 196)|(1, 196, 768)}" fillcolor=aliceblue]
+	5 [label="cat
+-1|{input:|output:}|{(1, 196, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	6 [label="Encoder
+-1|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	7 [label="add
+-2|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	8 [label="Dropout
+-2|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	9 [label="Sequential
+-2|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	10 [label="EncoderBlock
+-3|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	11 [label="LayerNorm
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	12 [label="MultiheadAttention
+-4|{input:|output:}|{3 x (1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	13 [label="Dropout
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	14 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	15 [label="LayerNorm
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	16 [label="MLPBlock
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	17 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	18 [label="EncoderBlock
+-3|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	19 [label="LayerNorm
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	20 [label="MultiheadAttention
+-4|{input:|output:}|{3 x (1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	21 [label="Dropout
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	22 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	23 [label="LayerNorm
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	24 [label="MLPBlock
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	25 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	26 [label="EncoderBlock
+-3|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	27 [label="LayerNorm
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	28 [label="MultiheadAttention
+-4|{input:|output:}|{3 x (1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	29 [label="Dropout
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	30 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	31 [label="LayerNorm
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	32 [label="MLPBlock
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	33 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	34 [label="EncoderBlock
+-3|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	35 [label="LayerNorm
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	36 [label="MultiheadAttention
+-4|{input:|output:}|{3 x (1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	37 [label="Dropout
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	38 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	39 [label="LayerNorm
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	40 [label="MLPBlock
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	41 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	42 [label="EncoderBlock
+-3|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	43 [label="LayerNorm
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	44 [label="MultiheadAttention
+-4|{input:|output:}|{3 x (1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	45 [label="Dropout
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	46 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	47 [label="LayerNorm
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	48 [label="MLPBlock
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	49 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	50 [label="EncoderBlock
+-3|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	51 [label="LayerNorm
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	52 [label="MultiheadAttention
+-4|{input:|output:}|{3 x (1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	53 [label="Dropout
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	54 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	55 [label="LayerNorm
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	56 [label="MLPBlock
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	57 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	58 [label="EncoderBlock
+-3|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	59 [label="LayerNorm
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	60 [label="MultiheadAttention
+-4|{input:|output:}|{3 x (1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	61 [label="Dropout
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	62 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	63 [label="LayerNorm
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	64 [label="MLPBlock
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	65 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	66 [label="EncoderBlock
+-3|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	67 [label="LayerNorm
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	68 [label="MultiheadAttention
+-4|{input:|output:}|{3 x (1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	69 [label="Dropout
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	70 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	71 [label="LayerNorm
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	72 [label="MLPBlock
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	73 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	74 [label="EncoderBlock
+-3|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	75 [label="LayerNorm
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	76 [label="MultiheadAttention
+-4|{input:|output:}|{3 x (1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	77 [label="Dropout
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	78 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	79 [label="LayerNorm
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	80 [label="MLPBlock
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	81 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	82 [label="EncoderBlock
+-3|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	83 [label="LayerNorm
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	84 [label="MultiheadAttention
+-4|{input:|output:}|{3 x (1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	85 [label="Dropout
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	86 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	87 [label="LayerNorm
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	88 [label="MLPBlock
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	89 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	90 [label="EncoderBlock
+-3|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	91 [label="LayerNorm
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	92 [label="MultiheadAttention
+-4|{input:|output:}|{3 x (1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	93 [label="Dropout
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	94 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	95 [label="LayerNorm
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	96 [label="MLPBlock
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	97 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	98 [label="EncoderBlock
+-3|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	99 [label="LayerNorm
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	100 [label="MultiheadAttention
+-4|{input:|output:}|{3 x (1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	101 [label="Dropout
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	102 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	103 [label="LayerNorm
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	104 [label="MLPBlock
+-4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	105 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	106 [label="LayerNorm
+-2|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	107 [label="__getitem__
+-1|{input:|output:}|{(1, 197, 768)|(1, 768)}" fillcolor=aliceblue]
+	108 [label="Sequential
+-1|{input:|output:}|{(1, 768)|(1, 1000)}" fillcolor=darkseagreen1]
+	109 [label="Linear
+-2|{input:|output:}|{(1, 768)|(1, 1000)}" fillcolor=darkseagreen1]
+	110 [label="output-tensor-0: (1, 1000)" fillcolor=lightyellow]
+	102 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	98 [label="EncoderBlock
+-3|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	94 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	90 [label="EncoderBlock
+-3|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	86 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	82 [label="EncoderBlock
+-3|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	78 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	74 [label="EncoderBlock
+-3|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	70 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	66 [label="EncoderBlock
+-3|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	62 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	58 [label="EncoderBlock
+-3|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	54 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	50 [label="EncoderBlock
+-3|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	46 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	42 [label="EncoderBlock
+-3|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	38 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	34 [label="EncoderBlock
+-3|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	30 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	26 [label="EncoderBlock
+-3|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	22 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	18 [label="EncoderBlock
+-3|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	14 [label="add
+-4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
+	10 [label="EncoderBlock
+-3|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
+	0 -> 1
+	1 -> 2
+	2 -> 3
+	3 -> 4
+	4 -> 5
+	5 -> 6
+	6 -> 7
+	7 -> 8
+	8 -> 9
+	9 -> 10
+	10 -> 11
+	11 -> 12
+	12 -> 13
+	13 -> 14
+	14 -> 15
+	15 -> 16
+	16 -> 17
+	17 -> 18
+	18 -> 19
+	19 -> 20
+	20 -> 21
+	21 -> 22
+	22 -> 23
+	23 -> 24
+	24 -> 25
+	25 -> 26
+	26 -> 27
+	27 -> 28
+	28 -> 29
+	29 -> 30
+	30 -> 31
+	31 -> 32
+	32 -> 33
+	33 -> 34
+	34 -> 35
+	35 -> 36
+	36 -> 37
+	37 -> 38
+	38 -> 39
+	39 -> 40
+	40 -> 41
+	41 -> 42
+	42 -> 43
+	43 -> 44
+	44 -> 45
+	45 -> 46
+	46 -> 47
+	47 -> 48
+	48 -> 49
+	49 -> 50
+	50 -> 51
+	51 -> 52
+	52 -> 53
+	53 -> 54
+	54 -> 55
+	55 -> 56
+	56 -> 57
+	57 -> 58
+	58 -> 59
+	59 -> 60
+	60 -> 61
+	61 -> 62
+	62 -> 63
+	63 -> 64
+	64 -> 65
+	65 -> 66
+	66 -> 67
+	67 -> 68
+	68 -> 69
+	69 -> 70
+	70 -> 71
+	71 -> 72
+	72 -> 73
+	73 -> 74
+	74 -> 75
+	75 -> 76
+	76 -> 77
+	77 -> 78
+	78 -> 79
+	79 -> 80
+	80 -> 81
+	81 -> 82
+	82 -> 83
+	83 -> 84
+	84 -> 85
+	85 -> 86
+	86 -> 87
+	87 -> 88
+	88 -> 89
+	89 -> 90
+	90 -> 91
+	91 -> 92
+	92 -> 93
+	93 -> 94
+	94 -> 95
+	95 -> 96
+	96 -> 97
+	97 -> 98
+	98 -> 99
+	99 -> 100
+	100 -> 101
+	101 -> 102
+	102 -> 103
+	103 -> 104
+	104 -> 105
+	105 -> 106
+	106 -> 107
+	107 -> 108
+	108 -> 109
+	109 -> 110
+	102 -> 105
+	98 -> 102
+	94 -> 97
+	90 -> 94
+	86 -> 89
+	82 -> 86
+	78 -> 81
+	74 -> 78
+	70 -> 73
+	66 -> 70
+	62 -> 65
+	58 -> 62
+	54 -> 57
+	50 -> 54
+	46 -> 49
+	42 -> 46
+	38 -> 41
+	34 -> 38
+	30 -> 33
+	26 -> 30
+	22 -> 25
+	18 -> 22
+	14 -> 17
+	10 -> 14
+}

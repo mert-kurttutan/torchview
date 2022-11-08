@@ -1,0 +1,47 @@
+strict digraph FunctionalNet {
+	graph [ordering=in size="12.0,12.0"]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	edge [fontsize=10]
+	0 [label="input-tensor-0: (1, 1, 32, 32)" fillcolor=lightyellow]
+	1 [label="FunctionalNet
+-0|{input:|output:}|{(1, 1, 32, 32)|(1, 10)}" fillcolor=darkseagreen1]
+	2 [label="Conv2d
+-1|{input:|output:}|{(1, 1, 32, 32)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
+	3 [label="relu
+-1|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=aliceblue]
+	4 [label="max_pool2d
+-1|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 14, 14)}" fillcolor=aliceblue]
+	5 [label="Conv2d
+-1|{input:|output:}|{(1, 32, 14, 14)|(1, 64, 10, 10)}" fillcolor=darkseagreen1]
+	6 [label="relu
+-1|{input:|output:}|{(1, 64, 10, 10)|(1, 64, 10, 10)}" fillcolor=aliceblue]
+	7 [label="max_pool2d
+-1|{input:|output:}|{(1, 64, 10, 10)|(1, 64, 5, 5)}" fillcolor=aliceblue]
+	8 [label="view
+-1|{input:|output:}|{(1, 64, 5, 5)|(1, 1600)}" fillcolor=aliceblue]
+	9 [label="Linear
+-1|{input:|output:}|{(1, 1600)|(1, 1024)}" fillcolor=darkseagreen1]
+	10 [label="relu
+-1|{input:|output:}|{(1, 1024)|(1, 1024)}" fillcolor=aliceblue]
+	11 [label="Dropout
+-1|{input:|output:}|{(1, 1024)|(1, 1024)}" fillcolor=darkseagreen1]
+	12 [label="Linear
+-1|{input:|output:}|{(1, 1024)|(1, 10)}" fillcolor=darkseagreen1]
+	13 [label="log_softmax
+-1|{input:|output:}|{(1, 10)|(1, 10)}" fillcolor=aliceblue]
+	14 [label="output-tensor-0: (1, 10)" fillcolor=lightyellow]
+	0 -> 1
+	1 -> 2
+	2 -> 3
+	3 -> 4
+	4 -> 5
+	5 -> 6
+	6 -> 7
+	7 -> 8
+	8 -> 9
+	9 -> 10
+	10 -> 11
+	11 -> 12
+	12 -> 13
+	13 -> 14
+}

@@ -1,0 +1,520 @@
+strict digraph CustomDenseNet {
+	graph [ordering=in size="51.3,51.3"]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	edge [fontsize=10]
+	0 [label="input-tensor-0: (1, 3, 224, 224)" fillcolor=lightyellow]
+	1 [label="DenseNet
+-0|{input:|output:}|{(1, 3, 224, 224)|(1, 10)}" fillcolor=darkseagreen1]
+	2 [label="Sequential
+-1|{input:|output:}|{(1, 3, 224, 224)|(1, 218, 56, 56)}" fillcolor=darkseagreen1]
+	3 [label="_InitBlock
+-2|{input:|output:}|{(1, 3, 224, 224)|(1, 32, 224, 224)}" fillcolor=darkseagreen1]
+	4 [label="Conv2d
+-3|{input:|output:}|{(1, 3, 224, 224)|(1, 32, 224, 224)}" fillcolor=darkseagreen1]
+	5 [label="_DenseBlock
+-2|{input:|output:}|{(1, 32, 224, 224)|(1, 152, 224, 224)}" fillcolor=darkseagreen1]
+	6 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	7 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224), (1, 24, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	8 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224), 2 x (1, 24, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	9 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224), 3 x (1, 24, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	10 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224), 4 x (1, 24, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	11 [label="cat
+-3|{input:|output:}|{(1, 32, 224, 224), 5 x (1, 24, 224, 224)|(1, 152, 224, 224)}" fillcolor=aliceblue]
+	12 [label="_TransitionBlock
+-2|{input:|output:}|{(1, 152, 224, 224)|(1, 76, 112, 112)}" fillcolor=darkseagreen1]
+	13 [label="BatchNorm2d
+-3|{input:|output:}|{(1, 152, 224, 224)|(1, 152, 224, 224)}" fillcolor=darkseagreen1]
+	14 [label="relu
+-3|{input:|output:}|{(1, 152, 224, 224)|(1, 152, 224, 224)}" fillcolor=aliceblue]
+	15 [label="Conv2d
+-3|{input:|output:}|{(1, 152, 224, 224)|(1, 76, 224, 224)}" fillcolor=darkseagreen1]
+	16 [label="AvgPool2d
+-3|{input:|output:}|{(1, 76, 224, 224)|(1, 76, 112, 112)}" fillcolor=darkseagreen1]
+	17 [label="_DenseBlock
+-2|{input:|output:}|{(1, 76, 112, 112)|(1, 196, 112, 112)}" fillcolor=darkseagreen1]
+	18 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	19 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112), (1, 24, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	20 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112), 2 x (1, 24, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	21 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112), 3 x (1, 24, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	22 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112), 4 x (1, 24, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	23 [label="cat
+-3|{input:|output:}|{(1, 76, 112, 112), 5 x (1, 24, 112, 112)|(1, 196, 112, 112)}" fillcolor=aliceblue]
+	24 [label="_TransitionBlock
+-2|{input:|output:}|{(1, 196, 112, 112)|(1, 98, 56, 56)}" fillcolor=darkseagreen1]
+	25 [label="BatchNorm2d
+-3|{input:|output:}|{(1, 196, 112, 112)|(1, 196, 112, 112)}" fillcolor=darkseagreen1]
+	26 [label="relu
+-3|{input:|output:}|{(1, 196, 112, 112)|(1, 196, 112, 112)}" fillcolor=aliceblue]
+	27 [label="Conv2d
+-3|{input:|output:}|{(1, 196, 112, 112)|(1, 98, 112, 112)}" fillcolor=darkseagreen1]
+	28 [label="AvgPool2d
+-3|{input:|output:}|{(1, 98, 112, 112)|(1, 98, 56, 56)}" fillcolor=darkseagreen1]
+	29 [label="_DenseBlock
+-2|{input:|output:}|{(1, 98, 56, 56)|(1, 218, 56, 56)}" fillcolor=darkseagreen1]
+	30 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	31 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56), (1, 24, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	32 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56), 2 x (1, 24, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	33 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56), 3 x (1, 24, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	34 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56), 4 x (1, 24, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	35 [label="cat
+-3|{input:|output:}|{(1, 98, 56, 56), 5 x (1, 24, 56, 56)|(1, 218, 56, 56)}" fillcolor=aliceblue]
+	36 [label="relu
+-1|{input:|output:}|{(1, 218, 56, 56)|(1, 218, 56, 56)}" fillcolor=aliceblue]
+	37 [label="adaptive_avg_pool2d
+-1|{input:|output:}|{(1, 218, 56, 56)|(1, 218, 1, 1)}" fillcolor=aliceblue]
+	38 [label="flatten
+-1|{input:|output:}|{(1, 218, 1, 1)|(1, 218)}" fillcolor=aliceblue]
+	39 [label="Linear
+-1|{input:|output:}|{(1, 218)|(1, 10)}" fillcolor=darkseagreen1]
+	40 [label="output-tensor-0: (1, 10)" fillcolor=lightyellow]
+	33 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56), 3 x (1, 24, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	32 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56), 2 x (1, 24, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	32 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56), 2 x (1, 24, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	31 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56), (1, 24, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	31 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56), (1, 24, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	31 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56), (1, 24, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	30 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	30 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	30 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	30 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	29 [label="_DenseBlock
+-2|{input:|output:}|{(1, 98, 56, 56)|(1, 218, 56, 56)}" fillcolor=darkseagreen1]
+	29 [label="_DenseBlock
+-2|{input:|output:}|{(1, 98, 56, 56)|(1, 218, 56, 56)}" fillcolor=darkseagreen1]
+	29 [label="_DenseBlock
+-2|{input:|output:}|{(1, 98, 56, 56)|(1, 218, 56, 56)}" fillcolor=darkseagreen1]
+	29 [label="_DenseBlock
+-2|{input:|output:}|{(1, 98, 56, 56)|(1, 218, 56, 56)}" fillcolor=darkseagreen1]
+	29 [label="_DenseBlock
+-2|{input:|output:}|{(1, 98, 56, 56)|(1, 218, 56, 56)}" fillcolor=darkseagreen1]
+	21 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112), 3 x (1, 24, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	20 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112), 2 x (1, 24, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	20 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112), 2 x (1, 24, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	19 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112), (1, 24, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	19 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112), (1, 24, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	19 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112), (1, 24, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	18 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	18 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	18 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	18 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	17 [label="_DenseBlock
+-2|{input:|output:}|{(1, 76, 112, 112)|(1, 196, 112, 112)}" fillcolor=darkseagreen1]
+	17 [label="_DenseBlock
+-2|{input:|output:}|{(1, 76, 112, 112)|(1, 196, 112, 112)}" fillcolor=darkseagreen1]
+	17 [label="_DenseBlock
+-2|{input:|output:}|{(1, 76, 112, 112)|(1, 196, 112, 112)}" fillcolor=darkseagreen1]
+	17 [label="_DenseBlock
+-2|{input:|output:}|{(1, 76, 112, 112)|(1, 196, 112, 112)}" fillcolor=darkseagreen1]
+	17 [label="_DenseBlock
+-2|{input:|output:}|{(1, 76, 112, 112)|(1, 196, 112, 112)}" fillcolor=darkseagreen1]
+	9 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224), 3 x (1, 24, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	8 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224), 2 x (1, 24, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	8 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224), 2 x (1, 24, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	7 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224), (1, 24, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	7 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224), (1, 24, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	7 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224), (1, 24, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	6 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	6 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	6 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	6 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	5 [label="_DenseBlock
+-2|{input:|output:}|{(1, 32, 224, 224)|(1, 152, 224, 224)}" fillcolor=darkseagreen1]
+	5 [label="_DenseBlock
+-2|{input:|output:}|{(1, 32, 224, 224)|(1, 152, 224, 224)}" fillcolor=darkseagreen1]
+	5 [label="_DenseBlock
+-2|{input:|output:}|{(1, 32, 224, 224)|(1, 152, 224, 224)}" fillcolor=darkseagreen1]
+	5 [label="_DenseBlock
+-2|{input:|output:}|{(1, 32, 224, 224)|(1, 152, 224, 224)}" fillcolor=darkseagreen1]
+	5 [label="_DenseBlock
+-2|{input:|output:}|{(1, 32, 224, 224)|(1, 152, 224, 224)}" fillcolor=darkseagreen1]
+	0 -> 1
+	1 -> 2
+	2 -> 3
+	3 -> 4
+	4 -> 5
+	5 -> 6
+	6 -> 7
+	7 -> 8
+	8 -> 9
+	9 -> 10
+	10 -> 11
+	11 -> 12
+	12 -> 13
+	13 -> 14
+	14 -> 15
+	15 -> 16
+	16 -> 17
+	17 -> 18
+	18 -> 19
+	19 -> 20
+	20 -> 21
+	21 -> 22
+	22 -> 23
+	23 -> 24
+	24 -> 25
+	25 -> 26
+	26 -> 27
+	27 -> 28
+	28 -> 29
+	29 -> 30
+	30 -> 31
+	31 -> 32
+	32 -> 33
+	33 -> 34
+	34 -> 35
+	35 -> 36
+	36 -> 37
+	37 -> 38
+	38 -> 39
+	39 -> 40
+	33 -> 35
+	32 -> 34
+	32 -> 35
+	31 -> 33
+	31 -> 34
+	31 -> 35
+	30 -> 32
+	30 -> 33
+	30 -> 34
+	30 -> 35
+	29 -> 31
+	29 -> 32
+	29 -> 33
+	29 -> 34
+	29 -> 35
+	21 -> 23
+	20 -> 22
+	20 -> 23
+	19 -> 21
+	19 -> 22
+	19 -> 23
+	18 -> 20
+	18 -> 21
+	18 -> 22
+	18 -> 23
+	17 -> 19
+	17 -> 20
+	17 -> 21
+	17 -> 22
+	17 -> 23
+	9 -> 11
+	8 -> 10
+	8 -> 11
+	7 -> 9
+	7 -> 10
+	7 -> 11
+	6 -> 8
+	6 -> 9
+	6 -> 10
+	6 -> 11
+	5 -> 7
+	5 -> 8
+	5 -> 9
+	5 -> 10
+	5 -> 11
+}
+strict digraph CustomDenseNet {
+	graph [ordering=in size="51.3,51.3"]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	edge [fontsize=10]
+	0 [label="input-tensor-0: (1, 3, 224, 224)" fillcolor=lightyellow]
+	1 [label="DenseNet
+-0|{input:|output:}|{(1, 3, 224, 224)|(1, 10)}" fillcolor=darkseagreen1]
+	2 [label="Sequential
+-1|{input:|output:}|{(1, 3, 224, 224)|(1, 218, 56, 56)}" fillcolor=darkseagreen1]
+	3 [label="_InitBlock
+-2|{input:|output:}|{(1, 3, 224, 224)|(1, 32, 224, 224)}" fillcolor=darkseagreen1]
+	4 [label="Conv2d
+-3|{input:|output:}|{(1, 3, 224, 224)|(1, 32, 224, 224)}" fillcolor=darkseagreen1]
+	5 [label="_DenseBlock
+-2|{input:|output:}|{(1, 32, 224, 224)|(1, 152, 224, 224)}" fillcolor=darkseagreen1]
+	6 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	7 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224), (1, 24, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	8 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224), 2 x (1, 24, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	9 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224), 3 x (1, 24, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	10 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224), 4 x (1, 24, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	11 [label="cat
+-3|{input:|output:}|{(1, 32, 224, 224), 5 x (1, 24, 224, 224)|(1, 152, 224, 224)}" fillcolor=aliceblue]
+	12 [label="_TransitionBlock
+-2|{input:|output:}|{(1, 152, 224, 224)|(1, 76, 112, 112)}" fillcolor=darkseagreen1]
+	13 [label="BatchNorm2d
+-3|{input:|output:}|{(1, 152, 224, 224)|(1, 152, 224, 224)}" fillcolor=darkseagreen1]
+	14 [label="relu
+-3|{input:|output:}|{(1, 152, 224, 224)|(1, 152, 224, 224)}" fillcolor=aliceblue]
+	15 [label="Conv2d
+-3|{input:|output:}|{(1, 152, 224, 224)|(1, 76, 224, 224)}" fillcolor=darkseagreen1]
+	16 [label="AvgPool2d
+-3|{input:|output:}|{(1, 76, 224, 224)|(1, 76, 112, 112)}" fillcolor=darkseagreen1]
+	17 [label="_DenseBlock
+-2|{input:|output:}|{(1, 76, 112, 112)|(1, 196, 112, 112)}" fillcolor=darkseagreen1]
+	18 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	19 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112), (1, 24, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	20 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112), 2 x (1, 24, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	21 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112), 3 x (1, 24, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	22 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112), 4 x (1, 24, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	23 [label="cat
+-3|{input:|output:}|{(1, 76, 112, 112), 5 x (1, 24, 112, 112)|(1, 196, 112, 112)}" fillcolor=aliceblue]
+	24 [label="_TransitionBlock
+-2|{input:|output:}|{(1, 196, 112, 112)|(1, 98, 56, 56)}" fillcolor=darkseagreen1]
+	25 [label="BatchNorm2d
+-3|{input:|output:}|{(1, 196, 112, 112)|(1, 196, 112, 112)}" fillcolor=darkseagreen1]
+	26 [label="relu
+-3|{input:|output:}|{(1, 196, 112, 112)|(1, 196, 112, 112)}" fillcolor=aliceblue]
+	27 [label="Conv2d
+-3|{input:|output:}|{(1, 196, 112, 112)|(1, 98, 112, 112)}" fillcolor=darkseagreen1]
+	28 [label="AvgPool2d
+-3|{input:|output:}|{(1, 98, 112, 112)|(1, 98, 56, 56)}" fillcolor=darkseagreen1]
+	29 [label="_DenseBlock
+-2|{input:|output:}|{(1, 98, 56, 56)|(1, 218, 56, 56)}" fillcolor=darkseagreen1]
+	30 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	31 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56), (1, 24, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	32 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56), 2 x (1, 24, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	33 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56), 3 x (1, 24, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	34 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56), 4 x (1, 24, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	35 [label="cat
+-3|{input:|output:}|{(1, 98, 56, 56), 5 x (1, 24, 56, 56)|(1, 218, 56, 56)}" fillcolor=aliceblue]
+	36 [label="relu
+-1|{input:|output:}|{(1, 218, 56, 56)|(1, 218, 56, 56)}" fillcolor=aliceblue]
+	37 [label="adaptive_avg_pool2d
+-1|{input:|output:}|{(1, 218, 56, 56)|(1, 218, 1, 1)}" fillcolor=aliceblue]
+	38 [label="flatten
+-1|{input:|output:}|{(1, 218, 1, 1)|(1, 218)}" fillcolor=aliceblue]
+	39 [label="Linear
+-1|{input:|output:}|{(1, 218)|(1, 10)}" fillcolor=darkseagreen1]
+	40 [label="output-tensor-0: (1, 10)" fillcolor=lightyellow]
+	33 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56), 3 x (1, 24, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	32 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56), 2 x (1, 24, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	32 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56), 2 x (1, 24, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	31 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56), (1, 24, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	31 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56), (1, 24, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	31 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56), (1, 24, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	30 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	30 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	30 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	30 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 98, 56, 56)|(1, 24, 56, 56)}" fillcolor=darkseagreen1]
+	29 [label="_DenseBlock
+-2|{input:|output:}|{(1, 98, 56, 56)|(1, 218, 56, 56)}" fillcolor=darkseagreen1]
+	29 [label="_DenseBlock
+-2|{input:|output:}|{(1, 98, 56, 56)|(1, 218, 56, 56)}" fillcolor=darkseagreen1]
+	29 [label="_DenseBlock
+-2|{input:|output:}|{(1, 98, 56, 56)|(1, 218, 56, 56)}" fillcolor=darkseagreen1]
+	29 [label="_DenseBlock
+-2|{input:|output:}|{(1, 98, 56, 56)|(1, 218, 56, 56)}" fillcolor=darkseagreen1]
+	29 [label="_DenseBlock
+-2|{input:|output:}|{(1, 98, 56, 56)|(1, 218, 56, 56)}" fillcolor=darkseagreen1]
+	21 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112), 3 x (1, 24, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	20 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112), 2 x (1, 24, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	20 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112), 2 x (1, 24, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	19 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112), (1, 24, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	19 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112), (1, 24, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	19 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112), (1, 24, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	18 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	18 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	18 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	18 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 76, 112, 112)|(1, 24, 112, 112)}" fillcolor=darkseagreen1]
+	17 [label="_DenseBlock
+-2|{input:|output:}|{(1, 76, 112, 112)|(1, 196, 112, 112)}" fillcolor=darkseagreen1]
+	17 [label="_DenseBlock
+-2|{input:|output:}|{(1, 76, 112, 112)|(1, 196, 112, 112)}" fillcolor=darkseagreen1]
+	17 [label="_DenseBlock
+-2|{input:|output:}|{(1, 76, 112, 112)|(1, 196, 112, 112)}" fillcolor=darkseagreen1]
+	17 [label="_DenseBlock
+-2|{input:|output:}|{(1, 76, 112, 112)|(1, 196, 112, 112)}" fillcolor=darkseagreen1]
+	17 [label="_DenseBlock
+-2|{input:|output:}|{(1, 76, 112, 112)|(1, 196, 112, 112)}" fillcolor=darkseagreen1]
+	9 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224), 3 x (1, 24, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	8 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224), 2 x (1, 24, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	8 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224), 2 x (1, 24, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	7 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224), (1, 24, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	7 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224), (1, 24, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	7 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224), (1, 24, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	6 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	6 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	6 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	6 [label="BottleneckUnit
+-3|{input:|output:}|{(1, 32, 224, 224)|(1, 24, 224, 224)}" fillcolor=darkseagreen1]
+	5 [label="_DenseBlock
+-2|{input:|output:}|{(1, 32, 224, 224)|(1, 152, 224, 224)}" fillcolor=darkseagreen1]
+	5 [label="_DenseBlock
+-2|{input:|output:}|{(1, 32, 224, 224)|(1, 152, 224, 224)}" fillcolor=darkseagreen1]
+	5 [label="_DenseBlock
+-2|{input:|output:}|{(1, 32, 224, 224)|(1, 152, 224, 224)}" fillcolor=darkseagreen1]
+	5 [label="_DenseBlock
+-2|{input:|output:}|{(1, 32, 224, 224)|(1, 152, 224, 224)}" fillcolor=darkseagreen1]
+	5 [label="_DenseBlock
+-2|{input:|output:}|{(1, 32, 224, 224)|(1, 152, 224, 224)}" fillcolor=darkseagreen1]
+	0 -> 1
+	1 -> 2
+	2 -> 3
+	3 -> 4
+	4 -> 5
+	5 -> 6
+	6 -> 7
+	7 -> 8
+	8 -> 9
+	9 -> 10
+	10 -> 11
+	11 -> 12
+	12 -> 13
+	13 -> 14
+	14 -> 15
+	15 -> 16
+	16 -> 17
+	17 -> 18
+	18 -> 19
+	19 -> 20
+	20 -> 21
+	21 -> 22
+	22 -> 23
+	23 -> 24
+	24 -> 25
+	25 -> 26
+	26 -> 27
+	27 -> 28
+	28 -> 29
+	29 -> 30
+	30 -> 31
+	31 -> 32
+	32 -> 33
+	33 -> 34
+	34 -> 35
+	35 -> 36
+	36 -> 37
+	37 -> 38
+	38 -> 39
+	39 -> 40
+	33 -> 35
+	32 -> 34
+	32 -> 35
+	31 -> 33
+	31 -> 34
+	31 -> 35
+	30 -> 32
+	30 -> 33
+	30 -> 34
+	30 -> 35
+	29 -> 31
+	29 -> 32
+	29 -> 33
+	29 -> 34
+	29 -> 35
+	21 -> 23
+	20 -> 22
+	20 -> 23
+	19 -> 21
+	19 -> 22
+	19 -> 23
+	18 -> 20
+	18 -> 21
+	18 -> 22
+	18 -> 23
+	17 -> 19
+	17 -> 20
+	17 -> 21
+	17 -> 22
+	17 -> 23
+	9 -> 11
+	8 -> 10
+	8 -> 11
+	7 -> 9
+	7 -> 10
+	7 -> 11
+	6 -> 8
+	6 -> 9
+	6 -> 10
+	6 -> 11
+	5 -> 7
+	5 -> 8
+	5 -> 9
+	5 -> 10
+	5 -> 11
+}
