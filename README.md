@@ -41,7 +41,13 @@ model_graph.visual_graph
 <img src="https://raw.githubusercontent.com/mert-kurttutan/torchview/main/docs/images/mlp.png" height="400"/>
 
 # Notebook Examples
-For more examples, see jupyter notebooks inside the docs folder.
+For more examples, see colab notebooks below,
+
+**Introduction Notebook:** [![Introduction](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mert-kurttutan/torchview/blob/main/docs/example_introduction.ipynb)
+
+**Computer Vision Models:** [![Vision](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mert-kurttutan/torchview/blob/main/docs/example_vision.ipynb)
+
+**NLP Models:** [![NLP](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mert-kurttutan/torchview/blob/main/docs/example_text.ipynb)
 
 <!-- single_input_all_cols.out -->
 
