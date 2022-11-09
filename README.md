@@ -211,7 +211,7 @@ model_graph.visual_graph
 
 <!-- lstm.out -->
 
-## ResNet / Skip Connection / Support for any Torch operation
+## ResNet / Skip Connection / Support for Torch operations
 
 ```python
 import torchvision
