@@ -227,6 +227,9 @@ model_graph.visual_graph
 - [ ] Displace Module Parameters
 - [ ] Support for Graph Neural Network (GNN)
 - [ ] Support for Undirected edges for GNNs
+- [ ] Support for torch-based functions[^1]
+
+[^1]: Here torch-based functions refers to any function that uses only torch functions and modules. This is more general than modules
 
 # Contributing
 
