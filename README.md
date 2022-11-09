@@ -9,7 +9,7 @@
 
 
 
-Torchview provides visualization of pytorch models in the form of visual graphs. Visualization include tensors, modules, torch.functions and info such as input/output shapes.
+Torchview provides visualization of pytorch models in the form of visual graphs. Visualization includes tensors, modules, torch.functions and info such as input/output shapes.
 
 Supports PyTorch versions 1.7.1+.
 
@@ -41,7 +41,7 @@ model_graph.visual_graph
 <img src="https://raw.githubusercontent.com/mert-kurttutan/torchview/main/docs/images/mlp.png" height="400"/>
 
 # Notebook Examples
-For more examples, see jupyter notebooks inside docs folder.
+For more examples, see jupyter notebooks inside the docs folder.
 
 <!-- single_input_all_cols.out -->
 
@@ -238,7 +238,7 @@ model_graph.visual_graph
 
 All issues and pull requests are much appreciated! If you are wondering how to build the project:
 
-- torchview is actively developed using the lastest version of Python.
+- torchview is actively developed using the latest version of Python.
   - Changes should be backward compatible to Python 3.7, and will follow Python's End-of-Life guidance for old versions.
   - Run `pip install -r requirements-dev.txt`. We use the latest versions of all dev packages.
   - To run unit tests, run `pytest`.
@@ -249,4 +249,4 @@ All issues and pull requests are much appreciated! If you are wondering how to b
 
 - Parts related to input processing and validation are taken/inspired from torchinfo repository!!.
 - Many of the software related parts (e.g. CI, testing) are also taken/inspired from torchinfo repository. So big thanks to @TylerYep!!!
-- The mechanism of constructing visual graph is thanks to `__torch_function__` and subclassing torch.Tensor. Big thanks to all those who developed this API!!.
+- The algorithm for constructing visual graphs is thanks to `__torch_function__` and subclassing torch.Tensor. Big thanks to all those who developed this API!!.
