@@ -220,7 +220,7 @@ def forward_prop(
 ) -> None:
     '''Performs forward propagation of model on RecorderTensor
     inside context to use module_forward_wrapper'''
-
+    saved_model_mode = model.training
     try:
         if mode == 'train':
             model.train()
@@ -245,7 +245,8 @@ def forward_prop(
         raise RuntimeError(
             "Failed to run torchgraph see error message"
         ) from e
-
+    finally:
+        model.train(saved_model_mode)
 
 def process_input(
     input_data: INPUT_DATA_TYPE | None,
