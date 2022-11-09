@@ -28,7 +28,7 @@ INPUT_SIZE_TYPE = Sequence[Union[int, Sequence[Any], torch.Size]]
 CORRECTED_INPUT_SIZE_TYPE = List[Union[Sequence[Any], torch.Size]]
 
 # TODO: test/change api to include also function calls, not only pytorch models
-# so, keep the api here as general as possible
+# so keep the api here as general as possible
 
 
 def draw_graph(
