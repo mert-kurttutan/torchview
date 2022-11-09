@@ -39,6 +39,9 @@ model_graph.visual_graph
 
 <img src="https://raw.githubusercontent.com/mert-kurttutan/torchview/main/docs/images/mlp.png" height="400"/>
 
+# Notebook Examples
+For more examples, see the notebooks inside docs folder.
+
 <!-- single_input_all_cols.out -->
 
 **Note:** Output graphviz visuals return images with desired sizes. But sometimes, on VSCode, some shapes are being cropped due to large size and svg rendering on by VSCode. To solve this, I suggest you run the following
