@@ -1,4 +1,4 @@
-name: Torchview - python package
+name: Testing
 on:
   push:
     branches: [ main ]
