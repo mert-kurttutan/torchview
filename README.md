@@ -224,7 +224,7 @@ model_graph.visual_graph
 
 
 # TODO:
-- [ ] Displace Module Parameters
+- [ ] Display Module parameter info
 - [ ] Support for Graph Neural Network (GNN)
 - [ ] Support for Undirected edges for GNNs
 - [ ] Support for torch-based functions[^1]
