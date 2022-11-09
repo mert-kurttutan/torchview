@@ -9,7 +9,8 @@
 
 
 
-Torchview provides visualization of pytorch models in the form of visual graphs.
+Torchview provides visualization of pytorch models in the form of visual graphs. Visualization include tensors, modules, torch.functions and info such as input/output shapes.
+
 Supports PyTorch versions 1.7.1+.
 
 # Installation
@@ -31,7 +32,7 @@ pip install torchview
 from torchview import draw_graph
 
 model = MLP()
-batch_size = 16
+batch_size = 2
 model_graph = draw_graph(model, input_size=(batch_size, 128))
 model_graph.visual_graph
 ```
@@ -40,7 +41,7 @@ model_graph.visual_graph
 <img src="https://raw.githubusercontent.com/mert-kurttutan/torchview/main/docs/images/mlp.png" height="400"/>
 
 # Notebook Examples
-For more examples, see the notebooks inside docs folder.
+For more examples, see jupyter notebooks inside docs folder.
 
 <!-- single_input_all_cols.out -->
 
@@ -49,7 +50,7 @@ For more examples, see the notebooks inside docs folder.
 import graphviz
 graphviz.set_jupyter_format('png')
 ```
-This problem does not occur on other jupyter platforms e.g. JupyterLab or Google Colab.
+This problem does not occur on other platforms e.g. JupyterLab or Google Colab.
 
 **Supported Features**
 * Almost all the models, RNN, Sequentials, Skip Connection
@@ -212,7 +213,6 @@ model_graph.visual_graph
 
 <img src="https://raw.githubusercontent.com/mert-kurttutan/torchview/main/docs/images/mlp_explicit.png" height="1000"/>
 
-<!-- lstm.out -->
 
 ## ResNet / Skip Connection / Support for Torch operations
 
@@ -232,7 +232,7 @@ model_graph.visual_graph
 - [ ] Support for Undirected edges for GNNs
 - [ ] Support for torch-based functions[^1]
 
-[^1]: Here torch-based functions refers to any function that uses only torch functions and modules. This is more general than modules
+[^1]: Here, torch-based functions refers to any function that uses only torch functions and modules. This is more general than modules.
 
 # Contributing
 
