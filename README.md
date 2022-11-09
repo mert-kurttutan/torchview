@@ -222,7 +222,11 @@ model_graph.visual_graph
 
 ![](https://raw.githubusercontent.com/mert-kurttutan/torchview/main/docs/images/resnet.png "ResnetModel")
 
-<!-- container.out -->
+
+# TODO:
+- [ ] Displace Module Parameters
+- [ ] Support for Graph Neural Network (GNN)
+- [ ] Support for Undirected edges for GNNs
 
 # Contributing
 
