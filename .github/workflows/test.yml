@@ -70,6 +70,7 @@ jobs:
         else
           echo "$RUNNER_OS not supported"
           exit 1
+        fi
       shell: bash
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4.3.0
