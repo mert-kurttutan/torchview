@@ -45,19 +45,13 @@ jobs:
     - name: Install system dependencies
       run: |
         if [ "$RUNNER_OS" == "Linux" ]; then
-          echo "::group::Run sudo apt-get update"
-          sudo apt-get update
-          echo "::endgroup::"
           echo "::group::Run sudo apt-get install graphviz"
           sudo apt-get install graphviz
-          echo "::endgroup::"
-          echo "::group::Run dot -V"
           DOT_VERSION="$(dot -V 2>&1)"
           echo $DOT_VERSION;
           echo "::endgroup::"
           echo "::notice::Apt installed ${DOT_VERSION#dot - }"
-        elif [ "$RUNNER_OS" == "macOS" ]; then
-          echo "::endgroup::"
+        elif [ "$RUNNER_OS" == "macOS" ]; then"
           echo "::group::Run brew install graphviz"
           brew install graphviz
           echo "::endgroup::"
