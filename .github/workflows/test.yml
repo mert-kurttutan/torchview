@@ -51,7 +51,7 @@ jobs:
           echo $DOT_VERSION;
           echo "::endgroup::"
           echo "::notice::Apt installed ${DOT_VERSION#dot - }"
-        elif [ "$RUNNER_OS" == "macOS" ]; then"
+        elif [ "$RUNNER_OS" == "macOS" ]; then
           echo "::group::Run brew install graphviz"
           brew install graphviz
           echo "::endgroup::"
