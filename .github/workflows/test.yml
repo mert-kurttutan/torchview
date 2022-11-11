@@ -96,6 +96,7 @@ jobs:
         pip install torch==${{ matrix.torch-version-map.torch }} \
           torchvision==${{ matrix.torch-version-map.torchvision }} \
           torchtext==${{ matrix.torch-version-map.torchtext }}
+      shell: bash
     - name: mypy
       if: ${{ matrix.torch-version-map.torch == '1.13' }}
       run: |
