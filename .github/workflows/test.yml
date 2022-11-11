@@ -7,10 +7,11 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
+        os: [ubuntu-latest,]
         python-version: ["3.7", "3.8", "3.9", "3.10"]
         graphviz-version: ["0.20"]
         torch-version-map: [
@@ -22,6 +23,15 @@ jobs:
           {torch: "1.12", torchvision: "0.13", torchtext: "0.13"},
           {torch: "1.13", torchvision: "0.14", torchtext: "0.14"},
         ]
+        include:
+          - python-version: "3.10"
+            os: macos-latest
+            graphviz-version: "0.20"
+            torch-version-map: {torch: "1.13", torchvision: "0.14", torchtext: "0.14"}
+          - python-version: "3.10"
+            os: windows-latest
+            graphviz-version: "0.20"
+            torch-version-map: {torch: "1.13", torchvision: "0.14", torchtext: "0.14"}
         exclude:
           - python-version: 3.7
             torch-version-map: {torch: "1.11", torchvision: "0.12", torchtext: "0.12"}
@@ -41,19 +51,40 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2.5.0
-    - name: Apt Install system dependencies
+    - name: Install system dependencies
       run: |
-        echo "::group::Run sudo apt-get update"
-        sudo apt-get update
-        echo "::endgroup::"
-        echo "::group::Run sudo apt-get install graphviz"
-        sudo apt-get install graphviz
-        echo "::endgroup::"
-        echo "::group::Run dot -V"
-        DOT_VERSION="$(dot -V 2>&1)"
-        echo $DOT_VERSION;
-        echo "::endgroup::"
-        echo "::notice::Apt installed ${DOT_VERSION#dot - }"
+        if [ "$RUNNER_OS" == "Linux" ]; then
+          echo "::group::Run sudo apt-get update"
+          sudo apt-get update
+          echo "::endgroup::"
+          echo "::group::Run sudo apt-get install graphviz"
+          sudo apt-get install graphviz
+          DOT_VERSION="$(dot -V 2>&1)"
+          echo $DOT_VERSION;
+          echo "::endgroup::"
+          echo "::notice::Apt installed ${DOT_VERSION#dot - }"
+        elif [ "$RUNNER_OS" == "macOS" ]; then
+          echo "::group::Run brew install graphviz"
+          brew install graphviz
+          echo "::endgroup::"
+          echo "::group::Run dot -V"
+          DOT_VERSION="$(dot -V 2>&1)"
+          echo $DOT_VERSION;
+          echo "::endgroup::"
+          echo "::notice::Apt installed ${DOT_VERSION#dot - }"
+        elif [ "$RUNNER_OS" == "Windows" ]; then
+          echo "::group::Run choco install graphviz"
+          choco install graphviz
+          echo "::endgroup::"
+          echo "::group::Run dot -V"
+          DOT_VERSION="$(dot -V 2>&1)"
+          echo $DOT_VERSION;
+          echo "::endgroup::"
+          echo "::notice::Apt installed ${DOT_VERSION#dot - }"
+        else
+          echo "$RUNNER_OS not supported"
+          exit 1
+        fi
       shell: bash
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4.3.0
@@ -68,6 +99,7 @@ jobs:
         pip install torch==${{ matrix.torch-version-map.torch }} \
           torchvision==${{ matrix.torch-version-map.torchvision }} \
           torchtext==${{ matrix.torch-version-map.torchtext }}
+      shell: bash
     - name: mypy
       if: ${{ matrix.torch-version-map.torch == '1.13' }}
       run: |
