@@ -7,10 +7,11 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
+        os: [ubuntu-latest, macos-latest]
         python-version: ["3.7", "3.8", "3.9", "3.10"]
         graphviz-version: ["0.20"]
         torch-version-map: [
@@ -41,19 +42,34 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2.5.0
-    - name: Apt Install system dependencies
+    - name: Install system dependencies
       run: |
-        echo "::group::Run sudo apt-get update"
-        sudo apt-get update
-        echo "::endgroup::"
-        echo "::group::Run sudo apt-get install graphviz"
-        sudo apt-get install graphviz
-        echo "::endgroup::"
-        echo "::group::Run dot -V"
-        DOT_VERSION="$(dot -V 2>&1)"
-        echo $DOT_VERSION;
-        echo "::endgroup::"
-        echo "::notice::Apt installed ${DOT_VERSION#dot - }"
+        if [ "$RUNNER_OS" == "Linux" ]; then
+          echo "::group::Run sudo apt-get update"
+          sudo apt-get update
+          echo "::endgroup::"
+          echo "::group::Run sudo apt-get install graphviz"
+          sudo apt-get install graphviz
+          echo "::endgroup::"
+          echo "::group::Run dot -V"
+          DOT_VERSION="$(dot -V 2>&1)"
+          echo $DOT_VERSION;
+          echo "::endgroup::"
+          echo "::notice::Apt installed ${DOT_VERSION#dot - }"
+        elif [ "$RUNNER_OS" == "macOS" ]; then
+          sudo brew update
+          echo "::endgroup::"
+          echo "::group::Run sudo brew install graphviz"
+          sudo brew install graphviz
+          echo "::endgroup::"
+          echo "::group::Run dot -V"
+          DOT_VERSION="$(dot -V 2>&1)"
+          echo $DOT_VERSION;
+          echo "::endgroup::"
+          echo "::notice::Apt installed ${DOT_VERSION#dot - }"
+        else
+          echo "$RUNNER_OS not supported"
+          exit 1
       shell: bash
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4.3.0
