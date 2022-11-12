@@ -15,7 +15,7 @@ jobs:
         python-version: ["3.7", "3.8", "3.9", "3.10"]
         graphviz-version: ["0.20"]
         torch-version-map: [
-          {torch: "1.7.1", torchvision: "0.8.2", torchtext: "0.8.1"},
+          {torch: "1.7.0", torchvision: "0.8.0", torchtext: "0.8.0"},
           {torch: "1.8", torchvision: "0.9", torchtext: "0.9"},
           {torch: "1.9", torchvision: "0.10", torchtext: "0.10"},
           {torch: "1.10", torchvision: "0.11.1", torchtext: "0.11"},
@@ -32,6 +32,10 @@ jobs:
             os: windows-latest
             graphviz-version: "0.20"
             torch-version-map: {torch: "1.13", torchvision: "0.14", torchtext: "0.14"}
+          - python-version: "3.9"
+            os: ubuntu-latest
+            graphviz-version: "0.20"
+            torch-version-map: {torch: "1.7.1", torchvision: "0.8.2", torchtext: "0.8.1"}
         exclude:
           - python-version: 3.7
             torch-version-map: {torch: "1.11", torchvision: "0.12", torchtext: "0.12"}
@@ -39,9 +43,12 @@ jobs:
             torch-version-map: {torch: "1.12", torchvision: "0.13", torchtext: "0.13"}
           - python-version: 3.7
             torch-version-map: {torch: "1.13", torchvision: "0.14", torchtext: "0.14"}
+          
+          - python-version: 3.9
+            torch-version-map: {torch: "1.7.0", torchvision: "0.8.0", torchtext: "0.8.0"}
 
           - python-version: 3.10
-            torch-version-map: {torch: "1.7.1", torchvision: "0.8.2", torchtext: "0.8.1"}
+            torch-version-map: {torch: "1.7.0", torchvision: "0.8.0", torchtext: "0.8.0"}
           - python-version: 3.10
             torch-version-map: {torch: "1.8", torchvision: "0.9", torchtext: "0.9"}
           - python-version: 3.10
