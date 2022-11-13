@@ -19,7 +19,23 @@ First, you need to install graphviz,
 ```
 pip install graphviz
 ```
-For python interface of graphiz to work, you need to have dot layout command working in your system, see the details [here](https://graphviz.readthedocs.io/en/stable/manual.html)
+For python interface of graphiz to work, you need to have dot layout command working in your system. If it isn't already installed, I suggest you run the following depeding on your OS,
+
+Debian-based Linux distro (e.g. Ubuntu):
+```
+apt-get install graphviz
+```
+
+Windows:
+```
+choco install graphviz
+```
+
+macOS:
+```
+brew install graphviz
+```
+see more details [here](https://graphviz.readthedocs.io/en/stable/manual.html)
 
 Then, continue with installing torchview
 ```
