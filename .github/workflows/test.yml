@@ -76,11 +76,13 @@ jobs:
         else
           echo "$RUNNER_OS not supported"
           exit 1
+        echo "::endgroup::"
         fi
         DOT_VERSION="$(dot -V 2>&1)"
+        echo "::group::Check dot version"
         echo $DOT_VERSION;
-        echo "::endgroup::"
         echo "::notice::dot installed ${DOT_VERSION#dot - }"
+        echo "::endgroup::"
       shell: bash
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4.3.0
