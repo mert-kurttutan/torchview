@@ -78,8 +78,10 @@ jobs:
           exit 1
         echo "::endgroup::"
         fi
+        echo "::group:: check dot version"
         DOT_VERSION="$(dot -V 2>&1)"
         echo "::notice::dot installed ${DOT_VERSION#dot - }"
+        echo "::endgroup::"
       shell: bash
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4.3.0
