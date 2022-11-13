@@ -67,32 +67,20 @@ jobs:
           echo "::endgroup::"
           echo "::group::Run sudo apt-get install graphviz"
           sudo apt-get install graphviz
-          DOT_VERSION="$(dot -V 2>&1)"
-          echo $DOT_VERSION;
-          echo "::endgroup::"
-          echo "::notice::Apt installed ${DOT_VERSION#dot - }"
         elif [ "$RUNNER_OS" == "macOS" ]; then
           echo "::group::Run brew install graphviz"
           brew install graphviz
-          echo "::endgroup::"
-          echo "::group::Run dot -V"
-          DOT_VERSION="$(dot -V 2>&1)"
-          echo $DOT_VERSION;
-          echo "::endgroup::"
-          echo "::notice::Apt installed ${DOT_VERSION#dot - }"
         elif [ "$RUNNER_OS" == "Windows" ]; then
           echo "::group::Run choco install graphviz"
           choco install graphviz
-          echo "::endgroup::"
-          echo "::group::Run dot -V"
-          DOT_VERSION="$(dot -V 2>&1)"
-          echo $DOT_VERSION;
-          echo "::endgroup::"
-          echo "::notice::Apt installed ${DOT_VERSION#dot - }"
         else
           echo "$RUNNER_OS not supported"
           exit 1
         fi
+        DOT_VERSION="$(dot -V 2>&1)"
+        echo $DOT_VERSION;
+        echo "::endgroup::"
+        echo "::notice::dot installed ${DOT_VERSION#dot - }"
       shell: bash
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4.3.0
