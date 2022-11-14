@@ -11,7 +11,7 @@
 
 Torchview provides visualization of pytorch models in the form of visual graphs. Visualization includes tensors, modules, torch.functions and info such as input/output shapes.
 
-Supports PyTorch versions >=1.7.
+Supports PyTorch versions $\geq$ 1.7
 
 # Installation
 
