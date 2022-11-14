@@ -4,6 +4,9 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+    
+env:
+  TORCH_LATEST_VERSION: "1.13"
 
 jobs:
   build:
@@ -98,15 +101,15 @@ jobs:
           torchtext==${{ matrix.torch-version-map.torchtext }}
       shell: bash
     - name: mypy
-      if: ${{ matrix.torch-version-map.torch == '1.13' }}
+      if: ${{ matrix.torch-version-map.torch == env.TORCH_LATEST_VERSION }}
       run: |
         mypy .
     - name: pytest
-      if: ${{ matrix.torch-version-map.torch == '1.13' }}
+      if: ${{ matrix.torch-version-map.torch == env.TORCH_LATEST_VERSION }}
       run: |
         pytest --cov=torchview --cov-report= --durations=0
     - name: pytest
-      if: ${{ matrix.torch-version-map.torch != '1.13' }}
+      if: ${{ matrix.torch-version-map.torch != env.TORCH_LATEST_VERSION }}
       run: |
         pytest --no-output
     - name: codecov
