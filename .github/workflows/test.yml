@@ -34,15 +34,13 @@ jobs:
           - os: macos-latest
             python-version: "3.10"
             graphviz-version: "0.20"
-            torch-version-map: {
-              torch: ${{ env.TORCH_LATEST_VERSION }}, torchvision: "0.14", torchtext: "0.14"
-            }
+            torch-version-map: 
+              {torch: ${{ env.TORCH_LATEST_VERSION }}, torchvision: "0.14", torchtext: "0.14"}
           - os: windows-latest
             python-version: "3.10"
             graphviz-version: "0.20"
-            torch-version-map: {
-              torch: ${{ env.TORCH_LATEST_VERSION }}, torchvision: "0.14", torchtext: "0.14"
-            }
+            torch-version-map: 
+              {torch: ${{ env.TORCH_LATEST_VERSION }}, torchvision: "0.14", torchtext: "0.14"}
 
         exclude:
           - python-version: 3.7
