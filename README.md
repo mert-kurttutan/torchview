@@ -19,7 +19,7 @@ First, you need to install graphviz,
 ```
 pip install graphviz
 ```
-For python interface of graphiz to work, you need to have dot layout command working in your system. If it isn't already installed, I suggest you run the following depeding on your OS,
+For python interface of graphiz to work, you need to have dot layout command working in your system. If it isn't installed, I suggest you run the following depending on your OS,
 
 Debian-based Linux distro (e.g. Ubuntu):
 ```
