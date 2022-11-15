@@ -245,7 +245,21 @@ model_graph = draw_graph(resnet18(), input_size=(1,3,32,32))
 model_graph.visual_graph
 ```
 
-![](https://raw.githubusercontent.com/mert-kurttutan/torchview/main/docs/images/resnet.png "ResnetModel")
+<html lang="en">
+    <style>
+      .image{
+        width: 300px;
+        height: 300px;
+        overflow: auto;
+      }
+    </style>
+</head>
+<body>
+  <div class="image">
+    <img src="https://raw.githubusercontent.com/mert-kurttutan/torchview/main/docs/images/resnet.png" alt="ResnetModel">
+  </div>
+</body>
+</html>
 
 
 # TODO:
