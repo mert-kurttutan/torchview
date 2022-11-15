@@ -245,7 +245,7 @@ model_graph = draw_graph(resnet18(), input_size=(1,3,32,32))
 model_graph.visual_graph
 ```
 
-<html lang="en">
+<html>
     <style>
       .image{
         width: 300px;
