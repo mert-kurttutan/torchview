@@ -2,92 +2,50 @@ strict digraph Roberta {
 	graph [ordering=in size="26.099999999999998,26.099999999999998"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
 	edge [fontsize=10]
-	0 [label="input-tensor-0: (2, 6)" fillcolor=lightyellow]
-	1 [label="RobertaModel
--0|{input:|output:}|{(2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	2 [label="RobertaEncoder
--1|{input:|output:}|{(2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	3 [label="TransformerEncoder
--2|{input:|output:}|{(2, 6)|(6, 2, 768)}" fillcolor=darkseagreen1]
-	4 [label="eq
--3|{input:|output:}|{(2, 6)|(2, 6)}" fillcolor=aliceblue]
-	5 [label="TransformerEncoder
--3|{input:|output:}|{(2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	6 [label="TransformerEncoderLayer
--4|{input:|output:}|{(2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	7 [label="MultiheadAttention
--5|{input:|output:}|{3 x (2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	8 [label="transpose
--6|{input:|output:}|{(2, 6, 768)|(6, 2, 768)}" fillcolor=aliceblue]
-	9 [label="multi_head_attention_forward
--6|{input:|output:}|{3 x (6, 2, 768), (2, 6)|(6, 2, 768)}" fillcolor=aliceblue]
-	10 [label="transpose
--6|{input:|output:}|{(6, 2, 768)|(2, 6, 768)}" fillcolor=aliceblue]
-	11 [label="Dropout
--5|{input:|output:}|{(2, 6, 768)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	12 [label="add
--6|{input:|output:}|{2 x (2, 6, 768)|(2, 6, 768)}" fillcolor=aliceblue]
-	13 [label="LayerNorm
--6|{input:|output:}|{(2, 6, 768)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	14 [label="Linear
--6|{input:|output:}|{(2, 6, 768)|(2, 6, 3072)}" fillcolor=darkseagreen1]
-	15 [label="gelu
--6|{input:|output:}|{(2, 6, 3072)|(2, 6, 3072)}" fillcolor=aliceblue]
-	16 [label="Dropout
--6|{input:|output:}|{(2, 6, 3072)|(2, 6, 3072)}" fillcolor=darkseagreen1]
-	17 [label="Linear
--6|{input:|output:}|{(2, 6, 3072)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	18 [label="Dropout
--6|{input:|output:}|{(2, 6, 768)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	19 [label="add
--6|{input:|output:}|{2 x (2, 6, 768)|(2, 6, 768)}" fillcolor=aliceblue]
-	20 [label="LayerNorm
--6|{input:|output:}|{(2, 6, 768)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	21 [label="TransformerEncoderLayer
--5|{input:|output:}|{(2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	22 [label="MultiheadAttention
--6|{input:|output:}|{3 x (2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	23 [label="Dropout
--6|{input:|output:}|{(2, 6, 768)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	24 [label="TransformerEncoderLayer
--6|{input:|output:}|{(2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	25 [label="output-tensor-12: (2, 6, 768)" fillcolor=lightyellow]
-	13 [label="LayerNorm
--6|{input:|output:}|{(2, 6, 768)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	7 [label="MultiheadAttention
--5|{input:|output:}|{3 x (2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	5 [label="TransformerEncoder
--3|{input:|output:}|{(2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	5 [label="TransformerEncoder
--3|{input:|output:}|{(2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	3 [label="TransformerEncoder
--2|{input:|output:}|{(2, 6)|(6, 2, 768)}" fillcolor=darkseagreen1]
-	26 [label="Embedding
--3|{input:|output:}|{(2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	27 [label="add
--3|{input:|output:}|{2 x (2, 6, 768)|(2, 6, 768)}" fillcolor=aliceblue]
-	28 [label="LayerNorm
--3|{input:|output:}|{(2, 6, 768)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	29 [label="Dropout
--3|{input:|output:}|{(2, 6, 768)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	3 [label="TransformerEncoder
--2|{input:|output:}|{(2, 6)|(6, 2, 768)}" fillcolor=darkseagreen1]
-	30 [label="PositionalEmbedding
--3|{input:|output:}|{(2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	31 [label="ne
--4|{input:|output:}|{(2, 6)|(2, 6)}" fillcolor=aliceblue]
-	32 [label="long
--4|{input:|output:}|{(2, 6)|(2, 6)}" fillcolor=aliceblue]
-	33 [label="cumsum
--4|{input:|output:}|{(2, 6)|(2, 6)}" fillcolor=aliceblue]
-	34 [label="mul
--4|{input:|output:}|{2 x (2, 6)|(2, 6)}" fillcolor=aliceblue]
-	35 [label="add
--4|{input:|output:}|{(2, 6)|(2, 6)}" fillcolor=aliceblue]
-	36 [label="Embedding
--4|{input:|output:}|{(2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	32 [label="long
--4|{input:|output:}|{(2, 6)|(2, 6)}" fillcolor=aliceblue]
+	0 [label="input-tensor&#92;ndepth:0|(2, 6)" fillcolor=lightyellow]
+	1 [label="RobertaModel&#92;ndepth:0|{input:|output:}|{(2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
+	2 [label="RobertaEncoder&#92;ndepth:1|{input:|output:}|{(2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
+	3 [label="TransformerEncoder&#92;ndepth:2|{input:|output:}|{(2, 6)|(6, 2, 768)}" fillcolor=darkseagreen1]
+	4 [label="eq&#92;ndepth:3|{input:|output:}|{(2, 6)|(2, 6)}" fillcolor=aliceblue]
+	5 [label="TransformerEncoder&#92;ndepth:3|{input:|output:}|{(2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
+	6 [label="TransformerEncoderLayer&#92;ndepth:4|{input:|output:}|{(2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
+	7 [label="MultiheadAttention&#92;ndepth:5|{input:|output:}|{3 x (2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
+	8 [label="transpose&#92;ndepth:6|{input:|output:}|{(2, 6, 768)|(6, 2, 768)}" fillcolor=aliceblue]
+	9 [label="multi_head_attention_forward&#92;ndepth:6|{input:|output:}|{3 x (6, 2, 768), (2, 6)|(6, 2, 768)}" fillcolor=aliceblue]
+	10 [label="transpose&#92;ndepth:6|{input:|output:}|{(6, 2, 768)|(2, 6, 768)}" fillcolor=aliceblue]
+	11 [label="Dropout&#92;ndepth:5|{input:|output:}|{(2, 6, 768)|(2, 6, 768)}" fillcolor=darkseagreen1]
+	12 [label="add&#92;ndepth:6|{input:|output:}|{2 x (2, 6, 768)|(2, 6, 768)}" fillcolor=aliceblue]
+	13 [label="LayerNorm&#92;ndepth:6|{input:|output:}|{(2, 6, 768)|(2, 6, 768)}" fillcolor=darkseagreen1]
+	14 [label="Linear&#92;ndepth:6|{input:|output:}|{(2, 6, 768)|(2, 6, 3072)}" fillcolor=darkseagreen1]
+	15 [label="gelu&#92;ndepth:6|{input:|output:}|{(2, 6, 3072)|(2, 6, 3072)}" fillcolor=aliceblue]
+	16 [label="Dropout&#92;ndepth:6|{input:|output:}|{(2, 6, 3072)|(2, 6, 3072)}" fillcolor=darkseagreen1]
+	17 [label="Linear&#92;ndepth:6|{input:|output:}|{(2, 6, 3072)|(2, 6, 768)}" fillcolor=darkseagreen1]
+	18 [label="Dropout&#92;ndepth:6|{input:|output:}|{(2, 6, 768)|(2, 6, 768)}" fillcolor=darkseagreen1]
+	19 [label="add&#92;ndepth:6|{input:|output:}|{2 x (2, 6, 768)|(2, 6, 768)}" fillcolor=aliceblue]
+	20 [label="LayerNorm&#92;ndepth:6|{input:|output:}|{(2, 6, 768)|(2, 6, 768)}" fillcolor=darkseagreen1]
+	21 [label="TransformerEncoderLayer&#92;ndepth:5|{input:|output:}|{(2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
+	22 [label="MultiheadAttention&#92;ndepth:6|{input:|output:}|{3 x (2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
+	23 [label="Dropout&#92;ndepth:6|{input:|output:}|{(2, 6, 768)|(2, 6, 768)}" fillcolor=darkseagreen1]
+	24 [label="TransformerEncoderLayer&#92;ndepth:6|{input:|output:}|{(2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
+	25 [label="output-tensor&#92;ndepth:12|(2, 6, 768)" fillcolor=lightyellow]
+	13 [label="LayerNorm&#92;ndepth:6|{input:|output:}|{(2, 6, 768)|(2, 6, 768)}" fillcolor=darkseagreen1]
+	7 [label="MultiheadAttention&#92;ndepth:5|{input:|output:}|{3 x (2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
+	5 [label="TransformerEncoder&#92;ndepth:3|{input:|output:}|{(2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
+	5 [label="TransformerEncoder&#92;ndepth:3|{input:|output:}|{(2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
+	3 [label="TransformerEncoder&#92;ndepth:2|{input:|output:}|{(2, 6)|(6, 2, 768)}" fillcolor=darkseagreen1]
+	26 [label="Embedding&#92;ndepth:3|{input:|output:}|{(2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
+	27 [label="add&#92;ndepth:3|{input:|output:}|{2 x (2, 6, 768)|(2, 6, 768)}" fillcolor=aliceblue]
+	28 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(2, 6, 768)|(2, 6, 768)}" fillcolor=darkseagreen1]
+	29 [label="Dropout&#92;ndepth:3|{input:|output:}|{(2, 6, 768)|(2, 6, 768)}" fillcolor=darkseagreen1]
+	3 [label="TransformerEncoder&#92;ndepth:2|{input:|output:}|{(2, 6)|(6, 2, 768)}" fillcolor=darkseagreen1]
+	30 [label="PositionalEmbedding&#92;ndepth:3|{input:|output:}|{(2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
+	31 [label="ne&#92;ndepth:4|{input:|output:}|{(2, 6)|(2, 6)}" fillcolor=aliceblue]
+	32 [label="long&#92;ndepth:4|{input:|output:}|{(2, 6)|(2, 6)}" fillcolor=aliceblue]
+	33 [label="cumsum&#92;ndepth:4|{input:|output:}|{(2, 6)|(2, 6)}" fillcolor=aliceblue]
+	34 [label="mul&#92;ndepth:4|{input:|output:}|{2 x (2, 6)|(2, 6)}" fillcolor=aliceblue]
+	35 [label="add&#92;ndepth:4|{input:|output:}|{(2, 6)|(2, 6)}" fillcolor=aliceblue]
+	36 [label="Embedding&#92;ndepth:4|{input:|output:}|{(2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
+	32 [label="long&#92;ndepth:4|{input:|output:}|{(2, 6)|(2, 6)}" fillcolor=aliceblue]
 	0 -> 1
 	1 -> 2
 	2 -> 3

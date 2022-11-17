@@ -200,19 +200,23 @@ class ComputationGraph:
     def get_node_label(self, node: COMPUTATION_NODES) -> str:
         input_str = 'input'
         output_str = 'output'
+        new_line = '&#92;n'  # needed for record shape config in graphviz
         if self.show_shapes:
             if isinstance(node, TensorNode):
-                label = f"{node.name}-{node.depth}: {node.tensor_shape}"
+                label = (
+                    f"{node.name}{new_line}depth:{node.depth}|"
+                    f"{node.tensor_shape}"
+                )
             else:
                 input_repr = compact_list_repr(node.input_shape)
                 output_repr = compact_list_repr(node.output_shape)
                 label = (
-                    f"{node.name}\n-{node.depth}|"
+                    f"{node.name}{new_line}depth:{node.depth}|"
                     f"{{{input_str}:|{output_str}:}}|"
                     f"{{{input_repr}|{output_repr}}}"
                 )
         else:
-            label = f"{node.name}-{node.depth}"
+            label = f"{node.name}{new_line}depth:{node.depth}"
         return label
 
     def resize_graph(self, scale=1.0, size_per_element=0.3, min_size=12):
