@@ -2,20 +2,14 @@ strict digraph LeakySequential {
 	graph [ordering=in size="12.0,12.0"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
 	edge [fontsize=10]
-	0 [label="input-tensor-0: (1, 2)" fillcolor=lightyellow]
-	1 [label="Sequential
--0|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
-	2 [label="LeakyReLU
--1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
-	3 [label="Identity
--1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
-	4 [label="LeakyReLU
--1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
-	5 [label="Identity
--1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
-	6 [label="LeakyReLU
--1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
-	7 [label="output-tensor-0: (1, 2)" fillcolor=lightyellow]
+	0 [label="input-tensor&#92;ndepth:0|(1, 2)" fillcolor=lightyellow]
+	1 [label="Sequential&#92;ndepth:0|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
+	2 [label="LeakyReLU&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
+	3 [label="Identity&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
+	4 [label="LeakyReLU&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
+	5 [label="Identity&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
+	6 [label="LeakyReLU&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
+	7 [label="output-tensor&#92;ndepth:0|(1, 2)" fillcolor=lightyellow]
 	0 -> 1
 	1 -> 2
 	2 -> 3
@@ -28,20 +22,14 @@ strict digraph LeakySequential {
 	graph [ordering=in size="12.0,12.0"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
 	edge [fontsize=10]
-	0 [label="input-tensor-0: (1, 2)" fillcolor=lightyellow]
-	1 [label="Sequential
--0|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
-	2 [label="LeakyReLU
--1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
-	3 [label="Identity
--1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
-	4 [label="LeakyReLU
--1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
-	5 [label="Identity
--1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
-	6 [label="LeakyReLU
--1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
-	7 [label="output-tensor-0: (1, 2)" fillcolor=lightyellow]
+	0 [label="input-tensor&#92;ndepth:0|(1, 2)" fillcolor=lightyellow]
+	1 [label="Sequential&#92;ndepth:0|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
+	2 [label="LeakyReLU&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
+	3 [label="Identity&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
+	4 [label="LeakyReLU&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
+	5 [label="Identity&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
+	6 [label="LeakyReLU&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
+	7 [label="output-tensor&#92;ndepth:0|(1, 2)" fillcolor=lightyellow]
 	0 -> 1
 	1 -> 2
 	2 -> 3

@@ -248,6 +248,7 @@ def forward_prop(
     finally:
         model.train(saved_model_mode)
 
+
 def process_input(
     input_data: INPUT_DATA_TYPE | None,
     input_size: INPUT_SIZE_TYPE | None,

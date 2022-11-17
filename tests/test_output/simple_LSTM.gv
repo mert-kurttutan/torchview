@@ -2,24 +2,17 @@ strict digraph LSTM {
 	graph [ordering=in size="12.0,12.0"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
 	edge [fontsize=10]
-	0 [label="input-tensor-0: (1, 100)" fillcolor=lightyellow]
-	1 [label="LSTMNet
--0|{input:|output:}|{(1, 100)|(100, 20), 2 x (2, 100, 512)}" fillcolor=darkseagreen1]
-	2 [label="Embedding
--1|{input:|output:}|{(1, 100)|(1, 100, 300)}" fillcolor=darkseagreen1]
-	3 [label="LSTM
--1|{input:|output:}|{(1, 100, 300)|(1, 100, 512), 2 x (2, 100, 512)}" fillcolor=darkseagreen1]
-	4 [label="Linear
--1|{input:|output:}|{(1, 100, 512)|(1, 100, 20)}" fillcolor=darkseagreen1]
-	5 [label="view
--1|{input:|output:}|{(1, 100, 20)|(100, 20)}" fillcolor=aliceblue]
-	6 [label="output-tensor-0: (100, 20)" fillcolor=lightyellow]
-	3 [label="LSTM
--1|{input:|output:}|{(1, 100, 300)|(1, 100, 512), 2 x (2, 100, 512)}" fillcolor=darkseagreen1]
-	7 [label="output-tensor-0: (2, 100, 512)" fillcolor=lightyellow]
-	3 [label="LSTM
--1|{input:|output:}|{(1, 100, 300)|(1, 100, 512), 2 x (2, 100, 512)}" fillcolor=darkseagreen1]
-	8 [label="output-tensor-0: (2, 100, 512)" fillcolor=lightyellow]
+	0 [label="input-tensor&#92;ndepth:0|(1, 100)" fillcolor=lightyellow]
+	1 [label="LSTMNet&#92;ndepth:0|{input:|output:}|{(1, 100)|(100, 20), 2 x (2, 100, 512)}" fillcolor=darkseagreen1]
+	2 [label="Embedding&#92;ndepth:1|{input:|output:}|{(1, 100)|(1, 100, 300)}" fillcolor=darkseagreen1]
+	3 [label="LSTM&#92;ndepth:1|{input:|output:}|{(1, 100, 300)|(1, 100, 512), 2 x (2, 100, 512)}" fillcolor=darkseagreen1]
+	4 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 100, 512)|(1, 100, 20)}" fillcolor=darkseagreen1]
+	5 [label="view&#92;ndepth:1|{input:|output:}|{(1, 100, 20)|(100, 20)}" fillcolor=aliceblue]
+	6 [label="output-tensor&#92;ndepth:0|(100, 20)" fillcolor=lightyellow]
+	3 [label="LSTM&#92;ndepth:1|{input:|output:}|{(1, 100, 300)|(1, 100, 512), 2 x (2, 100, 512)}" fillcolor=darkseagreen1]
+	7 [label="output-tensor&#92;ndepth:0|(2, 100, 512)" fillcolor=lightyellow]
+	3 [label="LSTM&#92;ndepth:1|{input:|output:}|{(1, 100, 300)|(1, 100, 512), 2 x (2, 100, 512)}" fillcolor=darkseagreen1]
+	8 [label="output-tensor&#92;ndepth:0|(2, 100, 512)" fillcolor=lightyellow]
 	0 -> 1
 	1 -> 2
 	2 -> 3
