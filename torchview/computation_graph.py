@@ -93,7 +93,7 @@ class ComputationGraph:
         # continue traversing from node of main module
         with RecursionDepth(limit=2000):
             self.traverse_graph(
-                main_module_node, main_module_node, self.depth
+                main_module_node, main_module_node
             )
 
         self.write_edge()
@@ -115,7 +115,6 @@ class ComputationGraph:
         self,
         node_match: COMPUTATION_NODES,
         start: COMPUTATION_NODES,
-        depth_limit: int | float = float('inf'),
         visited: set[COMPUTATION_NODES] | None = None,
     ) -> None:
         '''Use DFS-type traversing to add nodes and edges to graphviz Digraph
@@ -129,8 +128,8 @@ class ComputationGraph:
         visited.add(start)
 
         for node in start.children:
-            if node.depth > depth_limit:
-                # output tensor that are deeper than depth_limit
+            if node.depth > self.depth:
+                # output tensor that are deeper than self.depth
                 if not node.children:
                     assert isinstance(node, TensorNode), (
                         f"{node} node has no output, "
@@ -139,7 +138,7 @@ class ComputationGraph:
                     self.collect_graph(node_match, node)
                 else:
                     self.traverse_graph(
-                        node_match, node, depth_limit, visited
+                        node_match, node, visited
                     )
 
             # non-deeper nodes: non-tensor nodes or output tensors
@@ -148,14 +147,14 @@ class ComputationGraph:
                 (not isinstance(node, TensorNode) or not node.children)
             ):
                 self.collect_graph(node_match, node)
-                self.traverse_graph(node, node, depth_limit, visited)
+                self.traverse_graph(node, node, visited)
             else:
                 assert not isinstance(start, TensorNode), (
                     f"{node} node is tensor node and cannot be"
                     f"children of another tensor node {start}"
                 )
                 self.traverse_graph(
-                    node_match, node, depth_limit, visited
+                    node_match, node, visited
                 )
 
     def collect_graph(
