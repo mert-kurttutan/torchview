@@ -117,15 +117,14 @@ def module_forward_wrapper(
         )
 
         # pop appropriate nodes, see implementation below
-        input_recorder: NodeContainer[RecorderTensor] = (
-            reduce_data_info([args, kwargs], collect_tensor, NodeContainer())
+        output_recorder: list[RecorderTensor] = (
+            reduce_data_info(out, collect_tensor, [])
         )
-        output_recorder: NodeContainer[RecorderTensor] = (
-            reduce_data_info(out, collect_tensor, NodeContainer())
+        traverse_data_inplace(
+            [args, kwargs], pop_after_forward, recorded_output=output_recorder
         )
-        pop_after_forward(input_recorder, output_recorder)
 
-        # remove auxiliary tensor nodes
+        # remove auxiliary tensor nodes from recorder_tensor
         output_nodes: NodeContainer[TensorNode] = (
             reduce_data_info(out, collect_tensor_node, NodeContainer())
         )
@@ -226,7 +225,7 @@ class RecorderTensor(torch.Tensor):
         # dont create any node, give the result only
         if not args_nodes:
             return out
-        if not reduce_data_info(out, collect_tensor, NodeContainer()):
+        if not reduce_data_info(out, collect_tensor, []):
             return out
 
         # Create function_node and connect to its inputs tensor node
@@ -284,13 +283,13 @@ def traverse_data_inplace(
         action_fn(recorded_data, **kwargs)
     elif isinstance(recorded_data, Mapping):
         for r_d in recorded_data.values():
-            traverse_data_inplace(r_d, action_fn)
+            traverse_data_inplace(r_d, action_fn, **kwargs)
     elif (
         isinstance(recorded_data, Iterable) and
         not isinstance(recorded_data, (str, torch.Tensor))
     ):
         for r_d in recorded_data:
-            traverse_data_inplace(r_d, action_fn)
+            traverse_data_inplace(r_d, action_fn, **kwargs)
 
 
 def attach_node(
@@ -329,7 +328,7 @@ def attach_node(
 
 
 def pop_after_forward(
-    recorded_input: NodeContainer[RecorderTensor],
+    r_in: RecorderTensor,
     recorded_output: NodeContainer[RecorderTensor]
 ) -> None:
     '''Removes/pops nodes from RecorderTensors to maintain correct nodes
@@ -342,22 +341,22 @@ def pop_after_forward(
         'Tensor before and after inplace operation must have the same memory address'
     )
     output_id: NodeContainer[int] = NodeContainer(id(x) for x in recorded_output)
-    for r_in in recorded_input:
-        if not id(r_in) in output_id:
-            _ = reduce_data_info(
-                r_in, collect_tensor_node, NodeContainer(), is_pop=True
-            )
 
-        # input of inplace operation
-        else:
-            assert id(r_in) == r_in.tensor_nodes[-1].tensor_id, (
-                in_place_func_message
-            )
-            assert id(r_in) == r_in.tensor_nodes[-2].tensor_id, (
-                in_place_func_message
-            )
-            # pop tensor node before inplace operation
-            r_in.tensor_nodes.pop(-2)
+    if not id(r_in) in output_id:
+        _ = reduce_data_info(
+            r_in, collect_tensor_node, NodeContainer(), is_pop=True
+        )
+
+    # input of inplace operation
+    else:
+        assert id(r_in) == r_in.tensor_nodes[-1].tensor_id, (
+            in_place_func_message
+        )
+        assert id(r_in) == r_in.tensor_nodes[-2].tensor_id, (
+            in_place_func_message
+        )
+        # pop tensor node before inplace operation
+        r_in.tensor_nodes.pop(-2)
 
 
 def remove_func_module(out: Any, mod_node: ModuleNode) -> None:
@@ -395,9 +394,9 @@ def collect_tensor_node(
 
 
 def collect_tensor(
-    recorded_data: RecorderTensor, collected: NodeContainer[RecorderTensor]
+    recorded_data: RecorderTensor, collected: list[RecorderTensor]
 ) -> None:
-    collected.add(recorded_data)
+    collected.append(recorded_data)
 
 
 def collect_shape(

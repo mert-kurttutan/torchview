@@ -112,11 +112,17 @@ class MLP(nn.Module):
     def __init__(self, inplace: bool = True) -> None:
         super().__init__()
         self.layers = nn.Sequential(
-            nn.Linear(128, 128),
+            nn.Linear(128, 64),
             nn.ReLU(inplace),
-            nn.Linear(128, 128),
+            nn.Linear(64, 32),
             nn.ReLU(inplace),
-            nn.Linear(128, 1),
+            nn.Linear(32, 16),
+            nn.ReLU(inplace),
+            nn.Linear(16, 8),
+            nn.ReLU(inplace),
+            nn.Linear(8, 4),
+            nn.ReLU(inplace),
+            nn.Linear(4, 2),
         )
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
