@@ -91,9 +91,6 @@ class Node:
                     input_node.remove_outputs(self)
                     self.remove_inputs(input_node)
 
-            assert len(self.inputs) == 1, (
-                f'{self}'
-            )
         # if it has no input node
         if not self.inputs:
             for outputs_node in self.outputs:
