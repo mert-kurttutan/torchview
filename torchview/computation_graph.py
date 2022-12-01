@@ -68,9 +68,9 @@ class ComputationGraph:
         self.roll = roll
         self.depth = depth
 
-        self.reset_id_config()
+        self.reset_graph_history()
 
-    def reset_id_config(self):
+    def reset_graph_history(self):
         '''Resets to id config to the setting of empty visual graph
         needed for getting reproducible/deterministic node name and
         graphviz graphs. This is especially important for output tests
@@ -78,6 +78,7 @@ class ComputationGraph:
         self.running_id: int = 0
         self.id_dict: dict[str, int] = {}
         self.edge_list: list[tuple[COMPUTATION_NODES, COMPUTATION_NODES]] = []
+        self.visited: set[COMPUTATION_NODES] = set()
 
     def fill_visual_graph(self):
         '''Fills the graphviz graph with desired nodes and edges.'''
@@ -115,17 +116,14 @@ class ComputationGraph:
         self,
         node_match: COMPUTATION_NODES,
         start: COMPUTATION_NODES,
-        visited: set[COMPUTATION_NODES] | None = None,
     ) -> None:
         '''Use DFS-type traversing to add nodes and edges to graphviz Digraph
         object with additional constrains, e.g. depth limit'''
-        if visited is None:
-            visited = set()
 
-        if start in visited:
+        if start in self.visited:
             return
 
-        visited.add(start)
+        self.visited.add(start)
 
         for node in start.outputs:
             if node.depth > self.depth:
@@ -138,7 +136,7 @@ class ComputationGraph:
                     self.collect_graph(node_match, node)
                 else:
                     self.traverse_graph(
-                        node_match, node, visited
+                        node_match, node
                     )
 
             # non-deeper nodes: non-tensor nodes or output tensors
@@ -147,14 +145,14 @@ class ComputationGraph:
                 (not isinstance(node, TensorNode) or not node.outputs)
             ):
                 self.collect_graph(node_match, node)
-                self.traverse_graph(node, node, visited)
+                self.traverse_graph(node, node)
             else:
                 assert not isinstance(start, TensorNode), (
                     f"{node} node is tensor node and cannot be"
                     f"outputs of another tensor node {start}"
                 )
                 self.traverse_graph(
-                    node_match, node, visited
+                    node_match, node
                 )
 
     def collect_graph(
