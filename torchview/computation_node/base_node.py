@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from ..utils import OrderedSet
 
-# arr_type is the fundemental data structure to store parent and
-# children nodes. For normal usage, the set is used. This seemed most
-# appropriate data structure bec. parent and children nodes have to be
+# arr_type is the fundemental data structure to store input and
+# outputs nodes. For normal usage, the set is used. This seemed most
+# appropriate data structure bec. input and outputs nodes have to be
 # unique. If they are not unique, this leads to multiple edges between nodes
 # which I dont see as reasonable in any representation of torch models
 # Other proposals are welcome. One drawback is the order of iteration of set is not
@@ -26,23 +26,29 @@ class Node:
     def __init__(
         self,
         depth: int,
-        parents: NodeContainer[Node] | Node | None = None,
-        children: NodeContainer[Node] | Node | None = None,
+        inputs: NodeContainer[Node] | Node | None = None,
+        outputs: NodeContainer[Node] | Node | None = None,
         name: str = 'node',
+        children: NodeContainer[Node] | Node | None = None,
     ) -> None:
-        if children is None:
-            children = NodeContainer()
-        if parents is None:
-            parents = NodeContainer()
+        if outputs is None:
+            outputs = NodeContainer()
+        if inputs is None:
+            inputs = NodeContainer()
+
+        self.outputs = (
+            NodeContainer([outputs]) if isinstance(outputs, Node)
+            else outputs
+        )
+
+        self.inputs = (
+            NodeContainer([inputs]) if isinstance(inputs, Node)
+            else inputs
+        )
 
         self.children = (
             NodeContainer([children]) if isinstance(children, Node)
             else children
-        )
-
-        self.parents = (
-            NodeContainer([parents]) if isinstance(parents, Node)
-            else parents
         )
 
         self.name = name
@@ -55,62 +61,62 @@ class Node:
     def __repr__(self) -> str:
         return f"{self.name} at {hex(id(self))}"
 
-    def add_children(self, node: Node) -> None:
-        self.children.add(node)
+    def add_outputs(self, node: Node) -> None:
+        self.outputs.add(node)
 
-    def add_parents(self, node: Node) -> None:
-        self.parents.add(node)
+    def add_inputs(self, node: Node) -> None:
+        self.inputs.add(node)
 
-    def remove_children(self, node: Node) -> None:
-        self.children.remove(node)
+    def remove_outputs(self, node: Node) -> None:
+        self.outputs.remove(node)
 
-    def remove_parents(self, node: Node) -> None:
-        self.parents.remove(node)
+    def remove_inputs(self, node: Node) -> None:
+        self.inputs.remove(node)
 
-    def set_children(self, node_arr: NodeContainer[Node]) -> None:
-        self.children = node_arr
+    def set_outputs(self, node_arr: NodeContainer[Node]) -> None:
+        self.outputs = node_arr
 
-    def set_parents(self, node_arr: NodeContainer[Node]) -> None:
-        self.parents = node_arr
+    def set_inputs(self, node_arr: NodeContainer[Node]) -> None:
+        self.inputs = node_arr
 
     def remove(self) -> None:
         '''Removes the node from its graph by connecting its
-        parents to its children. Special cases e.g. no parent node
+        inputs to its outputs. Special cases e.g. no input node
         will be considered
         '''
-        if len(self.children) > 1 and len(self.parents) > 1:
-            parents_list = list(self.parents)
-            for parent_node in parents_list:
-                if parent_node.depth == -10:
-                    parent_node.remove_children(self)
-                    self.remove_parents(parent_node)
+        if len(self.outputs) > 1 and len(self.inputs) > 1:
+            inputs_list = list(self.inputs)
+            for input_node in inputs_list:
+                if input_node.depth == -10:
+                    input_node.remove_outputs(self)
+                    self.remove_inputs(input_node)
 
-            assert len(self.parents) == 1, (
+            assert len(self.inputs) == 1, (
                 f'{self}'
             )
-        # if it has no parent node
-        if not self.parents:
-            for children_node in self.children:
-                children_node.remove_parents(self)
+        # if it has no input node
+        if not self.inputs:
+            for outputs_node in self.outputs:
+                outputs_node.remove_inputs(self)
 
         else:
-            # if it has no children node
-            if not self.children:
-                for parent_node in self.parents:
-                    parent_node.remove_children(self)
+            # if it has no outputs node
+            if not self.outputs:
+                for input_node in self.inputs:
+                    input_node.remove_outputs(self)
             else:
-                for parent_node in self.parents:
-                    parent_node.remove_children(self)
-                    for children_node in self.children:
-                        parent_node.add_children(children_node)
-                        children_node.add_parents(parent_node)
+                for input_node in self.inputs:
+                    input_node.remove_outputs(self)
+                    for outputs_node in self.outputs:
+                        input_node.add_outputs(outputs_node)
+                        outputs_node.add_inputs(input_node)
 
-                for j in self.children:
-                    j.remove_parents(self)
+                for j in self.outputs:
+                    j.remove_inputs(self)
 
         # nullify the content
-        self.set_children(NodeContainer())
-        self.set_parents(NodeContainer())
+        self.set_outputs(NodeContainer())
+        self.set_inputs(NodeContainer())
         self.name = ''
         self.node_id = 'null'
 

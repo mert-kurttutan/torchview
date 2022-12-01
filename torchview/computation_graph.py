@@ -86,8 +86,8 @@ class ComputationGraph:
         for root_node in self.root_container:
             root_node.name = 'input-tensor'
             self.add_node(root_node)
-            assert len(root_node.children) == 1
-            main_module_node = next(iter(root_node.children))
+            assert len(root_node.outputs) == 1
+            main_module_node = next(iter(root_node.outputs))
             self.collect_graph(root_node, main_module_node)
 
         # continue traversing from node of main module
@@ -127,10 +127,10 @@ class ComputationGraph:
 
         visited.add(start)
 
-        for node in start.children:
+        for node in start.outputs:
             if node.depth > self.depth:
                 # output tensor that are deeper than self.depth
-                if not node.children:
+                if not node.outputs:
                     assert isinstance(node, TensorNode), (
                         f"{node} node has no output, "
                         f"it has to be output tensor"
@@ -144,14 +144,14 @@ class ComputationGraph:
             # non-deeper nodes: non-tensor nodes or output tensors
             elif (
                 not self.hide_inner_tensors or
-                (not isinstance(node, TensorNode) or not node.children)
+                (not isinstance(node, TensorNode) or not node.outputs)
             ):
                 self.collect_graph(node_match, node)
                 self.traverse_graph(node, node, visited)
             else:
                 assert not isinstance(start, TensorNode), (
                     f"{node} node is tensor node and cannot be"
-                    f"children of another tensor node {start}"
+                    f"outputs of another tensor node {start}"
                 )
                 self.traverse_graph(
                     node_match, node, visited
@@ -170,8 +170,8 @@ class ComputationGraph:
             if self.roll:
                 # identify recursively used modules
                 # with the same node id
-                child_id = get_child_id(head_node)
-                tail_node.set_node_id(child_id=child_id)
+                output_id = get_output_id(head_node)
+                tail_node.set_node_id(output_id=output_id)
             self.add_node(tail_node)
 
         if isinstance(head_node, TensorNode):
@@ -272,8 +272,8 @@ def compact_list_repr(x: list):
     return x_repr[:-2]
 
 
-def get_child_id(head_node: COMPUTATION_NODES) -> str | int:
-    ''' This returns id of child to get correct id.
+def get_output_id(head_node: COMPUTATION_NODES) -> str | int:
+    ''' This returns id of output to get correct id.
     This is used to identify the recursively used modules.
     Identification relation is as follows:
         ModuleNodes => by id of nn.Module object
@@ -282,12 +282,12 @@ def get_child_id(head_node: COMPUTATION_NODES) -> str | int:
     '''
     if isinstance(head_node, ModuleNode):
         if head_node.is_activation:
-            child_id = head_node.node_id
+            output_id = head_node.node_id
         else:
-            child_id = head_node.compute_unit_id
+            output_id = head_node.compute_unit_id
     elif isinstance(head_node, FunctionNode):
-        child_id = head_node.node_id
+        output_id = head_node.node_id
     else:
-        child_id = head_node.tensor_id
+        output_id = head_node.tensor_id
 
-    return child_id
+    return output_id
