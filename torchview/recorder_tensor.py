@@ -83,7 +83,7 @@ def module_forward_wrapper(
         Construct Module Node => forward-prop => change output nodes to retain
         module hierarchy correctly
         '''
-        # Create module node and connect to its parents tensor node
+        # Create module node and connect to its inputs tensor node
         input_nodes: NodeContainer[TensorNode] = (
             reduce_data_info([args, kwargs], collect_tensor_node, NodeContainer())
         )
@@ -92,14 +92,14 @@ def module_forward_wrapper(
         if not input_nodes:
             return _orig_module_forward(mod, *args, **kwargs)
 
-        # Create module_node and connect to its parents tensor node
+        # Create module_node and connect to its inputs tensor node
         cur_depth = next(iter(input_nodes)).depth
         cur_node = ModuleNode(
             mod, cur_depth, input_nodes,  # type: ignore[arg-type]
             name=type(mod).__name__
         )
         for node in input_nodes:
-            node.add_children(cur_node)
+            node.add_outputs(cur_node)
             node.name = "hidden-tensor"
         cur_node.set_input_shape(
             reduce_data_info([args, kwargs], collect_shape, [])
@@ -129,7 +129,7 @@ def module_forward_wrapper(
         output_nodes: NodeContainer[TensorNode] = (
             reduce_data_info(out, collect_tensor_node, NodeContainer())
         )
-        auxiliary_nodes = list(cur_node.children)
+        auxiliary_nodes = list(cur_node.outputs)
         for aux_node in auxiliary_nodes:
             assert isinstance(aux_node, TensorNode), (
                 f'Auxiliary Node of the module node'
@@ -146,10 +146,10 @@ def module_forward_wrapper(
         # rest of the algo that depends previous tensors
         if hide_module_functions and not any(mod.children()):
             # keep removing until all output tensor nodes
-            # are children of current module node
+            # are outputs of current module node
             while not (
                     reduce_data_info(out, collect_tensor_node, NodeContainer())
-                    .issubset(cur_node.children)  # type: ignore[arg-type]
+                    .issubset(cur_node.outputs)  # type: ignore[arg-type]
             ):
                 remove_func_module(out, cur_node)
 
@@ -229,13 +229,13 @@ class RecorderTensor(torch.Tensor):
         if not reduce_data_info(out, collect_tensor, NodeContainer()):
             return out
 
-        # Create function_node and connect to its parents tensor node
+        # Create function_node and connect to its inputs tensor node
         cur_depth = next(iter(args_nodes)).depth
         cur_node = FunctionNode(
             func, cur_depth, args_nodes, name=func.__name__  # type: ignore[arg-type]
         )
         for i in args_nodes:
-            i.add_children(cur_node)
+            i.add_outputs(cur_node)
             i.name = 'hidden-tensor'
 
         traverse_data_inplace(out, attach_node(cur_node))
@@ -294,37 +294,37 @@ def traverse_data_inplace(
 
 
 def attach_node(
-    parent_node: FunctionNode | ModuleNode, depth: int | None = None
+    input_node: FunctionNode | ModuleNode, depth: int | None = None
 ) -> Callable[..., Any]:
     '''Creates the function to attach TensorNodes, needed for nested calls'''
     def _func(recorded_tensor: RecorderTensor) -> None:
         '''Attaches TensorNode to ModuleNode or FunctionNode
         '''
-        _depth = parent_node.depth if depth is None else depth
+        _depth = input_node.depth if depth is None else depth
 
         tensor_node = TensorNode(
             tensor=recorded_tensor,
             depth=_depth,
-            parents=parent_node,
+            inputs=input_node,
         )
-        if isinstance(parent_node, ModuleNode):
+        if isinstance(input_node, ModuleNode):
             assert getattr(recorded_tensor, 'tensor_nodes', None) is not None, (
                 f'RecorderTensor to be attached to the Node'
-                f'{parent_node} must have tensor node'
+                f'{input_node} must have tensor node'
             )
-        assert isinstance(parent_node, (FunctionNode, ModuleNode)), (
-            f'Node {parent_node} to which to attach must be either'
+        assert isinstance(input_node, (FunctionNode, ModuleNode)), (
+            f'Node {input_node} to which to attach must be either'
             f'FunctionNode or ModuleNode'
         )
 
         if getattr(recorded_tensor, 'tensor_nodes', None) is None:
             recorded_tensor.tensor_nodes = [tensor_node]
         else:
-            if isinstance(parent_node, ModuleNode):
+            if isinstance(input_node, ModuleNode):
                 recorded_tensor.tensor_nodes.append(tensor_node)
-            elif isinstance(parent_node, FunctionNode):
+            elif isinstance(input_node, FunctionNode):
                 recorded_tensor.tensor_nodes[-1] = tensor_node
-        parent_node.add_children(tensor_node)
+        input_node.add_outputs(tensor_node)
     return _func
 
 
@@ -361,7 +361,7 @@ def pop_after_forward(
 
 
 def remove_func_module(out: Any, mod_node: ModuleNode) -> None:
-    '''Removes all parent nodes of RecorderTensor Nodes
+    '''Removes all input nodes of RecorderTensor Nodes
     from the graph
     '''
     output_tensor_nodes: NodeContainer[TensorNode] = (
@@ -369,14 +369,14 @@ def remove_func_module(out: Any, mod_node: ModuleNode) -> None:
     )
     my_col: NodeContainer[TensorNode] = NodeContainer()
 
-    # collect all parent nodes
+    # collect all input nodes
     for out_node in output_tensor_nodes:
-        for parent in out_node.parents:
-            my_col.add(parent)  # type: ignore[arg-type]
+        for in_node in out_node.inputs:
+            my_col.add(in_node)  # type: ignore[arg-type]
 
     for par in my_col:
         assert not isinstance(par, ModuleNode), (
-            f'Module Node {mod_node} has no children module,'
+            f'Module Node {mod_node} has no outputs module,'
             f'hence must not have node of Module Node type {par}'
         )
         par.remove()
