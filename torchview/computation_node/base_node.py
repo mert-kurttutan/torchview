@@ -28,8 +28,8 @@ class Node:
         depth: int,
         inputs: NodeContainer[Node] | Node | None = None,
         outputs: NodeContainer[Node] | Node | None = None,
-        children: NodeContainer[Node] | Node | None = None,
         name: str = 'node',
+        children: NodeContainer[Node] | Node | None = None,
     ) -> None:
         if outputs is None:
             outputs = NodeContainer()
