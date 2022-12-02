@@ -87,15 +87,12 @@ class ComputationGraph:
         for root_node in self.root_container:
             root_node.name = 'input-tensor'
             self.add_node(root_node)
-            assert len(root_node.outputs) == 1
-            main_module_node = next(iter(root_node.outputs))
-            self.collect_graph(root_node, main_module_node)
 
-        # continue traversing from node of main module
-        with RecursionDepth(limit=2000):
-            self.traverse_graph(
-                main_module_node, main_module_node
-            )
+            # continue traversing from node of main module
+            with RecursionDepth(limit=2000):
+                self.traverse_graph(
+                    root_node, root_node
+                )
 
         self.write_edge()
         self.resize_graph()

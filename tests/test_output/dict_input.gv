@@ -3,30 +3,30 @@ strict digraph model {
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
 	edge [fontsize=10]
 	0 [label="input-tensor&#92;ndepth:0|(1, 300)" fillcolor=lightyellow]
-	1 [label="input-tensor&#92;ndepth:0|(1, 300)" fillcolor=lightyellow]
-	2 [label="MultipleInputNetDifferentDtypes&#92;ndepth:0|{input:|output:}|{2 x (1, 300)|(2, 10)}" fillcolor=darkseagreen1]
-	3 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 300)|(1, 50)}" fillcolor=darkseagreen1]
-	4 [label="relu&#92;ndepth:1|{input:|output:}|{(1, 50)|(1, 50)}" fillcolor=aliceblue]
-	5 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 50)|(1, 10)}" fillcolor=darkseagreen1]
-	6 [label="cat&#92;ndepth:1|{input:|output:}|{2 x (1, 10)|(2, 10)}" fillcolor=aliceblue]
-	7 [label="log_softmax&#92;ndepth:1|{input:|output:}|{(2, 10)|(2, 10)}" fillcolor=aliceblue]
-	8 [label="output-tensor&#92;ndepth:0|(2, 10)" fillcolor=lightyellow]
-	2 [label="MultipleInputNetDifferentDtypes&#92;ndepth:0|{input:|output:}|{2 x (1, 300)|(2, 10)}" fillcolor=darkseagreen1]
-	9 [label="type&#92;ndepth:1|{input:|output:}|{(1, 300)|(1, 300)}" fillcolor=aliceblue]
-	10 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 300)|(1, 50)}" fillcolor=darkseagreen1]
-	11 [label="relu&#92;ndepth:1|{input:|output:}|{(1, 50)|(1, 50)}" fillcolor=aliceblue]
-	12 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 50)|(1, 10)}" fillcolor=darkseagreen1]
-	0 -> 2
+	1 [label="MultipleInputNetDifferentDtypes&#92;ndepth:0|{input:|output:}|{2 x (1, 300)|(2, 10)}" fillcolor=darkseagreen1]
+	2 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 300)|(1, 50)}" fillcolor=darkseagreen1]
+	3 [label="relu&#92;ndepth:1|{input:|output:}|{(1, 50)|(1, 50)}" fillcolor=aliceblue]
+	4 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 50)|(1, 10)}" fillcolor=darkseagreen1]
+	5 [label="cat&#92;ndepth:1|{input:|output:}|{2 x (1, 10)|(2, 10)}" fillcolor=aliceblue]
+	6 [label="log_softmax&#92;ndepth:1|{input:|output:}|{(2, 10)|(2, 10)}" fillcolor=aliceblue]
+	7 [label="output-tensor&#92;ndepth:0|(2, 10)" fillcolor=lightyellow]
+	1 [label="MultipleInputNetDifferentDtypes&#92;ndepth:0|{input:|output:}|{2 x (1, 300)|(2, 10)}" fillcolor=darkseagreen1]
+	8 [label="type&#92;ndepth:1|{input:|output:}|{(1, 300)|(1, 300)}" fillcolor=aliceblue]
+	9 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 300)|(1, 50)}" fillcolor=darkseagreen1]
+	10 [label="relu&#92;ndepth:1|{input:|output:}|{(1, 50)|(1, 50)}" fillcolor=aliceblue]
+	11 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 50)|(1, 10)}" fillcolor=darkseagreen1]
+	12 [label="input-tensor&#92;ndepth:0|(1, 300)" fillcolor=lightyellow]
+	0 -> 1
 	1 -> 2
 	2 -> 3
 	3 -> 4
 	4 -> 5
 	5 -> 6
 	6 -> 7
-	7 -> 8
-	2 -> 9
+	1 -> 8
+	8 -> 9
 	9 -> 10
 	10 -> 11
-	11 -> 12
-	12 -> 6
+	11 -> 5
+	12 -> 1
 }
