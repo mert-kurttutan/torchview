@@ -194,13 +194,14 @@ def draw_graph(
         input_data, input_size, device, dtypes
     )
 
-    forward_prop(
-        model, input_recorder_tensor, device,
-        model_mode, hide_module_functions, **kwargs
+    model_graph = ComputationGraph(
+        visual_graph, input_nodes, show_shapes,
+        hide_inner_tensors, hide_module_functions, roll, depth
     )
 
-    model_graph = ComputationGraph(
-        visual_graph, input_nodes, show_shapes, hide_inner_tensors, roll, depth
+    forward_prop(
+        model, input_recorder_tensor, device,
+        model_mode, model_graph, **kwargs
     )
 
     model_graph.fill_visual_graph()
@@ -215,7 +216,7 @@ def forward_prop(
     x: CORRECTED_INPUT_DATA_TYPE,
     device: torch.device | str,
     mode: str,
-    hide_module_functions: bool,
+    model_graph: ComputationGraph,
     **kwargs: Any,
 ) -> None:
     '''Performs forward propagation of model on RecorderTensor
@@ -230,7 +231,7 @@ def forward_prop(
             raise RuntimeError(
                 f"Specified model mode not recognized: {mode}"
             )
-        new_module_forward = module_forward_wrapper(hide_module_functions)
+        new_module_forward = module_forward_wrapper(model_graph)
         with Recorder(_orig_module_forward, new_module_forward):
             with torch.no_grad():
                 if isinstance(x, (list, tuple)):

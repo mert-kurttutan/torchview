@@ -54,6 +54,7 @@ class ComputationGraph:
         root_container: NodeContainer[TensorNode],
         show_shapes: bool = False,
         hide_inner_tensors: bool = True,
+        hide_module_functions: bool = True,
         roll: bool = True,
         depth: int | float = 3,
     ):
@@ -65,6 +66,7 @@ class ComputationGraph:
         self.root_container = root_container
         self.show_shapes = show_shapes
         self.hide_inner_tensors = hide_inner_tensors
+        self.hide_module_functions = hide_module_functions
         self.roll = roll
         self.depth = depth
 
