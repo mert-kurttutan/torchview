@@ -80,6 +80,7 @@ class ComputationGraph:
         self.running_id: int = 0
         self.id_dict: dict[str, int] = {}
         self.edge_list: list[tuple[COMPUTATION_NODES, COMPUTATION_NODES]] = []
+        self.node_hierarchy = {'main': []}
         self.visited: set[COMPUTATION_NODES] = set()
 
     def fill_visual_graph(self):

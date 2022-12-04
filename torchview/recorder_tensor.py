@@ -10,6 +10,8 @@ from torch.nn import functional as F
 from .computation_node import ModuleNode, FunctionNode, TensorNode, NodeContainer
 from .computation_graph import ComputationGraph
 
+from .computation_graph import ComputationGraph
+
 # Needed for module wrapper and resetting
 _orig_module_forward = torch.nn.Module.__call__
 
