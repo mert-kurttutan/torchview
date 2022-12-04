@@ -9,6 +9,8 @@ from torch.nn import functional as F
 
 from .computation_node import ModuleNode, FunctionNode, TensorNode, NodeContainer
 
+from .computation_graph import ComputationGraph
+
 # Needed for module wrapper and resetting
 _orig_module_forward = torch.nn.Module.__call__
 
@@ -75,7 +77,7 @@ def creation_ops_wrapper(_orig_op: Callable[..., Any]) -> Callable[..., Any]:
 
 
 def module_forward_wrapper(
-    hide_module_functions: bool,
+    model_graph: ComputationGraph,
 ) -> Callable[..., Any]:
     '''Wrapper for forward functions of modules'''
     def _module_forward_wrapper(mod: nn.Module, *args: Any, **kwargs: Any) -> Any:
@@ -143,7 +145,7 @@ def module_forward_wrapper(
 
         # dont touch inner tensors here, it might disrupt
         # rest of the algo that depends previous tensors
-        if hide_module_functions and not any(mod.children()):
+        if model_graph.hide_module_functions and not any(mod.children()):
             # keep removing until all output tensor nodes
             # are outputs of current module node
             while not (
