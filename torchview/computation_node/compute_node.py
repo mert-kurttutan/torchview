@@ -23,7 +23,7 @@ class TensorNode(Node):
         name: str = 'tensor',
         context: Any | None = None,
         is_aux: bool = False,
-        main_node: Node | None = None,
+        main_node: TensorNode | None = None,
         input_hierarchy: dict[int, ModuleNode] | None = None,
     ):
 
@@ -56,7 +56,7 @@ class ModuleNode(Node):
         inputs: NodeContainer[Node] | Node | None = None,
         outputs: NodeContainer[Node] | Node | None = None,
         name: str = 'module-node',
-        end_nodes: NodeContainer[Node] | Node | None = None,
+        end_nodes: NodeContainer[Node] | None = None,
     ) -> None:
         super(ModuleNode, self).__init__(
             depth, inputs, outputs, name
@@ -66,8 +66,7 @@ class ModuleNode(Node):
         self.is_container = not any(module_unit.children())
         self.input_shape: list[Tuple[int, ...]] = []
         self.output_shape: list[Tuple[int, ...]] = []
-        self.end_nodes = end_nodes
-        self.end_nodes = []
+        self.end_nodes = NodeContainer() if end_nodes is None else end_nodes
         self.set_node_id()
 
     def set_input_shape(self, input_shape: list[Tuple[int, ...]]) -> None:
