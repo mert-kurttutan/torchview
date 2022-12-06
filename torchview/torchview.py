@@ -108,6 +108,9 @@ def draw_graph(
             between nodes. Mutiple edge occurs e.g. when there are tensors
             from module node to module node and hiding those tensors
             Default: True
+            
+        expand_nested(bool):
+            if true, shows nested modules with dashed borders
 
         hide_module_function (bool):
             Determines whether to hide module torch_functions. Some
