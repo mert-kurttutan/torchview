@@ -57,9 +57,7 @@ batch_size = 2
 model_graph = draw_graph(model, input_size=(batch_size, 128))
 model_graph.visual_graph
 ```
-
-
-<img src="https://raw.githubusercontent.com/mert-kurttutan/torchview/main/docs/images/mlp.png" height="400"/>
+![output](https://user-images.githubusercontent.com/88637659/206028431-b114f48e-6307-4ff3-b31a-a74185eb61b5.png)
 
 # Notebook Examples
 For more examples, see colab notebooks below,
@@ -97,6 +95,7 @@ def draw_graph(
     dtypes: list[torch.dtype] | None = None,
     mode: str | None = None,
     strict: bool = True,
+    expand_nested: bool = False,
     hide_module_functions: bool = True,
     hide_inner_tensors: bool = True,
     roll: bool = False,
@@ -163,6 +162,9 @@ def draw_graph(
             between nodes. Mutiple edge occurs e.g. when there are tensors
             from module node to module node and hiding those tensors
             Default: True
+        
+        expand_nested(bool):
+            if true shows nested modules with dashed borders
 
         hide_module_function (bool):
             Determines whether to hide module torch_functions. Some
@@ -237,21 +239,18 @@ model_graph = draw_graph(
 
 model_graph.visual_graph
 ```
+![output](https://user-images.githubusercontent.com/88637659/206032886-e221a58f-c7d3-4c42-ab05-ac581fcc5726.png)
 
-<img src="https://raw.githubusercontent.com/mert-kurttutan/torchview/main/docs/images/mlp_explicit.png" height="1000"/>
 
-
-## ResNet / Skip Connection / Support for Torch operations
+## ResNet / Skip Connection / Support for Torch operations / Nested Modules
 
 ```python
 import torchvision
 
-model_graph = draw_graph(resnet18(), input_size=(1,3,32,32))
+model_graph = draw_graph(resnet18(), input_size=(1,3,32,32), expand_nested=True)
 model_graph.visual_graph
 ```
-
-![](https://raw.githubusercontent.com/mert-kurttutan/torchview/main/docs/images/resnet.png "ResnetModel")
-
+![expand_nested_resnet_model gv](https://user-images.githubusercontent.com/88637659/206036653-293f8ce7-04dd-4ac6-9de8-0061de505bba.png)
 
 # TODO:
 - [ ] Display Module parameter info
