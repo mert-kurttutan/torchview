@@ -1,8 +1,7 @@
 # mypy: ignore-errors
 from __future__ import annotations
 
-import sys
-from typing import Union, Any
+from typing import Union
 from collections import Counter
 from contextlib import nullcontext
 
@@ -97,7 +96,6 @@ class ComputationGraph:
         for root_node in self.root_container:
             root_node.context = self.node_hierarchy[main_container_module]
 
-
     def fill_visual_graph_new(self):
         '''Fills the graphviz graph with desired nodes and edges.'''
 
@@ -110,12 +108,13 @@ class ComputationGraph:
         self.write_edge()
         self.resize_graph()
 
-
     def traverse_graph_new(
         self, action_fn, **kwargs
     ):
         cur_node = kwargs['cur_node']
-        cur_subgraph = self.visual_graph if kwargs['subgraph'] is None else kwargs['subgraph']
+        cur_subgraph = (
+            self.visual_graph if kwargs['subgraph'] is None else kwargs['subgraph']
+        )
         if isinstance(cur_node, (TensorNode, ModuleNode, FunctionNode)):
             if cur_node.depth <= self.depth:
                 action_fn(**kwargs)
@@ -126,17 +125,23 @@ class ComputationGraph:
             if k.depth <= self.depth and k.depth >= 0:
                 action_fn(**new_kwargs)
 
-            display_nested = k.depth < self.depth and k.depth >= 1 and self.expand_nested
-            with cur_subgraph.subgraph(name=f'cluster_{self.subgraph_dict[k.node_id]}') if display_nested else nullcontext() as cur_cont:
+            display_nested = (
+                k.depth < self.depth and k.depth >= 1 and self.expand_nested
+            )
+            with (
+                cur_subgraph.subgraph(name=f'cluster_{self.subgraph_dict[k.node_id]}')
+                if display_nested else nullcontext()
+            ) as cur_cont:
                 if display_nested:
-                    cur_cont.attr(style='dashed', label=k.name, labeljust='l', fontsize='12')
+                    cur_cont.attr(
+                        style='dashed', label=k.name, labeljust='l', fontsize='12'
+                    )
                     new_kwargs = updated_dict(new_kwargs, 'subgraph', cur_cont)
                 for g in v:
                     new_kwargs = updated_dict(new_kwargs, 'cur_node', g)
                     self.traverse_graph_new(action_fn, **new_kwargs)
         else:
             raise ValueError('this should not be reached')
-
 
     def render_graph(
         self,
@@ -167,12 +172,7 @@ class ComputationGraph:
         in graphviz graph)'''
 
         cur_node = kwargs['cur_node']
-        assert '-' not in cur_node.node_id, 'No repetition of node recording'
-        assert any(cur_node.outputs) or any(cur_node.inputs), f'isolated node!!! {cur_node}'
-        assert cur_node.depth <= self.depth, f"must not go deeper than dept limit, {cur_node} {cur_node.depth}"
-        assert sum(1 for _ in cur_node.inputs) in [0, 1] or not isinstance(cur_node, TensorNode), (
-            f'tensor must have single input node {cur_node}'
-        )
+        self.check_node(cur_node)
         is_visible = self.is_node_visible(cur_node)
         # add node
         if is_visible:
@@ -193,7 +193,7 @@ class ComputationGraph:
                 self.subgraph_dict[cur_node.node_id] = self.running_dict_id
                 self.running_dict_id += 1
 
-        ## add edges
+        # add edges
         if not isinstance(cur_node, TensorNode):
             return
 
@@ -224,13 +224,18 @@ class ComputationGraph:
     def is_node_visible(self, compute_node):
         if isinstance(compute_node, (ModuleNode, FunctionNode)):
             is_visible = (
-                isinstance(compute_node, FunctionNode) or
-                ((self.hide_module_functions and compute_node.is_container) or compute_node.depth == self.depth)
+                isinstance(compute_node, FunctionNode) or (
+                    (self.hide_module_functions and compute_node.is_container)
+                    or compute_node.depth == self.depth
+                )
             )
             return is_visible
 
         if isinstance(compute_node, TensorNode):
-            is_visible = not self.hide_inner_tensors or (not compute_node.inputs or not compute_node.outputs)
+            is_visible = (
+                not self.hide_inner_tensors or
+                (not compute_node.inputs or not compute_node.outputs)
+            )
 
             if compute_node.is_aux:
                 input_node = next(iter(compute_node.inputs))
@@ -280,7 +285,9 @@ class ComputationGraph:
         label = None if edg_cnt == 1 else f' x{edg_cnt}'
         self.visual_graph.edge(f'{tail_id}', f'{head_id}', label=label)
 
-    def add_node(self, node: COMPUTATION_NODES, subgraph: Digraph | None = None) -> None:
+    def add_node(
+        self, node: COMPUTATION_NODES, subgraph: Digraph | None = None
+    ) -> None:
         assert node.node_id != 'null', f'wrong id {node} {type(node)}'
         if node.node_id not in self.id_dict:
             self.id_dict[node.node_id] = self.running_id
@@ -334,6 +341,16 @@ class ComputationGraph:
     ) -> str:
         return node2color[type(node)]
 
+    def check_node(self, node):
+        assert '-' not in node.node_id, 'No repetition of node recording'
+        assert any(node.outputs) or any(node.inputs), f'isolated node! {node}'
+        assert node.depth <= self.depth, f"exceeds depth limit, {node}"
+        assert (
+            sum(1 for _ in node.inputs) in [0, 1] or not isinstance(node, TensorNode)
+        ), (
+            f'tensor must have single input node {node}'
+        )
+
 
 def compact_list_repr(x: list):
     '''returns more compact representation of list with
@@ -373,10 +390,3 @@ def get_output_id(head_node: COMPUTATION_NODES) -> str | int:
         output_id = head_node.node_id
 
     return output_id
-
-
-def check_input_output_node(input_node, output_node):
-    if isinstance(input_node, TensorNode):
-        assert not isinstance(output_node, TensorNode), f'{input_node}, Tenosr->Tensor is must not occur'
-    else:
-        assert isinstance(output_node, TensorNode), f'{input_node}, Functio->Function is must not occur'

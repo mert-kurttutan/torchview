@@ -122,10 +122,6 @@ def module_forward_wrapper(
             [args, kwargs], attach_node(attach_kwargs, tensor_to_node)
         )
 
-        input_nodes: NodeContainer[TensorNode] = (
-            reduce_data_info([args, kwargs], collect_tensor_node, NodeContainer())
-        )
-
         # TODO: check if output contains RecorderTensor
         # this seems not to be necessary so far
         out = _orig_module_forward(mod, *args, **kwargs)
@@ -324,7 +320,8 @@ def traverse_data_inplace(
 
 
 def attach_node(
-    kwargs: dict[str, Any], tensor_to_node: dict[RecorderTensor, TensorNode] | None = None
+    kwargs: dict[str, Any],
+    tensor_to_node: dict[RecorderTensor, TensorNode] | None = None
 ) -> Callable[..., Any]:
     '''Creates the function to attach TensorNodes, needed for nested calls'''
     def _func(recorded_tensor: RecorderTensor) -> None:
@@ -449,7 +446,9 @@ def collect_shape(
     collected.append(tuple(recorded_data.shape))
 
 
-def change_depth_name(depth_delta: int, name: str, cur_node: ModuleNode) -> Callable[..., Any]:
+def change_depth_name(
+    depth_delta: int, name: str, cur_node: ModuleNode
+) -> Callable[..., Any]:
     def _func(recorded_data: RecorderTensor) -> None:
         recorded_data.tensor_nodes[-1].depth += depth_delta
         recorded_data.tensor_nodes[-1].name = name

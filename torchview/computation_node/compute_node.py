@@ -41,7 +41,10 @@ class TensorNode(Node):
 
     def set_node_id(self, input_id: int | str | None = None) -> None:
         if input_id is None:
-            self.node_id =  f'{id(self.main_node)}' if self.is_aux and self.main_node else f'{id(self)}'
+            self.node_id = (
+                f'{id(self.main_node)}' if self.is_aux and self.main_node
+                else f'{id(self)}'
+            )
         else:
             self.node_id = f'{id(self)}-{input_id}'
 
