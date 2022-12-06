@@ -3,20 +3,20 @@ strict digraph FunctionalNet {
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
 	edge [fontsize=10]
 	0 [label="input-tensor&#92;ndepth:0|(1, 1, 32, 32)" fillcolor=lightyellow]
-	1 [label="FunctionalNet&#92;ndepth:0|{input:|output:}|{(1, 1, 32, 32)|(1, 10)}" fillcolor=darkseagreen1]
-	2 [label="Conv2d&#92;ndepth:1|{input:|output:}|{(1, 1, 32, 32)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
-	3 [label="relu&#92;ndepth:1|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=aliceblue]
-	4 [label="max_pool2d&#92;ndepth:1|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 14, 14)}" fillcolor=aliceblue]
-	5 [label="Conv2d&#92;ndepth:1|{input:|output:}|{(1, 32, 14, 14)|(1, 64, 10, 10)}" fillcolor=darkseagreen1]
-	6 [label="relu&#92;ndepth:1|{input:|output:}|{(1, 64, 10, 10)|(1, 64, 10, 10)}" fillcolor=aliceblue]
-	7 [label="max_pool2d&#92;ndepth:1|{input:|output:}|{(1, 64, 10, 10)|(1, 64, 5, 5)}" fillcolor=aliceblue]
-	8 [label="view&#92;ndepth:1|{input:|output:}|{(1, 64, 5, 5)|(1, 1600)}" fillcolor=aliceblue]
-	9 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 1600)|(1, 1024)}" fillcolor=darkseagreen1]
-	10 [label="relu&#92;ndepth:1|{input:|output:}|{(1, 1024)|(1, 1024)}" fillcolor=aliceblue]
-	11 [label="Dropout&#92;ndepth:1|{input:|output:}|{(1, 1024)|(1, 1024)}" fillcolor=darkseagreen1]
-	12 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 1024)|(1, 10)}" fillcolor=darkseagreen1]
-	13 [label="log_softmax&#92;ndepth:1|{input:|output:}|{(1, 10)|(1, 10)}" fillcolor=aliceblue]
-	14 [label="output-tensor&#92;ndepth:0|(1, 10)" fillcolor=lightyellow]
+	0 [label="input-tensor&#92;ndepth:0|(1, 1, 32, 32)" fillcolor=lightyellow]
+	1 [label="Conv2d&#92;ndepth:1|{input:|output:}|{(1, 1, 32, 32)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
+	2 [label="relu&#92;ndepth:1|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=aliceblue]
+	3 [label="max_pool2d&#92;ndepth:1|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 14, 14)}" fillcolor=aliceblue]
+	4 [label="Conv2d&#92;ndepth:1|{input:|output:}|{(1, 32, 14, 14)|(1, 64, 10, 10)}" fillcolor=darkseagreen1]
+	5 [label="relu&#92;ndepth:1|{input:|output:}|{(1, 64, 10, 10)|(1, 64, 10, 10)}" fillcolor=aliceblue]
+	6 [label="max_pool2d&#92;ndepth:1|{input:|output:}|{(1, 64, 10, 10)|(1, 64, 5, 5)}" fillcolor=aliceblue]
+	7 [label="view&#92;ndepth:1|{input:|output:}|{(1, 64, 5, 5)|(1, 1600)}" fillcolor=aliceblue]
+	8 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 1600)|(1, 1024)}" fillcolor=darkseagreen1]
+	9 [label="relu&#92;ndepth:1|{input:|output:}|{(1, 1024)|(1, 1024)}" fillcolor=aliceblue]
+	10 [label="Dropout&#92;ndepth:1|{input:|output:}|{(1, 1024)|(1, 1024)}" fillcolor=darkseagreen1]
+	11 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 1024)|(1, 10)}" fillcolor=darkseagreen1]
+	12 [label="log_softmax&#92;ndepth:1|{input:|output:}|{(1, 10)|(1, 10)}" fillcolor=aliceblue]
+	13 [label="output-tensor&#92;ndepth:0|(1, 10)" fillcolor=lightyellow]
 	0 -> 1
 	1 -> 2
 	2 -> 3
@@ -30,5 +30,4 @@ strict digraph FunctionalNet {
 	10 -> 11
 	11 -> 12
 	12 -> 13
-	13 -> 14
 }

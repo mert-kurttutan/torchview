@@ -1,46 +1,31 @@
 strict digraph UNet2 {
-	graph [ordering=in size="23.099999999999998,23.099999999999998"]
+	graph [ordering=in size="14.1,14.1"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
 	edge [fontsize=10]
 	0 [label="input-tensor&#92;ndepth:0|(1, 1, 28, 28)" fillcolor=lightyellow]
-	1 [label="UNet2&#92;ndepth:0|{input:|output:}|{(1, 1, 28, 28)|(1, 1, 28, 28)}" fillcolor=darkseagreen1]
-	2 [label="DoubleConv&#92;ndepth:1|{input:|output:}|{(1, 1, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	3 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 1, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	4 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 1, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
+	0 [label="input-tensor&#92;ndepth:0|(1, 1, 28, 28)" fillcolor=lightyellow]
+	1 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 1, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
+	2 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
+	3 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
+	4 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
 	5 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
 	6 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	7 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	8 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	9 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	10 [label="Down&#92;ndepth:1|{input:|output:}|{(1, 96, 28, 28)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
-	11 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 96, 28, 28)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
-	12 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 14, 14)}" fillcolor=darkseagreen1]
-	13 [label="DoubleConv&#92;ndepth:3|{input:|output:}|{(1, 96, 14, 14)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
-	14 [label="Down&#92;ndepth:1|{input:|output:}|{(1, 192, 14, 14)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
-	15 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 192, 14, 14)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
-	16 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 192, 14, 14)|(1, 192, 7, 7)}" fillcolor=darkseagreen1]
-	17 [label="DoubleConv&#92;ndepth:3|{input:|output:}|{(1, 192, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
-	18 [label="Up&#92;ndepth:1|{input:|output:}|{(1, 384, 7, 7), (1, 192, 14, 14)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
-	19 [label="ConvTranspose2d&#92;ndepth:2|{input:|output:}|{(1, 384, 7, 7)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
-	20 [label="pad&#92;ndepth:2|{input:|output:}|{(1, 192, 14, 14)|(1, 192, 14, 14)}" fillcolor=aliceblue]
-	21 [label="cat&#92;ndepth:2|{input:|output:}|{2 x (1, 192, 14, 14)|(1, 384, 14, 14)}" fillcolor=aliceblue]
-	22 [label="DoubleConv&#92;ndepth:2|{input:|output:}|{(1, 384, 14, 14)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
-	23 [label="Sequential&#92;ndepth:3|{input:|output:}|{(1, 384, 14, 14)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
-	24 [label="Up&#92;ndepth:1|{input:|output:}|{(1, 192, 14, 14), (1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	25 [label="ConvTranspose2d&#92;ndepth:2|{input:|output:}|{(1, 192, 14, 14)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	26 [label="pad&#92;ndepth:2|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=aliceblue]
-	27 [label="cat&#92;ndepth:2|{input:|output:}|{2 x (1, 96, 28, 28)|(1, 192, 28, 28)}" fillcolor=aliceblue]
-	28 [label="DoubleConv&#92;ndepth:2|{input:|output:}|{(1, 192, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	29 [label="Sequential&#92;ndepth:3|{input:|output:}|{(1, 192, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	30 [label="OutConv&#92;ndepth:1|{input:|output:}|{(1, 96, 28, 28)|(1, 1, 28, 28)}" fillcolor=darkseagreen1]
-	31 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 96, 28, 28)|(1, 1, 28, 28)}" fillcolor=darkseagreen1]
-	32 [label="add_&#92;ndepth:1|{input:|output:}|{2 x (1, 1, 28, 28)|(1, 1, 28, 28)}" fillcolor=aliceblue]
-	33 [label="output-tensor&#92;ndepth:0|(1, 1, 28, 28)" fillcolor=lightyellow]
-	24 [label="Up&#92;ndepth:1|{input:|output:}|{(1, 192, 14, 14), (1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	18 [label="Up&#92;ndepth:1|{input:|output:}|{(1, 384, 7, 7), (1, 192, 14, 14)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
-	13 [label="DoubleConv&#92;ndepth:3|{input:|output:}|{(1, 96, 14, 14)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
-	9 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	1 [label="UNet2&#92;ndepth:0|{input:|output:}|{(1, 1, 28, 28)|(1, 1, 28, 28)}" fillcolor=darkseagreen1]
+	7 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 14, 14)}" fillcolor=darkseagreen1]
+	8 [label="DoubleConv&#92;ndepth:3|{input:|output:}|{(1, 96, 14, 14)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
+	9 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 192, 14, 14)|(1, 192, 7, 7)}" fillcolor=darkseagreen1]
+	10 [label="DoubleConv&#92;ndepth:3|{input:|output:}|{(1, 192, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
+	11 [label="ConvTranspose2d&#92;ndepth:2|{input:|output:}|{(1, 384, 7, 7)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
+	12 [label="pad&#92;ndepth:2|{input:|output:}|{(1, 192, 14, 14)|(1, 192, 14, 14)}" fillcolor=aliceblue]
+	13 [label="cat&#92;ndepth:2|{input:|output:}|{2 x (1, 192, 14, 14)|(1, 384, 14, 14)}" fillcolor=aliceblue]
+	14 [label="Sequential&#92;ndepth:3|{input:|output:}|{(1, 384, 14, 14)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
+	15 [label="ConvTranspose2d&#92;ndepth:2|{input:|output:}|{(1, 192, 14, 14)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
+	16 [label="pad&#92;ndepth:2|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=aliceblue]
+	17 [label="cat&#92;ndepth:2|{input:|output:}|{2 x (1, 96, 28, 28)|(1, 192, 28, 28)}" fillcolor=aliceblue]
+	18 [label="Sequential&#92;ndepth:3|{input:|output:}|{(1, 192, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
+	19 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 96, 28, 28)|(1, 1, 28, 28)}" fillcolor=darkseagreen1]
+	20 [label="add_&#92;ndepth:1|{input:|output:}|{2 x (1, 1, 28, 28)|(1, 1, 28, 28)}" fillcolor=aliceblue]
+	21 [label="output-tensor&#92;ndepth:0|(1, 1, 28, 28)" fillcolor=lightyellow]
+	0 -> 20
 	0 -> 1
 	1 -> 2
 	2 -> 3
@@ -52,31 +37,16 @@ strict digraph UNet2 {
 	8 -> 9
 	9 -> 10
 	10 -> 11
+	8 -> 13
 	11 -> 12
 	12 -> 13
 	13 -> 14
 	14 -> 15
+	6 -> 17
 	15 -> 16
 	16 -> 17
 	17 -> 18
 	18 -> 19
 	19 -> 20
 	20 -> 21
-	21 -> 22
-	22 -> 23
-	23 -> 24
-	24 -> 25
-	25 -> 26
-	26 -> 27
-	27 -> 28
-	28 -> 29
-	29 -> 30
-	30 -> 31
-	31 -> 32
-	32 -> 33
-	24 -> 27
-	18 -> 21
-	13 -> 18
-	9 -> 24
-	1 -> 32
 }
