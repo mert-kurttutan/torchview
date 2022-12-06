@@ -1,0 +1,66 @@
+strict digraph RecursiveNet {
+	graph [ordering=in size="12.0,12.0"]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	edge [fontsize=10]
+	0 [label="input-tensor&#92;ndepth:0|(2, 3)" fillcolor=lightyellow]
+	0 [label="input-tensor&#92;ndepth:0|(2, 3)" fillcolor=lightyellow]
+	1 [label="LSTMCell&#92;ndepth:1|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=darkseagreen1]
+	2 [label="LeakyReLU&#92;ndepth:1|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=darkseagreen1]
+	1 [label="LSTMCell&#92;ndepth:1|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=darkseagreen1]
+	2 [label="LeakyReLU&#92;ndepth:1|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=darkseagreen1]
+	1 [label="LSTMCell&#92;ndepth:1|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=darkseagreen1]
+	2 [label="LeakyReLU&#92;ndepth:1|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=darkseagreen1]
+	1 [label="LSTMCell&#92;ndepth:1|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=darkseagreen1]
+	3 [label="output-tensor&#92;ndepth:1|(2, 2)" fillcolor=lightyellow]
+	4 [label="LeakyReLU&#92;ndepth:1|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=darkseagreen1]
+	5 [label="output-tensor&#92;ndepth:0|(2, 2)" fillcolor=lightyellow]
+	0 -> 1
+	0 -> 1 [label=" x2"]
+	0 -> 1 [label=" x3"]
+	0 -> 1 [label=" x4"]
+	1 -> 2
+	1 -> 1
+	2 -> 1
+	1 -> 2 [label=" x2"]
+	1 -> 1 [label=" x2"]
+	2 -> 1 [label=" x2"]
+	1 -> 2 [label=" x3"]
+	1 -> 1 [label=" x3"]
+	2 -> 1 [label=" x3"]
+	1 -> 4
+	1 -> 3
+	4 -> 5
+}
+strict digraph RecursiveNet {
+	graph [ordering=in size="12.0,12.0"]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	edge [fontsize=10]
+	0 [label="input-tensor&#92;ndepth:0|(2, 3)" fillcolor=lightyellow]
+	0 [label="input-tensor&#92;ndepth:0|(2, 3)" fillcolor=lightyellow]
+	1 [label="LSTMCell&#92;ndepth:1|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=darkseagreen1]
+	2 [label="LeakyReLU&#92;ndepth:1|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=darkseagreen1]
+	3 [label="LSTMCell&#92;ndepth:1|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=darkseagreen1]
+	4 [label="LeakyReLU&#92;ndepth:1|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=darkseagreen1]
+	5 [label="LSTMCell&#92;ndepth:1|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=darkseagreen1]
+	6 [label="LeakyReLU&#92;ndepth:1|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=darkseagreen1]
+	7 [label="LSTMCell&#92;ndepth:1|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=darkseagreen1]
+	8 [label="output-tensor&#92;ndepth:1|(2, 2)" fillcolor=lightyellow]
+	9 [label="LeakyReLU&#92;ndepth:1|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=darkseagreen1]
+	10 [label="output-tensor&#92;ndepth:0|(2, 2)" fillcolor=lightyellow]
+	0 -> 1
+	0 -> 3
+	0 -> 5
+	0 -> 7
+	1 -> 2
+	1 -> 3
+	2 -> 3
+	3 -> 4
+	3 -> 5
+	4 -> 5
+	5 -> 6
+	5 -> 7
+	6 -> 7
+	7 -> 9
+	7 -> 8
+	9 -> 10
+}

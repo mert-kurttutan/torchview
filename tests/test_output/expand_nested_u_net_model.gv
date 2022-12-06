@@ -1,0 +1,85 @@
+strict digraph UNet2 {
+	graph [ordering=in size="24.0,24.0"]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	edge [fontsize=10]
+	0 [label="input-tensor&#92;ndepth:0|(1, 1, 28, 28)" fillcolor=lightyellow]
+	0 [label="input-tensor&#92;ndepth:0|(1, 1, 28, 28)" fillcolor=lightyellow]
+	subgraph cluster_2 {
+		fontsize=12 label=DoubleConv labeljust=l style=dashed
+		subgraph cluster_3 {
+			fontsize=12 label=Sequential labeljust=l style=dashed
+			1 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 1, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
+			2 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
+			3 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
+			4 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
+			5 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
+			6 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
+		}
+	}
+	subgraph cluster_4 {
+		fontsize=12 label=Down labeljust=l style=dashed
+		subgraph cluster_5 {
+			fontsize=12 label=Sequential labeljust=l style=dashed
+			7 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 14, 14)}" fillcolor=darkseagreen1]
+			8 [label="DoubleConv&#92;ndepth:3|{input:|output:}|{(1, 96, 14, 14)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
+		}
+	}
+	subgraph cluster_6 {
+		fontsize=12 label=Down labeljust=l style=dashed
+		subgraph cluster_7 {
+			fontsize=12 label=Sequential labeljust=l style=dashed
+			9 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 192, 14, 14)|(1, 192, 7, 7)}" fillcolor=darkseagreen1]
+			10 [label="DoubleConv&#92;ndepth:3|{input:|output:}|{(1, 192, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
+		}
+	}
+	subgraph cluster_8 {
+		fontsize=12 label=Up labeljust=l style=dashed
+		11 [label="ConvTranspose2d&#92;ndepth:2|{input:|output:}|{(1, 384, 7, 7)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
+		12 [label="pad&#92;ndepth:2|{input:|output:}|{(1, 192, 14, 14)|(1, 192, 14, 14)}" fillcolor=aliceblue]
+		13 [label="cat&#92;ndepth:2|{input:|output:}|{2 x (1, 192, 14, 14)|(1, 384, 14, 14)}" fillcolor=aliceblue]
+		subgraph cluster_9 {
+			fontsize=12 label=DoubleConv labeljust=l style=dashed
+			14 [label="Sequential&#92;ndepth:3|{input:|output:}|{(1, 384, 14, 14)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
+		}
+	}
+	subgraph cluster_10 {
+		fontsize=12 label=Up labeljust=l style=dashed
+		15 [label="ConvTranspose2d&#92;ndepth:2|{input:|output:}|{(1, 192, 14, 14)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
+		16 [label="pad&#92;ndepth:2|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=aliceblue]
+		17 [label="cat&#92;ndepth:2|{input:|output:}|{2 x (1, 96, 28, 28)|(1, 192, 28, 28)}" fillcolor=aliceblue]
+		subgraph cluster_11 {
+			fontsize=12 label=DoubleConv labeljust=l style=dashed
+			18 [label="Sequential&#92;ndepth:3|{input:|output:}|{(1, 192, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
+		}
+	}
+	subgraph cluster_12 {
+		fontsize=12 label=OutConv labeljust=l style=dashed
+		19 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 96, 28, 28)|(1, 1, 28, 28)}" fillcolor=darkseagreen1]
+	}
+	20 [label="add_&#92;ndepth:1|{input:|output:}|{2 x (1, 1, 28, 28)|(1, 1, 28, 28)}" fillcolor=aliceblue]
+	21 [label="output-tensor&#92;ndepth:0|(1, 1, 28, 28)" fillcolor=lightyellow]
+	0 -> 20
+	0 -> 1
+	1 -> 2
+	2 -> 3
+	3 -> 4
+	4 -> 5
+	5 -> 6
+	6 -> 7
+	7 -> 8
+	8 -> 9
+	9 -> 10
+	10 -> 11
+	8 -> 13
+	11 -> 12
+	12 -> 13
+	13 -> 14
+	14 -> 15
+	6 -> 17
+	15 -> 16
+	16 -> 17
+	17 -> 18
+	18 -> 19
+	19 -> 20
+	20 -> 21
+}
