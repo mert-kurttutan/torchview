@@ -60,3 +60,10 @@ def is_generator_empty(parameters: Iterable[Parameter]) -> bool:
         return False
     except StopIteration:
         return True
+
+
+def updated_dict(arg_dict, update_key, update_value):
+    return {
+        keyword: value if keyword != update_key else update_value
+        for keyword, value in arg_dict.items()
+    }
