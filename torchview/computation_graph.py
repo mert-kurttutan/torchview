@@ -63,7 +63,7 @@ class ComputationGraph:
         depth: int | float = 3,
     ):
         '''
-        Resets the running_id, id_dict when a new ComputationGraph is initialized.
+        Resets the running_node_id, id_dict when a new ComputationGraph is initialized.
         Otherwise, labels would depend on previous ComputationGraph runs
         '''
         self.visual_graph = visual_graph
@@ -82,14 +82,14 @@ class ComputationGraph:
         needed for getting reproducible/deterministic node name and
         graphviz graphs. This is especially important for output tests
         '''
-        self.running_id: int = 0
-        self.running_dict_id: int = 0
+        self.running_node_id: int = 0
+        self.running_subgraph_id: int = 0
         self.id_dict: dict[str, int] = {}
 
         self.edge_list: list[tuple[COMPUTATION_NODES, COMPUTATION_NODES]] = []
         main_container_module = ModuleNode(Identity(), -1)
         self.subgraph_dict: dict[str, int] = {main_container_module.node_id: 0}
-        self.running_dict_id += 1
+        self.running_subgraph_id += 1
         self.node_hierarchy = {
             main_container_module: list(root_node for root_node in self.root_container)
         }
@@ -190,8 +190,8 @@ class ComputationGraph:
             if self.roll:
                 self.rollify(cur_node)
             if cur_node.node_id not in self.subgraph_dict:
-                self.subgraph_dict[cur_node.node_id] = self.running_dict_id
-                self.running_dict_id += 1
+                self.subgraph_dict[cur_node.node_id] = self.running_subgraph_id
+                self.running_subgraph_id += 1
 
         # add edges
         if not isinstance(cur_node, TensorNode):
@@ -290,8 +290,8 @@ class ComputationGraph:
     ) -> None:
         assert node.node_id != 'null', f'wrong id {node} {type(node)}'
         if node.node_id not in self.id_dict:
-            self.id_dict[node.node_id] = self.running_id
-            self.running_id += 1
+            self.id_dict[node.node_id] = self.running_node_id
+            self.running_node_id += 1
         label = self.get_node_label(node)
         node_color = ComputationGraph.get_node_color(node)
 

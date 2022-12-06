@@ -146,6 +146,9 @@ def module_forward_wrapper(
         for output_node in output_nodes:
             cur_node.end_nodes.add(output_node)
             output_node.context = input_context
+            # output of empty modules
+            if output_node.depth == cur_node.depth:
+                output_node.node_id = str(id(output_node))
 
         if model_graph.hide_module_functions and cur_node.is_container:
             input_context.pop()
