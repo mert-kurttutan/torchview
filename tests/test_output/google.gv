@@ -1,327 +1,207 @@
 strict digraph GoogLeNet {
-	graph [ordering=in size="191.7,191.7"]
+	graph [ordering=in size="127.5,127.5"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
 	edge [fontsize=10]
 	0 [label="input-tensor&#92;ndepth:0|(1, 3, 224, 224)" fillcolor=lightyellow]
-	1 [label="GoogLeNet&#92;ndepth:0|{input:|output:}|{(1, 3, 224, 224)|(1, 1000)}" fillcolor=darkseagreen1]
-	2 [label="BasicConv2d&#92;ndepth:1|{input:|output:}|{(1, 3, 224, 224)|(1, 64, 112, 112)}" fillcolor=darkseagreen1]
-	3 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 3, 224, 224)|(1, 64, 112, 112)}" fillcolor=darkseagreen1]
-	4 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 64, 112, 112)|(1, 64, 112, 112)}" fillcolor=darkseagreen1]
-	5 [label="relu&#92;ndepth:2|{input:|output:}|{(1, 64, 112, 112)|(1, 64, 112, 112)}" fillcolor=aliceblue]
-	6 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 64, 112, 112)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
-	7 [label="BasicConv2d&#92;ndepth:1|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
-	8 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
-	9 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
-	10 [label="relu&#92;ndepth:2|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=aliceblue]
-	11 [label="BasicConv2d&#92;ndepth:1|{input:|output:}|{(1, 64, 56, 56)|(1, 192, 56, 56)}" fillcolor=darkseagreen1]
-	12 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 64, 56, 56)|(1, 192, 56, 56)}" fillcolor=darkseagreen1]
-	13 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 192, 56, 56)|(1, 192, 56, 56)}" fillcolor=darkseagreen1]
-	14 [label="relu&#92;ndepth:2|{input:|output:}|{(1, 192, 56, 56)|(1, 192, 56, 56)}" fillcolor=aliceblue]
-	15 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 192, 56, 56)|(1, 192, 28, 28)}" fillcolor=darkseagreen1]
-	16 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 192, 28, 28)|(1, 256, 28, 28)}" fillcolor=darkseagreen1]
-	17 [label="BasicConv2d&#92;ndepth:2|{input:|output:}|{(1, 192, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
-	18 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 192, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
-	19 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
-	20 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=aliceblue]
-	21 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 64, 28, 28), (1, 128, 28, 28), 2 x (1, 32, 28, 28)|(1, 256, 28, 28)}" fillcolor=aliceblue]
-	22 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 256, 28, 28)|(1, 480, 28, 28)}" fillcolor=darkseagreen1]
-	23 [label="BasicConv2d&#92;ndepth:2|{input:|output:}|{(1, 256, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
-	24 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
-	25 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
-	26 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=aliceblue]
-	27 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 128, 28, 28), (1, 192, 28, 28), (1, 96, 28, 28), (1, 64, 28, 28)|(1, 480, 28, 28)}" fillcolor=aliceblue]
-	28 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 480, 28, 28)|(1, 480, 14, 14)}" fillcolor=darkseagreen1]
-	29 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 480, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	30 [label="BasicConv2d&#92;ndepth:2|{input:|output:}|{(1, 480, 14, 14)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
-	31 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 480, 14, 14)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
-	32 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 192, 14, 14)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
-	33 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 192, 14, 14)|(1, 192, 14, 14)}" fillcolor=aliceblue]
-	34 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 192, 14, 14), (1, 208, 14, 14), (1, 48, 14, 14), (1, 64, 14, 14)|(1, 512, 14, 14)}" fillcolor=aliceblue]
-	35 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	36 [label="BasicConv2d&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 160, 14, 14)}" fillcolor=darkseagreen1]
-	37 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 160, 14, 14)}" fillcolor=darkseagreen1]
-	38 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 160, 14, 14)|(1, 160, 14, 14)}" fillcolor=darkseagreen1]
-	39 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 160, 14, 14)|(1, 160, 14, 14)}" fillcolor=aliceblue]
-	40 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 160, 14, 14), (1, 224, 14, 14), 2 x (1, 64, 14, 14)|(1, 512, 14, 14)}" fillcolor=aliceblue]
-	41 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	42 [label="BasicConv2d&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	43 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	44 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	45 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=aliceblue]
-	46 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 128, 14, 14), (1, 256, 14, 14), 2 x (1, 64, 14, 14)|(1, 512, 14, 14)}" fillcolor=aliceblue]
-	47 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 528, 14, 14)}" fillcolor=darkseagreen1]
-	48 [label="BasicConv2d&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 112, 14, 14)}" fillcolor=darkseagreen1]
-	49 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 112, 14, 14)}" fillcolor=darkseagreen1]
-	50 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 112, 14, 14)|(1, 112, 14, 14)}" fillcolor=darkseagreen1]
-	51 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 112, 14, 14)|(1, 112, 14, 14)}" fillcolor=aliceblue]
-	52 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 112, 14, 14), (1, 288, 14, 14), 2 x (1, 64, 14, 14)|(1, 528, 14, 14)}" fillcolor=aliceblue]
-	53 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 528, 14, 14)|(1, 832, 14, 14)}" fillcolor=darkseagreen1]
-	54 [label="BasicConv2d&#92;ndepth:2|{input:|output:}|{(1, 528, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
-	55 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 528, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
-	56 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
-	57 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=aliceblue]
-	58 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 256, 14, 14), (1, 320, 14, 14), 2 x (1, 128, 14, 14)|(1, 832, 14, 14)}" fillcolor=aliceblue]
-	59 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 832, 14, 14)|(1, 832, 7, 7)}" fillcolor=darkseagreen1]
-	60 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 832, 7, 7)|(1, 832, 7, 7)}" fillcolor=darkseagreen1]
-	61 [label="BasicConv2d&#92;ndepth:2|{input:|output:}|{(1, 832, 7, 7)|(1, 256, 7, 7)}" fillcolor=darkseagreen1]
-	62 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 256, 7, 7)}" fillcolor=darkseagreen1]
-	63 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 256, 7, 7)|(1, 256, 7, 7)}" fillcolor=darkseagreen1]
-	64 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 256, 7, 7)|(1, 256, 7, 7)}" fillcolor=aliceblue]
-	65 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 256, 7, 7), (1, 320, 7, 7), 2 x (1, 128, 7, 7)|(1, 832, 7, 7)}" fillcolor=aliceblue]
-	66 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 832, 7, 7)|(1, 1024, 7, 7)}" fillcolor=darkseagreen1]
-	67 [label="BasicConv2d&#92;ndepth:2|{input:|output:}|{(1, 832, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
-	68 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
-	69 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 384, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
-	70 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 384, 7, 7)|(1, 384, 7, 7)}" fillcolor=aliceblue]
-	71 [label="cat&#92;ndepth:2|{input:|output:}|{2 x (1, 384, 7, 7), 2 x (1, 128, 7, 7)|(1, 1024, 7, 7)}" fillcolor=aliceblue]
-	72 [label="AdaptiveAvgPool2d&#92;ndepth:1|{input:|output:}|{(1, 1024, 7, 7)|(1, 1024, 1, 1)}" fillcolor=darkseagreen1]
-	73 [label="flatten&#92;ndepth:1|{input:|output:}|{(1, 1024, 1, 1)|(1, 1024)}" fillcolor=aliceblue]
-	74 [label="Dropout&#92;ndepth:1|{input:|output:}|{(1, 1024)|(1, 1024)}" fillcolor=darkseagreen1]
-	75 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 1024)|(1, 1000)}" fillcolor=darkseagreen1]
-	76 [label="output-tensor&#92;ndepth:0|(1, 1000)" fillcolor=lightyellow]
-	66 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 832, 7, 7)|(1, 1024, 7, 7)}" fillcolor=darkseagreen1]
-	77 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 832, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
-	78 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 192, 7, 7)}" fillcolor=darkseagreen1]
-	79 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 832, 7, 7)|(1, 192, 7, 7)}" fillcolor=darkseagreen1]
-	80 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 192, 7, 7)|(1, 192, 7, 7)}" fillcolor=darkseagreen1]
-	81 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 192, 7, 7)|(1, 192, 7, 7)}" fillcolor=aliceblue]
-	82 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 192, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
-	83 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 192, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
-	84 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 384, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
-	85 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 384, 7, 7)|(1, 384, 7, 7)}" fillcolor=aliceblue]
-	66 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 832, 7, 7)|(1, 1024, 7, 7)}" fillcolor=darkseagreen1]
-	86 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 832, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	87 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 48, 7, 7)}" fillcolor=darkseagreen1]
-	88 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 832, 7, 7)|(1, 48, 7, 7)}" fillcolor=darkseagreen1]
-	89 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 48, 7, 7)|(1, 48, 7, 7)}" fillcolor=darkseagreen1]
-	90 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 48, 7, 7)|(1, 48, 7, 7)}" fillcolor=aliceblue]
-	91 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 48, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	92 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 48, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	93 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	94 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=aliceblue]
-	66 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 832, 7, 7)|(1, 1024, 7, 7)}" fillcolor=darkseagreen1]
-	95 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 832, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	96 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 832, 7, 7)}" fillcolor=darkseagreen1]
-	97 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	98 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 832, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	99 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	100 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=aliceblue]
-	60 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 832, 7, 7)|(1, 832, 7, 7)}" fillcolor=darkseagreen1]
-	101 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 832, 7, 7)|(1, 320, 7, 7)}" fillcolor=darkseagreen1]
-	102 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 160, 7, 7)}" fillcolor=darkseagreen1]
-	103 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 832, 7, 7)|(1, 160, 7, 7)}" fillcolor=darkseagreen1]
-	104 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 160, 7, 7)|(1, 160, 7, 7)}" fillcolor=darkseagreen1]
-	105 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 160, 7, 7)|(1, 160, 7, 7)}" fillcolor=aliceblue]
-	106 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 160, 7, 7)|(1, 320, 7, 7)}" fillcolor=darkseagreen1]
-	107 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 160, 7, 7)|(1, 320, 7, 7)}" fillcolor=darkseagreen1]
-	108 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 320, 7, 7)|(1, 320, 7, 7)}" fillcolor=darkseagreen1]
-	109 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 320, 7, 7)|(1, 320, 7, 7)}" fillcolor=aliceblue]
-	60 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 832, 7, 7)|(1, 832, 7, 7)}" fillcolor=darkseagreen1]
-	110 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 832, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	111 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 32, 7, 7)}" fillcolor=darkseagreen1]
-	112 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 832, 7, 7)|(1, 32, 7, 7)}" fillcolor=darkseagreen1]
-	113 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 32, 7, 7)|(1, 32, 7, 7)}" fillcolor=darkseagreen1]
-	114 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 32, 7, 7)|(1, 32, 7, 7)}" fillcolor=aliceblue]
-	115 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 32, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	116 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 32, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	117 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	118 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=aliceblue]
-	60 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 832, 7, 7)|(1, 832, 7, 7)}" fillcolor=darkseagreen1]
-	119 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 832, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	120 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 832, 7, 7)}" fillcolor=darkseagreen1]
-	121 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	122 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 832, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	123 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	124 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=aliceblue]
-	53 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 528, 14, 14)|(1, 832, 14, 14)}" fillcolor=darkseagreen1]
-	125 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 528, 14, 14)|(1, 320, 14, 14)}" fillcolor=darkseagreen1]
-	126 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 528, 14, 14)|(1, 160, 14, 14)}" fillcolor=darkseagreen1]
-	127 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 528, 14, 14)|(1, 160, 14, 14)}" fillcolor=darkseagreen1]
-	128 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 160, 14, 14)|(1, 160, 14, 14)}" fillcolor=darkseagreen1]
-	129 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 160, 14, 14)|(1, 160, 14, 14)}" fillcolor=aliceblue]
-	130 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 160, 14, 14)|(1, 320, 14, 14)}" fillcolor=darkseagreen1]
-	131 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 160, 14, 14)|(1, 320, 14, 14)}" fillcolor=darkseagreen1]
-	132 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 320, 14, 14)|(1, 320, 14, 14)}" fillcolor=darkseagreen1]
-	133 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 320, 14, 14)|(1, 320, 14, 14)}" fillcolor=aliceblue]
-	53 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 528, 14, 14)|(1, 832, 14, 14)}" fillcolor=darkseagreen1]
-	134 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 528, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	135 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 528, 14, 14)|(1, 32, 14, 14)}" fillcolor=darkseagreen1]
-	136 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 528, 14, 14)|(1, 32, 14, 14)}" fillcolor=darkseagreen1]
-	137 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 32, 14, 14)|(1, 32, 14, 14)}" fillcolor=darkseagreen1]
-	138 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 32, 14, 14)|(1, 32, 14, 14)}" fillcolor=aliceblue]
-	139 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 32, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	140 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 32, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	141 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	142 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=aliceblue]
-	53 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 528, 14, 14)|(1, 832, 14, 14)}" fillcolor=darkseagreen1]
-	143 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 528, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	144 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 528, 14, 14)|(1, 528, 14, 14)}" fillcolor=darkseagreen1]
-	145 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 528, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	146 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 528, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	147 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	148 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=aliceblue]
-	47 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 528, 14, 14)}" fillcolor=darkseagreen1]
-	149 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 288, 14, 14)}" fillcolor=darkseagreen1]
-	150 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 144, 14, 14)}" fillcolor=darkseagreen1]
-	151 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 144, 14, 14)}" fillcolor=darkseagreen1]
-	152 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 144, 14, 14)|(1, 144, 14, 14)}" fillcolor=darkseagreen1]
-	153 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 144, 14, 14)|(1, 144, 14, 14)}" fillcolor=aliceblue]
-	154 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 144, 14, 14)|(1, 288, 14, 14)}" fillcolor=darkseagreen1]
-	155 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 144, 14, 14)|(1, 288, 14, 14)}" fillcolor=darkseagreen1]
-	156 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 288, 14, 14)|(1, 288, 14, 14)}" fillcolor=darkseagreen1]
-	157 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 288, 14, 14)|(1, 288, 14, 14)}" fillcolor=aliceblue]
-	47 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 528, 14, 14)}" fillcolor=darkseagreen1]
-	158 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	159 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 32, 14, 14)}" fillcolor=darkseagreen1]
-	160 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 32, 14, 14)}" fillcolor=darkseagreen1]
-	161 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 32, 14, 14)|(1, 32, 14, 14)}" fillcolor=darkseagreen1]
-	162 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 32, 14, 14)|(1, 32, 14, 14)}" fillcolor=aliceblue]
-	163 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 32, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	164 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 32, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	165 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	166 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
-	47 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 528, 14, 14)}" fillcolor=darkseagreen1]
-	167 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	168 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	169 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	170 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	171 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	172 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
-	41 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	173 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
-	174 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	175 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	176 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	177 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=aliceblue]
-	178 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 128, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
-	179 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
-	180 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
-	181 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=aliceblue]
-	41 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	182 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	183 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 24, 14, 14)}" fillcolor=darkseagreen1]
-	184 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 24, 14, 14)}" fillcolor=darkseagreen1]
-	185 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 24, 14, 14)|(1, 24, 14, 14)}" fillcolor=darkseagreen1]
-	186 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 24, 14, 14)|(1, 24, 14, 14)}" fillcolor=aliceblue]
-	187 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 24, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	188 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 24, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	189 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	190 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
-	41 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	191 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	192 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	193 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	194 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	195 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	196 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
-	35 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	197 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 224, 14, 14)}" fillcolor=darkseagreen1]
-	198 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 112, 14, 14)}" fillcolor=darkseagreen1]
-	199 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 112, 14, 14)}" fillcolor=darkseagreen1]
-	200 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 112, 14, 14)|(1, 112, 14, 14)}" fillcolor=darkseagreen1]
-	201 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 112, 14, 14)|(1, 112, 14, 14)}" fillcolor=aliceblue]
-	202 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 112, 14, 14)|(1, 224, 14, 14)}" fillcolor=darkseagreen1]
-	203 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 112, 14, 14)|(1, 224, 14, 14)}" fillcolor=darkseagreen1]
-	204 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 224, 14, 14)|(1, 224, 14, 14)}" fillcolor=darkseagreen1]
-	205 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 224, 14, 14)|(1, 224, 14, 14)}" fillcolor=aliceblue]
-	35 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	206 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	207 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 24, 14, 14)}" fillcolor=darkseagreen1]
-	208 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 24, 14, 14)}" fillcolor=darkseagreen1]
-	209 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 24, 14, 14)|(1, 24, 14, 14)}" fillcolor=darkseagreen1]
-	210 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 24, 14, 14)|(1, 24, 14, 14)}" fillcolor=aliceblue]
-	211 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 24, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	212 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 24, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	213 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	214 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
-	35 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	215 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	216 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	217 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	218 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	219 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	220 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
-	29 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 480, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	221 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 480, 14, 14)|(1, 208, 14, 14)}" fillcolor=darkseagreen1]
-	222 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 480, 14, 14)|(1, 96, 14, 14)}" fillcolor=darkseagreen1]
-	223 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 480, 14, 14)|(1, 96, 14, 14)}" fillcolor=darkseagreen1]
-	224 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 96, 14, 14)|(1, 96, 14, 14)}" fillcolor=darkseagreen1]
-	225 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 96, 14, 14)|(1, 96, 14, 14)}" fillcolor=aliceblue]
-	226 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 96, 14, 14)|(1, 208, 14, 14)}" fillcolor=darkseagreen1]
-	227 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 96, 14, 14)|(1, 208, 14, 14)}" fillcolor=darkseagreen1]
-	228 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 208, 14, 14)|(1, 208, 14, 14)}" fillcolor=darkseagreen1]
-	229 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 208, 14, 14)|(1, 208, 14, 14)}" fillcolor=aliceblue]
-	29 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 480, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	230 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 480, 14, 14)|(1, 48, 14, 14)}" fillcolor=darkseagreen1]
-	231 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 480, 14, 14)|(1, 16, 14, 14)}" fillcolor=darkseagreen1]
-	232 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 480, 14, 14)|(1, 16, 14, 14)}" fillcolor=darkseagreen1]
-	233 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 16, 14, 14)|(1, 16, 14, 14)}" fillcolor=darkseagreen1]
-	234 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 16, 14, 14)|(1, 16, 14, 14)}" fillcolor=aliceblue]
-	235 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 16, 14, 14)|(1, 48, 14, 14)}" fillcolor=darkseagreen1]
-	236 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 16, 14, 14)|(1, 48, 14, 14)}" fillcolor=darkseagreen1]
-	237 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 48, 14, 14)|(1, 48, 14, 14)}" fillcolor=darkseagreen1]
-	238 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 48, 14, 14)|(1, 48, 14, 14)}" fillcolor=aliceblue]
-	29 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 480, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	239 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 480, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	240 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 480, 14, 14)|(1, 480, 14, 14)}" fillcolor=darkseagreen1]
-	241 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 480, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	242 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 480, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	243 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	244 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
-	22 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 256, 28, 28)|(1, 480, 28, 28)}" fillcolor=darkseagreen1]
-	245 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 256, 28, 28)|(1, 192, 28, 28)}" fillcolor=darkseagreen1]
-	246 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
-	247 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 256, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
-	248 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
-	249 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=aliceblue]
-	250 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 192, 28, 28)}" fillcolor=darkseagreen1]
-	251 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 128, 28, 28)|(1, 192, 28, 28)}" fillcolor=darkseagreen1]
-	252 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 192, 28, 28)|(1, 192, 28, 28)}" fillcolor=darkseagreen1]
-	253 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 192, 28, 28)|(1, 192, 28, 28)}" fillcolor=aliceblue]
-	22 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 256, 28, 28)|(1, 480, 28, 28)}" fillcolor=darkseagreen1]
-	254 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 256, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	255 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
-	256 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 256, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
-	257 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
-	258 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=aliceblue]
-	259 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 32, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	260 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	261 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	262 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=aliceblue]
-	22 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 256, 28, 28)|(1, 480, 28, 28)}" fillcolor=darkseagreen1]
-	263 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 256, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
-	264 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 256, 28, 28)|(1, 256, 28, 28)}" fillcolor=darkseagreen1]
-	265 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
-	266 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 256, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
-	267 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
-	268 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=aliceblue]
-	16 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 192, 28, 28)|(1, 256, 28, 28)}" fillcolor=darkseagreen1]
-	269 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 192, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
-	270 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 192, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	271 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 192, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	272 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	273 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=aliceblue]
-	274 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 96, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
-	275 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 96, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
-	276 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
-	277 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=aliceblue]
-	16 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 192, 28, 28)|(1, 256, 28, 28)}" fillcolor=darkseagreen1]
-	278 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 192, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
-	279 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 192, 28, 28)|(1, 16, 28, 28)}" fillcolor=darkseagreen1]
-	280 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 192, 28, 28)|(1, 16, 28, 28)}" fillcolor=darkseagreen1]
-	281 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 16, 28, 28)|(1, 16, 28, 28)}" fillcolor=darkseagreen1]
-	282 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 16, 28, 28)|(1, 16, 28, 28)}" fillcolor=aliceblue]
-	283 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 16, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
-	284 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 16, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
-	285 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
-	286 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=aliceblue]
-	16 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 192, 28, 28)|(1, 256, 28, 28)}" fillcolor=darkseagreen1]
-	287 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 192, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
-	288 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 192, 28, 28)|(1, 192, 28, 28)}" fillcolor=darkseagreen1]
-	289 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 192, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
-	290 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 192, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
-	291 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
-	292 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=aliceblue]
+	0 [label="input-tensor&#92;ndepth:0|(1, 3, 224, 224)" fillcolor=lightyellow]
+	1 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 3, 224, 224)|(1, 64, 112, 112)}" fillcolor=darkseagreen1]
+	2 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 64, 112, 112)|(1, 64, 112, 112)}" fillcolor=darkseagreen1]
+	3 [label="relu&#92;ndepth:2|{input:|output:}|{(1, 64, 112, 112)|(1, 64, 112, 112)}" fillcolor=aliceblue]
+	4 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 64, 112, 112)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+	5 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+	6 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+	7 [label="relu&#92;ndepth:2|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=aliceblue]
+	8 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 64, 56, 56)|(1, 192, 56, 56)}" fillcolor=darkseagreen1]
+	9 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 192, 56, 56)|(1, 192, 56, 56)}" fillcolor=darkseagreen1]
+	10 [label="relu&#92;ndepth:2|{input:|output:}|{(1, 192, 56, 56)|(1, 192, 56, 56)}" fillcolor=aliceblue]
+	11 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 192, 56, 56)|(1, 192, 28, 28)}" fillcolor=darkseagreen1]
+	12 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 192, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
+	13 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
+	14 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=aliceblue]
+	15 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 192, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
+	16 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
+	17 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=aliceblue]
+	18 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 96, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+	19 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+	20 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=aliceblue]
+	21 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 192, 28, 28)|(1, 16, 28, 28)}" fillcolor=darkseagreen1]
+	22 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 16, 28, 28)|(1, 16, 28, 28)}" fillcolor=darkseagreen1]
+	23 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 16, 28, 28)|(1, 16, 28, 28)}" fillcolor=aliceblue]
+	24 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 16, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
+	25 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
+	26 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=aliceblue]
+	27 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 192, 28, 28)|(1, 192, 28, 28)}" fillcolor=darkseagreen1]
+	28 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 192, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
+	29 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
+	30 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=aliceblue]
+	31 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 64, 28, 28), (1, 128, 28, 28), 2 x (1, 32, 28, 28)|(1, 256, 28, 28)}" fillcolor=aliceblue]
+	32 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+	33 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+	34 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=aliceblue]
+	35 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 256, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+	36 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+	37 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=aliceblue]
+	38 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 128, 28, 28)|(1, 192, 28, 28)}" fillcolor=darkseagreen1]
+	39 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 192, 28, 28)|(1, 192, 28, 28)}" fillcolor=darkseagreen1]
+	40 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 192, 28, 28)|(1, 192, 28, 28)}" fillcolor=aliceblue]
+	41 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 256, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
+	42 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
+	43 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=aliceblue]
+	44 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
+	45 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
+	46 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=aliceblue]
+	47 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 256, 28, 28)|(1, 256, 28, 28)}" fillcolor=darkseagreen1]
+	48 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 256, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
+	49 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
+	50 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=aliceblue]
+	51 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 128, 28, 28), (1, 192, 28, 28), (1, 96, 28, 28), (1, 64, 28, 28)|(1, 480, 28, 28)}" fillcolor=aliceblue]
+	52 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 480, 28, 28)|(1, 480, 14, 14)}" fillcolor=darkseagreen1]
+	53 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 480, 14, 14)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
+	54 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 192, 14, 14)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
+	55 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 192, 14, 14)|(1, 192, 14, 14)}" fillcolor=aliceblue]
+	56 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 480, 14, 14)|(1, 96, 14, 14)}" fillcolor=darkseagreen1]
+	57 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 96, 14, 14)|(1, 96, 14, 14)}" fillcolor=darkseagreen1]
+	58 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 96, 14, 14)|(1, 96, 14, 14)}" fillcolor=aliceblue]
+	59 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 96, 14, 14)|(1, 208, 14, 14)}" fillcolor=darkseagreen1]
+	60 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 208, 14, 14)|(1, 208, 14, 14)}" fillcolor=darkseagreen1]
+	61 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 208, 14, 14)|(1, 208, 14, 14)}" fillcolor=aliceblue]
+	62 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 480, 14, 14)|(1, 16, 14, 14)}" fillcolor=darkseagreen1]
+	63 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 16, 14, 14)|(1, 16, 14, 14)}" fillcolor=darkseagreen1]
+	64 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 16, 14, 14)|(1, 16, 14, 14)}" fillcolor=aliceblue]
+	65 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 16, 14, 14)|(1, 48, 14, 14)}" fillcolor=darkseagreen1]
+	66 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 48, 14, 14)|(1, 48, 14, 14)}" fillcolor=darkseagreen1]
+	67 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 48, 14, 14)|(1, 48, 14, 14)}" fillcolor=aliceblue]
+	68 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 480, 14, 14)|(1, 480, 14, 14)}" fillcolor=darkseagreen1]
+	69 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 480, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	70 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	71 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
+	72 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 192, 14, 14), (1, 208, 14, 14), (1, 48, 14, 14), (1, 64, 14, 14)|(1, 512, 14, 14)}" fillcolor=aliceblue]
+	73 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 160, 14, 14)}" fillcolor=darkseagreen1]
+	74 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 160, 14, 14)|(1, 160, 14, 14)}" fillcolor=darkseagreen1]
+	75 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 160, 14, 14)|(1, 160, 14, 14)}" fillcolor=aliceblue]
+	76 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 112, 14, 14)}" fillcolor=darkseagreen1]
+	77 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 112, 14, 14)|(1, 112, 14, 14)}" fillcolor=darkseagreen1]
+	78 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 112, 14, 14)|(1, 112, 14, 14)}" fillcolor=aliceblue]
+	79 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 112, 14, 14)|(1, 224, 14, 14)}" fillcolor=darkseagreen1]
+	80 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 224, 14, 14)|(1, 224, 14, 14)}" fillcolor=darkseagreen1]
+	81 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 224, 14, 14)|(1, 224, 14, 14)}" fillcolor=aliceblue]
+	82 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 24, 14, 14)}" fillcolor=darkseagreen1]
+	83 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 24, 14, 14)|(1, 24, 14, 14)}" fillcolor=darkseagreen1]
+	84 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 24, 14, 14)|(1, 24, 14, 14)}" fillcolor=aliceblue]
+	85 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 24, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	86 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	87 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
+	88 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
+	89 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	90 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	91 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
+	92 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 160, 14, 14), (1, 224, 14, 14), 2 x (1, 64, 14, 14)|(1, 512, 14, 14)}" fillcolor=aliceblue]
+	93 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
+	94 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
+	95 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=aliceblue]
+	96 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
+	97 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
+	98 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=aliceblue]
+	99 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+	100 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+	101 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=aliceblue]
+	102 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 24, 14, 14)}" fillcolor=darkseagreen1]
+	103 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 24, 14, 14)|(1, 24, 14, 14)}" fillcolor=darkseagreen1]
+	104 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 24, 14, 14)|(1, 24, 14, 14)}" fillcolor=aliceblue]
+	105 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 24, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	106 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	107 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
+	108 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
+	109 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	110 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	111 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
+	112 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 128, 14, 14), (1, 256, 14, 14), 2 x (1, 64, 14, 14)|(1, 512, 14, 14)}" fillcolor=aliceblue]
+	113 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 112, 14, 14)}" fillcolor=darkseagreen1]
+	114 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 112, 14, 14)|(1, 112, 14, 14)}" fillcolor=darkseagreen1]
+	115 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 112, 14, 14)|(1, 112, 14, 14)}" fillcolor=aliceblue]
+	116 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 144, 14, 14)}" fillcolor=darkseagreen1]
+	117 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 144, 14, 14)|(1, 144, 14, 14)}" fillcolor=darkseagreen1]
+	118 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 144, 14, 14)|(1, 144, 14, 14)}" fillcolor=aliceblue]
+	119 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 144, 14, 14)|(1, 288, 14, 14)}" fillcolor=darkseagreen1]
+	120 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 288, 14, 14)|(1, 288, 14, 14)}" fillcolor=darkseagreen1]
+	121 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 288, 14, 14)|(1, 288, 14, 14)}" fillcolor=aliceblue]
+	122 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 32, 14, 14)}" fillcolor=darkseagreen1]
+	123 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 32, 14, 14)|(1, 32, 14, 14)}" fillcolor=darkseagreen1]
+	124 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 32, 14, 14)|(1, 32, 14, 14)}" fillcolor=aliceblue]
+	125 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 32, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	126 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	127 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
+	128 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
+	129 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	130 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	131 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
+	132 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 112, 14, 14), (1, 288, 14, 14), 2 x (1, 64, 14, 14)|(1, 528, 14, 14)}" fillcolor=aliceblue]
+	133 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 528, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+	134 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+	135 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=aliceblue]
+	136 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 528, 14, 14)|(1, 160, 14, 14)}" fillcolor=darkseagreen1]
+	137 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 160, 14, 14)|(1, 160, 14, 14)}" fillcolor=darkseagreen1]
+	138 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 160, 14, 14)|(1, 160, 14, 14)}" fillcolor=aliceblue]
+	139 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 160, 14, 14)|(1, 320, 14, 14)}" fillcolor=darkseagreen1]
+	140 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 320, 14, 14)|(1, 320, 14, 14)}" fillcolor=darkseagreen1]
+	141 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 320, 14, 14)|(1, 320, 14, 14)}" fillcolor=aliceblue]
+	142 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 528, 14, 14)|(1, 32, 14, 14)}" fillcolor=darkseagreen1]
+	143 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 32, 14, 14)|(1, 32, 14, 14)}" fillcolor=darkseagreen1]
+	144 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 32, 14, 14)|(1, 32, 14, 14)}" fillcolor=aliceblue]
+	145 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 32, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
+	146 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
+	147 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=aliceblue]
+	148 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 528, 14, 14)|(1, 528, 14, 14)}" fillcolor=darkseagreen1]
+	149 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 528, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
+	150 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
+	151 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=aliceblue]
+	152 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 256, 14, 14), (1, 320, 14, 14), 2 x (1, 128, 14, 14)|(1, 832, 14, 14)}" fillcolor=aliceblue]
+	153 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 832, 14, 14)|(1, 832, 7, 7)}" fillcolor=darkseagreen1]
+	154 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 256, 7, 7)}" fillcolor=darkseagreen1]
+	155 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 256, 7, 7)|(1, 256, 7, 7)}" fillcolor=darkseagreen1]
+	156 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 256, 7, 7)|(1, 256, 7, 7)}" fillcolor=aliceblue]
+	157 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 832, 7, 7)|(1, 160, 7, 7)}" fillcolor=darkseagreen1]
+	158 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 160, 7, 7)|(1, 160, 7, 7)}" fillcolor=darkseagreen1]
+	159 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 160, 7, 7)|(1, 160, 7, 7)}" fillcolor=aliceblue]
+	160 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 160, 7, 7)|(1, 320, 7, 7)}" fillcolor=darkseagreen1]
+	161 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 320, 7, 7)|(1, 320, 7, 7)}" fillcolor=darkseagreen1]
+	162 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 320, 7, 7)|(1, 320, 7, 7)}" fillcolor=aliceblue]
+	163 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 832, 7, 7)|(1, 32, 7, 7)}" fillcolor=darkseagreen1]
+	164 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 32, 7, 7)|(1, 32, 7, 7)}" fillcolor=darkseagreen1]
+	165 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 32, 7, 7)|(1, 32, 7, 7)}" fillcolor=aliceblue]
+	166 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 32, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
+	167 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
+	168 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=aliceblue]
+	169 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 832, 7, 7)}" fillcolor=darkseagreen1]
+	170 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 832, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
+	171 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
+	172 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=aliceblue]
+	173 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 256, 7, 7), (1, 320, 7, 7), 2 x (1, 128, 7, 7)|(1, 832, 7, 7)}" fillcolor=aliceblue]
+	174 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
+	175 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 384, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
+	176 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 384, 7, 7)|(1, 384, 7, 7)}" fillcolor=aliceblue]
+	177 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 832, 7, 7)|(1, 192, 7, 7)}" fillcolor=darkseagreen1]
+	178 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 192, 7, 7)|(1, 192, 7, 7)}" fillcolor=darkseagreen1]
+	179 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 192, 7, 7)|(1, 192, 7, 7)}" fillcolor=aliceblue]
+	180 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 192, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
+	181 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 384, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
+	182 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 384, 7, 7)|(1, 384, 7, 7)}" fillcolor=aliceblue]
+	183 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 832, 7, 7)|(1, 48, 7, 7)}" fillcolor=darkseagreen1]
+	184 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 48, 7, 7)|(1, 48, 7, 7)}" fillcolor=darkseagreen1]
+	185 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 48, 7, 7)|(1, 48, 7, 7)}" fillcolor=aliceblue]
+	186 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 48, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
+	187 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
+	188 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=aliceblue]
+	189 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 832, 7, 7)}" fillcolor=darkseagreen1]
+	190 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 832, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
+	191 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
+	192 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=aliceblue]
+	193 [label="cat&#92;ndepth:2|{input:|output:}|{2 x (1, 384, 7, 7), 2 x (1, 128, 7, 7)|(1, 1024, 7, 7)}" fillcolor=aliceblue]
+	194 [label="AdaptiveAvgPool2d&#92;ndepth:1|{input:|output:}|{(1, 1024, 7, 7)|(1, 1024, 1, 1)}" fillcolor=darkseagreen1]
+	195 [label="flatten&#92;ndepth:1|{input:|output:}|{(1, 1024, 1, 1)|(1, 1024)}" fillcolor=aliceblue]
+	196 [label="Dropout&#92;ndepth:1|{input:|output:}|{(1, 1024)|(1, 1024)}" fillcolor=darkseagreen1]
+	197 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 1024)|(1, 1000)}" fillcolor=darkseagreen1]
+	198 [label="output-tensor&#92;ndepth:0|(1, 1000)" fillcolor=lightyellow]
 	0 -> 1
 	1 -> 2
 	2 -> 3
@@ -336,19 +216,22 @@ strict digraph GoogLeNet {
 	11 -> 12
 	12 -> 13
 	13 -> 14
-	14 -> 15
+	14 -> 31
+	11 -> 15
 	15 -> 16
 	16 -> 17
 	17 -> 18
 	18 -> 19
 	19 -> 20
-	20 -> 21
+	20 -> 31
+	11 -> 21
 	21 -> 22
 	22 -> 23
 	23 -> 24
 	24 -> 25
 	25 -> 26
-	26 -> 27
+	26 -> 31
+	11 -> 27
 	27 -> 28
 	28 -> 29
 	29 -> 30
@@ -356,19 +239,22 @@ strict digraph GoogLeNet {
 	31 -> 32
 	32 -> 33
 	33 -> 34
-	34 -> 35
+	34 -> 51
+	31 -> 35
 	35 -> 36
 	36 -> 37
 	37 -> 38
 	38 -> 39
 	39 -> 40
-	40 -> 41
+	40 -> 51
+	31 -> 41
 	41 -> 42
 	42 -> 43
 	43 -> 44
 	44 -> 45
 	45 -> 46
-	46 -> 47
+	46 -> 51
+	31 -> 47
 	47 -> 48
 	48 -> 49
 	49 -> 50
@@ -377,19 +263,22 @@ strict digraph GoogLeNet {
 	52 -> 53
 	53 -> 54
 	54 -> 55
-	55 -> 56
+	55 -> 72
+	52 -> 56
 	56 -> 57
 	57 -> 58
 	58 -> 59
 	59 -> 60
 	60 -> 61
-	61 -> 62
+	61 -> 72
+	52 -> 62
 	62 -> 63
 	63 -> 64
 	64 -> 65
 	65 -> 66
 	66 -> 67
-	67 -> 68
+	67 -> 72
+	52 -> 68
 	68 -> 69
 	69 -> 70
 	70 -> 71
@@ -397,689 +286,22 @@ strict digraph GoogLeNet {
 	72 -> 73
 	73 -> 74
 	74 -> 75
-	75 -> 76
-	66 -> 77
+	75 -> 92
+	72 -> 76
+	76 -> 77
 	77 -> 78
 	78 -> 79
 	79 -> 80
 	80 -> 81
-	81 -> 82
-	82 -> 83
-	83 -> 84
-	84 -> 85
-	85 -> 71
-	66 -> 86
-	86 -> 87
-	87 -> 88
-	88 -> 89
-	89 -> 90
-	90 -> 91
-	91 -> 92
-	92 -> 93
-	93 -> 94
-	94 -> 71
-	66 -> 95
-	95 -> 96
-	96 -> 97
-	97 -> 98
-	98 -> 99
-	99 -> 100
-	100 -> 71
-	60 -> 101
-	101 -> 102
-	102 -> 103
-	103 -> 104
-	104 -> 105
-	105 -> 106
-	106 -> 107
-	107 -> 108
-	108 -> 109
-	109 -> 65
-	60 -> 110
-	110 -> 111
-	111 -> 112
-	112 -> 113
-	113 -> 114
-	114 -> 115
-	115 -> 116
-	116 -> 117
-	117 -> 118
-	118 -> 65
-	60 -> 119
-	119 -> 120
-	120 -> 121
-	121 -> 122
-	122 -> 123
-	123 -> 124
-	124 -> 65
-	53 -> 125
-	125 -> 126
-	126 -> 127
-	127 -> 128
-	128 -> 129
-	129 -> 130
-	130 -> 131
-	131 -> 132
-	132 -> 133
-	133 -> 58
-	53 -> 134
-	134 -> 135
-	135 -> 136
-	136 -> 137
-	137 -> 138
-	138 -> 139
-	139 -> 140
-	140 -> 141
-	141 -> 142
-	142 -> 58
-	53 -> 143
-	143 -> 144
-	144 -> 145
-	145 -> 146
-	146 -> 147
-	147 -> 148
-	148 -> 58
-	47 -> 149
-	149 -> 150
-	150 -> 151
-	151 -> 152
-	152 -> 153
-	153 -> 154
-	154 -> 155
-	155 -> 156
-	156 -> 157
-	157 -> 52
-	47 -> 158
-	158 -> 159
-	159 -> 160
-	160 -> 161
-	161 -> 162
-	162 -> 163
-	163 -> 164
-	164 -> 165
-	165 -> 166
-	166 -> 52
-	47 -> 167
-	167 -> 168
-	168 -> 169
-	169 -> 170
-	170 -> 171
-	171 -> 172
-	172 -> 52
-	41 -> 173
-	173 -> 174
-	174 -> 175
-	175 -> 176
-	176 -> 177
-	177 -> 178
-	178 -> 179
-	179 -> 180
-	180 -> 181
-	181 -> 46
-	41 -> 182
-	182 -> 183
-	183 -> 184
-	184 -> 185
-	185 -> 186
-	186 -> 187
-	187 -> 188
-	188 -> 189
-	189 -> 190
-	190 -> 46
-	41 -> 191
-	191 -> 192
-	192 -> 193
-	193 -> 194
-	194 -> 195
-	195 -> 196
-	196 -> 46
-	35 -> 197
-	197 -> 198
-	198 -> 199
-	199 -> 200
-	200 -> 201
-	201 -> 202
-	202 -> 203
-	203 -> 204
-	204 -> 205
-	205 -> 40
-	35 -> 206
-	206 -> 207
-	207 -> 208
-	208 -> 209
-	209 -> 210
-	210 -> 211
-	211 -> 212
-	212 -> 213
-	213 -> 214
-	214 -> 40
-	35 -> 215
-	215 -> 216
-	216 -> 217
-	217 -> 218
-	218 -> 219
-	219 -> 220
-	220 -> 40
-	29 -> 221
-	221 -> 222
-	222 -> 223
-	223 -> 224
-	224 -> 225
-	225 -> 226
-	226 -> 227
-	227 -> 228
-	228 -> 229
-	229 -> 34
-	29 -> 230
-	230 -> 231
-	231 -> 232
-	232 -> 233
-	233 -> 234
-	234 -> 235
-	235 -> 236
-	236 -> 237
-	237 -> 238
-	238 -> 34
-	29 -> 239
-	239 -> 240
-	240 -> 241
-	241 -> 242
-	242 -> 243
-	243 -> 244
-	244 -> 34
-	22 -> 245
-	245 -> 246
-	246 -> 247
-	247 -> 248
-	248 -> 249
-	249 -> 250
-	250 -> 251
-	251 -> 252
-	252 -> 253
-	253 -> 27
-	22 -> 254
-	254 -> 255
-	255 -> 256
-	256 -> 257
-	257 -> 258
-	258 -> 259
-	259 -> 260
-	260 -> 261
-	261 -> 262
-	262 -> 27
-	22 -> 263
-	263 -> 264
-	264 -> 265
-	265 -> 266
-	266 -> 267
-	267 -> 268
-	268 -> 27
-	16 -> 269
-	269 -> 270
-	270 -> 271
-	271 -> 272
-	272 -> 273
-	273 -> 274
-	274 -> 275
-	275 -> 276
-	276 -> 277
-	277 -> 21
-	16 -> 278
-	278 -> 279
-	279 -> 280
-	280 -> 281
-	281 -> 282
-	282 -> 283
-	283 -> 284
-	284 -> 285
-	285 -> 286
-	286 -> 21
-	16 -> 287
-	287 -> 288
-	288 -> 289
-	289 -> 290
-	290 -> 291
-	291 -> 292
-	292 -> 21
-}
-strict digraph GoogLeNet {
-	graph [ordering=in size="206.7,206.7"]
-	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
-	edge [fontsize=10]
-	0 [label="input-tensor&#92;ndepth:0|(1, 3, 224, 224)" fillcolor=lightyellow]
-	1 [label="GoogLeNet&#92;ndepth:0|{input:|output:}|{(1, 3, 224, 224)|3 x (1, 1000)}" fillcolor=darkseagreen1]
-	2 [label="BasicConv2d&#92;ndepth:1|{input:|output:}|{(1, 3, 224, 224)|(1, 64, 112, 112)}" fillcolor=darkseagreen1]
-	3 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 3, 224, 224)|(1, 64, 112, 112)}" fillcolor=darkseagreen1]
-	4 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 64, 112, 112)|(1, 64, 112, 112)}" fillcolor=darkseagreen1]
-	5 [label="relu&#92;ndepth:2|{input:|output:}|{(1, 64, 112, 112)|(1, 64, 112, 112)}" fillcolor=aliceblue]
-	6 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 64, 112, 112)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
-	7 [label="BasicConv2d&#92;ndepth:1|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
-	8 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
-	9 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
-	10 [label="relu&#92;ndepth:2|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=aliceblue]
-	11 [label="BasicConv2d&#92;ndepth:1|{input:|output:}|{(1, 64, 56, 56)|(1, 192, 56, 56)}" fillcolor=darkseagreen1]
-	12 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 64, 56, 56)|(1, 192, 56, 56)}" fillcolor=darkseagreen1]
-	13 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 192, 56, 56)|(1, 192, 56, 56)}" fillcolor=darkseagreen1]
-	14 [label="relu&#92;ndepth:2|{input:|output:}|{(1, 192, 56, 56)|(1, 192, 56, 56)}" fillcolor=aliceblue]
-	15 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 192, 56, 56)|(1, 192, 28, 28)}" fillcolor=darkseagreen1]
-	16 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 192, 28, 28)|(1, 256, 28, 28)}" fillcolor=darkseagreen1]
-	17 [label="BasicConv2d&#92;ndepth:2|{input:|output:}|{(1, 192, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
-	18 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 192, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
-	19 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
-	20 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=aliceblue]
-	21 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 64, 28, 28), (1, 128, 28, 28), 2 x (1, 32, 28, 28)|(1, 256, 28, 28)}" fillcolor=aliceblue]
-	22 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 256, 28, 28)|(1, 480, 28, 28)}" fillcolor=darkseagreen1]
-	23 [label="BasicConv2d&#92;ndepth:2|{input:|output:}|{(1, 256, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
-	24 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
-	25 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
-	26 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=aliceblue]
-	27 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 128, 28, 28), (1, 192, 28, 28), (1, 96, 28, 28), (1, 64, 28, 28)|(1, 480, 28, 28)}" fillcolor=aliceblue]
-	28 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 480, 28, 28)|(1, 480, 14, 14)}" fillcolor=darkseagreen1]
-	29 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 480, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	30 [label="BasicConv2d&#92;ndepth:2|{input:|output:}|{(1, 480, 14, 14)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
-	31 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 480, 14, 14)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
-	32 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 192, 14, 14)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
-	33 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 192, 14, 14)|(1, 192, 14, 14)}" fillcolor=aliceblue]
-	34 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 192, 14, 14), (1, 208, 14, 14), (1, 48, 14, 14), (1, 64, 14, 14)|(1, 512, 14, 14)}" fillcolor=aliceblue]
-	35 [label="InceptionAux&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 1000)}" fillcolor=darkseagreen1]
-	36 [label="adaptive_avg_pool2d&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 4, 4)}" fillcolor=aliceblue]
-	37 [label="BasicConv2d&#92;ndepth:2|{input:|output:}|{(1, 512, 4, 4)|(1, 128, 4, 4)}" fillcolor=darkseagreen1]
-	38 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 4, 4)|(1, 128, 4, 4)}" fillcolor=darkseagreen1]
-	39 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 128, 4, 4)|(1, 128, 4, 4)}" fillcolor=darkseagreen1]
-	40 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 128, 4, 4)|(1, 128, 4, 4)}" fillcolor=aliceblue]
-	41 [label="flatten&#92;ndepth:2|{input:|output:}|{(1, 128, 4, 4)|(1, 2048)}" fillcolor=aliceblue]
-	42 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 2048)|(1, 1024)}" fillcolor=darkseagreen1]
-	43 [label="relu&#92;ndepth:2|{input:|output:}|{(1, 1024)|(1, 1024)}" fillcolor=aliceblue]
-	44 [label="Dropout&#92;ndepth:2|{input:|output:}|{(1, 1024)|(1, 1024)}" fillcolor=darkseagreen1]
-	45 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 1024)|(1, 1000)}" fillcolor=darkseagreen1]
-	46 [label="output-tensor&#92;ndepth:0|(1, 1000)" fillcolor=lightyellow]
-	34 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 192, 14, 14), (1, 208, 14, 14), (1, 48, 14, 14), (1, 64, 14, 14)|(1, 512, 14, 14)}" fillcolor=aliceblue]
-	47 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	48 [label="BasicConv2d&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 160, 14, 14)}" fillcolor=darkseagreen1]
-	49 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 160, 14, 14)}" fillcolor=darkseagreen1]
-	50 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 160, 14, 14)|(1, 160, 14, 14)}" fillcolor=darkseagreen1]
-	51 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 160, 14, 14)|(1, 160, 14, 14)}" fillcolor=aliceblue]
-	52 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 160, 14, 14), (1, 224, 14, 14), 2 x (1, 64, 14, 14)|(1, 512, 14, 14)}" fillcolor=aliceblue]
-	53 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	54 [label="BasicConv2d&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	55 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	56 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	57 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=aliceblue]
-	58 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 128, 14, 14), (1, 256, 14, 14), 2 x (1, 64, 14, 14)|(1, 512, 14, 14)}" fillcolor=aliceblue]
-	59 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 528, 14, 14)}" fillcolor=darkseagreen1]
-	60 [label="BasicConv2d&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 112, 14, 14)}" fillcolor=darkseagreen1]
-	61 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 112, 14, 14)}" fillcolor=darkseagreen1]
-	62 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 112, 14, 14)|(1, 112, 14, 14)}" fillcolor=darkseagreen1]
-	63 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 112, 14, 14)|(1, 112, 14, 14)}" fillcolor=aliceblue]
-	64 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 112, 14, 14), (1, 288, 14, 14), 2 x (1, 64, 14, 14)|(1, 528, 14, 14)}" fillcolor=aliceblue]
-	65 [label="InceptionAux&#92;ndepth:1|{input:|output:}|{(1, 528, 14, 14)|(1, 1000)}" fillcolor=darkseagreen1]
-	66 [label="adaptive_avg_pool2d&#92;ndepth:2|{input:|output:}|{(1, 528, 14, 14)|(1, 528, 4, 4)}" fillcolor=aliceblue]
-	67 [label="BasicConv2d&#92;ndepth:2|{input:|output:}|{(1, 528, 4, 4)|(1, 128, 4, 4)}" fillcolor=darkseagreen1]
-	68 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 528, 4, 4)|(1, 128, 4, 4)}" fillcolor=darkseagreen1]
-	69 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 128, 4, 4)|(1, 128, 4, 4)}" fillcolor=darkseagreen1]
-	70 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 128, 4, 4)|(1, 128, 4, 4)}" fillcolor=aliceblue]
-	71 [label="flatten&#92;ndepth:2|{input:|output:}|{(1, 128, 4, 4)|(1, 2048)}" fillcolor=aliceblue]
-	72 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 2048)|(1, 1024)}" fillcolor=darkseagreen1]
-	73 [label="relu&#92;ndepth:2|{input:|output:}|{(1, 1024)|(1, 1024)}" fillcolor=aliceblue]
-	74 [label="Dropout&#92;ndepth:2|{input:|output:}|{(1, 1024)|(1, 1024)}" fillcolor=darkseagreen1]
-	75 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 1024)|(1, 1000)}" fillcolor=darkseagreen1]
-	76 [label="output-tensor&#92;ndepth:0|(1, 1000)" fillcolor=lightyellow]
-	64 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 112, 14, 14), (1, 288, 14, 14), 2 x (1, 64, 14, 14)|(1, 528, 14, 14)}" fillcolor=aliceblue]
-	77 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 528, 14, 14)|(1, 832, 14, 14)}" fillcolor=darkseagreen1]
-	78 [label="BasicConv2d&#92;ndepth:2|{input:|output:}|{(1, 528, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
-	79 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 528, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
-	80 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
-	81 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=aliceblue]
-	82 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 256, 14, 14), (1, 320, 14, 14), 2 x (1, 128, 14, 14)|(1, 832, 14, 14)}" fillcolor=aliceblue]
-	83 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 832, 14, 14)|(1, 832, 7, 7)}" fillcolor=darkseagreen1]
-	84 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 832, 7, 7)|(1, 832, 7, 7)}" fillcolor=darkseagreen1]
-	85 [label="BasicConv2d&#92;ndepth:2|{input:|output:}|{(1, 832, 7, 7)|(1, 256, 7, 7)}" fillcolor=darkseagreen1]
-	86 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 256, 7, 7)}" fillcolor=darkseagreen1]
-	87 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 256, 7, 7)|(1, 256, 7, 7)}" fillcolor=darkseagreen1]
-	88 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 256, 7, 7)|(1, 256, 7, 7)}" fillcolor=aliceblue]
-	89 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 256, 7, 7), (1, 320, 7, 7), 2 x (1, 128, 7, 7)|(1, 832, 7, 7)}" fillcolor=aliceblue]
-	90 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 832, 7, 7)|(1, 1024, 7, 7)}" fillcolor=darkseagreen1]
-	91 [label="BasicConv2d&#92;ndepth:2|{input:|output:}|{(1, 832, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
-	92 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
-	93 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 384, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
-	94 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 384, 7, 7)|(1, 384, 7, 7)}" fillcolor=aliceblue]
-	95 [label="cat&#92;ndepth:2|{input:|output:}|{2 x (1, 384, 7, 7), 2 x (1, 128, 7, 7)|(1, 1024, 7, 7)}" fillcolor=aliceblue]
-	96 [label="AdaptiveAvgPool2d&#92;ndepth:1|{input:|output:}|{(1, 1024, 7, 7)|(1, 1024, 1, 1)}" fillcolor=darkseagreen1]
-	97 [label="flatten&#92;ndepth:1|{input:|output:}|{(1, 1024, 1, 1)|(1, 1024)}" fillcolor=aliceblue]
-	98 [label="Dropout&#92;ndepth:1|{input:|output:}|{(1, 1024)|(1, 1024)}" fillcolor=darkseagreen1]
-	99 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 1024)|(1, 1000)}" fillcolor=darkseagreen1]
-	100 [label="output-tensor&#92;ndepth:0|(1, 1000)" fillcolor=lightyellow]
-	90 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 832, 7, 7)|(1, 1024, 7, 7)}" fillcolor=darkseagreen1]
-	101 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 832, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
-	102 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 192, 7, 7)}" fillcolor=darkseagreen1]
-	103 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 832, 7, 7)|(1, 192, 7, 7)}" fillcolor=darkseagreen1]
-	104 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 192, 7, 7)|(1, 192, 7, 7)}" fillcolor=darkseagreen1]
-	105 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 192, 7, 7)|(1, 192, 7, 7)}" fillcolor=aliceblue]
-	106 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 192, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
-	107 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 192, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
-	108 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 384, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
-	109 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 384, 7, 7)|(1, 384, 7, 7)}" fillcolor=aliceblue]
-	90 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 832, 7, 7)|(1, 1024, 7, 7)}" fillcolor=darkseagreen1]
-	110 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 832, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	111 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 48, 7, 7)}" fillcolor=darkseagreen1]
-	112 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 832, 7, 7)|(1, 48, 7, 7)}" fillcolor=darkseagreen1]
-	113 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 48, 7, 7)|(1, 48, 7, 7)}" fillcolor=darkseagreen1]
-	114 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 48, 7, 7)|(1, 48, 7, 7)}" fillcolor=aliceblue]
-	115 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 48, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	116 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 48, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	117 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	118 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=aliceblue]
-	90 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 832, 7, 7)|(1, 1024, 7, 7)}" fillcolor=darkseagreen1]
-	119 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 832, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	120 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 832, 7, 7)}" fillcolor=darkseagreen1]
-	121 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	122 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 832, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	123 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	124 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=aliceblue]
-	84 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 832, 7, 7)|(1, 832, 7, 7)}" fillcolor=darkseagreen1]
-	125 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 832, 7, 7)|(1, 320, 7, 7)}" fillcolor=darkseagreen1]
-	126 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 160, 7, 7)}" fillcolor=darkseagreen1]
-	127 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 832, 7, 7)|(1, 160, 7, 7)}" fillcolor=darkseagreen1]
-	128 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 160, 7, 7)|(1, 160, 7, 7)}" fillcolor=darkseagreen1]
-	129 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 160, 7, 7)|(1, 160, 7, 7)}" fillcolor=aliceblue]
-	130 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 160, 7, 7)|(1, 320, 7, 7)}" fillcolor=darkseagreen1]
-	131 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 160, 7, 7)|(1, 320, 7, 7)}" fillcolor=darkseagreen1]
-	132 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 320, 7, 7)|(1, 320, 7, 7)}" fillcolor=darkseagreen1]
-	133 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 320, 7, 7)|(1, 320, 7, 7)}" fillcolor=aliceblue]
-	84 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 832, 7, 7)|(1, 832, 7, 7)}" fillcolor=darkseagreen1]
-	134 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 832, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	135 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 32, 7, 7)}" fillcolor=darkseagreen1]
-	136 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 832, 7, 7)|(1, 32, 7, 7)}" fillcolor=darkseagreen1]
-	137 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 32, 7, 7)|(1, 32, 7, 7)}" fillcolor=darkseagreen1]
-	138 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 32, 7, 7)|(1, 32, 7, 7)}" fillcolor=aliceblue]
-	139 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 32, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	140 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 32, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	141 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	142 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=aliceblue]
-	84 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 832, 7, 7)|(1, 832, 7, 7)}" fillcolor=darkseagreen1]
-	143 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 832, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	144 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 832, 7, 7)}" fillcolor=darkseagreen1]
-	145 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	146 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 832, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	147 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
-	148 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=aliceblue]
-	77 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 528, 14, 14)|(1, 832, 14, 14)}" fillcolor=darkseagreen1]
-	149 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 528, 14, 14)|(1, 320, 14, 14)}" fillcolor=darkseagreen1]
-	150 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 528, 14, 14)|(1, 160, 14, 14)}" fillcolor=darkseagreen1]
-	151 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 528, 14, 14)|(1, 160, 14, 14)}" fillcolor=darkseagreen1]
-	152 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 160, 14, 14)|(1, 160, 14, 14)}" fillcolor=darkseagreen1]
-	153 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 160, 14, 14)|(1, 160, 14, 14)}" fillcolor=aliceblue]
-	154 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 160, 14, 14)|(1, 320, 14, 14)}" fillcolor=darkseagreen1]
-	155 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 160, 14, 14)|(1, 320, 14, 14)}" fillcolor=darkseagreen1]
-	156 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 320, 14, 14)|(1, 320, 14, 14)}" fillcolor=darkseagreen1]
-	157 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 320, 14, 14)|(1, 320, 14, 14)}" fillcolor=aliceblue]
-	77 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 528, 14, 14)|(1, 832, 14, 14)}" fillcolor=darkseagreen1]
-	158 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 528, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	159 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 528, 14, 14)|(1, 32, 14, 14)}" fillcolor=darkseagreen1]
-	160 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 528, 14, 14)|(1, 32, 14, 14)}" fillcolor=darkseagreen1]
-	161 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 32, 14, 14)|(1, 32, 14, 14)}" fillcolor=darkseagreen1]
-	162 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 32, 14, 14)|(1, 32, 14, 14)}" fillcolor=aliceblue]
-	163 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 32, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	164 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 32, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	165 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	166 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=aliceblue]
-	77 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 528, 14, 14)|(1, 832, 14, 14)}" fillcolor=darkseagreen1]
-	167 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 528, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	168 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 528, 14, 14)|(1, 528, 14, 14)}" fillcolor=darkseagreen1]
-	169 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 528, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	170 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 528, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	171 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	172 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=aliceblue]
-	59 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 528, 14, 14)}" fillcolor=darkseagreen1]
-	173 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 288, 14, 14)}" fillcolor=darkseagreen1]
-	174 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 144, 14, 14)}" fillcolor=darkseagreen1]
-	175 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 144, 14, 14)}" fillcolor=darkseagreen1]
-	176 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 144, 14, 14)|(1, 144, 14, 14)}" fillcolor=darkseagreen1]
-	177 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 144, 14, 14)|(1, 144, 14, 14)}" fillcolor=aliceblue]
-	178 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 144, 14, 14)|(1, 288, 14, 14)}" fillcolor=darkseagreen1]
-	179 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 144, 14, 14)|(1, 288, 14, 14)}" fillcolor=darkseagreen1]
-	180 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 288, 14, 14)|(1, 288, 14, 14)}" fillcolor=darkseagreen1]
-	181 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 288, 14, 14)|(1, 288, 14, 14)}" fillcolor=aliceblue]
-	59 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 528, 14, 14)}" fillcolor=darkseagreen1]
-	182 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	183 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 32, 14, 14)}" fillcolor=darkseagreen1]
-	184 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 32, 14, 14)}" fillcolor=darkseagreen1]
-	185 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 32, 14, 14)|(1, 32, 14, 14)}" fillcolor=darkseagreen1]
-	186 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 32, 14, 14)|(1, 32, 14, 14)}" fillcolor=aliceblue]
-	187 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 32, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	188 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 32, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	189 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	190 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
-	59 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 528, 14, 14)}" fillcolor=darkseagreen1]
-	191 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	192 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	193 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	194 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	195 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	196 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
-	53 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	197 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
-	198 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	199 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	200 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
-	201 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=aliceblue]
-	202 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 128, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
-	203 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
-	204 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
-	205 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=aliceblue]
-	53 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	206 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	207 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 24, 14, 14)}" fillcolor=darkseagreen1]
-	208 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 24, 14, 14)}" fillcolor=darkseagreen1]
-	209 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 24, 14, 14)|(1, 24, 14, 14)}" fillcolor=darkseagreen1]
-	210 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 24, 14, 14)|(1, 24, 14, 14)}" fillcolor=aliceblue]
-	211 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 24, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	212 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 24, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	213 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	214 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
-	53 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	215 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	216 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	217 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	218 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	219 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	220 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
-	47 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	221 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 224, 14, 14)}" fillcolor=darkseagreen1]
-	222 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 112, 14, 14)}" fillcolor=darkseagreen1]
-	223 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 112, 14, 14)}" fillcolor=darkseagreen1]
-	224 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 112, 14, 14)|(1, 112, 14, 14)}" fillcolor=darkseagreen1]
-	225 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 112, 14, 14)|(1, 112, 14, 14)}" fillcolor=aliceblue]
-	226 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 112, 14, 14)|(1, 224, 14, 14)}" fillcolor=darkseagreen1]
-	227 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 112, 14, 14)|(1, 224, 14, 14)}" fillcolor=darkseagreen1]
-	228 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 224, 14, 14)|(1, 224, 14, 14)}" fillcolor=darkseagreen1]
-	229 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 224, 14, 14)|(1, 224, 14, 14)}" fillcolor=aliceblue]
-	47 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	230 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	231 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 24, 14, 14)}" fillcolor=darkseagreen1]
-	232 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 24, 14, 14)}" fillcolor=darkseagreen1]
-	233 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 24, 14, 14)|(1, 24, 14, 14)}" fillcolor=darkseagreen1]
-	234 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 24, 14, 14)|(1, 24, 14, 14)}" fillcolor=aliceblue]
-	235 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 24, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	236 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 24, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	237 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	238 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
-	47 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	239 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	240 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	241 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	242 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	243 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	244 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
-	29 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 480, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	245 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 480, 14, 14)|(1, 208, 14, 14)}" fillcolor=darkseagreen1]
-	246 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 480, 14, 14)|(1, 96, 14, 14)}" fillcolor=darkseagreen1]
-	247 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 480, 14, 14)|(1, 96, 14, 14)}" fillcolor=darkseagreen1]
-	248 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 96, 14, 14)|(1, 96, 14, 14)}" fillcolor=darkseagreen1]
-	249 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 96, 14, 14)|(1, 96, 14, 14)}" fillcolor=aliceblue]
-	250 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 96, 14, 14)|(1, 208, 14, 14)}" fillcolor=darkseagreen1]
-	251 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 96, 14, 14)|(1, 208, 14, 14)}" fillcolor=darkseagreen1]
-	252 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 208, 14, 14)|(1, 208, 14, 14)}" fillcolor=darkseagreen1]
-	253 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 208, 14, 14)|(1, 208, 14, 14)}" fillcolor=aliceblue]
-	29 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 480, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	254 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 480, 14, 14)|(1, 48, 14, 14)}" fillcolor=darkseagreen1]
-	255 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 480, 14, 14)|(1, 16, 14, 14)}" fillcolor=darkseagreen1]
-	256 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 480, 14, 14)|(1, 16, 14, 14)}" fillcolor=darkseagreen1]
-	257 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 16, 14, 14)|(1, 16, 14, 14)}" fillcolor=darkseagreen1]
-	258 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 16, 14, 14)|(1, 16, 14, 14)}" fillcolor=aliceblue]
-	259 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 16, 14, 14)|(1, 48, 14, 14)}" fillcolor=darkseagreen1]
-	260 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 16, 14, 14)|(1, 48, 14, 14)}" fillcolor=darkseagreen1]
-	261 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 48, 14, 14)|(1, 48, 14, 14)}" fillcolor=darkseagreen1]
-	262 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 48, 14, 14)|(1, 48, 14, 14)}" fillcolor=aliceblue]
-	29 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 480, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
-	263 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 480, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	264 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 480, 14, 14)|(1, 480, 14, 14)}" fillcolor=darkseagreen1]
-	265 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 480, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	266 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 480, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	267 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
-	268 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
-	22 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 256, 28, 28)|(1, 480, 28, 28)}" fillcolor=darkseagreen1]
-	269 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 256, 28, 28)|(1, 192, 28, 28)}" fillcolor=darkseagreen1]
-	270 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
-	271 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 256, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
-	272 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
-	273 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=aliceblue]
-	274 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 192, 28, 28)}" fillcolor=darkseagreen1]
-	275 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 128, 28, 28)|(1, 192, 28, 28)}" fillcolor=darkseagreen1]
-	276 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 192, 28, 28)|(1, 192, 28, 28)}" fillcolor=darkseagreen1]
-	277 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 192, 28, 28)|(1, 192, 28, 28)}" fillcolor=aliceblue]
-	22 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 256, 28, 28)|(1, 480, 28, 28)}" fillcolor=darkseagreen1]
-	278 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 256, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	279 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
-	280 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 256, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
-	281 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
-	282 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=aliceblue]
-	283 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 32, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	284 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	285 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	286 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=aliceblue]
-	22 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 256, 28, 28)|(1, 480, 28, 28)}" fillcolor=darkseagreen1]
-	287 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 256, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
-	288 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 256, 28, 28)|(1, 256, 28, 28)}" fillcolor=darkseagreen1]
-	289 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
-	290 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 256, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
-	291 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
-	292 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=aliceblue]
-	16 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 192, 28, 28)|(1, 256, 28, 28)}" fillcolor=darkseagreen1]
-	293 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 192, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
-	294 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 192, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	295 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 192, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	296 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
-	297 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=aliceblue]
-	298 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 96, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
-	299 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 96, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
-	300 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
-	301 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=aliceblue]
-	16 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 192, 28, 28)|(1, 256, 28, 28)}" fillcolor=darkseagreen1]
-	302 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 192, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
-	303 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 192, 28, 28)|(1, 16, 28, 28)}" fillcolor=darkseagreen1]
-	304 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 192, 28, 28)|(1, 16, 28, 28)}" fillcolor=darkseagreen1]
-	305 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 16, 28, 28)|(1, 16, 28, 28)}" fillcolor=darkseagreen1]
-	306 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 16, 28, 28)|(1, 16, 28, 28)}" fillcolor=aliceblue]
-	307 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 16, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
-	308 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 16, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
-	309 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
-	310 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=aliceblue]
-	16 [label="Inception&#92;ndepth:1|{input:|output:}|{(1, 192, 28, 28)|(1, 256, 28, 28)}" fillcolor=darkseagreen1]
-	311 [label="Sequential&#92;ndepth:2|{input:|output:}|{(1, 192, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
-	312 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 192, 28, 28)|(1, 192, 28, 28)}" fillcolor=darkseagreen1]
-	313 [label="BasicConv2d&#92;ndepth:3|{input:|output:}|{(1, 192, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
-	314 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 192, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
-	315 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
-	316 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=aliceblue]
-	0 -> 1
-	1 -> 2
-	2 -> 3
-	3 -> 4
-	4 -> 5
-	5 -> 6
-	6 -> 7
-	7 -> 8
-	8 -> 9
-	9 -> 10
-	10 -> 11
-	11 -> 12
-	12 -> 13
-	13 -> 14
-	14 -> 15
-	15 -> 16
-	16 -> 17
-	17 -> 18
-	18 -> 19
-	19 -> 20
-	20 -> 21
-	21 -> 22
-	22 -> 23
-	23 -> 24
-	24 -> 25
-	25 -> 26
-	26 -> 27
-	27 -> 28
-	28 -> 29
-	29 -> 30
-	30 -> 31
-	31 -> 32
-	32 -> 33
-	33 -> 34
-	34 -> 35
-	35 -> 36
-	36 -> 37
-	37 -> 38
-	38 -> 39
-	39 -> 40
-	40 -> 41
-	41 -> 42
-	42 -> 43
-	43 -> 44
-	44 -> 45
-	45 -> 46
-	34 -> 47
-	47 -> 48
-	48 -> 49
-	49 -> 50
-	50 -> 51
-	51 -> 52
-	52 -> 53
-	53 -> 54
-	54 -> 55
-	55 -> 56
-	56 -> 57
-	57 -> 58
-	58 -> 59
-	59 -> 60
-	60 -> 61
-	61 -> 62
-	62 -> 63
-	63 -> 64
-	64 -> 65
-	65 -> 66
-	66 -> 67
-	67 -> 68
-	68 -> 69
-	69 -> 70
-	70 -> 71
-	71 -> 72
-	72 -> 73
-	73 -> 74
-	74 -> 75
-	75 -> 76
-	64 -> 77
-	77 -> 78
-	78 -> 79
-	79 -> 80
-	80 -> 81
-	81 -> 82
+	81 -> 92
+	72 -> 82
 	82 -> 83
 	83 -> 84
 	84 -> 85
 	85 -> 86
 	86 -> 87
-	87 -> 88
+	87 -> 92
+	72 -> 88
 	88 -> 89
 	89 -> 90
 	90 -> 91
@@ -1087,66 +309,69 @@ strict digraph GoogLeNet {
 	92 -> 93
 	93 -> 94
 	94 -> 95
-	95 -> 96
+	95 -> 112
+	92 -> 96
 	96 -> 97
 	97 -> 98
 	98 -> 99
 	99 -> 100
-	90 -> 101
-	101 -> 102
+	100 -> 101
+	101 -> 112
+	92 -> 102
 	102 -> 103
 	103 -> 104
 	104 -> 105
 	105 -> 106
 	106 -> 107
-	107 -> 108
+	107 -> 112
+	92 -> 108
 	108 -> 109
-	109 -> 95
-	90 -> 110
+	109 -> 110
 	110 -> 111
 	111 -> 112
 	112 -> 113
 	113 -> 114
 	114 -> 115
-	115 -> 116
+	115 -> 132
+	112 -> 116
 	116 -> 117
 	117 -> 118
-	118 -> 95
-	90 -> 119
+	118 -> 119
 	119 -> 120
 	120 -> 121
-	121 -> 122
+	121 -> 132
+	112 -> 122
 	122 -> 123
 	123 -> 124
-	124 -> 95
-	84 -> 125
+	124 -> 125
 	125 -> 126
 	126 -> 127
-	127 -> 128
+	127 -> 132
+	112 -> 128
 	128 -> 129
 	129 -> 130
 	130 -> 131
 	131 -> 132
 	132 -> 133
-	133 -> 89
-	84 -> 134
+	133 -> 134
 	134 -> 135
-	135 -> 136
+	135 -> 152
+	132 -> 136
 	136 -> 137
 	137 -> 138
 	138 -> 139
 	139 -> 140
 	140 -> 141
-	141 -> 142
-	142 -> 89
-	84 -> 143
+	141 -> 152
+	132 -> 142
+	142 -> 143
 	143 -> 144
 	144 -> 145
 	145 -> 146
 	146 -> 147
-	147 -> 148
-	148 -> 89
-	77 -> 149
+	147 -> 152
+	132 -> 148
+	148 -> 149
 	149 -> 150
 	150 -> 151
 	151 -> 152
@@ -1154,185 +379,522 @@ strict digraph GoogLeNet {
 	153 -> 154
 	154 -> 155
 	155 -> 156
-	156 -> 157
-	157 -> 82
-	77 -> 158
+	156 -> 173
+	153 -> 157
+	157 -> 158
 	158 -> 159
 	159 -> 160
 	160 -> 161
 	161 -> 162
-	162 -> 163
+	162 -> 173
+	153 -> 163
 	163 -> 164
 	164 -> 165
 	165 -> 166
-	166 -> 82
-	77 -> 167
+	166 -> 167
 	167 -> 168
-	168 -> 169
+	168 -> 173
+	153 -> 169
 	169 -> 170
 	170 -> 171
 	171 -> 172
-	172 -> 82
-	59 -> 173
+	172 -> 173
 	173 -> 174
 	174 -> 175
 	175 -> 176
-	176 -> 177
+	176 -> 193
+	173 -> 177
 	177 -> 178
 	178 -> 179
 	179 -> 180
 	180 -> 181
-	181 -> 64
-	59 -> 182
-	182 -> 183
+	181 -> 182
+	182 -> 193
+	173 -> 183
 	183 -> 184
 	184 -> 185
 	185 -> 186
 	186 -> 187
 	187 -> 188
-	188 -> 189
+	188 -> 193
+	173 -> 189
 	189 -> 190
-	190 -> 64
-	59 -> 191
+	190 -> 191
 	191 -> 192
 	192 -> 193
 	193 -> 194
 	194 -> 195
 	195 -> 196
-	196 -> 64
-	53 -> 197
+	196 -> 197
+	197 -> 198
+}
+strict digraph GoogLeNet {
+	graph [ordering=in size="139.5,139.5"]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	edge [fontsize=10]
+	0 [label="input-tensor&#92;ndepth:0|(1, 3, 224, 224)" fillcolor=lightyellow]
+	0 [label="input-tensor&#92;ndepth:0|(1, 3, 224, 224)" fillcolor=lightyellow]
+	1 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 3, 224, 224)|(1, 64, 112, 112)}" fillcolor=darkseagreen1]
+	2 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 64, 112, 112)|(1, 64, 112, 112)}" fillcolor=darkseagreen1]
+	3 [label="relu&#92;ndepth:2|{input:|output:}|{(1, 64, 112, 112)|(1, 64, 112, 112)}" fillcolor=aliceblue]
+	4 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 64, 112, 112)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+	5 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+	6 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+	7 [label="relu&#92;ndepth:2|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=aliceblue]
+	8 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 64, 56, 56)|(1, 192, 56, 56)}" fillcolor=darkseagreen1]
+	9 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 192, 56, 56)|(1, 192, 56, 56)}" fillcolor=darkseagreen1]
+	10 [label="relu&#92;ndepth:2|{input:|output:}|{(1, 192, 56, 56)|(1, 192, 56, 56)}" fillcolor=aliceblue]
+	11 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 192, 56, 56)|(1, 192, 28, 28)}" fillcolor=darkseagreen1]
+	12 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 192, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
+	13 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
+	14 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=aliceblue]
+	15 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 192, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
+	16 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
+	17 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=aliceblue]
+	18 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 96, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+	19 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+	20 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=aliceblue]
+	21 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 192, 28, 28)|(1, 16, 28, 28)}" fillcolor=darkseagreen1]
+	22 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 16, 28, 28)|(1, 16, 28, 28)}" fillcolor=darkseagreen1]
+	23 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 16, 28, 28)|(1, 16, 28, 28)}" fillcolor=aliceblue]
+	24 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 16, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
+	25 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
+	26 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=aliceblue]
+	27 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 192, 28, 28)|(1, 192, 28, 28)}" fillcolor=darkseagreen1]
+	28 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 192, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
+	29 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
+	30 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=aliceblue]
+	31 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 64, 28, 28), (1, 128, 28, 28), 2 x (1, 32, 28, 28)|(1, 256, 28, 28)}" fillcolor=aliceblue]
+	32 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+	33 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+	34 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=aliceblue]
+	35 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 256, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+	36 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+	37 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=aliceblue]
+	38 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 128, 28, 28)|(1, 192, 28, 28)}" fillcolor=darkseagreen1]
+	39 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 192, 28, 28)|(1, 192, 28, 28)}" fillcolor=darkseagreen1]
+	40 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 192, 28, 28)|(1, 192, 28, 28)}" fillcolor=aliceblue]
+	41 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 256, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
+	42 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
+	43 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=aliceblue]
+	44 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 32, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
+	45 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
+	46 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=aliceblue]
+	47 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 256, 28, 28)|(1, 256, 28, 28)}" fillcolor=darkseagreen1]
+	48 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 256, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
+	49 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=darkseagreen1]
+	50 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 28, 28)|(1, 64, 28, 28)}" fillcolor=aliceblue]
+	51 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 128, 28, 28), (1, 192, 28, 28), (1, 96, 28, 28), (1, 64, 28, 28)|(1, 480, 28, 28)}" fillcolor=aliceblue]
+	52 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 480, 28, 28)|(1, 480, 14, 14)}" fillcolor=darkseagreen1]
+	53 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 480, 14, 14)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
+	54 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 192, 14, 14)|(1, 192, 14, 14)}" fillcolor=darkseagreen1]
+	55 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 192, 14, 14)|(1, 192, 14, 14)}" fillcolor=aliceblue]
+	56 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 480, 14, 14)|(1, 96, 14, 14)}" fillcolor=darkseagreen1]
+	57 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 96, 14, 14)|(1, 96, 14, 14)}" fillcolor=darkseagreen1]
+	58 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 96, 14, 14)|(1, 96, 14, 14)}" fillcolor=aliceblue]
+	59 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 96, 14, 14)|(1, 208, 14, 14)}" fillcolor=darkseagreen1]
+	60 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 208, 14, 14)|(1, 208, 14, 14)}" fillcolor=darkseagreen1]
+	61 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 208, 14, 14)|(1, 208, 14, 14)}" fillcolor=aliceblue]
+	62 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 480, 14, 14)|(1, 16, 14, 14)}" fillcolor=darkseagreen1]
+	63 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 16, 14, 14)|(1, 16, 14, 14)}" fillcolor=darkseagreen1]
+	64 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 16, 14, 14)|(1, 16, 14, 14)}" fillcolor=aliceblue]
+	65 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 16, 14, 14)|(1, 48, 14, 14)}" fillcolor=darkseagreen1]
+	66 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 48, 14, 14)|(1, 48, 14, 14)}" fillcolor=darkseagreen1]
+	67 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 48, 14, 14)|(1, 48, 14, 14)}" fillcolor=aliceblue]
+	68 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 480, 14, 14)|(1, 480, 14, 14)}" fillcolor=darkseagreen1]
+	69 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 480, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	70 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	71 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
+	72 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 192, 14, 14), (1, 208, 14, 14), (1, 48, 14, 14), (1, 64, 14, 14)|(1, 512, 14, 14)}" fillcolor=aliceblue]
+	73 [label="adaptive_avg_pool2d&#92;ndepth:2|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 4, 4)}" fillcolor=aliceblue]
+	74 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 4, 4)|(1, 128, 4, 4)}" fillcolor=darkseagreen1]
+	75 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 128, 4, 4)|(1, 128, 4, 4)}" fillcolor=darkseagreen1]
+	76 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 128, 4, 4)|(1, 128, 4, 4)}" fillcolor=aliceblue]
+	77 [label="flatten&#92;ndepth:2|{input:|output:}|{(1, 128, 4, 4)|(1, 2048)}" fillcolor=aliceblue]
+	78 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 2048)|(1, 1024)}" fillcolor=darkseagreen1]
+	79 [label="relu&#92;ndepth:2|{input:|output:}|{(1, 1024)|(1, 1024)}" fillcolor=aliceblue]
+	80 [label="Dropout&#92;ndepth:2|{input:|output:}|{(1, 1024)|(1, 1024)}" fillcolor=darkseagreen1]
+	81 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 1024)|(1, 1000)}" fillcolor=darkseagreen1]
+	82 [label="output-tensor&#92;ndepth:0|(1, 1000)" fillcolor=lightyellow]
+	83 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 160, 14, 14)}" fillcolor=darkseagreen1]
+	84 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 160, 14, 14)|(1, 160, 14, 14)}" fillcolor=darkseagreen1]
+	85 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 160, 14, 14)|(1, 160, 14, 14)}" fillcolor=aliceblue]
+	86 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 112, 14, 14)}" fillcolor=darkseagreen1]
+	87 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 112, 14, 14)|(1, 112, 14, 14)}" fillcolor=darkseagreen1]
+	88 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 112, 14, 14)|(1, 112, 14, 14)}" fillcolor=aliceblue]
+	89 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 112, 14, 14)|(1, 224, 14, 14)}" fillcolor=darkseagreen1]
+	90 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 224, 14, 14)|(1, 224, 14, 14)}" fillcolor=darkseagreen1]
+	91 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 224, 14, 14)|(1, 224, 14, 14)}" fillcolor=aliceblue]
+	92 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 24, 14, 14)}" fillcolor=darkseagreen1]
+	93 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 24, 14, 14)|(1, 24, 14, 14)}" fillcolor=darkseagreen1]
+	94 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 24, 14, 14)|(1, 24, 14, 14)}" fillcolor=aliceblue]
+	95 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 24, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	96 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	97 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
+	98 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
+	99 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	100 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	101 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
+	102 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 160, 14, 14), (1, 224, 14, 14), 2 x (1, 64, 14, 14)|(1, 512, 14, 14)}" fillcolor=aliceblue]
+	103 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
+	104 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
+	105 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=aliceblue]
+	106 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
+	107 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
+	108 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=aliceblue]
+	109 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+	110 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+	111 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=aliceblue]
+	112 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 24, 14, 14)}" fillcolor=darkseagreen1]
+	113 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 24, 14, 14)|(1, 24, 14, 14)}" fillcolor=darkseagreen1]
+	114 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 24, 14, 14)|(1, 24, 14, 14)}" fillcolor=aliceblue]
+	115 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 24, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	116 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	117 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
+	118 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
+	119 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	120 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	121 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
+	122 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 128, 14, 14), (1, 256, 14, 14), 2 x (1, 64, 14, 14)|(1, 512, 14, 14)}" fillcolor=aliceblue]
+	123 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 112, 14, 14)}" fillcolor=darkseagreen1]
+	124 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 112, 14, 14)|(1, 112, 14, 14)}" fillcolor=darkseagreen1]
+	125 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 112, 14, 14)|(1, 112, 14, 14)}" fillcolor=aliceblue]
+	126 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 144, 14, 14)}" fillcolor=darkseagreen1]
+	127 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 144, 14, 14)|(1, 144, 14, 14)}" fillcolor=darkseagreen1]
+	128 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 144, 14, 14)|(1, 144, 14, 14)}" fillcolor=aliceblue]
+	129 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 144, 14, 14)|(1, 288, 14, 14)}" fillcolor=darkseagreen1]
+	130 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 288, 14, 14)|(1, 288, 14, 14)}" fillcolor=darkseagreen1]
+	131 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 288, 14, 14)|(1, 288, 14, 14)}" fillcolor=aliceblue]
+	132 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 32, 14, 14)}" fillcolor=darkseagreen1]
+	133 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 32, 14, 14)|(1, 32, 14, 14)}" fillcolor=darkseagreen1]
+	134 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 32, 14, 14)|(1, 32, 14, 14)}" fillcolor=aliceblue]
+	135 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 32, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	136 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	137 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
+	138 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
+	139 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	140 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=darkseagreen1]
+	141 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 64, 14, 14)|(1, 64, 14, 14)}" fillcolor=aliceblue]
+	142 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 112, 14, 14), (1, 288, 14, 14), 2 x (1, 64, 14, 14)|(1, 528, 14, 14)}" fillcolor=aliceblue]
+	143 [label="adaptive_avg_pool2d&#92;ndepth:2|{input:|output:}|{(1, 528, 14, 14)|(1, 528, 4, 4)}" fillcolor=aliceblue]
+	144 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 528, 4, 4)|(1, 128, 4, 4)}" fillcolor=darkseagreen1]
+	145 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 128, 4, 4)|(1, 128, 4, 4)}" fillcolor=darkseagreen1]
+	146 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 128, 4, 4)|(1, 128, 4, 4)}" fillcolor=aliceblue]
+	147 [label="flatten&#92;ndepth:2|{input:|output:}|{(1, 128, 4, 4)|(1, 2048)}" fillcolor=aliceblue]
+	148 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 2048)|(1, 1024)}" fillcolor=darkseagreen1]
+	149 [label="relu&#92;ndepth:2|{input:|output:}|{(1, 1024)|(1, 1024)}" fillcolor=aliceblue]
+	150 [label="Dropout&#92;ndepth:2|{input:|output:}|{(1, 1024)|(1, 1024)}" fillcolor=darkseagreen1]
+	151 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 1024)|(1, 1000)}" fillcolor=darkseagreen1]
+	152 [label="output-tensor&#92;ndepth:0|(1, 1000)" fillcolor=lightyellow]
+	153 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 528, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+	154 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+	155 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=aliceblue]
+	156 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 528, 14, 14)|(1, 160, 14, 14)}" fillcolor=darkseagreen1]
+	157 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 160, 14, 14)|(1, 160, 14, 14)}" fillcolor=darkseagreen1]
+	158 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 160, 14, 14)|(1, 160, 14, 14)}" fillcolor=aliceblue]
+	159 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 160, 14, 14)|(1, 320, 14, 14)}" fillcolor=darkseagreen1]
+	160 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 320, 14, 14)|(1, 320, 14, 14)}" fillcolor=darkseagreen1]
+	161 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 320, 14, 14)|(1, 320, 14, 14)}" fillcolor=aliceblue]
+	162 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 528, 14, 14)|(1, 32, 14, 14)}" fillcolor=darkseagreen1]
+	163 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 32, 14, 14)|(1, 32, 14, 14)}" fillcolor=darkseagreen1]
+	164 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 32, 14, 14)|(1, 32, 14, 14)}" fillcolor=aliceblue]
+	165 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 32, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
+	166 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
+	167 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=aliceblue]
+	168 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 528, 14, 14)|(1, 528, 14, 14)}" fillcolor=darkseagreen1]
+	169 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 528, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
+	170 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=darkseagreen1]
+	171 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 14, 14)|(1, 128, 14, 14)}" fillcolor=aliceblue]
+	172 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 256, 14, 14), (1, 320, 14, 14), 2 x (1, 128, 14, 14)|(1, 832, 14, 14)}" fillcolor=aliceblue]
+	173 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 832, 14, 14)|(1, 832, 7, 7)}" fillcolor=darkseagreen1]
+	174 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 256, 7, 7)}" fillcolor=darkseagreen1]
+	175 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 256, 7, 7)|(1, 256, 7, 7)}" fillcolor=darkseagreen1]
+	176 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 256, 7, 7)|(1, 256, 7, 7)}" fillcolor=aliceblue]
+	177 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 832, 7, 7)|(1, 160, 7, 7)}" fillcolor=darkseagreen1]
+	178 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 160, 7, 7)|(1, 160, 7, 7)}" fillcolor=darkseagreen1]
+	179 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 160, 7, 7)|(1, 160, 7, 7)}" fillcolor=aliceblue]
+	180 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 160, 7, 7)|(1, 320, 7, 7)}" fillcolor=darkseagreen1]
+	181 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 320, 7, 7)|(1, 320, 7, 7)}" fillcolor=darkseagreen1]
+	182 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 320, 7, 7)|(1, 320, 7, 7)}" fillcolor=aliceblue]
+	183 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 832, 7, 7)|(1, 32, 7, 7)}" fillcolor=darkseagreen1]
+	184 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 32, 7, 7)|(1, 32, 7, 7)}" fillcolor=darkseagreen1]
+	185 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 32, 7, 7)|(1, 32, 7, 7)}" fillcolor=aliceblue]
+	186 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 32, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
+	187 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
+	188 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=aliceblue]
+	189 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 832, 7, 7)}" fillcolor=darkseagreen1]
+	190 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 832, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
+	191 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
+	192 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=aliceblue]
+	193 [label="cat&#92;ndepth:2|{input:|output:}|{(1, 256, 7, 7), (1, 320, 7, 7), 2 x (1, 128, 7, 7)|(1, 832, 7, 7)}" fillcolor=aliceblue]
+	194 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
+	195 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 384, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
+	196 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 384, 7, 7)|(1, 384, 7, 7)}" fillcolor=aliceblue]
+	197 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 832, 7, 7)|(1, 192, 7, 7)}" fillcolor=darkseagreen1]
+	198 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 192, 7, 7)|(1, 192, 7, 7)}" fillcolor=darkseagreen1]
+	199 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 192, 7, 7)|(1, 192, 7, 7)}" fillcolor=aliceblue]
+	200 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 192, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
+	201 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 384, 7, 7)|(1, 384, 7, 7)}" fillcolor=darkseagreen1]
+	202 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 384, 7, 7)|(1, 384, 7, 7)}" fillcolor=aliceblue]
+	203 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 832, 7, 7)|(1, 48, 7, 7)}" fillcolor=darkseagreen1]
+	204 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 48, 7, 7)|(1, 48, 7, 7)}" fillcolor=darkseagreen1]
+	205 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 48, 7, 7)|(1, 48, 7, 7)}" fillcolor=aliceblue]
+	206 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 48, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
+	207 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
+	208 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=aliceblue]
+	209 [label="MaxPool2d&#92;ndepth:3|{input:|output:}|{(1, 832, 7, 7)|(1, 832, 7, 7)}" fillcolor=darkseagreen1]
+	210 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 832, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
+	211 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=darkseagreen1]
+	212 [label="relu&#92;ndepth:4|{input:|output:}|{(1, 128, 7, 7)|(1, 128, 7, 7)}" fillcolor=aliceblue]
+	213 [label="cat&#92;ndepth:2|{input:|output:}|{2 x (1, 384, 7, 7), 2 x (1, 128, 7, 7)|(1, 1024, 7, 7)}" fillcolor=aliceblue]
+	214 [label="AdaptiveAvgPool2d&#92;ndepth:1|{input:|output:}|{(1, 1024, 7, 7)|(1, 1024, 1, 1)}" fillcolor=darkseagreen1]
+	215 [label="flatten&#92;ndepth:1|{input:|output:}|{(1, 1024, 1, 1)|(1, 1024)}" fillcolor=aliceblue]
+	216 [label="Dropout&#92;ndepth:1|{input:|output:}|{(1, 1024)|(1, 1024)}" fillcolor=darkseagreen1]
+	217 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 1024)|(1, 1000)}" fillcolor=darkseagreen1]
+	218 [label="output-tensor&#92;ndepth:0|(1, 1000)" fillcolor=lightyellow]
+	0 -> 1
+	1 -> 2
+	2 -> 3
+	3 -> 4
+	4 -> 5
+	5 -> 6
+	6 -> 7
+	7 -> 8
+	8 -> 9
+	9 -> 10
+	10 -> 11
+	11 -> 12
+	12 -> 13
+	13 -> 14
+	14 -> 31
+	11 -> 15
+	15 -> 16
+	16 -> 17
+	17 -> 18
+	18 -> 19
+	19 -> 20
+	20 -> 31
+	11 -> 21
+	21 -> 22
+	22 -> 23
+	23 -> 24
+	24 -> 25
+	25 -> 26
+	26 -> 31
+	11 -> 27
+	27 -> 28
+	28 -> 29
+	29 -> 30
+	30 -> 31
+	31 -> 32
+	32 -> 33
+	33 -> 34
+	34 -> 51
+	31 -> 35
+	35 -> 36
+	36 -> 37
+	37 -> 38
+	38 -> 39
+	39 -> 40
+	40 -> 51
+	31 -> 41
+	41 -> 42
+	42 -> 43
+	43 -> 44
+	44 -> 45
+	45 -> 46
+	46 -> 51
+	31 -> 47
+	47 -> 48
+	48 -> 49
+	49 -> 50
+	50 -> 51
+	51 -> 52
+	52 -> 53
+	53 -> 54
+	54 -> 55
+	55 -> 72
+	52 -> 56
+	56 -> 57
+	57 -> 58
+	58 -> 59
+	59 -> 60
+	60 -> 61
+	61 -> 72
+	52 -> 62
+	62 -> 63
+	63 -> 64
+	64 -> 65
+	65 -> 66
+	66 -> 67
+	67 -> 72
+	52 -> 68
+	68 -> 69
+	69 -> 70
+	70 -> 71
+	71 -> 72
+	72 -> 73
+	73 -> 74
+	74 -> 75
+	75 -> 76
+	76 -> 77
+	77 -> 78
+	78 -> 79
+	79 -> 80
+	80 -> 81
+	81 -> 82
+	72 -> 83
+	83 -> 84
+	84 -> 85
+	85 -> 102
+	72 -> 86
+	86 -> 87
+	87 -> 88
+	88 -> 89
+	89 -> 90
+	90 -> 91
+	91 -> 102
+	72 -> 92
+	92 -> 93
+	93 -> 94
+	94 -> 95
+	95 -> 96
+	96 -> 97
+	97 -> 102
+	72 -> 98
+	98 -> 99
+	99 -> 100
+	100 -> 101
+	101 -> 102
+	102 -> 103
+	103 -> 104
+	104 -> 105
+	105 -> 122
+	102 -> 106
+	106 -> 107
+	107 -> 108
+	108 -> 109
+	109 -> 110
+	110 -> 111
+	111 -> 122
+	102 -> 112
+	112 -> 113
+	113 -> 114
+	114 -> 115
+	115 -> 116
+	116 -> 117
+	117 -> 122
+	102 -> 118
+	118 -> 119
+	119 -> 120
+	120 -> 121
+	121 -> 122
+	122 -> 123
+	123 -> 124
+	124 -> 125
+	125 -> 142
+	122 -> 126
+	126 -> 127
+	127 -> 128
+	128 -> 129
+	129 -> 130
+	130 -> 131
+	131 -> 142
+	122 -> 132
+	132 -> 133
+	133 -> 134
+	134 -> 135
+	135 -> 136
+	136 -> 137
+	137 -> 142
+	122 -> 138
+	138 -> 139
+	139 -> 140
+	140 -> 141
+	141 -> 142
+	142 -> 143
+	143 -> 144
+	144 -> 145
+	145 -> 146
+	146 -> 147
+	147 -> 148
+	148 -> 149
+	149 -> 150
+	150 -> 151
+	151 -> 152
+	142 -> 153
+	153 -> 154
+	154 -> 155
+	155 -> 172
+	142 -> 156
+	156 -> 157
+	157 -> 158
+	158 -> 159
+	159 -> 160
+	160 -> 161
+	161 -> 172
+	142 -> 162
+	162 -> 163
+	163 -> 164
+	164 -> 165
+	165 -> 166
+	166 -> 167
+	167 -> 172
+	142 -> 168
+	168 -> 169
+	169 -> 170
+	170 -> 171
+	171 -> 172
+	172 -> 173
+	173 -> 174
+	174 -> 175
+	175 -> 176
+	176 -> 193
+	173 -> 177
+	177 -> 178
+	178 -> 179
+	179 -> 180
+	180 -> 181
+	181 -> 182
+	182 -> 193
+	173 -> 183
+	183 -> 184
+	184 -> 185
+	185 -> 186
+	186 -> 187
+	187 -> 188
+	188 -> 193
+	173 -> 189
+	189 -> 190
+	190 -> 191
+	191 -> 192
+	192 -> 193
+	193 -> 194
+	194 -> 195
+	195 -> 196
+	196 -> 213
+	193 -> 197
 	197 -> 198
 	198 -> 199
 	199 -> 200
 	200 -> 201
 	201 -> 202
-	202 -> 203
+	202 -> 213
+	193 -> 203
 	203 -> 204
 	204 -> 205
-	205 -> 58
-	53 -> 206
+	205 -> 206
 	206 -> 207
 	207 -> 208
-	208 -> 209
+	208 -> 213
+	193 -> 209
 	209 -> 210
 	210 -> 211
 	211 -> 212
 	212 -> 213
 	213 -> 214
-	214 -> 58
-	53 -> 215
+	214 -> 215
 	215 -> 216
 	216 -> 217
 	217 -> 218
-	218 -> 219
-	219 -> 220
-	220 -> 58
-	47 -> 221
-	221 -> 222
-	222 -> 223
-	223 -> 224
-	224 -> 225
-	225 -> 226
-	226 -> 227
-	227 -> 228
-	228 -> 229
-	229 -> 52
-	47 -> 230
-	230 -> 231
-	231 -> 232
-	232 -> 233
-	233 -> 234
-	234 -> 235
-	235 -> 236
-	236 -> 237
-	237 -> 238
-	238 -> 52
-	47 -> 239
-	239 -> 240
-	240 -> 241
-	241 -> 242
-	242 -> 243
-	243 -> 244
-	244 -> 52
-	29 -> 245
-	245 -> 246
-	246 -> 247
-	247 -> 248
-	248 -> 249
-	249 -> 250
-	250 -> 251
-	251 -> 252
-	252 -> 253
-	253 -> 34
-	29 -> 254
-	254 -> 255
-	255 -> 256
-	256 -> 257
-	257 -> 258
-	258 -> 259
-	259 -> 260
-	260 -> 261
-	261 -> 262
-	262 -> 34
-	29 -> 263
-	263 -> 264
-	264 -> 265
-	265 -> 266
-	266 -> 267
-	267 -> 268
-	268 -> 34
-	22 -> 269
-	269 -> 270
-	270 -> 271
-	271 -> 272
-	272 -> 273
-	273 -> 274
-	274 -> 275
-	275 -> 276
-	276 -> 277
-	277 -> 27
-	22 -> 278
-	278 -> 279
-	279 -> 280
-	280 -> 281
-	281 -> 282
-	282 -> 283
-	283 -> 284
-	284 -> 285
-	285 -> 286
-	286 -> 27
-	22 -> 287
-	287 -> 288
-	288 -> 289
-	289 -> 290
-	290 -> 291
-	291 -> 292
-	292 -> 27
-	16 -> 293
-	293 -> 294
-	294 -> 295
-	295 -> 296
-	296 -> 297
-	297 -> 298
-	298 -> 299
-	299 -> 300
-	300 -> 301
-	301 -> 21
-	16 -> 302
-	302 -> 303
-	303 -> 304
-	304 -> 305
-	305 -> 306
-	306 -> 307
-	307 -> 308
-	308 -> 309
-	309 -> 310
-	310 -> 21
-	16 -> 311
-	311 -> 312
-	312 -> 313
-	313 -> 314
-	314 -> 315
-	315 -> 316
-	316 -> 21
 }

@@ -1,0 +1,447 @@
+strict digraph Resnet {
+	graph [ordering=in size="132.6,132.6"]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	edge [fontsize=10]
+	0 [label="input-tensor&#92;ndepth:0|(1, 3, 224, 224)" fillcolor=lightyellow]
+	0 [label="input-tensor&#92;ndepth:0|(1, 3, 224, 224)" fillcolor=lightyellow]
+	1 [label="Conv2d&#92;ndepth:1|{input:|output:}|{(1, 3, 224, 224)|(1, 64, 112, 112)}" fillcolor=darkseagreen1]
+	2 [label="BatchNorm2d&#92;ndepth:1|{input:|output:}|{(1, 64, 112, 112)|(1, 64, 112, 112)}" fillcolor=darkseagreen1]
+	3 [label="ReLU&#92;ndepth:1|{input:|output:}|{(1, 64, 112, 112)|(1, 64, 112, 112)}" fillcolor=darkseagreen1]
+	4 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 64, 112, 112)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+	subgraph cluster_2 {
+		fontsize=12 label=Sequential labeljust=l style=dashed
+		subgraph cluster_3 {
+			fontsize=12 label=Bottleneck labeljust=l style=dashed
+			5 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+			6 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+			7 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+			8 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+			9 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+			10 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+			11 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 64, 56, 56)|(1, 256, 56, 56)}" fillcolor=darkseagreen1]
+			12 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 256, 56, 56)|(1, 256, 56, 56)}" fillcolor=darkseagreen1]
+			subgraph cluster_4 {
+				fontsize=12 label=Sequential labeljust=l style=dashed
+				13 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 64, 56, 56)|(1, 256, 56, 56)}" fillcolor=darkseagreen1]
+				14 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 256, 56, 56)|(1, 256, 56, 56)}" fillcolor=darkseagreen1]
+			}
+			15 [label="add_&#92;ndepth:3|{input:|output:}|{2 x (1, 256, 56, 56)|(1, 256, 56, 56)}" fillcolor=aliceblue]
+			16 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 256, 56, 56)|(1, 256, 56, 56)}" fillcolor=darkseagreen1]
+		}
+		subgraph cluster_5 {
+			fontsize=12 label=Bottleneck labeljust=l style=dashed
+			17 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+			18 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+			19 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+			20 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+			21 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+			22 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+			23 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 64, 56, 56)|(1, 256, 56, 56)}" fillcolor=darkseagreen1]
+			24 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 256, 56, 56)|(1, 256, 56, 56)}" fillcolor=darkseagreen1]
+			25 [label="add_&#92;ndepth:3|{input:|output:}|{2 x (1, 256, 56, 56)|(1, 256, 56, 56)}" fillcolor=aliceblue]
+			26 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 256, 56, 56)|(1, 256, 56, 56)}" fillcolor=darkseagreen1]
+		}
+		subgraph cluster_6 {
+			fontsize=12 label=Bottleneck labeljust=l style=dashed
+			27 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+			28 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+			29 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+			30 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+			31 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+			32 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 64, 56, 56)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
+			33 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 64, 56, 56)|(1, 256, 56, 56)}" fillcolor=darkseagreen1]
+			34 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 256, 56, 56)|(1, 256, 56, 56)}" fillcolor=darkseagreen1]
+			35 [label="add_&#92;ndepth:3|{input:|output:}|{2 x (1, 256, 56, 56)|(1, 256, 56, 56)}" fillcolor=aliceblue]
+			36 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 256, 56, 56)|(1, 256, 56, 56)}" fillcolor=darkseagreen1]
+		}
+	}
+	subgraph cluster_7 {
+		fontsize=12 label=Sequential labeljust=l style=dashed
+		subgraph cluster_8 {
+			fontsize=12 label=Bottleneck labeljust=l style=dashed
+			37 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 56, 56)|(1, 128, 56, 56)}" fillcolor=darkseagreen1]
+			38 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 128, 56, 56)|(1, 128, 56, 56)}" fillcolor=darkseagreen1]
+			39 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 128, 56, 56)|(1, 128, 56, 56)}" fillcolor=darkseagreen1]
+			40 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 128, 56, 56)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+			41 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+			42 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+			43 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 512, 28, 28)}" fillcolor=darkseagreen1]
+			44 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 512, 28, 28)|(1, 512, 28, 28)}" fillcolor=darkseagreen1]
+			subgraph cluster_9 {
+				fontsize=12 label=Sequential labeljust=l style=dashed
+				45 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 256, 56, 56)|(1, 512, 28, 28)}" fillcolor=darkseagreen1]
+				46 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 512, 28, 28)|(1, 512, 28, 28)}" fillcolor=darkseagreen1]
+			}
+			47 [label="add_&#92;ndepth:3|{input:|output:}|{2 x (1, 512, 28, 28)|(1, 512, 28, 28)}" fillcolor=aliceblue]
+			48 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 512, 28, 28)|(1, 512, 28, 28)}" fillcolor=darkseagreen1]
+		}
+		subgraph cluster_10 {
+			fontsize=12 label=Bottleneck labeljust=l style=dashed
+			49 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+			50 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+			51 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+			52 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+			53 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+			54 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+			55 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 512, 28, 28)}" fillcolor=darkseagreen1]
+			56 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 512, 28, 28)|(1, 512, 28, 28)}" fillcolor=darkseagreen1]
+			57 [label="add_&#92;ndepth:3|{input:|output:}|{2 x (1, 512, 28, 28)|(1, 512, 28, 28)}" fillcolor=aliceblue]
+			58 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 512, 28, 28)|(1, 512, 28, 28)}" fillcolor=darkseagreen1]
+		}
+		subgraph cluster_11 {
+			fontsize=12 label=Bottleneck labeljust=l style=dashed
+			59 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+			60 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+			61 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+			62 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+			63 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+			64 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+			65 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 512, 28, 28)}" fillcolor=darkseagreen1]
+			66 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 512, 28, 28)|(1, 512, 28, 28)}" fillcolor=darkseagreen1]
+			67 [label="add_&#92;ndepth:3|{input:|output:}|{2 x (1, 512, 28, 28)|(1, 512, 28, 28)}" fillcolor=aliceblue]
+			68 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 512, 28, 28)|(1, 512, 28, 28)}" fillcolor=darkseagreen1]
+		}
+		subgraph cluster_12 {
+			fontsize=12 label=Bottleneck labeljust=l style=dashed
+			69 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+			70 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+			71 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+			72 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+			73 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+			74 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
+			75 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 128, 28, 28)|(1, 512, 28, 28)}" fillcolor=darkseagreen1]
+			76 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 512, 28, 28)|(1, 512, 28, 28)}" fillcolor=darkseagreen1]
+			77 [label="add_&#92;ndepth:3|{input:|output:}|{2 x (1, 512, 28, 28)|(1, 512, 28, 28)}" fillcolor=aliceblue]
+			78 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 512, 28, 28)|(1, 512, 28, 28)}" fillcolor=darkseagreen1]
+		}
+	}
+	subgraph cluster_13 {
+		fontsize=12 label=Sequential labeljust=l style=dashed
+		subgraph cluster_14 {
+			fontsize=12 label=Bottleneck labeljust=l style=dashed
+			79 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 28, 28)|(1, 256, 28, 28)}" fillcolor=darkseagreen1]
+			80 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 256, 28, 28)|(1, 256, 28, 28)}" fillcolor=darkseagreen1]
+			81 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 256, 28, 28)|(1, 256, 28, 28)}" fillcolor=darkseagreen1]
+			82 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 28, 28)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			83 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			84 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			85 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 1024, 14, 14)}" fillcolor=darkseagreen1]
+			86 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 1024, 14, 14)|(1, 1024, 14, 14)}" fillcolor=darkseagreen1]
+			subgraph cluster_15 {
+				fontsize=12 label=Sequential labeljust=l style=dashed
+				87 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 512, 28, 28)|(1, 1024, 14, 14)}" fillcolor=darkseagreen1]
+				88 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 1024, 14, 14)|(1, 1024, 14, 14)}" fillcolor=darkseagreen1]
+			}
+			89 [label="add_&#92;ndepth:3|{input:|output:}|{2 x (1, 1024, 14, 14)|(1, 1024, 14, 14)}" fillcolor=aliceblue]
+			90 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 1024, 14, 14)|(1, 1024, 14, 14)}" fillcolor=darkseagreen1]
+		}
+		subgraph cluster_16 {
+			fontsize=12 label=Bottleneck labeljust=l style=dashed
+			91 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 1024, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			92 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			93 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			94 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			95 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			96 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			97 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 1024, 14, 14)}" fillcolor=darkseagreen1]
+			98 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 1024, 14, 14)|(1, 1024, 14, 14)}" fillcolor=darkseagreen1]
+			99 [label="add_&#92;ndepth:3|{input:|output:}|{2 x (1, 1024, 14, 14)|(1, 1024, 14, 14)}" fillcolor=aliceblue]
+			100 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 1024, 14, 14)|(1, 1024, 14, 14)}" fillcolor=darkseagreen1]
+		}
+		subgraph cluster_17 {
+			fontsize=12 label=Bottleneck labeljust=l style=dashed
+			101 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 1024, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			102 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			103 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			104 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			105 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			106 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			107 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 1024, 14, 14)}" fillcolor=darkseagreen1]
+			108 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 1024, 14, 14)|(1, 1024, 14, 14)}" fillcolor=darkseagreen1]
+			109 [label="add_&#92;ndepth:3|{input:|output:}|{2 x (1, 1024, 14, 14)|(1, 1024, 14, 14)}" fillcolor=aliceblue]
+			110 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 1024, 14, 14)|(1, 1024, 14, 14)}" fillcolor=darkseagreen1]
+		}
+		subgraph cluster_18 {
+			fontsize=12 label=Bottleneck labeljust=l style=dashed
+			111 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 1024, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			112 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			113 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			114 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			115 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			116 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			117 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 1024, 14, 14)}" fillcolor=darkseagreen1]
+			118 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 1024, 14, 14)|(1, 1024, 14, 14)}" fillcolor=darkseagreen1]
+			119 [label="add_&#92;ndepth:3|{input:|output:}|{2 x (1, 1024, 14, 14)|(1, 1024, 14, 14)}" fillcolor=aliceblue]
+			120 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 1024, 14, 14)|(1, 1024, 14, 14)}" fillcolor=darkseagreen1]
+		}
+		subgraph cluster_19 {
+			fontsize=12 label=Bottleneck labeljust=l style=dashed
+			121 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 1024, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			122 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			123 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			124 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			125 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			126 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			127 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 1024, 14, 14)}" fillcolor=darkseagreen1]
+			128 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 1024, 14, 14)|(1, 1024, 14, 14)}" fillcolor=darkseagreen1]
+			129 [label="add_&#92;ndepth:3|{input:|output:}|{2 x (1, 1024, 14, 14)|(1, 1024, 14, 14)}" fillcolor=aliceblue]
+			130 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 1024, 14, 14)|(1, 1024, 14, 14)}" fillcolor=darkseagreen1]
+		}
+		subgraph cluster_20 {
+			fontsize=12 label=Bottleneck labeljust=l style=dashed
+			131 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 1024, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			132 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			133 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			134 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			135 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			136 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
+			137 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 256, 14, 14)|(1, 1024, 14, 14)}" fillcolor=darkseagreen1]
+			138 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 1024, 14, 14)|(1, 1024, 14, 14)}" fillcolor=darkseagreen1]
+			139 [label="add_&#92;ndepth:3|{input:|output:}|{2 x (1, 1024, 14, 14)|(1, 1024, 14, 14)}" fillcolor=aliceblue]
+			140 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 1024, 14, 14)|(1, 1024, 14, 14)}" fillcolor=darkseagreen1]
+		}
+	}
+	subgraph cluster_21 {
+		fontsize=12 label=Sequential labeljust=l style=dashed
+		subgraph cluster_22 {
+			fontsize=12 label=Bottleneck labeljust=l style=dashed
+			141 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 1024, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
+			142 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
+			143 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 14, 14)}" fillcolor=darkseagreen1]
+			144 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 14, 14)|(1, 512, 7, 7)}" fillcolor=darkseagreen1]
+			145 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 512, 7, 7)|(1, 512, 7, 7)}" fillcolor=darkseagreen1]
+			146 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 512, 7, 7)|(1, 512, 7, 7)}" fillcolor=darkseagreen1]
+			147 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 7, 7)|(1, 2048, 7, 7)}" fillcolor=darkseagreen1]
+			148 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 2048, 7, 7)|(1, 2048, 7, 7)}" fillcolor=darkseagreen1]
+			subgraph cluster_23 {
+				fontsize=12 label=Sequential labeljust=l style=dashed
+				149 [label="Conv2d&#92;ndepth:4|{input:|output:}|{(1, 1024, 14, 14)|(1, 2048, 7, 7)}" fillcolor=darkseagreen1]
+				150 [label="BatchNorm2d&#92;ndepth:4|{input:|output:}|{(1, 2048, 7, 7)|(1, 2048, 7, 7)}" fillcolor=darkseagreen1]
+			}
+			151 [label="add_&#92;ndepth:3|{input:|output:}|{2 x (1, 2048, 7, 7)|(1, 2048, 7, 7)}" fillcolor=aliceblue]
+			152 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 2048, 7, 7)|(1, 2048, 7, 7)}" fillcolor=darkseagreen1]
+		}
+		subgraph cluster_24 {
+			fontsize=12 label=Bottleneck labeljust=l style=dashed
+			153 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 2048, 7, 7)|(1, 512, 7, 7)}" fillcolor=darkseagreen1]
+			154 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 512, 7, 7)|(1, 512, 7, 7)}" fillcolor=darkseagreen1]
+			155 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 512, 7, 7)|(1, 512, 7, 7)}" fillcolor=darkseagreen1]
+			156 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 7, 7)|(1, 512, 7, 7)}" fillcolor=darkseagreen1]
+			157 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 512, 7, 7)|(1, 512, 7, 7)}" fillcolor=darkseagreen1]
+			158 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 512, 7, 7)|(1, 512, 7, 7)}" fillcolor=darkseagreen1]
+			159 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 7, 7)|(1, 2048, 7, 7)}" fillcolor=darkseagreen1]
+			160 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 2048, 7, 7)|(1, 2048, 7, 7)}" fillcolor=darkseagreen1]
+			161 [label="add_&#92;ndepth:3|{input:|output:}|{2 x (1, 2048, 7, 7)|(1, 2048, 7, 7)}" fillcolor=aliceblue]
+			162 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 2048, 7, 7)|(1, 2048, 7, 7)}" fillcolor=darkseagreen1]
+		}
+		subgraph cluster_25 {
+			fontsize=12 label=Bottleneck labeljust=l style=dashed
+			163 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 2048, 7, 7)|(1, 512, 7, 7)}" fillcolor=darkseagreen1]
+			164 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 512, 7, 7)|(1, 512, 7, 7)}" fillcolor=darkseagreen1]
+			165 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 512, 7, 7)|(1, 512, 7, 7)}" fillcolor=darkseagreen1]
+			166 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 7, 7)|(1, 512, 7, 7)}" fillcolor=darkseagreen1]
+			167 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 512, 7, 7)|(1, 512, 7, 7)}" fillcolor=darkseagreen1]
+			168 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 512, 7, 7)|(1, 512, 7, 7)}" fillcolor=darkseagreen1]
+			169 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 512, 7, 7)|(1, 2048, 7, 7)}" fillcolor=darkseagreen1]
+			170 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 2048, 7, 7)|(1, 2048, 7, 7)}" fillcolor=darkseagreen1]
+			171 [label="add_&#92;ndepth:3|{input:|output:}|{2 x (1, 2048, 7, 7)|(1, 2048, 7, 7)}" fillcolor=aliceblue]
+			172 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 2048, 7, 7)|(1, 2048, 7, 7)}" fillcolor=darkseagreen1]
+		}
+	}
+	173 [label="AdaptiveAvgPool2d&#92;ndepth:1|{input:|output:}|{(1, 2048, 7, 7)|(1, 2048, 1, 1)}" fillcolor=darkseagreen1]
+	174 [label="flatten&#92;ndepth:1|{input:|output:}|{(1, 2048, 1, 1)|(1, 2048)}" fillcolor=aliceblue]
+	175 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 2048)|(1, 1000)}" fillcolor=darkseagreen1]
+	176 [label="output-tensor&#92;ndepth:0|(1, 1000)" fillcolor=lightyellow]
+	0 -> 1
+	1 -> 2
+	2 -> 3
+	3 -> 4
+	4 -> 5
+	5 -> 6
+	6 -> 7
+	7 -> 8
+	8 -> 9
+	9 -> 10
+	10 -> 11
+	11 -> 12
+	12 -> 15
+	4 -> 13
+	13 -> 14
+	14 -> 15
+	15 -> 16
+	16 -> 17
+	16 -> 25
+	17 -> 18
+	18 -> 19
+	19 -> 20
+	20 -> 21
+	21 -> 22
+	22 -> 23
+	23 -> 24
+	24 -> 25
+	25 -> 26
+	26 -> 27
+	26 -> 35
+	27 -> 28
+	28 -> 29
+	29 -> 30
+	30 -> 31
+	31 -> 32
+	32 -> 33
+	33 -> 34
+	34 -> 35
+	35 -> 36
+	36 -> 37
+	37 -> 38
+	38 -> 39
+	39 -> 40
+	40 -> 41
+	41 -> 42
+	42 -> 43
+	43 -> 44
+	44 -> 47
+	36 -> 45
+	45 -> 46
+	46 -> 47
+	47 -> 48
+	48 -> 49
+	48 -> 57
+	49 -> 50
+	50 -> 51
+	51 -> 52
+	52 -> 53
+	53 -> 54
+	54 -> 55
+	55 -> 56
+	56 -> 57
+	57 -> 58
+	58 -> 59
+	58 -> 67
+	59 -> 60
+	60 -> 61
+	61 -> 62
+	62 -> 63
+	63 -> 64
+	64 -> 65
+	65 -> 66
+	66 -> 67
+	67 -> 68
+	68 -> 69
+	68 -> 77
+	69 -> 70
+	70 -> 71
+	71 -> 72
+	72 -> 73
+	73 -> 74
+	74 -> 75
+	75 -> 76
+	76 -> 77
+	77 -> 78
+	78 -> 79
+	79 -> 80
+	80 -> 81
+	81 -> 82
+	82 -> 83
+	83 -> 84
+	84 -> 85
+	85 -> 86
+	86 -> 89
+	78 -> 87
+	87 -> 88
+	88 -> 89
+	89 -> 90
+	90 -> 91
+	90 -> 99
+	91 -> 92
+	92 -> 93
+	93 -> 94
+	94 -> 95
+	95 -> 96
+	96 -> 97
+	97 -> 98
+	98 -> 99
+	99 -> 100
+	100 -> 101
+	100 -> 109
+	101 -> 102
+	102 -> 103
+	103 -> 104
+	104 -> 105
+	105 -> 106
+	106 -> 107
+	107 -> 108
+	108 -> 109
+	109 -> 110
+	110 -> 111
+	110 -> 119
+	111 -> 112
+	112 -> 113
+	113 -> 114
+	114 -> 115
+	115 -> 116
+	116 -> 117
+	117 -> 118
+	118 -> 119
+	119 -> 120
+	120 -> 121
+	120 -> 129
+	121 -> 122
+	122 -> 123
+	123 -> 124
+	124 -> 125
+	125 -> 126
+	126 -> 127
+	127 -> 128
+	128 -> 129
+	129 -> 130
+	130 -> 131
+	130 -> 139
+	131 -> 132
+	132 -> 133
+	133 -> 134
+	134 -> 135
+	135 -> 136
+	136 -> 137
+	137 -> 138
+	138 -> 139
+	139 -> 140
+	140 -> 141
+	141 -> 142
+	142 -> 143
+	143 -> 144
+	144 -> 145
+	145 -> 146
+	146 -> 147
+	147 -> 148
+	148 -> 151
+	140 -> 149
+	149 -> 150
+	150 -> 151
+	151 -> 152
+	152 -> 153
+	152 -> 161
+	153 -> 154
+	154 -> 155
+	155 -> 156
+	156 -> 157
+	157 -> 158
+	158 -> 159
+	159 -> 160
+	160 -> 161
+	161 -> 162
+	162 -> 163
+	162 -> 171
+	163 -> 164
+	164 -> 165
+	165 -> 166
+	166 -> 167
+	167 -> 168
+	168 -> 169
+	169 -> 170
+	170 -> 171
+	171 -> 172
+	172 -> 173
+	173 -> 174
+	174 -> 175
+	175 -> 176
+}

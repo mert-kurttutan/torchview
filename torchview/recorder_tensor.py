@@ -10,8 +10,6 @@ from torch.nn import functional as F
 from .computation_node import ModuleNode, FunctionNode, TensorNode, NodeContainer
 from .computation_graph import ComputationGraph
 
-from .computation_graph import ComputationGraph
-
 # Needed for module wrapper and resetting
 _orig_module_forward = torch.nn.Module.__call__
 
@@ -97,18 +95,31 @@ def module_forward_wrapper(
 
         # Create module_node and connect to its inputs tensor node
         cur_depth = next(iter(input_nodes)).depth
+        input_context = next(iter(input_nodes)).context
         cur_node = ModuleNode(
             mod, cur_depth, input_nodes,  # type: ignore[arg-type]
             name=type(mod).__name__
         )
+
+        # update context with current modules's context
+        input_context.append({cur_node: []})
         for node in input_nodes:
             node.add_outputs(cur_node)
             node.name = "hidden-tensor"
         cur_node.set_input_shape(
             reduce_data_info([args, kwargs], collect_shape, [])
         )
+
+        tensor_to_node: dict[RecorderTensor, TensorNode] = (
+            reduce_data_info([args, kwargs], collect_tensor_node_id_dict, {})
+        )
+        attach_kwargs = {
+            'inputs': cur_node, 'depth': cur_node.depth+1,
+            'context': input_context[-1][cur_node], 'is_aux': True,
+        }
+
         traverse_data_inplace(
-            [args, kwargs], attach_node(cur_node, cur_node.depth+1)
+            [args, kwargs], attach_node(attach_kwargs, tensor_to_node)
         )
 
         # TODO: check if output contains RecorderTensor
@@ -116,7 +127,7 @@ def module_forward_wrapper(
         out = _orig_module_forward(mod, *args, **kwargs)
 
         traverse_data_inplace(
-            out, change_depth_name(-1, 'output-tensor')
+            out, change_depth_name(-1, 'output-tensor', cur_node)
         )
 
         # pop appropriate nodes, see implementation below
@@ -131,22 +142,25 @@ def module_forward_wrapper(
         output_nodes: NodeContainer[TensorNode] = (
             reduce_data_info(out, collect_tensor_node, NodeContainer())
         )
-        auxiliary_nodes = list(cur_node.outputs)
-        for aux_node in auxiliary_nodes:
-            assert isinstance(aux_node, TensorNode), (
-                f'Auxiliary Node of the module node'
-                f'{cur_node} must be a Tensor Node!'
-            )
-            # some modules are auxiliary modules, just passes
-            # without any computation. e.g. nn.Identity(). For these modules,
-            # output node is the same as auxuliary nodes, so dont delete the nodes
-            # if this is the case
-            if aux_node not in output_nodes:
-                aux_node.remove()
 
-        # dont touch inner tensors here, it might disrupt
-        # rest of the algo that depends previous tensors
-        if model_graph.hide_module_functions and not any(mod.children()):
+        for output_node in output_nodes:
+            cur_node.end_nodes.add(output_node)
+            output_node.context = input_context
+            # output of empty modules
+            if output_node.depth == cur_node.depth:
+                output_node.node_id = str(id(output_node))
+
+        if model_graph.hide_module_functions and cur_node.is_container:
+            input_context.pop()
+            input_context.append(cur_node)
+            for out_node in output_nodes:
+                out_node.context = input_context
+                input_context.append(out_node)
+                out_node.input_hierarchy = {
+                    key_word: value
+                    for key_word, value in out_node.input_hierarchy.items()
+                    if key_word != cur_node.depth+1
+                }
             # keep removing until all output tensor nodes
             # are outputs of current module node
             while not (
@@ -233,14 +247,20 @@ class RecorderTensor(torch.Tensor):
 
         # Create function_node and connect to its inputs tensor node
         cur_depth = next(iter(args_nodes)).depth
+        input_context = next(iter(args_nodes)).context
         cur_node = FunctionNode(
             func, cur_depth, args_nodes, name=func.__name__  # type: ignore[arg-type]
         )
+
         for i in args_nodes:
             i.add_outputs(cur_node)
             i.name = 'hidden-tensor'
-
-        traverse_data_inplace(out, attach_node(cur_node))
+        input_context.append(cur_node)
+        attach_kwargs = {
+            'inputs': cur_node, 'depth': cur_node.depth, "context": input_context,
+            'is_aux': False, 'input_hierarchy': {cur_depth: cur_node},
+        }
+        traverse_data_inplace(out, attach_node(attach_kwargs))
 
         # note that when processing inplace operation, input shape is calculated
         # correctly only if inplace operation preserves the input shape
@@ -251,6 +271,13 @@ class RecorderTensor(torch.Tensor):
             reduce_data_info([args, kwargs], collect_shape, [])
         )
         cur_node.set_output_shape(reduce_data_info(out, collect_shape, []))
+
+        out_nodes: NodeContainer[TensorNode] = (
+            reduce_data_info(out, collect_tensor_node, NodeContainer())
+        )
+
+        for out_node in out_nodes:
+            assert out_node.context is input_context
 
         return out
 
@@ -296,37 +323,43 @@ def traverse_data_inplace(
 
 
 def attach_node(
-    input_node: FunctionNode | ModuleNode, depth: int | None = None
+    kwargs: dict[str, Any],
+    tensor_to_node: dict[RecorderTensor, TensorNode] | None = None
 ) -> Callable[..., Any]:
     '''Creates the function to attach TensorNodes, needed for nested calls'''
     def _func(recorded_tensor: RecorderTensor) -> None:
         '''Attaches TensorNode to ModuleNode or FunctionNode
         '''
-        _depth = input_node.depth if depth is None else depth
 
+        if kwargs['is_aux'] and tensor_to_node:
+            kwargs['main_node'] = tensor_to_node[recorded_tensor]
+        new_kwargs = {
+            key_word: value
+            for key_word, value in kwargs.items() if key_word != 'tensor_to_node'
+        }
         tensor_node = TensorNode(
             tensor=recorded_tensor,
-            depth=_depth,
-            inputs=input_node,
+            **new_kwargs
         )
-        if isinstance(input_node, ModuleNode):
+        if isinstance(kwargs["inputs"], ModuleNode):
             assert getattr(recorded_tensor, 'tensor_nodes', None) is not None, (
                 f'RecorderTensor to be attached to the Node'
-                f'{input_node} must have tensor node'
+                f'{kwargs["inputs"]} must have tensor node'
             )
-        assert isinstance(input_node, (FunctionNode, ModuleNode)), (
-            f'Node {input_node} to which to attach must be either'
+        assert isinstance(kwargs["inputs"], (FunctionNode, ModuleNode)), (
+            f'Node {kwargs["inputs"]} to which to attach must be either'
             f'FunctionNode or ModuleNode'
         )
 
         if getattr(recorded_tensor, 'tensor_nodes', None) is None:
             recorded_tensor.tensor_nodes = [tensor_node]
         else:
-            if isinstance(input_node, ModuleNode):
+            if isinstance(kwargs["inputs"], ModuleNode):
                 recorded_tensor.tensor_nodes.append(tensor_node)
-            elif isinstance(input_node, FunctionNode):
+            elif isinstance(kwargs["inputs"], FunctionNode):
                 recorded_tensor.tensor_nodes[-1] = tensor_node
-        input_node.add_outputs(tensor_node)
+        kwargs["inputs"].add_outputs(tensor_node)
+        kwargs['context'].append(tensor_node)
     return _func
 
 
@@ -362,15 +395,15 @@ def pop_after_forward(
         r_in.tensor_nodes.pop(-2)
 
 
-def remove_func_module(out: Any, mod_node: ModuleNode) -> None:
+def remove_func_module(out: Any, mod_node: ModuleNode,) -> None:
     '''Removes all input nodes of RecorderTensor Nodes
     from the graph
     '''
+    my_col: NodeContainer[TensorNode] = NodeContainer()
+
     output_tensor_nodes: NodeContainer[TensorNode] = (
         reduce_data_info(out, collect_tensor_node, NodeContainer())
     )
-    my_col: NodeContainer[TensorNode] = NodeContainer()
-
     # collect all input nodes
     for out_node in output_tensor_nodes:
         for in_node in out_node.inputs:
@@ -396,6 +429,14 @@ def collect_tensor_node(
             collected.add(recorded_data.tensor_nodes[-1])
 
 
+def collect_tensor_node_id_dict(
+    recorded_data: RecorderTensor,
+    collected: dict[RecorderTensor, TensorNode],
+) -> None:
+    if getattr(recorded_data, 'tensor_nodes', None):
+        collected[recorded_data] = recorded_data.tensor_nodes[-1].main_node
+
+
 def collect_tensor(
     recorded_data: RecorderTensor, collected: list[RecorderTensor]
 ) -> None:
@@ -408,8 +449,12 @@ def collect_shape(
     collected.append(tuple(recorded_data.shape))
 
 
-def change_depth_name(depth_delta: int, name: str) -> Callable[..., Any]:
+def change_depth_name(
+    depth_delta: int, name: str, cur_node: ModuleNode
+) -> Callable[..., Any]:
     def _func(recorded_data: RecorderTensor) -> None:
         recorded_data.tensor_nodes[-1].depth += depth_delta
         recorded_data.tensor_nodes[-1].name = name
+        cur_depth = recorded_data.tensor_nodes[-1].depth
+        recorded_data.tensor_nodes[-1].input_hierarchy[cur_depth] = cur_node
     return _func

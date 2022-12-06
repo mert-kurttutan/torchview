@@ -145,6 +145,25 @@ def test_roll_recursive_net(verify_result: Callable[..., Any]) -> None:
     verify_result([model_graph_1, model_graph_2])
 
 
+def test_expand_nested_recursive_net(verify_result: Callable[..., Any]) -> None:
+
+    model_graph_1 = draw_graph(
+        SimpleRNN(), input_size=(2, 3),
+        graph_name='RecursiveNet',
+        expand_nested=True,
+        roll=True,
+    )
+
+    model_graph_2 = draw_graph(
+        SimpleRNN(), input_size=(2, 3),
+        graph_name='RecursiveNet',
+        expand_nested=True,
+        roll=False,
+    )
+
+    verify_result([model_graph_1, model_graph_2])
+
+
 def test_inplace_recursive_net(verify_result: Callable[..., Any]) -> None:
 
     model_graph_1 = draw_graph(

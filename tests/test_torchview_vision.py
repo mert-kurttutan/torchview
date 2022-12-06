@@ -26,12 +26,36 @@ def test_simple_u_net_model(verify_result: Callable[..., Any]) -> None:
     verify_result([model_graph])
 
 
+def test_expand_nested_u_net_model(verify_result: Callable[..., Any]) -> None:
+    model = UNet2(1, 1, use_bn=True, residual=True)
+    model_graph = draw_graph(
+        model, input_size=(1, 1, 28, 28),
+        graph_name='UNet2',
+        expand_nested=True
+    )
+
+    verify_result([model_graph])
+
+
 def test_simple_resnet_model(verify_result: Callable[..., Any]) -> None:
 
     model_graph = draw_graph(
         torchvision.models.resnet50(),
         input_size=(1, 3, 224, 224),
         graph_name='Resnet',
+        depth=5
+    )
+
+    verify_result([model_graph])
+
+
+def test_expand_nested_resnet_model(verify_result: Callable[..., Any]) -> None:
+
+    model_graph = draw_graph(
+        torchvision.models.resnet50(),
+        input_size=(1, 3, 224, 224),
+        graph_name='Resnet',
+        expand_nested=True,
         depth=5
     )
 

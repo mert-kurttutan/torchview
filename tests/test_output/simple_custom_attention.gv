@@ -1,126 +1,116 @@
 strict digraph "custom-attention" {
-	graph [ordering=in size="44.4,44.4"]
+	graph [ordering=in size="36.6,36.6"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
 	edge [fontsize=10]
 	0 [label="input-tensor&#92;ndepth:0|(7, 2, 128)" fillcolor=lightyellow]
-	1 [label="Block&#92;ndepth:0|{input:|output:}|{(7, 2, 128)|(7, 2, 128)}" fillcolor=darkseagreen1]
-	2 [label="LayerNorm&#92;ndepth:1|{input:|output:}|{(7, 2, 128)|(7, 2, 128)}" fillcolor=darkseagreen1]
-	3 [label="layer_norm&#92;ndepth:2|{input:|output:}|{(7, 2, 128)|(7, 2, 128)}" fillcolor=aliceblue]
-	4 [label="hidden-tensor&#92;ndepth:1|(7, 2, 128)" fillcolor=lightyellow]
-	5 [label="CausalSelfAttention&#92;ndepth:1|{input:|output:}|{(7, 2, 128)|(7, 2, 128)}" fillcolor=darkseagreen1]
-	6 [label="Linear&#92;ndepth:2|{input:|output:}|{(7, 2, 128)|(7, 2, 384)}" fillcolor=darkseagreen1]
-	7 [label="linear&#92;ndepth:3|{input:|output:}|{(7, 2, 128)|(7, 2, 384)}" fillcolor=aliceblue]
-	8 [label="hidden-tensor&#92;ndepth:2|(7, 2, 384)" fillcolor=lightyellow]
-	9 [label="split&#92;ndepth:2|{input:|output:}|{(7, 2, 384)|3 x (7, 2, 128)}" fillcolor=aliceblue]
-	10 [label="hidden-tensor&#92;ndepth:2|(7, 2, 128)" fillcolor=lightyellow]
-	11 [label="view&#92;ndepth:2|{input:|output:}|{(7, 2, 128)|(7, 2, 4, 32)}" fillcolor=aliceblue]
-	12 [label="hidden-tensor&#92;ndepth:2|(7, 2, 4, 32)" fillcolor=lightyellow]
-	13 [label="transpose&#92;ndepth:2|{input:|output:}|{(7, 2, 4, 32)|(7, 4, 2, 32)}" fillcolor=aliceblue]
-	14 [label="hidden-tensor&#92;ndepth:2|(7, 4, 2, 32)" fillcolor=lightyellow]
-	15 [label="matmul&#92;ndepth:2|{input:|output:}|{(7, 4, 2, 32), (7, 4, 32, 2)|(7, 4, 2, 2)}" fillcolor=aliceblue]
-	16 [label="hidden-tensor&#92;ndepth:2|(7, 4, 2, 2)" fillcolor=lightyellow]
-	17 [label="mul&#92;ndepth:2|{input:|output:}|{(7, 4, 2, 2)|(7, 4, 2, 2)}" fillcolor=aliceblue]
-	18 [label="hidden-tensor&#92;ndepth:2|(7, 4, 2, 2)" fillcolor=lightyellow]
-	19 [label="masked_fill&#92;ndepth:2|{input:|output:}|{(7, 4, 2, 2)|(7, 4, 2, 2)}" fillcolor=aliceblue]
-	20 [label="hidden-tensor&#92;ndepth:2|(7, 4, 2, 2)" fillcolor=lightyellow]
-	21 [label="softmax&#92;ndepth:2|{input:|output:}|{(7, 4, 2, 2)|(7, 4, 2, 2)}" fillcolor=aliceblue]
-	22 [label="hidden-tensor&#92;ndepth:2|(7, 4, 2, 2)" fillcolor=lightyellow]
-	23 [label="Dropout&#92;ndepth:2|{input:|output:}|{(7, 4, 2, 2)|(7, 4, 2, 2)}" fillcolor=darkseagreen1]
-	24 [label="dropout&#92;ndepth:3|{input:|output:}|{(7, 4, 2, 2)|(7, 4, 2, 2)}" fillcolor=aliceblue]
-	25 [label="hidden-tensor&#92;ndepth:2|(7, 4, 2, 2)" fillcolor=lightyellow]
-	26 [label="matmul&#92;ndepth:2|{input:|output:}|{(7, 4, 2, 2), (7, 4, 2, 32)|(7, 4, 2, 32)}" fillcolor=aliceblue]
-	27 [label="hidden-tensor&#92;ndepth:2|(7, 4, 2, 32)" fillcolor=lightyellow]
-	28 [label="transpose&#92;ndepth:2|{input:|output:}|{(7, 4, 2, 32)|(7, 2, 4, 32)}" fillcolor=aliceblue]
-	29 [label="hidden-tensor&#92;ndepth:2|(7, 2, 4, 32)" fillcolor=lightyellow]
-	30 [label="contiguous&#92;ndepth:2|{input:|output:}|{(7, 2, 4, 32)|(7, 2, 4, 32)}" fillcolor=aliceblue]
-	31 [label="hidden-tensor&#92;ndepth:2|(7, 2, 4, 32)" fillcolor=lightyellow]
-	32 [label="view&#92;ndepth:2|{input:|output:}|{(7, 2, 4, 32)|(7, 2, 128)}" fillcolor=aliceblue]
-	33 [label="hidden-tensor&#92;ndepth:2|(7, 2, 128)" fillcolor=lightyellow]
-	34 [label="Linear&#92;ndepth:2|{input:|output:}|{(7, 2, 128)|(7, 2, 128)}" fillcolor=darkseagreen1]
-	35 [label="linear&#92;ndepth:3|{input:|output:}|{(7, 2, 128)|(7, 2, 128)}" fillcolor=aliceblue]
-	36 [label="hidden-tensor&#92;ndepth:2|(7, 2, 128)" fillcolor=lightyellow]
-	37 [label="Dropout&#92;ndepth:2|{input:|output:}|{(7, 2, 128)|(7, 2, 128)}" fillcolor=darkseagreen1]
-	38 [label="dropout&#92;ndepth:3|{input:|output:}|{(7, 2, 128)|(7, 2, 128)}" fillcolor=aliceblue]
-	39 [label="hidden-tensor&#92;ndepth:1|(7, 2, 128)" fillcolor=lightyellow]
-	40 [label="add&#92;ndepth:1|{input:|output:}|{2 x (7, 2, 128)|(7, 2, 128)}" fillcolor=aliceblue]
-	41 [label="hidden-tensor&#92;ndepth:1|(7, 2, 128)" fillcolor=lightyellow]
-	42 [label="LayerNorm&#92;ndepth:1|{input:|output:}|{(7, 2, 128)|(7, 2, 128)}" fillcolor=darkseagreen1]
-	43 [label="layer_norm&#92;ndepth:2|{input:|output:}|{(7, 2, 128)|(7, 2, 128)}" fillcolor=aliceblue]
+	0 [label="input-tensor&#92;ndepth:0|(7, 2, 128)" fillcolor=lightyellow]
+	1 [label="layer_norm&#92;ndepth:2|{input:|output:}|{(7, 2, 128)|(7, 2, 128)}" fillcolor=aliceblue]
+	2 [label="hidden-tensor&#92;ndepth:1|(7, 2, 128)" fillcolor=lightyellow]
+	3 [label="linear&#92;ndepth:3|{input:|output:}|{(7, 2, 128)|(7, 2, 384)}" fillcolor=aliceblue]
+	4 [label="hidden-tensor&#92;ndepth:2|(7, 2, 384)" fillcolor=lightyellow]
+	5 [label="split&#92;ndepth:2|{input:|output:}|{(7, 2, 384)|3 x (7, 2, 128)}" fillcolor=aliceblue]
+	6 [label="hidden-tensor&#92;ndepth:2|(7, 2, 128)" fillcolor=lightyellow]
+	7 [label="hidden-tensor&#92;ndepth:2|(7, 2, 128)" fillcolor=lightyellow]
+	8 [label="hidden-tensor&#92;ndepth:2|(7, 2, 128)" fillcolor=lightyellow]
+	9 [label="view&#92;ndepth:2|{input:|output:}|{(7, 2, 128)|(7, 2, 4, 32)}" fillcolor=aliceblue]
+	10 [label="hidden-tensor&#92;ndepth:2|(7, 2, 4, 32)" fillcolor=lightyellow]
+	11 [label="transpose&#92;ndepth:2|{input:|output:}|{(7, 2, 4, 32)|(7, 4, 2, 32)}" fillcolor=aliceblue]
+	12 [label="hidden-tensor&#92;ndepth:2|(7, 4, 2, 32)" fillcolor=lightyellow]
+	13 [label="view&#92;ndepth:2|{input:|output:}|{(7, 2, 128)|(7, 2, 4, 32)}" fillcolor=aliceblue]
+	14 [label="hidden-tensor&#92;ndepth:2|(7, 2, 4, 32)" fillcolor=lightyellow]
+	15 [label="transpose&#92;ndepth:2|{input:|output:}|{(7, 2, 4, 32)|(7, 4, 2, 32)}" fillcolor=aliceblue]
+	16 [label="hidden-tensor&#92;ndepth:2|(7, 4, 2, 32)" fillcolor=lightyellow]
+	17 [label="view&#92;ndepth:2|{input:|output:}|{(7, 2, 128)|(7, 2, 4, 32)}" fillcolor=aliceblue]
+	18 [label="hidden-tensor&#92;ndepth:2|(7, 2, 4, 32)" fillcolor=lightyellow]
+	19 [label="transpose&#92;ndepth:2|{input:|output:}|{(7, 2, 4, 32)|(7, 4, 2, 32)}" fillcolor=aliceblue]
+	20 [label="hidden-tensor&#92;ndepth:2|(7, 4, 2, 32)" fillcolor=lightyellow]
+	21 [label="transpose&#92;ndepth:2|{input:|output:}|{(7, 4, 2, 32)|(7, 4, 32, 2)}" fillcolor=aliceblue]
+	22 [label="hidden-tensor&#92;ndepth:2|(7, 4, 32, 2)" fillcolor=lightyellow]
+	23 [label="matmul&#92;ndepth:2|{input:|output:}|{(7, 4, 2, 32), (7, 4, 32, 2)|(7, 4, 2, 2)}" fillcolor=aliceblue]
+	24 [label="hidden-tensor&#92;ndepth:2|(7, 4, 2, 2)" fillcolor=lightyellow]
+	25 [label="mul&#92;ndepth:2|{input:|output:}|{(7, 4, 2, 2)|(7, 4, 2, 2)}" fillcolor=aliceblue]
+	26 [label="hidden-tensor&#92;ndepth:2|(7, 4, 2, 2)" fillcolor=lightyellow]
+	27 [label="masked_fill&#92;ndepth:2|{input:|output:}|{(7, 4, 2, 2)|(7, 4, 2, 2)}" fillcolor=aliceblue]
+	28 [label="hidden-tensor&#92;ndepth:2|(7, 4, 2, 2)" fillcolor=lightyellow]
+	29 [label="softmax&#92;ndepth:2|{input:|output:}|{(7, 4, 2, 2)|(7, 4, 2, 2)}" fillcolor=aliceblue]
+	30 [label="hidden-tensor&#92;ndepth:2|(7, 4, 2, 2)" fillcolor=lightyellow]
+	31 [label="dropout&#92;ndepth:3|{input:|output:}|{(7, 4, 2, 2)|(7, 4, 2, 2)}" fillcolor=aliceblue]
+	32 [label="hidden-tensor&#92;ndepth:2|(7, 4, 2, 2)" fillcolor=lightyellow]
+	33 [label="matmul&#92;ndepth:2|{input:|output:}|{(7, 4, 2, 2), (7, 4, 2, 32)|(7, 4, 2, 32)}" fillcolor=aliceblue]
+	34 [label="hidden-tensor&#92;ndepth:2|(7, 4, 2, 32)" fillcolor=lightyellow]
+	35 [label="transpose&#92;ndepth:2|{input:|output:}|{(7, 4, 2, 32)|(7, 2, 4, 32)}" fillcolor=aliceblue]
+	36 [label="hidden-tensor&#92;ndepth:2|(7, 2, 4, 32)" fillcolor=lightyellow]
+	37 [label="contiguous&#92;ndepth:2|{input:|output:}|{(7, 2, 4, 32)|(7, 2, 4, 32)}" fillcolor=aliceblue]
+	38 [label="hidden-tensor&#92;ndepth:2|(7, 2, 4, 32)" fillcolor=lightyellow]
+	39 [label="view&#92;ndepth:2|{input:|output:}|{(7, 2, 4, 32)|(7, 2, 128)}" fillcolor=aliceblue]
+	40 [label="hidden-tensor&#92;ndepth:2|(7, 2, 128)" fillcolor=lightyellow]
+	41 [label="linear&#92;ndepth:3|{input:|output:}|{(7, 2, 128)|(7, 2, 128)}" fillcolor=aliceblue]
+	42 [label="hidden-tensor&#92;ndepth:2|(7, 2, 128)" fillcolor=lightyellow]
+	43 [label="dropout&#92;ndepth:3|{input:|output:}|{(7, 2, 128)|(7, 2, 128)}" fillcolor=aliceblue]
 	44 [label="hidden-tensor&#92;ndepth:1|(7, 2, 128)" fillcolor=lightyellow]
-	45 [label="Linear&#92;ndepth:1|{input:|output:}|{(7, 2, 128)|(7, 2, 512)}" fillcolor=darkseagreen1]
-	46 [label="linear&#92;ndepth:2|{input:|output:}|{(7, 2, 128)|(7, 2, 512)}" fillcolor=aliceblue]
-	47 [label="hidden-tensor&#92;ndepth:1|(7, 2, 512)" fillcolor=lightyellow]
-	48 [label="ReLU&#92;ndepth:1|{input:|output:}|{(7, 2, 512)|(7, 2, 512)}" fillcolor=darkseagreen1]
-	49 [label="relu&#92;ndepth:2|{input:|output:}|{(7, 2, 512)|(7, 2, 512)}" fillcolor=aliceblue]
+	45 [label="add&#92;ndepth:1|{input:|output:}|{2 x (7, 2, 128)|(7, 2, 128)}" fillcolor=aliceblue]
+	46 [label="hidden-tensor&#92;ndepth:1|(7, 2, 128)" fillcolor=lightyellow]
+	47 [label="layer_norm&#92;ndepth:2|{input:|output:}|{(7, 2, 128)|(7, 2, 128)}" fillcolor=aliceblue]
+	48 [label="hidden-tensor&#92;ndepth:1|(7, 2, 128)" fillcolor=lightyellow]
+	49 [label="linear&#92;ndepth:2|{input:|output:}|{(7, 2, 128)|(7, 2, 512)}" fillcolor=aliceblue]
 	50 [label="hidden-tensor&#92;ndepth:1|(7, 2, 512)" fillcolor=lightyellow]
-	51 [label="Linear&#92;ndepth:1|{input:|output:}|{(7, 2, 512)|(7, 2, 128)}" fillcolor=darkseagreen1]
-	52 [label="linear&#92;ndepth:2|{input:|output:}|{(7, 2, 512)|(7, 2, 128)}" fillcolor=aliceblue]
-	53 [label="hidden-tensor&#92;ndepth:1|(7, 2, 128)" fillcolor=lightyellow]
-	54 [label="Dropout&#92;ndepth:1|{input:|output:}|{(7, 2, 128)|(7, 2, 128)}" fillcolor=darkseagreen1]
+	51 [label="relu&#92;ndepth:2|{input:|output:}|{(7, 2, 512)|(7, 2, 512)}" fillcolor=aliceblue]
+	52 [label="hidden-tensor&#92;ndepth:1|(7, 2, 512)" fillcolor=lightyellow]
+	53 [label="linear&#92;ndepth:2|{input:|output:}|{(7, 2, 512)|(7, 2, 128)}" fillcolor=aliceblue]
+	54 [label="hidden-tensor&#92;ndepth:1|(7, 2, 128)" fillcolor=lightyellow]
 	55 [label="dropout&#92;ndepth:2|{input:|output:}|{(7, 2, 128)|(7, 2, 128)}" fillcolor=aliceblue]
 	56 [label="hidden-tensor&#92;ndepth:1|(7, 2, 128)" fillcolor=lightyellow]
 	57 [label="add&#92;ndepth:1|{input:|output:}|{2 x (7, 2, 128)|(7, 2, 128)}" fillcolor=aliceblue]
 	58 [label="output-tensor&#92;ndepth:0|(7, 2, 128)" fillcolor=lightyellow]
-	9 [label="split&#92;ndepth:2|{input:|output:}|{(7, 2, 384)|3 x (7, 2, 128)}" fillcolor=aliceblue]
-	59 [label="hidden-tensor&#92;ndepth:2|(7, 2, 128)" fillcolor=lightyellow]
-	60 [label="view&#92;ndepth:2|{input:|output:}|{(7, 2, 128)|(7, 2, 4, 32)}" fillcolor=aliceblue]
-	61 [label="hidden-tensor&#92;ndepth:2|(7, 2, 4, 32)" fillcolor=lightyellow]
-	62 [label="transpose&#92;ndepth:2|{input:|output:}|{(7, 2, 4, 32)|(7, 4, 2, 32)}" fillcolor=aliceblue]
-	63 [label="hidden-tensor&#92;ndepth:2|(7, 4, 2, 32)" fillcolor=lightyellow]
-	64 [label="transpose&#92;ndepth:2|{input:|output:}|{(7, 4, 2, 32)|(7, 4, 32, 2)}" fillcolor=aliceblue]
-	65 [label="hidden-tensor&#92;ndepth:2|(7, 4, 32, 2)" fillcolor=lightyellow]
-	9 [label="split&#92;ndepth:2|{input:|output:}|{(7, 2, 384)|3 x (7, 2, 128)}" fillcolor=aliceblue]
-	66 [label="hidden-tensor&#92;ndepth:2|(7, 2, 128)" fillcolor=lightyellow]
-	67 [label="view&#92;ndepth:2|{input:|output:}|{(7, 2, 128)|(7, 2, 4, 32)}" fillcolor=aliceblue]
-	68 [label="hidden-tensor&#92;ndepth:2|(7, 2, 4, 32)" fillcolor=lightyellow]
-	69 [label="transpose&#92;ndepth:2|{input:|output:}|{(7, 2, 4, 32)|(7, 4, 2, 32)}" fillcolor=aliceblue]
-	70 [label="hidden-tensor&#92;ndepth:2|(7, 4, 2, 32)" fillcolor=lightyellow]
-	1 [label="Block&#92;ndepth:0|{input:|output:}|{(7, 2, 128)|(7, 2, 128)}" fillcolor=darkseagreen1]
+	0 -> 45
 	0 -> 1
 	1 -> 2
 	2 -> 3
-	3 -> 4
 	4 -> 5
+	3 -> 4
+	6 -> 13
 	5 -> 6
-	6 -> 7
-	7 -> 8
-	8 -> 9
-	9 -> 10
+	7 -> 9
+	5 -> 7
+	8 -> 17
+	5 -> 8
 	10 -> 11
+	9 -> 10
+	12 -> 21
 	11 -> 12
-	12 -> 13
-	13 -> 14
 	14 -> 15
+	13 -> 14
+	16 -> 23
 	15 -> 16
-	16 -> 17
-	17 -> 18
 	18 -> 19
+	17 -> 18
+	20 -> 33
 	19 -> 20
-	20 -> 21
-	21 -> 22
 	22 -> 23
-	23 -> 24
+	21 -> 22
 	24 -> 25
-	25 -> 26
+	23 -> 24
 	26 -> 27
-	27 -> 28
+	25 -> 26
 	28 -> 29
+	27 -> 28
 	29 -> 30
 	30 -> 31
-	31 -> 32
 	32 -> 33
-	33 -> 34
+	31 -> 32
 	34 -> 35
-	35 -> 36
+	33 -> 34
 	36 -> 37
-	37 -> 38
+	35 -> 36
 	38 -> 39
+	37 -> 38
 	39 -> 40
 	40 -> 41
 	41 -> 42
 	42 -> 43
-	43 -> 44
 	44 -> 45
+	43 -> 44
+	46 -> 57
 	45 -> 46
 	46 -> 47
 	47 -> 48
@@ -131,23 +121,7 @@ strict digraph "custom-attention" {
 	52 -> 53
 	53 -> 54
 	54 -> 55
-	55 -> 56
 	56 -> 57
+	55 -> 56
 	57 -> 58
-	41 -> 57
-	9 -> 59
-	59 -> 60
-	60 -> 61
-	61 -> 62
-	62 -> 63
-	63 -> 64
-	64 -> 65
-	65 -> 15
-	9 -> 66
-	66 -> 67
-	67 -> 68
-	68 -> 69
-	69 -> 70
-	70 -> 26
-	1 -> 40
 }

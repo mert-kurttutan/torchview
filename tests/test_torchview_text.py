@@ -27,7 +27,7 @@ def test_simple_bert_model(verify_result: Callable[..., Any]) -> None:
     model_graph = draw_graph(
         model, model_input,
         graph_name='Roberta',
-        depth=6,
+        depth=4,
     )
 
     verify_result([model_graph])

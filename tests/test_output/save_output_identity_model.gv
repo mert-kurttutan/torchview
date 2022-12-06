@@ -3,10 +3,9 @@ strict digraph save_output_identity_model {
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
 	edge [fontsize=10]
 	0 [label="input-tensor&#92;ndepth:0|(4, 4)" fillcolor=lightyellow]
-	1 [label="IdentityModel&#92;ndepth:0|{input:|output:}|{(4, 4)|(4, 4)}" fillcolor=darkseagreen1]
-	2 [label="Identity&#92;ndepth:1|{input:|output:}|{(4, 4)|(4, 4)}" fillcolor=darkseagreen1]
-	3 [label="output-tensor&#92;ndepth:0|(4, 4)" fillcolor=lightyellow]
+	0 [label="input-tensor&#92;ndepth:0|(4, 4)" fillcolor=lightyellow]
+	1 [label="Identity&#92;ndepth:1|{input:|output:}|{(4, 4)|(4, 4)}" fillcolor=darkseagreen1]
+	2 [label="output-tensor&#92;ndepth:0|(4, 4)" fillcolor=lightyellow]
 	0 -> 1
 	1 -> 2
-	2 -> 3
 }

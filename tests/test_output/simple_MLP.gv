@@ -3,20 +3,19 @@ strict digraph MLP {
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
 	edge [fontsize=10]
 	0 [label="input-tensor&#92;ndepth:0|(1, 128)" fillcolor=lightyellow]
-	1 [label="MLP&#92;ndepth:0|{input:|output:}|{(1, 128)|(1, 2)}" fillcolor=darkseagreen1]
-	2 [label="Sequential&#92;ndepth:1|{input:|output:}|{(1, 128)|(1, 2)}" fillcolor=darkseagreen1]
-	3 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 128)|(1, 64)}" fillcolor=darkseagreen1]
-	4 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 64)|(1, 64)}" fillcolor=darkseagreen1]
-	5 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 64)|(1, 32)}" fillcolor=darkseagreen1]
-	6 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 32)|(1, 32)}" fillcolor=darkseagreen1]
-	7 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 32)|(1, 16)}" fillcolor=darkseagreen1]
-	8 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 16)|(1, 16)}" fillcolor=darkseagreen1]
-	9 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 16)|(1, 8)}" fillcolor=darkseagreen1]
-	10 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 8)|(1, 8)}" fillcolor=darkseagreen1]
-	11 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 8)|(1, 4)}" fillcolor=darkseagreen1]
-	12 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 4)|(1, 4)}" fillcolor=darkseagreen1]
-	13 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 4)|(1, 2)}" fillcolor=darkseagreen1]
-	14 [label="output-tensor&#92;ndepth:0|(1, 2)" fillcolor=lightyellow]
+	0 [label="input-tensor&#92;ndepth:0|(1, 128)" fillcolor=lightyellow]
+	1 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 128)|(1, 64)}" fillcolor=darkseagreen1]
+	2 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 64)|(1, 64)}" fillcolor=darkseagreen1]
+	3 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 64)|(1, 32)}" fillcolor=darkseagreen1]
+	4 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 32)|(1, 32)}" fillcolor=darkseagreen1]
+	5 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 32)|(1, 16)}" fillcolor=darkseagreen1]
+	6 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 16)|(1, 16)}" fillcolor=darkseagreen1]
+	7 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 16)|(1, 8)}" fillcolor=darkseagreen1]
+	8 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 8)|(1, 8)}" fillcolor=darkseagreen1]
+	9 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 8)|(1, 4)}" fillcolor=darkseagreen1]
+	10 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 4)|(1, 4)}" fillcolor=darkseagreen1]
+	11 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 4)|(1, 2)}" fillcolor=darkseagreen1]
+	12 [label="output-tensor&#92;ndepth:0|(1, 2)" fillcolor=lightyellow]
 	0 -> 1
 	1 -> 2
 	2 -> 3
@@ -29,6 +28,4 @@ strict digraph MLP {
 	9 -> 10
 	10 -> 11
 	11 -> 12
-	12 -> 13
-	13 -> 14
 }

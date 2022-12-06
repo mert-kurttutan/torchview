@@ -21,6 +21,10 @@ class TensorNode(Node):
         inputs: NodeContainer[Node] | Node | None = None,
         outputs: NodeContainer[Node] | Node | None = None,
         name: str = 'tensor',
+        context: Any | None = None,
+        is_aux: bool = False,
+        main_node: TensorNode | None = None,
+        input_hierarchy: dict[int, ModuleNode] | None = None,
     ):
 
         super(TensorNode, self).__init__(
@@ -29,11 +33,18 @@ class TensorNode(Node):
         self.tensor_id = id(tensor)
         self.tensor_shape = tuple(tensor.shape)
         self.name = name
+        self.is_aux = is_aux
+        self.main_node = self if main_node is None else main_node
+        self.context = [] if context is None else context
+        self.input_hierarchy = {} if input_hierarchy is None else input_hierarchy
         self.set_node_id()
 
     def set_node_id(self, input_id: int | str | None = None) -> None:
         if input_id is None:
-            self.node_id = f'{id(self)}'
+            self.node_id = (
+                f'{id(self.main_node)}' if self.is_aux and self.main_node
+                else f'{id(self)}'
+            )
         else:
             self.node_id = f'{id(self)}-{input_id}'
 
@@ -48,14 +59,17 @@ class ModuleNode(Node):
         inputs: NodeContainer[Node] | Node | None = None,
         outputs: NodeContainer[Node] | Node | None = None,
         name: str = 'module-node',
+        end_nodes: NodeContainer[Node] | None = None,
     ) -> None:
         super(ModuleNode, self).__init__(
             depth, inputs, outputs, name
         )
         self.compute_unit_id = id(module_unit)
         self.is_activation = is_generator_empty(module_unit.parameters())
+        self.is_container = not any(module_unit.children())
         self.input_shape: list[Tuple[int, ...]] = []
         self.output_shape: list[Tuple[int, ...]] = []
+        self.end_nodes = NodeContainer() if end_nodes is None else end_nodes
         self.set_node_id()
 
     def set_input_shape(self, input_shape: list[Tuple[int, ...]]) -> None:
@@ -98,9 +112,11 @@ class FunctionNode(Node):
             depth, inputs, outputs, name
         )
         self.compute_unit_id = id(function_unit)
+        self.is_container = True
         self.input_shape: list[Tuple[int, ...]] = []
         self.output_shape: list[Tuple[int, ...]] = []
         self.set_node_id()
+        self.end_nodes = self.outputs
 
     def set_input_shape(self, input_shape: list[Tuple[int, ...]]) -> None:
         self.input_shape = input_shape
