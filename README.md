@@ -239,7 +239,7 @@ model_graph = draw_graph(
 
 model_graph.visual_graph
 ```
-![output](https://user-images.githubusercontent.com/88637659/206032886-e221a58f-c7d3-4c42-ab05-ac581fcc5726.png)
+![download](https://user-images.githubusercontent.com/88637659/206188796-4b9e57ef-8d33-469b-b8e0-2c47b06fe70b.png)
 
 
 ## ResNet / Skip Connection / Support for Torch operations / Nested Modules
