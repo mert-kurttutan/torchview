@@ -224,8 +224,7 @@ model_graph = draw_graph(
 )
 model_graph.visual_graph
 ```
-
-<img src="https://raw.githubusercontent.com/mert-kurttutan/torchview/main/docs/images/rnn.png" height="400"/>
+![rnns](https://user-images.githubusercontent.com/88637659/206644016-23a89c81-1d6a-4558-82f4-33f179b345f3.png)
 
 ## Show/Hide intermediate (hidden) tensors and Functionals
 
