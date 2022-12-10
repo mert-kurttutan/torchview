@@ -108,7 +108,7 @@ def draw_graph(
             between nodes. Mutiple edge occurs e.g. when there are tensors
             from module node to module node and hiding those tensors
             Default: True
-            
+
         expand_nested(bool):
             if true, shows nested modules with dashed borders
 
@@ -208,7 +208,7 @@ def draw_graph(
         model_mode, model_graph, **kwargs
     )
 
-    model_graph.fill_visual_graph_new()
+    model_graph.fill_visual_graph()
 
     if save_graph:
         model_graph.visual_graph.render(format='png')
@@ -240,7 +240,7 @@ def forward_prop(
             with torch.no_grad():
                 if isinstance(x, (list, tuple)):
                     _ = model.to(device)(*x, **kwargs)
-                elif isinstance(x, dict):
+                elif isinstance(x, Mapping):
                     _ = model.to(device)(**x, **kwargs)
                 else:
                     # Should not reach this point, since process_input_data ensures

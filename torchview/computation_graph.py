@@ -22,10 +22,6 @@ COMPUTATION_NODES = Union[TensorNode, ModuleNode, FunctionNode]
 # TODO: change api of to include also function calls, not only pytorch models
 # so, keep the api here as general as possible
 
-# TODO: during traversing graph skip submodules
-# if current module is matches depth limit. This will decrease the recursion
-# depth of traverse_graph function
-
 node2color = {
     TensorNode: "lightyellow",
     ModuleNode: "darkseagreen1",
@@ -87,16 +83,20 @@ class ComputationGraph:
         self.id_dict: dict[str, int] = {}
 
         self.edge_list: list[tuple[COMPUTATION_NODES, COMPUTATION_NODES]] = []
+
+        # module node  to capture whole graph
         main_container_module = ModuleNode(Identity(), -1)
         self.subgraph_dict: dict[str, int] = {main_container_module.node_id: 0}
         self.running_subgraph_id += 1
+
+        # Add input nodes
         self.node_hierarchy = {
             main_container_module: list(root_node for root_node in self.root_container)
         }
         for root_node in self.root_container:
             root_node.context = self.node_hierarchy[main_container_module]
 
-    def fill_visual_graph_new(self):
+    def fill_visual_graph(self):
         '''Fills the graphviz graph with desired nodes and edges.'''
 
         # First add input nodes
@@ -104,11 +104,32 @@ class ComputationGraph:
             root_node.name = 'input-tensor'
             self.add_node(root_node)
 
-        self.render_graph()
-        self.write_edge()
+        self.render_nodes()
+        self.render_edges()
         self.resize_graph()
 
-    def traverse_graph_new(
+    def render_nodes(
+        self,
+    ):
+        kwargs = {
+            'cur_node': self.node_hierarchy,
+            'subgraph': None,
+        }
+        self.traverse_graph(self.collect_graph, **kwargs)
+
+    def render_edges(self):
+        '''Adds edges to graphviz graph using node ids from edge_list'''
+        counter_edge = {}
+        for tail, head in self.edge_list:
+            tail_id, head_id = self.id_dict[tail.node_id], self.id_dict[head.node_id]
+            counter_edge[(tail_id, head_id)] = (
+                counter_edge.get((tail_id, head_id), 0) + 1
+            )
+            self.add_edge(
+                tail_id, head_id, counter_edge[(tail_id, head_id)]
+            )
+
+    def traverse_graph(
         self, action_fn, **kwargs
     ):
         cur_node = kwargs['cur_node']
@@ -139,32 +160,11 @@ class ComputationGraph:
                     new_kwargs = updated_dict(new_kwargs, 'subgraph', cur_cont)
                 for g in v:
                     new_kwargs = updated_dict(new_kwargs, 'cur_node', g)
-                    self.traverse_graph_new(action_fn, **new_kwargs)
+                    self.traverse_graph(action_fn, **new_kwargs)
         else:
             raise ValueError('this should not be reached')
 
-    def render_graph(
-        self,
-    ):
-        kwargs = {
-            'cur_node': self.node_hierarchy,
-            'subgraph': None,
-        }
-        self.traverse_graph_new(self.collect_graph_latest, **kwargs)
-
-    def rollify(
-        self, cur_node: COMPUTATION_NODES
-    ):
-        head_node = next(iter(cur_node.end_nodes))
-        if head_node.outputs and self.hide_inner_tensors:
-            head_node = next(iter(head_node.outputs))
-
-        # identify recursively used modules
-        # with the same node id
-        output_id = get_output_id(head_node)
-        cur_node.set_node_id(output_id=output_id)
-
-    def collect_graph_latest(
+    def collect_graph(
         self, **kwargs,
     ) -> None:
         '''Adds edges and nodes with appropriate node name/id (so it respects
@@ -193,17 +193,13 @@ class ComputationGraph:
                 self.subgraph_dict[cur_node.node_id] = self.running_subgraph_id
                 self.running_subgraph_id += 1
 
-        # add edges
         if not isinstance(cur_node, TensorNode):
             return
 
-        # add {cur_node -> head} part
+        # add edges
+        # {cur_node -> head} part
         tail_node = self.get_tail_node(cur_node)
         if cur_node.outputs:
-            # tail_node = self.get_tail_node(cur_node)
-            # is_visible = self.is_node_visible(cur_node)
-            # if not isinstance(tail_node, TensorNode) and is_visible:
-            #     self.edge_list.append((tail_node, cur_node))
             for output_node in cur_node.outputs:
                 assert not isinstance(output_node, TensorNode)
                 is_visible = self.is_node_visible(output_node)
@@ -213,13 +209,25 @@ class ComputationGraph:
                     else:
                         self.edge_list.append((cur_node, output_node))
 
-        # add {tail -> cur_node} part
+        # {tail -> cur_node} part
         # # output node
         is_tensor_visible = self.is_node_visible(cur_node)
         # visible tensor and non-input tensor nodes
         if is_tensor_visible and not isinstance(tail_node, TensorNode):
             tail_node = self.get_tail_node(cur_node)
             self.edge_list.append((tail_node, cur_node))
+
+    def rollify(
+        self, cur_node: COMPUTATION_NODES
+    ):
+        head_node = next(iter(cur_node.end_nodes))
+        if head_node.outputs and self.hide_inner_tensors:
+            head_node = next(iter(head_node.outputs))
+
+        # identify recursively used modules
+        # with the same node id
+        output_id = get_output_id(head_node)
+        cur_node.set_node_id(output_id=output_id)
 
     def is_node_visible(self, compute_node):
         if isinstance(compute_node, (ModuleNode, FunctionNode)):
@@ -243,7 +251,9 @@ class ComputationGraph:
                 is_visible = is_visible and is_input_visible
             return is_visible
 
-        raise ValueError('this should not happen!!!')
+        raise ValueError(
+            'Only Computation Nodes are allowed for this function as an input'
+        )
 
     def get_tail_node(self, _tensor_node):
         tensor_node = _tensor_node
@@ -265,18 +275,6 @@ class ComputationGraph:
                 break
 
         return chosen_input
-
-    def write_edge(self):
-        '''Adds edges to graphviz graph using node ids from edge_list'''
-        counter_edge = {}
-        for tail, head in self.edge_list:
-            tail_id, head_id = self.id_dict[tail.node_id], self.id_dict[head.node_id]
-            counter_edge[(tail_id, head_id)] = (
-                counter_edge.get((tail_id, head_id), 0) + 1
-            )
-            self.add_edge(
-                tail_id, head_id, counter_edge[(tail_id, head_id)]
-            )
 
     def add_edge(
         self, tail_id: int, head_id: int, edg_cnt: int
