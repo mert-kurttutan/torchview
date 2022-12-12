@@ -184,9 +184,9 @@ class ComputationGraph:
 
         cur_node = kwargs['cur_node']
         self.check_node(cur_node)
-        is_visible = self.is_node_visible(cur_node)
+        is_cur_visible = self.is_node_visible(cur_node)
         # add node
-        if is_visible:
+        if is_cur_visible:
             subgraph = kwargs['subgraph']
             if isinstance(cur_node, (FunctionNode, ModuleNode)):
                 if self.roll:
@@ -215,8 +215,8 @@ class ComputationGraph:
         if cur_node.outputs:
             for output_node in cur_node.outputs:
                 assert not isinstance(output_node, TensorNode)
-                is_visible = self.is_node_visible(output_node)
-                if is_visible:
+                is_output_visible = self.is_node_visible(output_node)
+                if is_output_visible:
                     if self.hide_inner_tensors:
                         self.edge_list.append((tail_node, output_node))
                     else:
@@ -224,10 +224,8 @@ class ComputationGraph:
 
         # {tail -> cur_node} part
         # # output node
-        is_tensor_visible = self.is_node_visible(cur_node)
         # visible tensor and non-input tensor nodes
-        if is_tensor_visible and not isinstance(tail_node, TensorNode):
-            tail_node = self.get_tail_node(cur_node)
+        if is_cur_visible and not isinstance(tail_node, TensorNode):
             self.edge_list.append((tail_node, cur_node))
 
     def rollify(
@@ -261,6 +259,9 @@ class ComputationGraph:
             return is_visible
 
         if isinstance(compute_node, TensorNode):
+            if compute_node.main_node.depth < 0:
+                return False
+
             is_visible = (
                 not self.hide_inner_tensors or
                 (not compute_node.inputs or not compute_node.outputs)
