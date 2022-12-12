@@ -272,13 +272,6 @@ class RecorderTensor(torch.Tensor):
         )
         cur_node.set_output_shape(reduce_data_info(out, collect_shape, []))
 
-        out_nodes: NodeContainer[TensorNode] = (
-            reduce_data_info(out, collect_tensor_node, NodeContainer())
-        )
-
-        for out_node in out_nodes:
-            assert out_node.context is input_context
-
         return out
 
 

@@ -44,8 +44,19 @@ class ComputationGraph:
         show_shapes (bool):
             Whether to show shapes of tensor/input/outputs
 
+        hide_module_functions (bool):
+            Some modules contain only torch.function and no submodule,
+            e.g. nn.Conv2d. They are usually implemented to do one type
+            of computation, e.g. Conv2d -> 2D Convolution. If True,
+            visual graph only displays the module itself,
+            while ignoring its inner functions.
+
         hide_inner_tensors (bool):
             Whether to hide inner tensors in graphviz graph object
+
+
+        node_hierarchy dict:
+            Represents nested hierarchy of ComputationNodes by nested dictionary
     '''
     def __init__(
         self,
@@ -193,6 +204,8 @@ class ComputationGraph:
                 self.subgraph_dict[cur_node.node_id] = self.running_subgraph_id
                 self.running_subgraph_id += 1
 
+        # add edges only through
+        # node -> TensorNode -> Node connection
         if not isinstance(cur_node, TensorNode):
             return
 
@@ -220,6 +233,12 @@ class ComputationGraph:
     def rollify(
         self, cur_node: COMPUTATION_NODES
     ):
+        '''Rolls computational graph by identifying recursively used
+        Modules. This is done by giving the same id for nodes that are
+        recursively used.
+        This becomes complex when there are stateless and torch.functions.
+        For more details see docs'''
+
         head_node = next(iter(cur_node.end_nodes))
         if head_node.outputs and self.hide_inner_tensors:
             head_node = next(iter(head_node.outputs))
@@ -230,6 +249,8 @@ class ComputationGraph:
         cur_node.set_node_id(output_id=output_id)
 
     def is_node_visible(self, compute_node):
+        '''Returns True if node should be displayed on the visual
+        graph. Otherwise False'''
         if isinstance(compute_node, (ModuleNode, FunctionNode)):
             is_visible = (
                 isinstance(compute_node, FunctionNode) or (
@@ -286,7 +307,6 @@ class ComputationGraph:
     def add_node(
         self, node: COMPUTATION_NODES, subgraph: Digraph | None = None
     ) -> None:
-        assert node.node_id != 'null', f'wrong id {node} {type(node)}'
         if node.node_id not in self.id_dict:
             self.id_dict[node.node_id] = self.running_node_id
             self.running_node_id += 1
@@ -340,6 +360,7 @@ class ComputationGraph:
         return node2color[type(node)]
 
     def check_node(self, node):
+        assert node.node_id != 'null', f'wrong id {node} {type(node)}'
         assert '-' not in node.node_id, 'No repetition of node recording'
         assert any(node.outputs) or any(node.inputs), f'isolated node! {node}'
         assert node.depth <= self.depth, f"exceeds depth limit, {node}"
@@ -374,8 +395,8 @@ def get_output_id(head_node: COMPUTATION_NODES) -> str | int:
     This is used to identify the recursively used modules.
     Identification relation is as follows:
         ModuleNodes => by id of nn.Module object
-        Parameterless Modules => by id node object
-        FunctionNodes => by id of node object
+        Parameterless Modules => by id Node object
+        FunctionNodes => by id of Node object
     '''
     if isinstance(head_node, ModuleNode):
         if head_node.is_activation:
