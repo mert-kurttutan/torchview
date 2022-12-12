@@ -403,8 +403,6 @@ def get_output_id(head_node: COMPUTATION_NODES) -> str | int:
             output_id = head_node.node_id
         else:
             output_id = head_node.compute_unit_id
-    elif isinstance(head_node, FunctionNode):
-        output_id = head_node.node_id
     else:
         output_id = head_node.node_id
 
