@@ -126,14 +126,15 @@ def module_forward_wrapper(
         # this seems not to be necessary so far
         out = _orig_module_forward(mod, *args, **kwargs)
 
-        traverse_data_inplace(
-            out, change_depth_name(-1, 'output-tensor', cur_node)
-        )
-
         # pop appropriate nodes, see implementation below
         output_recorder: list[RecorderTensor] = (
             reduce_data_info(out, collect_tensor, [])
         )
+
+        traverse_data_inplace(
+            set(output_recorder), change_depth_name(-1, 'output-tensor', cur_node)
+        )
+
         traverse_data_inplace(
             [args, kwargs], pop_after_forward, recorded_output=output_recorder
         )
