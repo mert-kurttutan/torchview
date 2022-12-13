@@ -3,6 +3,8 @@ from os.path import exists
 
 from typing import Callable, Any
 
+import pytest
+
 import torch
 from torch import nn
 from torch import __version__ as torch_version
