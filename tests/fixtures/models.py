@@ -278,3 +278,31 @@ class RecursiveRelu(nn.Module):
             x = self.activation(x)
 
         return x
+
+
+class Tower(nn.Module):
+    '''Tower Model'''
+    def __init__(self, length=1):
+        super().__init__()
+        self.layers = []
+        for i in range(length):
+            l = nn.LazyLinear(out_features=10)
+            self.add_module(f"tower{i}", l)
+            self.layers.append(l)
+
+    def forward(self, x):
+        for l in self.layers:
+            x = l(x)
+        return x
+
+
+class TowerBranches(nn.Module):
+    '''Model with different length of tower used for expand_nested'''
+    def __init__(self):
+        super().__init__()
+        self.tower1 = Tower(2)
+        self.tower2 = Tower(3)
+        self.tower3 = Tower(4)
+
+    def forward(self, x):
+        return self.tower1(x) + self.tower2(x) + self.tower3(x)

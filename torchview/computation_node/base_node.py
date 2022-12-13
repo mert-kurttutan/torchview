@@ -79,44 +79,6 @@ class Node:
     def set_inputs(self, node_arr: NodeContainer[Node]) -> None:
         self.inputs = node_arr
 
-    def remove(self) -> None:
-        '''Removes the node from its graph by connecting its
-        inputs to its outputs. Special cases e.g. no input node
-        will be considered
-        '''
-        if len(self.outputs) > 1 and len(self.inputs) > 1:
-            inputs_list = list(self.inputs)
-            for input_node in inputs_list:
-                if input_node.depth == -10:
-                    input_node.remove_outputs(self)
-                    self.remove_inputs(input_node)
-
-        # if it has no input node
-        if not self.inputs:
-            for outputs_node in self.outputs:
-                outputs_node.remove_inputs(self)
-
-        else:
-            # if it has no outputs node
-            if not self.outputs:
-                for input_node in self.inputs:
-                    input_node.remove_outputs(self)
-            else:
-                for input_node in self.inputs:
-                    input_node.remove_outputs(self)
-                    for outputs_node in self.outputs:
-                        input_node.add_outputs(outputs_node)
-                        outputs_node.add_inputs(input_node)
-
-                for j in self.outputs:
-                    j.remove_inputs(self)
-
-        # nullify the content
-        self.set_outputs(NodeContainer())
-        self.set_inputs(NodeContainer())
-        self.name = ''
-        self.node_id = 'null'
-
     def set_node_id(self) -> None:
         raise NotImplementedError(
             'To be implemented by subclasses of Node Class !!!'

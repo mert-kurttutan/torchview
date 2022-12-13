@@ -151,25 +151,6 @@ def module_forward_wrapper(
             if output_node.depth == cur_node.depth:
                 output_node.node_id = str(id(output_node))
 
-        if model_graph.hide_module_functions and cur_node.is_container:
-            input_context.pop()
-            input_context.append(cur_node)
-            for out_node in output_nodes:
-                out_node.context = input_context
-                input_context.append(out_node)
-                out_node.input_hierarchy = {
-                    key_word: value
-                    for key_word, value in out_node.input_hierarchy.items()
-                    if key_word != cur_node.depth+1
-                }
-            # keep removing until all output tensor nodes
-            # are outputs of current module node
-            while not (
-                    reduce_data_info(out, collect_tensor_node, NodeContainer())
-                    .issubset(cur_node.outputs)  # type: ignore[arg-type]
-            ):
-                remove_func_module(out, cur_node)
-
         cur_node.set_output_shape(reduce_data_info(out, collect_shape, []))
         return out
 
@@ -387,28 +368,6 @@ def pop_after_forward(
         )
         # pop tensor node before inplace operation
         r_in.tensor_nodes.pop(-2)
-
-
-def remove_func_module(out: Any, mod_node: ModuleNode,) -> None:
-    '''Removes all input nodes of RecorderTensor Nodes
-    from the graph
-    '''
-    my_col: NodeContainer[TensorNode] = NodeContainer()
-
-    output_tensor_nodes: NodeContainer[TensorNode] = (
-        reduce_data_info(out, collect_tensor_node, NodeContainer())
-    )
-    # collect all input nodes
-    for out_node in output_tensor_nodes:
-        for in_node in out_node.inputs:
-            my_col.add(in_node)  # type: ignore[arg-type]
-
-    for par in my_col:
-        assert not isinstance(par, ModuleNode), (
-            f'Module Node {mod_node} has no outputs module,'
-            f'hence must not have node of Module Node type {par}'
-        )
-        par.remove()
 
 
 def collect_tensor_node(

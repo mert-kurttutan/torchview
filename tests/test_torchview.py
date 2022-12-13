@@ -17,6 +17,7 @@ from tests.fixtures.models import (
     FunctionalNet,
     RecursiveRelu,
     ScalarNet,
+    TowerBranches,
 )
 from torchview import draw_graph
 
@@ -265,3 +266,10 @@ def test_reusing_activation_layers(verify_result: Callable[..., Any]) -> None:
     )
 
     verify_result([model_graph_1, model_graph_2])
+
+
+def test_expand_nested_tower(verify_result: Callable[..., Any]) -> None:
+    model = TowerBranches()
+    model_graph = draw_graph(model, input_size=[(1, 10)], expand_nested=True)
+
+    verify_result([model_graph])
