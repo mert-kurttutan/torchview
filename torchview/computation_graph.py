@@ -97,6 +97,7 @@ class ComputationGraph:
 
         # module node  to capture whole graph
         main_container_module = ModuleNode(Identity(), -1)
+        main_container_module.is_container = False
         self.subgraph_dict: dict[str, int] = {main_container_module.node_id: 0}
         self.running_subgraph_id += 1
 
@@ -157,9 +158,17 @@ class ComputationGraph:
             if k.depth <= self.depth and k.depth >= 0:
                 action_fn(**new_kwargs)
 
+            # if it is container module, move directly to outputs
+            if self.hide_module_functions and k.is_container:
+                for g in k.end_nodes:
+                    new_kwargs = updated_dict(new_kwargs, 'cur_node', g)
+                    self.traverse_graph(action_fn, **new_kwargs)
+                return
+
             display_nested = (
                 k.depth < self.depth and k.depth >= 1 and self.expand_nested
             )
+
             with (
                 cur_subgraph.subgraph(name=f'cluster_{self.subgraph_dict[k.node_id]}')
                 if display_nested else nullcontext()
@@ -217,10 +226,10 @@ class ComputationGraph:
                 assert not isinstance(output_node, TensorNode)
                 is_output_visible = self.is_node_visible(output_node)
                 if is_output_visible:
-                    if self.hide_inner_tensors:
-                        self.edge_list.append((tail_node, output_node))
-                    else:
+                    if not self.hide_inner_tensors:
                         self.edge_list.append((cur_node, output_node))
+                    elif self.is_node_visible(tail_node):
+                        self.edge_list.append((tail_node, output_node))
 
         # {tail -> cur_node} part
         # # output node
@@ -291,11 +300,19 @@ class ComputationGraph:
 
         sorted_depth = sorted(depth for depth in tensor_node.input_hierarchy)
         chosen_input = next(iter(tensor_node.inputs))
+        depth = 0
         for depth in sorted_depth:
             chosen_input = tensor_node.input_hierarchy[depth]
             if depth == self.depth:
                 break
 
+        # if returned by container module and hide_module_functions
+        if (
+            isinstance(tensor_node.input_hierarchy[depth], FunctionNode) and
+            tensor_node.input_hierarchy.get(depth-1) and self.hide_module_functions
+        ):
+            if tensor_node.input_hierarchy[depth-1].is_container:
+                return tensor_node.input_hierarchy[depth-1]
         return chosen_input
 
     def add_edge(

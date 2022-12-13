@@ -1,10 +1,13 @@
 from os.path import exists
-
+from packaging import version
 
 from typing import Callable, Any
 
+import pytest
+
 import torch
 from torch import nn
+from torch import __version__ as torch_version
 from tests.fixtures.models import (
     IdentityModel,
     MLP,
@@ -17,6 +20,7 @@ from tests.fixtures.models import (
     FunctionalNet,
     RecursiveRelu,
     ScalarNet,
+    TowerBranches,
 )
 from torchview import draw_graph
 
@@ -265,3 +269,14 @@ def test_reusing_activation_layers(verify_result: Callable[..., Any]) -> None:
     )
 
     verify_result([model_graph_1, model_graph_2])
+
+
+@pytest.mark.skipif(
+    version.parse(torch_version) < version.parse('1.8'),
+    reason=f"Torch version {torch_version} doesn't have this model."
+)
+def test_expand_nested_tower(verify_result: Callable[..., Any]) -> None:
+    model = TowerBranches()
+    model_graph = draw_graph(model, input_size=[(1, 10)], expand_nested=True)
+
+    verify_result([model_graph])
