@@ -194,8 +194,8 @@ def draw_graph(
         directory=directory, filename=filename
     )
 
-    input_recorder_tensor, input_nodes = process_input(
-        input_data, input_size, device, dtypes
+    input_recorder_tensor, kwargs_record_tensor, input_nodes = process_input(
+        input_data, input_size, kwargs, device, dtypes
     )
 
     model_graph = ComputationGraph(
@@ -205,7 +205,7 @@ def draw_graph(
 
     forward_prop(
         model, input_recorder_tensor, device,
-        model_mode, **kwargs
+        model_mode, **kwargs_record_tensor
     )
 
     model_graph.fill_visual_graph()
@@ -256,12 +256,14 @@ def forward_prop(
 def process_input(
     input_data: INPUT_DATA_TYPE | None,
     input_size: INPUT_SIZE_TYPE | None,
+    kwargs: Any,
     device: torch.device | str,
     dtypes: list[torch.dtype] | None = None,
-) -> tuple[CORRECTED_INPUT_DATA_TYPE, NodeContainer[TensorNode]]:
+) -> tuple[CORRECTED_INPUT_DATA_TYPE, Any, NodeContainer[TensorNode]]:
     """Reads sample input data to get the input size."""
     x = None
     correct_input_size = []
+    kwargs_recorder_tensor = traverse_data(kwargs, get_recorder_tensor, type)
     if input_data is not None:
         x = set_device(input_data, device)
         x = traverse_data(x, get_recorder_tensor, type)
@@ -275,9 +277,11 @@ def process_input(
         x = get_input_tensor(correct_input_size, dtypes, device)
 
     input_data_node: NodeContainer[TensorNode] = (
-        reduce_data_info(x, collect_tensor_node, NodeContainer())
+        reduce_data_info(
+            [x, kwargs_recorder_tensor], collect_tensor_node, NodeContainer()
+        )
     )
-    return x, input_data_node
+    return x, kwargs_recorder_tensor, input_data_node
 
 
 def validate_user_params(
