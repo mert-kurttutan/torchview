@@ -300,13 +300,17 @@ class ComputationGraph:
 
         sorted_depth = sorted(depth for depth in tensor_node.input_hierarchy)
         chosen_input = next(iter(tensor_node.inputs))
+        depth = 0
         for depth in sorted_depth:
             chosen_input = tensor_node.input_hierarchy[depth]
             if depth == self.depth:
                 break
 
         # if returned by container module and hide_module_functions
-        if isinstance(tensor_node.input_hierarchy[depth], FunctionNode) and tensor_node.input_hierarchy.get(depth-1) and self.hide_module_functions:
+        if (
+            isinstance(tensor_node.input_hierarchy[depth], FunctionNode) and
+            tensor_node.input_hierarchy.get(depth-1) and self.hide_module_functions
+        ):
             if tensor_node.input_hierarchy[depth-1].is_container:
                 return tensor_node.input_hierarchy[depth-1]
         return chosen_input

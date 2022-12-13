@@ -8,7 +8,6 @@ from torch import nn
 from torch.nn import functional as F
 
 from .computation_node import ModuleNode, FunctionNode, TensorNode, NodeContainer
-from .computation_graph import ComputationGraph
 
 # Needed for module wrapper and resetting
 _orig_module_forward = torch.nn.Module.__call__
@@ -75,9 +74,7 @@ def creation_ops_wrapper(_orig_op: Callable[..., Any]) -> Callable[..., Any]:
     return _func
 
 
-def module_forward_wrapper(
-    model_graph: ComputationGraph,
-) -> Callable[..., Any]:
+def module_forward_wrapper() -> Callable[..., Any]:
     '''Wrapper for forward functions of modules'''
     def _module_forward_wrapper(mod: nn.Module, *args: Any, **kwargs: Any) -> Any:
         '''Forward prop of module for RecorderTensor subclass
