@@ -3,7 +3,6 @@ strict digraph FunctionalNet {
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
 	edge [fontsize=10]
 	0 [label="input-tensor&#92;ndepth:0|(1, 1, 32, 32)" fillcolor=lightyellow]
-	0 [label="input-tensor&#92;ndepth:0|(1, 1, 32, 32)" fillcolor=lightyellow]
 	1 [label="Conv2d&#92;ndepth:1|{input:|output:}|{(1, 1, 32, 32)|(1, 32, 28, 28)}" fillcolor=darkseagreen1]
 	2 [label="relu&#92;ndepth:1|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 28, 28)}" fillcolor=aliceblue]
 	3 [label="max_pool2d&#92;ndepth:1|{input:|output:}|{(1, 32, 28, 28)|(1, 32, 14, 14)}" fillcolor=aliceblue]

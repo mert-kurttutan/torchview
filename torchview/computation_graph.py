@@ -92,7 +92,7 @@ class ComputationGraph:
         self.running_node_id: int = 0
         self.running_subgraph_id: int = 0
         self.id_dict: dict[str, int] = {}
-
+        self.added_nodes = set()
         self.edge_list: list[tuple[COMPUTATION_NODES, COMPUTATION_NODES]] = []
 
         # module node  to capture whole graph
@@ -114,7 +114,6 @@ class ComputationGraph:
         # First add input nodes
         for root_node in self.root_container:
             root_node.name = 'input-tensor'
-            self.add_node(root_node)
 
         self.render_nodes()
         self.render_edges()
@@ -192,6 +191,10 @@ class ComputationGraph:
         in graphviz graph)'''
 
         cur_node = kwargs['cur_node']
+        # if tensor node is traced, dont repeat collecting
+        if id(cur_node) in self.added_nodes:
+            return
+
         self.check_node(cur_node)
         is_cur_visible = self.is_node_visible(cur_node)
         # add node
@@ -336,6 +339,7 @@ class ComputationGraph:
         subgraph.node(
             name=f'{self.id_dict[node.node_id]}', label=label, fillcolor=node_color,
         )
+        self.added_nodes.add(id(node))
 
     def get_node_label(self, node: COMPUTATION_NODES) -> str:
         input_str = 'input'

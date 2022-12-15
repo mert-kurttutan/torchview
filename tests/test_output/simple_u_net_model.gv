@@ -1,8 +1,7 @@
 strict digraph UNet2 {
-	graph [ordering=in size="14.1,14.1"]
+	graph [ordering=in size="13.799999999999999,13.799999999999999"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
 	edge [fontsize=10]
-	0 [label="input-tensor&#92;ndepth:0|(1, 1, 28, 28)" fillcolor=lightyellow]
 	0 [label="input-tensor&#92;ndepth:0|(1, 1, 28, 28)" fillcolor=lightyellow]
 	1 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 1, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]
 	2 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 96, 28, 28)|(1, 96, 28, 28)}" fillcolor=darkseagreen1]

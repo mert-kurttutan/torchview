@@ -1,8 +1,7 @@
 strict digraph Resnet {
-	graph [ordering=in size="111.0,111.0"]
+	graph [ordering=in size="110.7,110.7"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
 	edge [fontsize=10]
-	0 [label="input-tensor&#92;ndepth:0|(1, 3, 224, 224)" fillcolor=lightyellow]
 	0 [label="input-tensor&#92;ndepth:0|(1, 3, 224, 224)" fillcolor=lightyellow]
 	1 [label="Conv2d&#92;ndepth:1|{input:|output:}|{(1, 3, 224, 224)|(1, 64, 112, 112)}" fillcolor=darkseagreen1]
 	2 [label="BatchNorm2d&#92;ndepth:1|{input:|output:}|{(1, 64, 112, 112)|(1, 64, 112, 112)}" fillcolor=darkseagreen1]

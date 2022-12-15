@@ -26,7 +26,7 @@ def profile() -> None:
     random.seed(0)
     command = (
         "for _ in trange(10): "
-        "create_graph(torchvision.models.resnet152(), input_size=(1, 3, 224, 224))"
+        "draw_graph(torchvision.models.resnet152(), input_size=(1, 3, 224, 224))"
     )
     profile_file = "profile.txt"
     sort = "time"
