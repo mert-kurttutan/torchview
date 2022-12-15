@@ -226,7 +226,6 @@ class ComputationGraph:
         tail_node = self.get_tail_node(cur_node)
         if cur_node.outputs:
             for output_node in cur_node.outputs:
-                assert not isinstance(output_node, TensorNode)
                 is_output_visible = self.is_node_visible(output_node)
                 if is_output_visible:
                     if not self.hide_inner_tensors:
