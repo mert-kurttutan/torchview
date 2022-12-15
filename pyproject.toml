@@ -70,6 +70,7 @@ module = [
     'tests.fixtures.dense_net',
     'tests.fixtures.custom_attention',
     'torchtext.functional',
+    'transformers',
 ]
 ignore_missing_imports = true
 

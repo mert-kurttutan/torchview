@@ -1,5 +1,4 @@
 import pytest
-import torch
 
 from typing import Callable, Any
 
