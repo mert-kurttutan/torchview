@@ -129,7 +129,7 @@ def module_forward_wrapper() -> Callable[..., Any]:
         )
 
         traverse_data_inplace(
-            set(output_recorder), change_depth_name(-1, 'output-tensor', cur_node)
+            set(output_recorder), process_output_node(-1, 'output-tensor', cur_node)
         )
 
         traverse_data_inplace(
@@ -399,10 +399,21 @@ def collect_shape(
     collected.append(tuple(recorded_data.shape))
 
 
-def change_depth_name(
+def process_output_node(
     depth_delta: int, name: str, cur_node: ModuleNode
 ) -> Callable[..., Any]:
     def _func(recorded_data: RecorderTensor) -> None:
+        output_node = recorded_data.tensor_nodes[-1]
+
+        # if output node is reused inside module
+        if output_node.outputs:
+            recorded_data.tensor_nodes[-1] = TensorNode(
+                recorded_data, output_node.depth, output_node,
+                context=output_node.context, is_aux=False
+            )
+            output_node.context.append(recorded_data.tensor_nodes[-1])
+            output_node.add_outputs(recorded_data.tensor_nodes[-1])
+
         recorded_data.tensor_nodes[-1].depth += depth_delta
         recorded_data.tensor_nodes[-1].name = name
         cur_depth = recorded_data.tensor_nodes[-1].depth

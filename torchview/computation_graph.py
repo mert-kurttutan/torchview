@@ -92,7 +92,7 @@ class ComputationGraph:
         self.running_node_id: int = 0
         self.running_subgraph_id: int = 0
         self.id_dict: dict[str, int] = {}
-        self.added_nodes: set[COMPUTATION_NODES] = set()
+        self.added_nodes: set[int] = set()
         self.edge_list: list[tuple[COMPUTATION_NODES, COMPUTATION_NODES]] = []
 
         # module node  to capture whole graph
