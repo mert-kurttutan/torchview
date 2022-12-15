@@ -260,6 +260,10 @@ class ComputationGraph:
     def is_node_visible(self, compute_node):
         '''Returns True if node should be displayed on the visual
         graph. Otherwise False'''
+
+        if compute_node.name == 'output-pass':
+            return False
+
         if isinstance(compute_node, (ModuleNode, FunctionNode)):
             is_visible = (
                 isinstance(compute_node, FunctionNode) or (
@@ -318,6 +322,9 @@ class ComputationGraph:
         ):
             if tensor_node.input_hierarchy[depth-1].is_container:
                 return tensor_node.input_hierarchy[depth-1]
+
+        if chosen_input.name == 'output-pass':
+            return self.get_tail_node(next(iter((chosen_input.inputs))))
         return chosen_input
 
     def add_edge(
