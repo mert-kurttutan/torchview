@@ -409,7 +409,8 @@ def process_output_node(
         if output_node.outputs:
             recorded_data.tensor_nodes[-1] = TensorNode(
                 recorded_data, output_node.depth, output_node,
-                context=output_node.context, is_aux=False
+                context=output_node.context, is_aux=False,
+                input_hierarchy=output_node.input_hierarchy
             )
             output_node.context.append(recorded_data.tensor_nodes[-1])
             output_node.add_outputs(recorded_data.tensor_nodes[-1])

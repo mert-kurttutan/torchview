@@ -10,9 +10,8 @@ strict digraph RecursiveNet {
 	5 [label="LSTMCell&#92;ndepth:1|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=darkseagreen1]
 	6 [label="LeakyReLU&#92;ndepth:1|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=darkseagreen1]
 	7 [label="LSTMCell&#92;ndepth:1|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=darkseagreen1]
-	8 [label="output-tensor&#92;ndepth:1|(2, 2)" fillcolor=lightyellow]
-	9 [label="LeakyReLU&#92;ndepth:1|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=darkseagreen1]
-	10 [label="output-tensor&#92;ndepth:0|(2, 2)" fillcolor=lightyellow]
+	8 [label="LeakyReLU&#92;ndepth:1|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=darkseagreen1]
+	9 [label="output-tensor&#92;ndepth:0|(2, 2)" fillcolor=lightyellow]
 	0 -> 1
 	0 -> 3
 	0 -> 5
@@ -26,9 +25,8 @@ strict digraph RecursiveNet {
 	5 -> 6
 	5 -> 7
 	6 -> 7
-	7 -> 9
 	7 -> 8
-	9 -> 10
+	8 -> 9
 }
 strict digraph RecursiveNet {
 	graph [ordering=in size="12.0,12.0"]
@@ -42,9 +40,8 @@ strict digraph RecursiveNet {
 	5 [label="LSTMCell&#92;ndepth:1|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=darkseagreen1]
 	6 [label="LeakyReLU&#92;ndepth:1|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=darkseagreen1]
 	7 [label="LSTMCell&#92;ndepth:1|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=darkseagreen1]
-	8 [label="output-tensor&#92;ndepth:1|(2, 2)" fillcolor=lightyellow]
-	9 [label="LeakyReLU&#92;ndepth:1|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=darkseagreen1]
-	10 [label="output-tensor&#92;ndepth:0|(2, 2)" fillcolor=lightyellow]
+	8 [label="LeakyReLU&#92;ndepth:1|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=darkseagreen1]
+	9 [label="output-tensor&#92;ndepth:0|(2, 2)" fillcolor=lightyellow]
 	0 -> 1
 	0 -> 3
 	0 -> 5
@@ -58,7 +55,6 @@ strict digraph RecursiveNet {
 	5 -> 6
 	5 -> 7
 	6 -> 7
-	7 -> 9
 	7 -> 8
-	9 -> 10
+	8 -> 9
 }

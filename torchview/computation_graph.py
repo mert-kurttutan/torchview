@@ -275,7 +275,10 @@ class ComputationGraph:
 
             is_visible = (
                 not self.hide_inner_tensors or
-                (not compute_node.inputs or not compute_node.outputs)
+                (
+                    (not compute_node.inputs or not compute_node.outputs)
+                    and compute_node.depth == 0
+                )
             )
 
             if compute_node.is_aux:
