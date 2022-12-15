@@ -3,7 +3,6 @@ strict digraph model {
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
 	edge [fontsize=10]
 	0 [label="input-tensor&#92;ndepth:0|(1, 10)" fillcolor=lightyellow]
-	0 [label="input-tensor&#92;ndepth:0|(1, 10)" fillcolor=lightyellow]
 	subgraph cluster_2 {
 		fontsize=12 label=Tower labeljust=l style=dashed
 		1 [label="LazyLinear&#92;ndepth:2|{input:|output:}|{(1, 10)|(1, 10)}" fillcolor=darkseagreen1]

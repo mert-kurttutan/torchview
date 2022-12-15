@@ -4,8 +4,6 @@ strict digraph model {
 	edge [fontsize=10]
 	0 [label="input-tensor&#92;ndepth:0|(1, 300)" fillcolor=lightyellow]
 	1 [label="input-tensor&#92;ndepth:0|(1, 300)" fillcolor=lightyellow]
-	0 [label="input-tensor&#92;ndepth:0|(1, 300)" fillcolor=lightyellow]
-	1 [label="input-tensor&#92;ndepth:0|(1, 300)" fillcolor=lightyellow]
 	2 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 300)|(1, 50)}" fillcolor=darkseagreen1]
 	3 [label="relu&#92;ndepth:1|{input:|output:}|{(1, 50)|(1, 50)}" fillcolor=aliceblue]
 	4 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 50)|(1, 10)}" fillcolor=darkseagreen1]

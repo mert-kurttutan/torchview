@@ -1,8 +1,7 @@
 strict digraph "custom-attention" {
-	graph [ordering=in size="36.6,36.6"]
+	graph [ordering=in size="36.3,36.3"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
 	edge [fontsize=10]
-	0 [label="input-tensor&#92;ndepth:0|(7, 2, 128)" fillcolor=lightyellow]
 	0 [label="input-tensor&#92;ndepth:0|(7, 2, 128)" fillcolor=lightyellow]
 	1 [label="layer_norm&#92;ndepth:2|{input:|output:}|{(7, 2, 128)|(7, 2, 128)}" fillcolor=aliceblue]
 	2 [label="hidden-tensor&#92;ndepth:1|(7, 2, 128)" fillcolor=lightyellow]

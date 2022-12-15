@@ -1,9 +1,7 @@
 strict digraph SiameseNets {
-	graph [ordering=in size="41.1,41.1"]
+	graph [ordering=in size="40.5,40.5"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
 	edge [fontsize=10]
-	0 [label="input-tensor&#92;ndepth:0|(1, 1, 88, 88)" fillcolor=lightyellow]
-	1 [label="input-tensor&#92;ndepth:0|(1, 1, 88, 88)" fillcolor=lightyellow]
 	0 [label="input-tensor&#92;ndepth:0|(1, 1, 88, 88)" fillcolor=lightyellow]
 	1 [label="input-tensor&#92;ndepth:0|(1, 1, 88, 88)" fillcolor=lightyellow]
 	2 [label="conv2d&#92;ndepth:2|{input:|output:}|{(1, 1, 88, 88)|(1, 64, 79, 79)}" fillcolor=aliceblue]

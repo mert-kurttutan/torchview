@@ -1,8 +1,7 @@
 strict digraph Roberta {
-	graph [ordering=in size="20.4,20.4"]
+	graph [ordering=in size="20.099999999999998,20.099999999999998"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
 	edge [fontsize=10]
-	0 [label="input-tensor&#92;ndepth:0|(2, 6)" fillcolor=lightyellow]
 	0 [label="input-tensor&#92;ndepth:0|(2, 6)" fillcolor=lightyellow]
 	1 [label="eq&#92;ndepth:3|{input:|output:}|{(2, 6)|(2, 6)}" fillcolor=aliceblue]
 	2 [label="Embedding&#92;ndepth:3|{input:|output:}|{(2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]

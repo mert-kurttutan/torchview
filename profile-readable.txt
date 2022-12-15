@@ -1,0 +1,110 @@
+Thu Dec 15 07:53:36 2022    profile.txt
+
+         11580236 function calls (9311084 primitive calls) in 17.237 seconds
+
+   Ordered by: internal time
+   List reduced from 568 to 100 due to restriction <100>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     9330    4.282    0.000    4.476    0.000 {method 'to' of 'torch._C._TensorBase' objects}
+3100/1550    2.754    0.001    3.233    0.002 {built-in method torch.conv2d}
+     1570    2.371    0.002    2.371    0.002 {method 'uniform_' of 'torch._C._TensorBase' objects}
+     1550    1.957    0.001    1.957    0.001 {method 'normal_' of 'torch._C._TensorBase' objects}
+       12    1.444    0.120    1.444    0.120 {built-in method torch._C._cuda_getDeviceCount}
+3762505/2182135    0.448    0.000    1.341    0.000 {built-in method builtins.isinstance}
+473580/76440    0.380    0.000    1.866    0.000 /home/mert-kurttutan/projects/torchview/torchview/recorder_tensor.py:260(reduce_data_info)
+   770910    0.268    0.000    0.744    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/typing.py:1130(__subclasscheck__)
+   770910    0.217    0.000    0.962    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/typing.py:975(__instancecheck__)
+        1    0.167    0.167    0.193    0.193 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/cuda/__init__.py:490(_raw_device_count_nvml)
+   812350    0.166    0.000    0.386    0.000 {built-in method builtins.issubclass}
+38350/22400    0.134    0.000    4.967    0.000 /home/mert-kurttutan/projects/torchview/torchview/recorder_tensor.py:190(__torch_function__)
+771140/770911    0.113    0.000    0.220    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/abc.py:121(__subclasscheck__)
+771140/770911    0.107    0.000    0.107    0.000 {built-in method _abc._abc_subclasscheck}
+164760/38340    0.099    0.000    0.195    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/_tensor.py:1358(_convert)
+  4230/10    0.098    0.000    2.657    0.266 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/nn/modules/module.py:637(_apply)
+     1510    0.088    0.000    0.088    0.000 {built-in method torch.relu_}
+    38340    0.085    0.000    3.259    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/_tensor.py:1256(__torch_function__)
+     1550    0.077    0.000    0.077    0.000 {built-in method torch.batch_norm}
+     4240    0.075    0.000    0.080    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/nn/modules/module.py:307(__init__)
+  5230/10    0.074    0.000    5.771    0.577 /home/mert-kurttutan/projects/torchview/torchview/recorder_tensor.py:79(_module_forward_wrapper)
+    49270    0.063    0.000    0.063    0.000 {method 'items' of 'dict' objects}
+    10390    0.062    0.000    0.564    0.000 /home/mert-kurttutan/projects/torchview/torchview/computation_node/compute_node.py:17(__init__)
+    43220    0.059    0.000    0.130    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1268(__setattr__)
+    21260    0.057    0.000    0.944    0.000 /home/mert-kurttutan/projects/torchview/torchview/recorder_tensor.py:396(collect_shape)
+57450/20840    0.056    0.000    0.827    0.000 /home/mert-kurttutan/projects/torchview/torchview/recorder_tensor.py:279(traverse_data_inplace)
+    10380    0.044    0.000    0.629    0.000 /home/mert-kurttutan/projects/torchview/torchview/recorder_tensor.py:302(_func)
+    31760    0.038    0.000    0.073    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/graphviz/quoting.py:40(quote)
+   158070    0.038    0.000    0.105    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/_tensor.py:1367(<genexpr>)
+    20780    0.033    0.000    0.062    0.000 /home/mert-kurttutan/projects/torchview/torchview/computation_node/base_node.py:26(__init__)
+    42540    0.033    0.000    0.037    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1252(__getattr__)
+    94190    0.030    0.000    0.046    0.000 /home/mert-kurttutan/projects/torchview/torchview/utils.py:16(__init__)
+    53040    0.029    0.000    0.048    0.000 /home/mert-kurttutan/projects/torchview/torchview/recorder_tensor.py:370(collect_tensor_node)
+ 11500/10    0.029    0.000    0.374    0.037 /home/mert-kurttutan/projects/torchview/torchview/computation_graph.py:146(traverse_graph)
+64020/10760    0.028    0.000    0.152    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/graphviz/_tools.py:151(wrapper)
+    31180    0.028    0.000    0.031    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1795(named_children)
+   153700    0.028    0.000    0.028    0.000 /home/mert-kurttutan/projects/torchview/torchview/utils.py:39(__iter__)
+        1    0.025    0.025    0.025    0.025 {built-in method _ctypes.dlopen}
+     4670    0.025    0.000    0.025    0.000 {built-in method torch.empty}
+    91990    0.025    0.000    0.025    0.000 /home/mert-kurttutan/projects/torchview/torchview/utils.py:27(add)
+    11330    0.024    0.000    0.267    0.000 /home/mert-kurttutan/projects/torchview/torchview/computation_graph.py:189(collect_graph)
+32910/15350    0.022    0.000    0.024    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1843(named_modules)
+      500    0.021    0.000    3.103    0.006 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torchvision/models/resnet.py:143(forward)
+    28000    0.020    0.000    0.030    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/autograd/grad_mode.py:227(__init__)
+     5240    0.018    0.000    0.091    0.000 /home/mert-kurttutan/projects/torchview/torchview/computation_node/compute_node.py:55(__init__)
+    14000    0.018    0.000    0.019    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/autograd/grad_mode.py:126(__init__)
+     6200    0.018    0.000    0.018    0.000 {method 'fill_' of 'torch._C._TensorBase' objects}
+     1550    0.017    0.000    0.172    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py:30(__init__)
+    38550    0.017    0.000    0.026    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/nn/parameter.py:8(__instancecheck__)
+    63520    0.017    0.000    0.017    0.000 {method 'match' of 're.Pattern' objects}
+     9320    0.017    0.000    2.477    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/nn/modules/module.py:981(convert)
+    14000    0.016    0.000    0.035    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/autograd/grad_mode.py:135(__exit__)
+     3150    0.016    0.000    0.016    0.000 {method 'as_subclass' of 'torch._C._TensorBase' objects}
+    78230    0.015    0.000    0.022    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/_tensor.py:1274(<genexpr>)
+    71930    0.015    0.000    0.022    0.000 /home/mert-kurttutan/projects/torchview/torchview/utils.py:21(__len__)
+     4670    0.014    0.000    0.014    0.000 {built-in method _make_subclass}
+     8940    0.014    0.000    0.029    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1671(_named_members)
+    38340    0.014    0.000    0.036    0.000 {built-in method builtins.all}
+     1550    0.014    0.000    2.466    0.002 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/nn/modules/conv.py:71(__init__)
+    10220    0.014    0.000    0.035    0.000 /home/mert-kurttutan/projects/torchview/torchview/computation_graph.py:399(compact_list_repr)
+      500    0.013    0.000    0.013    0.000 {method 'add_' of 'torch._C._TensorBase' objects}
+    31180    0.013    0.000    0.044    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1786(children)
+23650/23100    0.013    0.000    0.019    0.000 /home/mert-kurttutan/projects/torchview/torchview/computation_graph.py:264(is_node_visible)
+     5130    0.012    0.000    0.012    0.000 {method 'search' of 're.Pattern' objects}
+  5230/10    0.012    0.000    5.766    0.577 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1184(_call_impl)
+     5230    0.012    0.000    0.035    0.000 /home/mert-kurttutan/projects/torchview/torchview/recorder_tensor.py:338(pop_after_forward)
+     3080    0.011    0.000    0.014    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/overrides.py:1404(_get_overloaded_args)
+    99823    0.011    0.000    0.011    0.000 {built-in method builtins.id}
+   122906    0.011    0.000    0.011    0.000 {method 'get' of 'dict' objects}
+     5670    0.011    0.000    0.022    0.000 /home/mert-kurttutan/projects/torchview/torchview/computation_graph.py:295(get_tail_node)
+   137677    0.011    0.000    0.011    0.000 {built-in method builtins.len}
+        1    0.011    0.011   17.237   17.237 <string>:1(<module>)
+  8460/20    0.010    0.000    0.050    0.002 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1888(train)
+    11330    0.010    0.000    0.032    0.000 /home/mert-kurttutan/projects/torchview/torchview/computation_graph.py:387(check_node)
+    14000    0.010    0.000    0.024    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/autograd/grad_mode.py:131(__enter__)
+     5130    0.010    0.000    0.162    0.000 /home/mert-kurttutan/projects/torchview/torchview/computation_graph.py:331(add_node)
+     4670    0.010    0.000    0.010    0.000 {built-in method torch._has_compatible_shallow_copy_type}
+     5150    0.010    0.000    0.027    0.000 /home/mert-kurttutan/projects/torchview/torchview/computation_node/compute_node.py:103(__init__)
+     1550    0.010    0.000    0.010    0.000 {built-in method torch.tensor}
+       10    0.009    0.001    4.827    0.483 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torchvision/models/resnet.py:167(__init__)
+    15610    0.009    0.000    0.016    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/_collections_abc.py:759(__ior__)
+    22321    0.009    0.000    0.026    0.000 {built-in method builtins.hasattr}
+     3120    0.009    0.000    0.012    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/nn/init.py:284(_calculate_fan_in_and_fan_out)
+     3080    0.009    0.000    0.940    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/overrides.py:1470(handle_torch_function)
+    74526    0.008    0.000    0.008    0.000 {method 'append' of 'list' objects}
+     6220    0.008    0.000    0.024    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/nn/modules/module.py:389(register_parameter)
+    16730    0.008    0.000    0.074    0.000 /home/mert-kurttutan/projects/torchview/torchview/utils.py:65(updated_dict)
+     1550    0.008    0.000    0.008    0.000 {built-in method torch.ones}
+    10750    0.008    0.000    0.080    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/graphviz/quoting.py:115(a_list)
+     8940    0.008    0.000    0.043    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/nn/modules/module.py:1684(parameters)
+     9320    0.008    0.000    0.008    0.000 {method 'is_floating_point' of 'torch._C._TensorBase' objects}
+     1560    0.008    0.000    2.400    0.002 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/nn/init.py:366(kaiming_uniform_)
+    42000    0.008    0.000    0.008    0.000 {built-in method torch.is_grad_enabled}
+     1550    0.008    0.000    0.539    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/nn/modules/batchnorm.py:137(forward)
+3100/1550    0.008    0.000    0.487    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/nn/functional.py:2419(batch_norm)
+       10    0.008    0.001    0.055    0.006 /home/mert-kurttutan/projects/torchview/torchview/computation_graph.py:134(render_edges)
+    69660    0.008    0.000    0.008    0.000 {method 'values' of 'dict' objects}
+    10380    0.007    0.000    0.007    0.000 /home/mert-kurttutan/projects/torchview/torchview/recorder_tensor.py:308(<dictcomp>)
+     4670    0.007    0.000    0.018    0.000 /home/mert-kurttutan/miniconda3/envs/pytorch-env/lib/python3.10/site-packages/torch/nn/modules/module.py:641(compute_should_use_set_data)
+     5130    0.007    0.000    0.043    0.000 /home/mert-kurttutan/projects/torchview/torchview/computation_graph.py:347(get_node_label)
+
+
