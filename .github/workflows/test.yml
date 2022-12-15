@@ -96,6 +96,10 @@ jobs:
         pip install torch==${{ matrix.torch-version-map.torch }} \
           torchvision==${{ matrix.torch-version-map.torchvision }} \
           torchtext==${{ matrix.torch-version-map.torchtext }}
+        if [ ${{matrix.torch-version-map.torch}} == '1.13' ]; then
+          pip install transformers
+        fi
+        
       shell: bash
     - name: mypy
       if: ${{ matrix.torch-version-map.torch == '1.13' }}
