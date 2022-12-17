@@ -104,7 +104,7 @@ def module_forward_wrapper() -> Callable[..., Any]:
         input_context.append({cur_node: []})
         for node in input_nodes:
             node.add_outputs(cur_node)
-            node.name = "hidden-tensor"
+
         cur_node.set_input_shape(
             reduce_data_info([args, kwargs], collect_shape, [])
         )
@@ -113,8 +113,9 @@ def module_forward_wrapper() -> Callable[..., Any]:
             reduce_data_info([args, kwargs], collect_tensor_node_id_dict, {})
         )
         attach_kwargs = {
-            'inputs': cur_node, 'depth': cur_node.depth+1,
+            'inputs': cur_node, 'depth': cur_depth+1,
             'context': input_context[-1][cur_node], 'is_aux': True,
+            'name': 'auxiliary-tensor'
         }
 
         traverse_data_inplace(
@@ -132,7 +133,7 @@ def module_forward_wrapper() -> Callable[..., Any]:
 
         traverse_data_inplace(
             OrderedSet(output_recorder),
-            process_output_node(-1, 'output-tensor', cur_node)
+            process_output_node(cur_node)
         )
 
         traverse_data_inplace(
@@ -147,9 +148,6 @@ def module_forward_wrapper() -> Callable[..., Any]:
         for output_node in output_nodes:
             cur_node.end_nodes.add(output_node)
             output_node.context = input_context
-            # output of empty modules
-            if output_node.depth == cur_node.depth:
-                output_node.node_id = str(id(output_node))
 
         cur_node.set_output_shape(reduce_data_info(out, collect_shape, []))
         return out
@@ -236,11 +234,12 @@ class RecorderTensor(torch.Tensor):
 
         for i in args_nodes:
             i.add_outputs(cur_node)
-            i.name = 'hidden-tensor'
+
         input_context.append(cur_node)
         attach_kwargs = {
-            'inputs': cur_node, 'depth': cur_node.depth, "context": input_context,
+            'inputs': cur_node, 'depth': cur_depth, "context": input_context,
             'is_aux': False, 'input_hierarchy': {cur_depth: cur_node},
+            'name': 'output-tensor' if cur_depth == 0 else 'hidden-tensor'
         }
         traverse_data_inplace(out, attach_node(attach_kwargs))
 
@@ -403,18 +402,17 @@ def collect_shape(
 
 
 def process_output_node(
-    depth_delta: int, name: str, cur_node: ModuleNode
+    cur_node: ModuleNode
 ) -> Callable[..., Any]:
     def _func(recorded_data: RecorderTensor) -> None:
         output_node = recorded_data.tensor_nodes[-1]
-
-        # if output node is reused inside module
+        cur_depth = cur_node.depth
+        # if output node is reused inside module or empty module is used
         # introduce node for empty pass function
-        if output_node.outputs:
-
+        if not output_node.is_main_output() or output_node.is_aux:
             out_pass = FunctionNode(
                 lambda x: x, output_node.depth, output_node,
-                name='output-pass'
+                name='empty-pass'
             )
             output_node.add_outputs(out_pass)
             output_node.context.append(out_pass)
@@ -429,8 +427,8 @@ def process_output_node(
             out_pass.add_outputs(recorded_data.tensor_nodes[-1])
             output_node.context.append(recorded_data.tensor_nodes[-1])
 
-        recorded_data.tensor_nodes[-1].depth += depth_delta
+        recorded_data.tensor_nodes[-1].depth = cur_depth
+        name = 'output-tensor' if cur_depth == 0 else 'hidden-tensor'
         recorded_data.tensor_nodes[-1].name = name
-        cur_depth = recorded_data.tensor_nodes[-1].depth
         recorded_data.tensor_nodes[-1].input_hierarchy[cur_depth] = cur_node
     return _func

@@ -79,6 +79,12 @@ class Node:
     def set_inputs(self, node_arr: NodeContainer[Node]) -> None:
         self.inputs = node_arr
 
+    def is_main_input(self) -> bool:
+        return not self.inputs
+
+    def is_main_output(self) -> bool:
+        return not self.outputs
+
     def set_node_id(self) -> None:
         raise NotImplementedError(
             'To be implemented by subclasses of Node Class !!!'
