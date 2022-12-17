@@ -24,7 +24,7 @@ class TensorNode(Node):
         context: Any | None = None,
         is_aux: bool = False,
         main_node: TensorNode | None = None,
-        input_hierarchy: dict[int, ModuleNode] | None = None,
+        input_hierarchy: dict[int, ModuleNode | FunctionNode] | None = None,
     ):
 
         super(TensorNode, self).__init__(

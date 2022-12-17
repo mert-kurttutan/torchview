@@ -406,14 +406,25 @@ def process_output_node(
         output_node = recorded_data.tensor_nodes[-1]
 
         # if output node is reused inside module
+        # introduce node for empty pass function
         if output_node.outputs:
-            recorded_data.tensor_nodes[-1] = TensorNode(
-                recorded_data, output_node.depth, output_node,
-                context=output_node.context, is_aux=False,
-                input_hierarchy=output_node.input_hierarchy
+
+            out_pass = FunctionNode(
+                lambda x: x, output_node.depth, output_node,
+                name='output-pass'
             )
+            output_node.add_outputs(out_pass)
+            output_node.context.append(out_pass)
+
+            recorded_data.tensor_nodes[-1] = TensorNode(
+                recorded_data, output_node.depth, out_pass,
+                context=output_node.context, is_aux=False,
+                input_hierarchy={
+                    recorded_data.tensor_nodes[-1].depth: out_pass
+                }
+            )
+            out_pass.add_outputs(recorded_data.tensor_nodes[-1])
             output_node.context.append(recorded_data.tensor_nodes[-1])
-            output_node.add_outputs(recorded_data.tensor_nodes[-1])
 
         recorded_data.tensor_nodes[-1].depth += depth_delta
         recorded_data.tensor_nodes[-1].name = name
