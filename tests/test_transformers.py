@@ -25,3 +25,27 @@ def test_transformer_gpt2(verify_result: Callable[..., Any]) -> None:
         model, input_data=inputs, graph_name='gpt2', depth=3, expand_nested=True
     )
     verify_result([model_graph1, model_graph2])
+
+
+def test_transformer_automodel(verify_result: Callable[..., Any]) -> None:
+
+    tokenizer = transformers.AutoTokenizer.from_pretrained("bert-base-cased-finetuned-mrpc")
+    model = transformers.AutoModelForSequenceClassification.from_pretrained("bert-base-cased-finetuned-mrpc")
+
+    sequence_0 = "The company HuggingFace is based in New York City"
+    sequence_1 = "Apples are especially bad for your health"
+    sequence_2 = "HuggingFace's headquarters are situated in Manhattan"
+
+    # The tokenizer will automatically add any model specific separators (i.e. <CLS> and <SEP>) and tokens to
+    # the sequence, as well as compute the attention masks.
+    paraphrase = tokenizer(sequence_0, sequence_2, return_tensors="pt")
+    not_paraphrase = tokenizer(sequence_0, sequence_1, return_tensors="pt")
+
+    model_graph1 = draw_graph(
+        model, input_data=paraphrase, graph_name='bert', depth=3
+    )
+
+    model_graph2 = draw_graph(
+        model, input_data=not_paraphrase, graph_name='bert', depth=3
+    )
+    verify_result([model_graph1, model_graph2])
