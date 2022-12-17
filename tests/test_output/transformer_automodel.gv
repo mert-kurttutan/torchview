@@ -1,21 +1,25 @@
 strict digraph bert {
-	graph [ordering=in size="36.0,36.0"]
+	graph [ordering=in size="21.599999999999998,21.599999999999998"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
 	0 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 26)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 26)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	1 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 26)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 26)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	2 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 26)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 26)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	3 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">__getitem__<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -27,7 +31,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	4 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">to<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -39,7 +44,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	5 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">__rsub__<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -51,7 +57,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	6 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">mul<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -63,7 +70,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	7 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Embedding<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -75,7 +83,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	8 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Embedding<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -87,7 +96,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	9 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -99,7 +109,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	10 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add_<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -111,7 +122,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	11 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -123,7 +135,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	12 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Dropout<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -135,7 +148,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	13 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BertLayer<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -147,7 +161,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	14 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BertLayer<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -159,7 +174,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	15 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BertLayer<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -171,7 +187,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	16 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BertLayer<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -183,7 +200,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	17 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BertLayer<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -195,7 +213,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	18 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BertLayer<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -207,7 +226,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	19 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BertLayer<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -219,7 +239,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	20 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BertLayer<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -231,7 +252,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	21 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BertLayer<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -243,7 +265,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	22 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BertLayer<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -255,7 +278,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	23 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BertLayer<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -267,7 +291,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	24 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BertLayer<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -279,7 +304,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	25 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">__getitem__<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -291,7 +317,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	26 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -303,7 +330,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	27 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Tanh<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -315,7 +343,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	28 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Dropout<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -327,7 +356,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	29 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -339,8 +369,9 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	30 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 2)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 2)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	2 -> 3
 	3 -> 4
@@ -385,25 +416,29 @@ strict digraph bert {
 	29 -> 30
 }
 strict digraph bert {
-	graph [ordering=in size="42.0,42.0"]
+	graph [ordering=in size="25.2,25.2"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
 	0 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 23)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 23)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	1 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 23)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 23)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	2 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 23)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 23)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	subgraph cluster_2 {
 		fontsize=12 label=BertModel labeljust=l style=dashed
 		3 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">__getitem__<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -415,7 +450,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 		4 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">to<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -427,7 +463,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 		5 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">__rsub__<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -439,7 +476,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 		6 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">mul<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -453,7 +491,8 @@ strict digraph bert {
 		subgraph cluster_3 {
 			fontsize=12 label=BertEmbeddings labeljust=l style=dashed
 			7 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Embedding<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -465,7 +504,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			8 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Embedding<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -477,7 +517,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			9 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -489,7 +530,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			10 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add_<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -501,7 +543,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			11 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -513,7 +556,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			12 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Dropout<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -528,7 +572,8 @@ strict digraph bert {
 		subgraph cluster_4 {
 			fontsize=12 label=BertEncoder labeljust=l style=dashed
 			13 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BertLayer<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -540,7 +585,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			14 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BertLayer<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -552,7 +598,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			15 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BertLayer<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -564,7 +611,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			16 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BertLayer<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -576,7 +624,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			17 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BertLayer<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -588,7 +637,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			18 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BertLayer<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -600,7 +650,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			19 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BertLayer<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -612,7 +663,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			20 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BertLayer<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -624,7 +676,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			21 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BertLayer<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -636,7 +689,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			22 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BertLayer<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -648,7 +702,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			23 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BertLayer<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -660,7 +715,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			24 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BertLayer<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -675,7 +731,8 @@ strict digraph bert {
 		subgraph cluster_5 {
 			fontsize=12 label=BertPooler labeljust=l style=dashed
 			25 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">__getitem__<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -687,7 +744,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			26 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -699,7 +757,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			27 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Tanh<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -713,7 +772,8 @@ strict digraph bert {
 		}
 	}
 	28 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Dropout<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -725,7 +785,8 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	29 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -737,8 +798,9 @@ strict digraph bert {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	30 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 2)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 2)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	2 -> 3
 	3 -> 4

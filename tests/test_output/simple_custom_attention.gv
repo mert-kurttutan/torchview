@@ -1,13 +1,15 @@
 strict digraph "custom-attention" {
-	graph [ordering=in size="60.5,60.5"]
+	graph [ordering=in size="36.3,36.3"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
 	0 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(7, 2, 128)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(7, 2, 128)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	1 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">layer_norm<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -19,11 +21,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	2 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:1</TD><TD>(7, 2, 128)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:1</TD><TD>(7, 2, 128)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	3 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">linear<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -35,11 +39,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	4 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 2, 384)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 2, 384)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	5 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">split<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -51,19 +57,23 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	6 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 2, 128)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 2, 128)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	7 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 2, 128)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 2, 128)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	8 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 2, 128)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 2, 128)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	9 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">view<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -75,11 +85,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	10 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 2, 4, 32)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 2, 4, 32)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	11 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">transpose<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -91,11 +103,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	12 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 4, 2, 32)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 4, 2, 32)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	13 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">view<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -107,11 +121,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	14 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 2, 4, 32)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 2, 4, 32)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	15 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">transpose<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -123,11 +139,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	16 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 4, 2, 32)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 4, 2, 32)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	17 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">view<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -139,11 +157,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	18 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 2, 4, 32)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 2, 4, 32)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	19 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">transpose<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -155,11 +175,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	20 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 4, 2, 32)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 4, 2, 32)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	21 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">transpose<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -171,11 +193,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	22 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 4, 32, 2)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 4, 32, 2)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	23 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">matmul<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -187,11 +211,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	24 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 4, 2, 2)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 4, 2, 2)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	25 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">mul<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -203,11 +229,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	26 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 4, 2, 2)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 4, 2, 2)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	27 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">masked_fill<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -219,11 +247,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	28 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 4, 2, 2)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 4, 2, 2)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	29 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">softmax<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -235,11 +265,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	30 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 4, 2, 2)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 4, 2, 2)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	31 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">dropout<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -251,11 +283,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	32 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 4, 2, 2)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 4, 2, 2)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	33 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">matmul<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -267,11 +301,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	34 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 4, 2, 32)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 4, 2, 32)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	35 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">transpose<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -283,11 +319,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	36 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 2, 4, 32)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 2, 4, 32)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	37 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">contiguous<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -299,11 +337,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	38 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 2, 4, 32)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 2, 4, 32)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	39 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">view<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -315,11 +355,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	40 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 2, 128)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 2, 128)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	41 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">linear<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -331,11 +373,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	42 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 2, 128)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:2</TD><TD>(7, 2, 128)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	43 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">dropout<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -347,11 +391,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	44 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:1</TD><TD>(7, 2, 128)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:1</TD><TD>(7, 2, 128)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	45 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -363,11 +409,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	46 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:1</TD><TD>(7, 2, 128)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:1</TD><TD>(7, 2, 128)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	47 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">layer_norm<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -379,11 +427,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	48 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:1</TD><TD>(7, 2, 128)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:1</TD><TD>(7, 2, 128)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	49 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">linear<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -395,11 +445,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	50 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:1</TD><TD>(7, 2, 512)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:1</TD><TD>(7, 2, 512)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	51 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -411,11 +463,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	52 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:1</TD><TD>(7, 2, 512)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:1</TD><TD>(7, 2, 512)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	53 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">linear<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -427,11 +481,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	54 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:1</TD><TD>(7, 2, 128)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:1</TD><TD>(7, 2, 128)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	55 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">dropout<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -443,11 +499,13 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	56 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>hidden-tensor<BR/>depth:1</TD><TD>(7, 2, 128)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>hidden-tensor<BR/>depth:1</TD><TD>(7, 2, 128)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	57 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -459,8 +517,9 @@ strict digraph "custom-attention" {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	58 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(7, 2, 128)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(7, 2, 128)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	0 -> 45
 	0 -> 1

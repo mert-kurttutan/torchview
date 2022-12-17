@@ -1,17 +1,20 @@
 strict digraph gpt2 {
-	graph [ordering=in size="128.0,128.0"]
+	graph [ordering=in size="76.8,76.8"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
 	0 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 6)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 6)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	1 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 6)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 6)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	2 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">view<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -23,7 +26,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	3 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">view<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -35,7 +39,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	4 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">__getitem__<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -47,7 +52,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	5 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">to<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -59,7 +65,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	6 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">__rsub__<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -71,7 +78,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	7 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">mul<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -83,7 +91,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	8 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Embedding<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -95,7 +104,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	9 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -107,7 +117,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	10 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Dropout<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -119,7 +130,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	11 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -131,7 +143,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	12 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -143,15 +156,18 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	13 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	14 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	15 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -163,7 +179,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	16 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -175,7 +192,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	17 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -187,7 +205,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	18 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -199,7 +218,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	19 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -211,7 +231,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	20 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -223,15 +244,18 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	21 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	22 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	23 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -243,7 +267,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	24 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -255,7 +280,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	25 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -267,7 +293,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	26 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -279,7 +306,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	27 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -291,7 +319,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	28 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -303,15 +332,18 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	29 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	30 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	31 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -323,7 +355,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	32 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -335,7 +368,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	33 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -347,7 +381,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	34 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -359,7 +394,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	35 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -371,7 +407,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	36 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -383,15 +420,18 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	37 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	38 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	39 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -403,7 +443,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	40 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -415,7 +456,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	41 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -427,7 +469,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	42 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -439,7 +482,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	43 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -451,7 +495,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	44 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -463,15 +508,18 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	45 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	46 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	47 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -483,7 +531,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	48 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -495,7 +544,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	49 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -507,7 +557,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	50 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -519,7 +570,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	51 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -531,7 +583,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	52 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -543,15 +596,18 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	53 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	54 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	55 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -563,7 +619,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	56 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -575,7 +632,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	57 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -587,7 +645,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	58 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -599,7 +658,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	59 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -611,7 +671,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	60 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -623,15 +684,18 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	61 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	62 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	63 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -643,7 +707,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	64 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -655,7 +720,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	65 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -667,7 +733,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	66 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -679,7 +746,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	67 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -691,7 +759,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	68 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -703,15 +772,18 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	69 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	70 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	71 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -723,7 +795,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	72 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -735,7 +808,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	73 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -747,7 +821,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	74 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -759,7 +834,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	75 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -771,7 +847,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	76 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -783,15 +860,18 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	77 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	78 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	79 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -803,7 +883,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	80 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -815,7 +896,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	81 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -827,7 +909,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	82 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -839,7 +922,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	83 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -851,7 +935,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	84 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -863,15 +948,18 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	85 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	86 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	87 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -883,7 +971,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	88 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -895,7 +984,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	89 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -907,7 +997,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	90 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -919,7 +1010,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	91 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -931,7 +1023,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	92 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -943,15 +1036,18 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	93 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	94 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	95 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -963,7 +1059,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	96 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -975,7 +1072,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	97 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -987,7 +1085,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	98 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -999,7 +1098,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	99 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1011,7 +1111,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	100 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1023,15 +1124,18 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	101 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	102 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	103 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1043,7 +1147,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	104 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1055,7 +1160,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	105 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1067,7 +1173,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	106 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1079,7 +1186,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	107 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1091,7 +1199,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	108 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">view<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1103,7 +1212,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	109 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1115,8 +1225,9 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	110 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 6, 50257)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 6, 50257)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	0 -> 2
 	1 -> 3
@@ -1265,21 +1376,24 @@ strict digraph gpt2 {
 	109 -> 110
 }
 strict digraph gpt2 {
-	graph [ordering=in size="147.5,147.5"]
+	graph [ordering=in size="88.5,88.5"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
 	0 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 6)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 6)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	1 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 6)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 6)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	subgraph cluster_2 {
 		fontsize=12 label=GPT2Model labeljust=l style=dashed
 		2 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">view<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1291,7 +1405,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 		3 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">view<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1303,7 +1418,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 		4 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">__getitem__<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1315,7 +1431,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 		5 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">to<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1327,7 +1444,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 		6 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">__rsub__<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1339,7 +1457,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 		7 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">mul<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1351,7 +1470,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 		8 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Embedding<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1363,7 +1483,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		9 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1375,7 +1496,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 		10 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Dropout<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1389,7 +1511,8 @@ strict digraph gpt2 {
 		subgraph cluster_3 {
 			fontsize=12 label=GPT2Block labeljust=l style=dashed
 			11 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1401,7 +1524,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			12 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1413,15 +1537,18 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			13 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 			14 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 			15 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1433,7 +1560,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			16 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1445,7 +1573,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			17 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1457,7 +1586,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			18 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1472,7 +1602,8 @@ strict digraph gpt2 {
 		subgraph cluster_4 {
 			fontsize=12 label=GPT2Block labeljust=l style=dashed
 			19 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1484,7 +1615,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			20 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1496,15 +1628,18 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			21 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 			22 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 			23 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1516,7 +1651,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			24 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1528,7 +1664,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			25 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1540,7 +1677,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			26 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1555,7 +1693,8 @@ strict digraph gpt2 {
 		subgraph cluster_5 {
 			fontsize=12 label=GPT2Block labeljust=l style=dashed
 			27 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1567,7 +1706,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			28 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1579,15 +1719,18 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			29 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 			30 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 			31 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1599,7 +1742,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			32 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1611,7 +1755,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			33 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1623,7 +1768,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			34 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1638,7 +1784,8 @@ strict digraph gpt2 {
 		subgraph cluster_6 {
 			fontsize=12 label=GPT2Block labeljust=l style=dashed
 			35 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1650,7 +1797,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			36 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1662,15 +1810,18 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			37 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 			38 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 			39 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1682,7 +1833,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			40 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1694,7 +1846,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			41 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1706,7 +1859,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			42 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1721,7 +1875,8 @@ strict digraph gpt2 {
 		subgraph cluster_7 {
 			fontsize=12 label=GPT2Block labeljust=l style=dashed
 			43 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1733,7 +1888,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			44 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1745,15 +1901,18 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			45 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 			46 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 			47 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1765,7 +1924,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			48 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1777,7 +1937,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			49 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1789,7 +1950,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			50 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1804,7 +1966,8 @@ strict digraph gpt2 {
 		subgraph cluster_8 {
 			fontsize=12 label=GPT2Block labeljust=l style=dashed
 			51 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1816,7 +1979,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			52 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1828,15 +1992,18 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			53 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 			54 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 			55 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1848,7 +2015,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			56 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1860,7 +2028,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			57 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1872,7 +2041,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			58 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1887,7 +2057,8 @@ strict digraph gpt2 {
 		subgraph cluster_9 {
 			fontsize=12 label=GPT2Block labeljust=l style=dashed
 			59 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1899,7 +2070,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			60 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1911,15 +2083,18 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			61 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 			62 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 			63 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1931,7 +2106,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			64 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1943,7 +2119,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			65 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1955,7 +2132,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			66 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1970,7 +2148,8 @@ strict digraph gpt2 {
 		subgraph cluster_10 {
 			fontsize=12 label=GPT2Block labeljust=l style=dashed
 			67 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1982,7 +2161,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			68 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1994,15 +2174,18 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			69 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 			70 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 			71 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2014,7 +2197,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			72 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2026,7 +2210,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			73 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2038,7 +2223,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			74 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2053,7 +2239,8 @@ strict digraph gpt2 {
 		subgraph cluster_11 {
 			fontsize=12 label=GPT2Block labeljust=l style=dashed
 			75 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2065,7 +2252,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			76 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2077,15 +2265,18 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			77 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 			78 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 			79 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2097,7 +2288,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			80 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2109,7 +2301,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			81 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2121,7 +2314,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			82 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2136,7 +2330,8 @@ strict digraph gpt2 {
 		subgraph cluster_12 {
 			fontsize=12 label=GPT2Block labeljust=l style=dashed
 			83 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2148,7 +2343,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			84 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2160,15 +2356,18 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			85 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 			86 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 			87 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2180,7 +2379,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			88 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2192,7 +2392,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			89 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2204,7 +2405,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			90 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2219,7 +2421,8 @@ strict digraph gpt2 {
 		subgraph cluster_13 {
 			fontsize=12 label=GPT2Block labeljust=l style=dashed
 			91 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2231,7 +2434,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			92 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2243,15 +2447,18 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			93 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 			94 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 			95 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2263,7 +2470,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			96 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2275,7 +2483,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			97 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2287,7 +2496,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			98 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2302,7 +2512,8 @@ strict digraph gpt2 {
 		subgraph cluster_14 {
 			fontsize=12 label=GPT2Block labeljust=l style=dashed
 			99 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2314,7 +2525,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			100 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2326,15 +2538,18 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			101 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 			102 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 			103 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2346,7 +2561,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			104 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2358,7 +2574,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			105 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2370,7 +2587,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			106 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2383,7 +2601,8 @@ strict digraph gpt2 {
                     </TABLE>> fillcolor=aliceblue]
 		}
 		107 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LayerNorm<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2395,7 +2614,8 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		108 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">view<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2408,7 +2628,8 @@ strict digraph gpt2 {
                     </TABLE>> fillcolor=aliceblue]
 	}
 	109 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2420,8 +2641,9 @@ strict digraph gpt2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	110 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 6, 50257)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 6, 50257)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	0 -> 2
 	1 -> 3

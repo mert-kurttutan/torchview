@@ -3,11 +3,13 @@ strict digraph LeakySequential {
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
 	0 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 2)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 2)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	1 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LeakyReLU<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -19,7 +21,8 @@ strict digraph LeakySequential {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	2 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Identity<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -31,7 +34,8 @@ strict digraph LeakySequential {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	3 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LeakyReLU<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -43,7 +47,8 @@ strict digraph LeakySequential {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	4 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Identity<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -55,7 +60,8 @@ strict digraph LeakySequential {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	5 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LeakyReLU<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -67,8 +73,9 @@ strict digraph LeakySequential {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	6 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 2)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 2)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	0 -> 1
 	1 -> 2
@@ -82,11 +89,13 @@ strict digraph LeakySequential {
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
 	0 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 2)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 2)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	1 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LeakyReLU<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -98,7 +107,8 @@ strict digraph LeakySequential {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	2 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Identity<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -110,7 +120,8 @@ strict digraph LeakySequential {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	3 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LeakyReLU<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -122,7 +133,8 @@ strict digraph LeakySequential {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	4 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Identity<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -134,7 +146,8 @@ strict digraph LeakySequential {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	5 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">LeakyReLU<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -146,8 +159,9 @@ strict digraph LeakySequential {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	6 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 2)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 2)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	0 -> 1
 	1 -> 2

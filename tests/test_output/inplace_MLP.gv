@@ -1,13 +1,15 @@
 strict digraph MLP {
-	graph [ordering=in size="12.5,12.5"]
+	graph [ordering=in size="12.0,12.0"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
 	0 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 128)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 128)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	1 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -19,7 +21,8 @@ strict digraph MLP {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	2 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -31,7 +34,8 @@ strict digraph MLP {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	3 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -43,7 +47,8 @@ strict digraph MLP {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	4 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -55,7 +60,8 @@ strict digraph MLP {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	5 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -67,7 +73,8 @@ strict digraph MLP {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	6 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -79,7 +86,8 @@ strict digraph MLP {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	7 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -91,7 +99,8 @@ strict digraph MLP {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	8 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -103,7 +112,8 @@ strict digraph MLP {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	9 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -115,7 +125,8 @@ strict digraph MLP {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	10 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -127,7 +138,8 @@ strict digraph MLP {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	11 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -139,8 +151,9 @@ strict digraph MLP {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	12 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 2)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 2)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	0 -> 1
 	1 -> 2
@@ -156,15 +169,17 @@ strict digraph MLP {
 	11 -> 12
 }
 strict digraph MLP {
-	graph [ordering=in size="12.5,12.5"]
+	graph [ordering=in size="12.0,12.0"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
 	0 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 128)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 128)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	1 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -176,7 +191,8 @@ strict digraph MLP {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	2 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -188,7 +204,8 @@ strict digraph MLP {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	3 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -200,7 +217,8 @@ strict digraph MLP {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	4 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -212,7 +230,8 @@ strict digraph MLP {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	5 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -224,7 +243,8 @@ strict digraph MLP {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	6 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -236,7 +256,8 @@ strict digraph MLP {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	7 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -248,7 +269,8 @@ strict digraph MLP {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	8 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -260,7 +282,8 @@ strict digraph MLP {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	9 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -272,7 +295,8 @@ strict digraph MLP {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	10 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -284,7 +308,8 @@ strict digraph MLP {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	11 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -296,8 +321,9 @@ strict digraph MLP {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	12 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 2)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 2)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	0 -> 1
 	1 -> 2

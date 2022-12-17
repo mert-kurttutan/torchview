@@ -1,13 +1,15 @@
 strict digraph UNet2 {
-	graph [ordering=in size="23.0,23.0"]
+	graph [ordering=in size="13.799999999999999,13.799999999999999"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
 	0 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 1, 28, 28)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 1, 28, 28)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	1 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -19,7 +21,8 @@ strict digraph UNet2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	2 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -31,7 +34,8 @@ strict digraph UNet2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	3 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -43,7 +47,8 @@ strict digraph UNet2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	4 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -55,7 +60,8 @@ strict digraph UNet2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	5 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -67,7 +73,8 @@ strict digraph UNet2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	6 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -79,7 +86,8 @@ strict digraph UNet2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	7 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">MaxPool2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -91,7 +99,8 @@ strict digraph UNet2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	8 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">DoubleConv<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -103,7 +112,8 @@ strict digraph UNet2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	9 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">MaxPool2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -115,7 +125,8 @@ strict digraph UNet2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	10 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">DoubleConv<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -127,7 +138,8 @@ strict digraph UNet2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	11 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -139,7 +151,8 @@ strict digraph UNet2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	12 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">pad<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -151,7 +164,8 @@ strict digraph UNet2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	13 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">cat<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -163,7 +177,8 @@ strict digraph UNet2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	14 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Sequential<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -175,7 +190,8 @@ strict digraph UNet2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	15 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -187,7 +203,8 @@ strict digraph UNet2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	16 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">pad<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -199,7 +216,8 @@ strict digraph UNet2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	17 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">cat<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -211,7 +229,8 @@ strict digraph UNet2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	18 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Sequential<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -223,7 +242,8 @@ strict digraph UNet2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	19 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -235,7 +255,8 @@ strict digraph UNet2 {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	20 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add_<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -247,8 +268,9 @@ strict digraph UNet2 {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	21 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 28, 28)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 28, 28)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	0 -> 20
 	0 -> 1

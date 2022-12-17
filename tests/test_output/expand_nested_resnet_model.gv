@@ -1,13 +1,15 @@
 strict digraph Resnet {
-	graph [ordering=in size="220.5,220.5"]
+	graph [ordering=in size="132.29999999999998,132.29999999999998"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
 	0 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 3, 224, 224)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 3, 224, 224)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	1 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -19,7 +21,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	2 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -31,7 +34,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	3 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -43,7 +47,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	4 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">MaxPool2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -59,7 +64,8 @@ strict digraph Resnet {
 		subgraph cluster_3 {
 			fontsize=12 label=Bottleneck labeljust=l style=dashed
 			5 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -71,7 +77,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			6 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -83,7 +90,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			7 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -95,7 +103,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			8 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -107,7 +116,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			9 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -119,7 +129,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			10 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -131,7 +142,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			11 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -143,7 +155,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			12 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -157,7 +170,8 @@ strict digraph Resnet {
 			subgraph cluster_4 {
 				fontsize=12 label=Sequential labeljust=l style=dashed
 				13 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:4</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -169,7 +183,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 				14 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:4</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -182,7 +197,8 @@ strict digraph Resnet {
                     </TABLE>> fillcolor=darkseagreen1]
 			}
 			15 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add_<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -194,7 +210,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			16 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -209,7 +226,8 @@ strict digraph Resnet {
 		subgraph cluster_5 {
 			fontsize=12 label=Bottleneck labeljust=l style=dashed
 			17 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -221,7 +239,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			18 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -233,7 +252,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			19 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -245,7 +265,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			20 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -257,7 +278,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			21 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -269,7 +291,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			22 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -281,7 +304,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			23 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -293,7 +317,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			24 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -305,7 +330,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			25 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add_<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -317,7 +343,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			26 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -332,7 +359,8 @@ strict digraph Resnet {
 		subgraph cluster_6 {
 			fontsize=12 label=Bottleneck labeljust=l style=dashed
 			27 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -344,7 +372,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			28 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -356,7 +385,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			29 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -368,7 +398,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			30 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -380,7 +411,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			31 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -392,7 +424,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			32 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -404,7 +437,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			33 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -416,7 +450,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			34 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -428,7 +463,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			35 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add_<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -440,7 +476,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			36 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -458,7 +495,8 @@ strict digraph Resnet {
 		subgraph cluster_8 {
 			fontsize=12 label=Bottleneck labeljust=l style=dashed
 			37 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -470,7 +508,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			38 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -482,7 +521,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			39 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -494,7 +534,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			40 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -506,7 +547,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			41 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -518,7 +560,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			42 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -530,7 +573,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			43 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -542,7 +586,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			44 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -556,7 +601,8 @@ strict digraph Resnet {
 			subgraph cluster_9 {
 				fontsize=12 label=Sequential labeljust=l style=dashed
 				45 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:4</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -568,7 +614,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 				46 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:4</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -581,7 +628,8 @@ strict digraph Resnet {
                     </TABLE>> fillcolor=darkseagreen1]
 			}
 			47 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add_<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -593,7 +641,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			48 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -608,7 +657,8 @@ strict digraph Resnet {
 		subgraph cluster_10 {
 			fontsize=12 label=Bottleneck labeljust=l style=dashed
 			49 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -620,7 +670,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			50 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -632,7 +683,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			51 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -644,7 +696,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			52 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -656,7 +709,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			53 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -668,7 +722,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			54 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -680,7 +735,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			55 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -692,7 +748,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			56 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -704,7 +761,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			57 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add_<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -716,7 +774,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			58 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -731,7 +790,8 @@ strict digraph Resnet {
 		subgraph cluster_11 {
 			fontsize=12 label=Bottleneck labeljust=l style=dashed
 			59 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -743,7 +803,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			60 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -755,7 +816,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			61 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -767,7 +829,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			62 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -779,7 +842,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			63 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -791,7 +855,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			64 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -803,7 +868,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			65 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -815,7 +881,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			66 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -827,7 +894,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			67 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add_<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -839,7 +907,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			68 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -854,7 +923,8 @@ strict digraph Resnet {
 		subgraph cluster_12 {
 			fontsize=12 label=Bottleneck labeljust=l style=dashed
 			69 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -866,7 +936,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			70 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -878,7 +949,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			71 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -890,7 +962,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			72 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -902,7 +975,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			73 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -914,7 +988,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			74 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -926,7 +1001,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			75 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -938,7 +1014,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			76 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -950,7 +1027,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			77 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add_<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -962,7 +1040,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			78 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -980,7 +1059,8 @@ strict digraph Resnet {
 		subgraph cluster_14 {
 			fontsize=12 label=Bottleneck labeljust=l style=dashed
 			79 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -992,7 +1072,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			80 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1004,7 +1085,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			81 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1016,7 +1098,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			82 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1028,7 +1111,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			83 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1040,7 +1124,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			84 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1052,7 +1137,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			85 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1064,7 +1150,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			86 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1078,7 +1165,8 @@ strict digraph Resnet {
 			subgraph cluster_15 {
 				fontsize=12 label=Sequential labeljust=l style=dashed
 				87 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:4</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1090,7 +1178,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 				88 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:4</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1103,7 +1192,8 @@ strict digraph Resnet {
                     </TABLE>> fillcolor=darkseagreen1]
 			}
 			89 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add_<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1115,7 +1205,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			90 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1130,7 +1221,8 @@ strict digraph Resnet {
 		subgraph cluster_16 {
 			fontsize=12 label=Bottleneck labeljust=l style=dashed
 			91 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1142,7 +1234,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			92 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1154,7 +1247,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			93 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1166,7 +1260,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			94 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1178,7 +1273,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			95 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1190,7 +1286,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			96 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1202,7 +1299,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			97 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1214,7 +1312,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			98 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1226,7 +1325,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			99 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add_<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1238,7 +1338,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			100 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1253,7 +1354,8 @@ strict digraph Resnet {
 		subgraph cluster_17 {
 			fontsize=12 label=Bottleneck labeljust=l style=dashed
 			101 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1265,7 +1367,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			102 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1277,7 +1380,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			103 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1289,7 +1393,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			104 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1301,7 +1406,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			105 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1313,7 +1419,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			106 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1325,7 +1432,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			107 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1337,7 +1445,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			108 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1349,7 +1458,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			109 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add_<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1361,7 +1471,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			110 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1376,7 +1487,8 @@ strict digraph Resnet {
 		subgraph cluster_18 {
 			fontsize=12 label=Bottleneck labeljust=l style=dashed
 			111 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1388,7 +1500,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			112 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1400,7 +1513,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			113 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1412,7 +1526,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			114 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1424,7 +1539,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			115 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1436,7 +1552,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			116 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1448,7 +1565,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			117 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1460,7 +1578,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			118 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1472,7 +1591,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			119 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add_<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1484,7 +1604,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			120 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1499,7 +1620,8 @@ strict digraph Resnet {
 		subgraph cluster_19 {
 			fontsize=12 label=Bottleneck labeljust=l style=dashed
 			121 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1511,7 +1633,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			122 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1523,7 +1646,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			123 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1535,7 +1659,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			124 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1547,7 +1672,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			125 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1559,7 +1685,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			126 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1571,7 +1698,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			127 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1583,7 +1711,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			128 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1595,7 +1724,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			129 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add_<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1607,7 +1737,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			130 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1622,7 +1753,8 @@ strict digraph Resnet {
 		subgraph cluster_20 {
 			fontsize=12 label=Bottleneck labeljust=l style=dashed
 			131 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1634,7 +1766,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			132 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1646,7 +1779,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			133 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1658,7 +1792,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			134 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1670,7 +1805,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			135 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1682,7 +1818,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			136 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1694,7 +1831,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			137 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1706,7 +1844,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			138 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1718,7 +1857,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			139 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add_<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1730,7 +1870,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			140 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1748,7 +1889,8 @@ strict digraph Resnet {
 		subgraph cluster_22 {
 			fontsize=12 label=Bottleneck labeljust=l style=dashed
 			141 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1760,7 +1902,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			142 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1772,7 +1915,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			143 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1784,7 +1928,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			144 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1796,7 +1941,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			145 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1808,7 +1954,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			146 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1820,7 +1967,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			147 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1832,7 +1980,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			148 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1846,7 +1995,8 @@ strict digraph Resnet {
 			subgraph cluster_23 {
 				fontsize=12 label=Sequential labeljust=l style=dashed
 				149 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:4</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1858,7 +2008,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 				150 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:4</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1871,7 +2022,8 @@ strict digraph Resnet {
                     </TABLE>> fillcolor=darkseagreen1]
 			}
 			151 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add_<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1883,7 +2035,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			152 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1898,7 +2051,8 @@ strict digraph Resnet {
 		subgraph cluster_24 {
 			fontsize=12 label=Bottleneck labeljust=l style=dashed
 			153 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1910,7 +2064,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			154 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1922,7 +2077,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			155 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1934,7 +2090,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			156 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1946,7 +2103,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			157 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1958,7 +2116,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			158 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1970,7 +2129,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			159 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1982,7 +2142,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			160 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1994,7 +2155,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			161 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add_<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2006,7 +2168,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			162 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2021,7 +2184,8 @@ strict digraph Resnet {
 		subgraph cluster_25 {
 			fontsize=12 label=Bottleneck labeljust=l style=dashed
 			163 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2033,7 +2197,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			164 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2045,7 +2210,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			165 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2057,7 +2223,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			166 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2069,7 +2236,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			167 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2081,7 +2249,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			168 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2093,7 +2262,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			169 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2105,7 +2275,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			170 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2117,7 +2288,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			171 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add_<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2129,7 +2301,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			172 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2143,7 +2316,8 @@ strict digraph Resnet {
 		}
 	}
 	173 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">AdaptiveAvgPool2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2155,7 +2329,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	174 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">flatten<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2167,7 +2342,8 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	175 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2179,8 +2355,9 @@ strict digraph Resnet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	176 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1000)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1000)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	0 -> 1
 	1 -> 2

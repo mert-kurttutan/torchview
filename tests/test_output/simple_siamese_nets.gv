@@ -1,17 +1,20 @@
 strict digraph SiameseNets {
-	graph [ordering=in size="35.5,35.5"]
+	graph [ordering=in size="21.3,21.3"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
 	0 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 1, 88, 88)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 1, 88, 88)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	1 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 1, 88, 88)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 1, 88, 88)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	2 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -23,7 +26,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	3 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -35,7 +39,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	4 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">MaxPool2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -47,7 +52,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	5 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -59,7 +65,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	6 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -71,7 +78,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	7 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">MaxPool2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -83,7 +91,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	8 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -95,7 +104,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	9 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -107,7 +117,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	10 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">MaxPool2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -119,7 +130,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	11 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -131,7 +143,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	12 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -143,7 +156,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	13 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">MaxPool2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -155,7 +169,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	14 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -167,7 +182,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	15 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -179,7 +195,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	16 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">MaxPool2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -191,7 +208,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	17 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -203,7 +221,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	18 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -215,7 +234,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	19 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">MaxPool2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -227,7 +247,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	20 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -239,7 +260,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	21 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -251,7 +273,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	22 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">MaxPool2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -263,7 +286,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	23 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -275,7 +299,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	24 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -287,7 +312,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	25 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">MaxPool2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -299,7 +325,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	26 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">view<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -311,7 +338,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	27 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">view<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -323,7 +351,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	28 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -335,7 +364,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	29 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -347,7 +377,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	30 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">sub<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -359,7 +390,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	31 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">abs<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -371,7 +403,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	32 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Dropout<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -383,7 +416,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	33 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -395,7 +429,8 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	34 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">sigmoid<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -407,8 +442,9 @@ strict digraph SiameseNets {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	35 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	0 -> 2
 	1 -> 14

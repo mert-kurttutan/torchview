@@ -403,7 +403,7 @@ class ComputationGraph:
                     </TABLE>>'''
         return label
 
-    def resize_graph(self, scale=1.0, size_per_element=0.5, min_size=12):
+    def resize_graph(self, scale=1.0, size_per_element=0.3, min_size=12):
         """Resize the graph according to how much content it contains.
         Modify the graph in place. Default values are subject to change,
         so far they seem to work fine.

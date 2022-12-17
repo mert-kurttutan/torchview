@@ -1,13 +1,15 @@
 strict digraph LDC {
-	graph [ordering=in size="107.5,107.5"]
+	graph [ordering=in size="64.5,64.5"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
 	0 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 3, 32, 32)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 3, 32, 32)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	1 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -19,7 +21,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	2 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -31,7 +34,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	3 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -43,7 +47,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	4 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -55,7 +60,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	5 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -67,7 +73,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	6 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -79,7 +86,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	7 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -91,7 +99,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	8 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -103,7 +112,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	9 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -115,7 +125,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	10 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -127,7 +138,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	11 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -139,7 +151,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	12 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -151,7 +164,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	13 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -163,7 +177,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	14 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">MaxPool2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -175,7 +190,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	15 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -187,7 +203,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	16 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -199,7 +216,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	17 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -211,7 +229,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	18 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -223,7 +242,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	19 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -235,7 +255,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	20 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -247,7 +268,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	21 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -259,7 +281,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	22 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -271,7 +294,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	23 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -283,7 +307,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	24 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -295,7 +320,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	25 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -307,7 +333,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	26 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -319,7 +346,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	27 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">mul<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -331,7 +359,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	28 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -343,7 +372,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	29 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -355,7 +385,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	30 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -367,7 +398,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	31 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -379,7 +411,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	32 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -391,7 +424,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	33 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -403,7 +437,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	34 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -415,7 +450,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	35 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">mul<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -427,7 +463,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	36 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">MaxPool2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -439,7 +476,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	37 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -451,7 +489,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	38 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -463,7 +502,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	39 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -475,7 +515,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	40 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -487,7 +528,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	41 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -499,7 +541,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	42 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -511,7 +554,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	43 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -523,7 +567,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	44 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -535,7 +580,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	45 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -547,7 +593,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	46 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -559,7 +606,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	47 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -571,7 +619,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	48 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -583,7 +632,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	49 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -595,7 +645,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	50 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">mul<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -607,7 +658,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	51 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -619,7 +671,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	52 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -631,7 +684,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	53 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -643,7 +697,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	54 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -655,7 +710,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	55 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -667,7 +723,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	56 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -679,7 +736,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	57 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -691,7 +749,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	58 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">mul<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -703,7 +762,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	59 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -715,7 +775,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	60 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -727,7 +788,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	61 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -739,7 +801,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	62 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -751,7 +814,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	63 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -763,7 +827,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	64 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -775,7 +840,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	65 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -787,7 +853,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	66 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">mul<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -799,7 +866,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	67 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -811,7 +879,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	68 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -823,7 +892,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	69 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -835,7 +905,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	70 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -847,7 +918,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	71 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -859,7 +931,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	72 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -871,7 +944,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	73 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -883,7 +957,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	74 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -895,7 +970,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	75 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -907,7 +983,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	76 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -919,7 +996,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	77 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -931,7 +1009,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	78 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -943,7 +1022,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	79 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -955,7 +1035,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	80 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -967,7 +1048,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	81 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -979,7 +1061,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	82 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -991,7 +1074,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	83 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1003,7 +1087,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	84 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1015,7 +1100,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	85 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1027,7 +1113,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	86 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1039,7 +1126,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	87 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1051,7 +1139,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	88 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">cat<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1063,7 +1152,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	89 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1075,7 +1165,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	90 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GroupNorm<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1087,7 +1178,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	91 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1099,7 +1191,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	92 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1111,7 +1204,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	93 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">softmax<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1123,7 +1217,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	94 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">mul<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1135,7 +1230,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	95 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">sum<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1147,7 +1243,8 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	96 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">unsqueeze<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1159,24 +1256,29 @@ strict digraph LDC {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	97 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	98 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	99 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	100 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	101 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	0 -> 1
 	1 -> 2
@@ -1293,17 +1395,19 @@ strict digraph LDC {
 	87 -> 101
 }
 strict digraph LDC_expanded {
-	graph [ordering=in size="142.0,142.0"]
+	graph [ordering=in size="85.2,85.2"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
 	0 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 3, 32, 32)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 3, 32, 32)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	subgraph cluster_2 {
 		fontsize=12 label=DoubleConvBlock labeljust=l style=dashed
 		1 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1315,7 +1419,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		2 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1327,7 +1432,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		3 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1339,7 +1445,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		4 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1351,7 +1458,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		5 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1363,7 +1471,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		6 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1378,7 +1487,8 @@ strict digraph LDC_expanded {
 	subgraph cluster_3 {
 		fontsize=12 label=SingleConvBlock labeljust=l style=dashed
 		7 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1390,7 +1500,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		8 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1405,7 +1516,8 @@ strict digraph LDC_expanded {
 	subgraph cluster_4 {
 		fontsize=12 label=DoubleConvBlock labeljust=l style=dashed
 		9 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1417,7 +1529,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		10 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1429,7 +1542,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		11 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1441,7 +1555,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		12 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1453,7 +1568,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		13 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1466,7 +1582,8 @@ strict digraph LDC_expanded {
                     </TABLE>> fillcolor=darkseagreen1]
 	}
 	14 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">MaxPool2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1478,7 +1595,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	15 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1492,7 +1610,8 @@ strict digraph LDC_expanded {
 	subgraph cluster_5 {
 		fontsize=12 label=SingleConvBlock labeljust=l style=dashed
 		16 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1504,7 +1623,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		17 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1519,7 +1639,8 @@ strict digraph LDC_expanded {
 	subgraph cluster_6 {
 		fontsize=12 label=SingleConvBlock labeljust=l style=dashed
 		18 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1531,7 +1652,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		19 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1548,7 +1670,8 @@ strict digraph LDC_expanded {
 		subgraph cluster_8 {
 			fontsize=12 label=_DenseLayer labeljust=l style=dashed
 			20 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1560,7 +1683,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			21 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1572,7 +1696,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			22 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1584,7 +1709,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			23 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1596,7 +1722,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			24 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1608,7 +1735,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			25 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1620,7 +1748,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			26 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1632,7 +1761,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			27 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">mul<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1647,7 +1777,8 @@ strict digraph LDC_expanded {
 		subgraph cluster_9 {
 			fontsize=12 label=_DenseLayer labeljust=l style=dashed
 			28 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1659,7 +1790,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			29 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1671,7 +1803,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			30 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1683,7 +1816,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			31 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1695,7 +1829,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			32 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1707,7 +1842,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			33 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1719,7 +1855,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			34 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1731,7 +1868,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			35 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">mul<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1745,7 +1883,8 @@ strict digraph LDC_expanded {
 		}
 	}
 	36 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">MaxPool2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1757,7 +1896,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	37 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1771,7 +1911,8 @@ strict digraph LDC_expanded {
 	subgraph cluster_10 {
 		fontsize=12 label=SingleConvBlock labeljust=l style=dashed
 		38 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1783,7 +1924,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		39 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1796,7 +1938,8 @@ strict digraph LDC_expanded {
                     </TABLE>> fillcolor=darkseagreen1]
 	}
 	40 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1810,7 +1953,8 @@ strict digraph LDC_expanded {
 	subgraph cluster_11 {
 		fontsize=12 label=SingleConvBlock labeljust=l style=dashed
 		41 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1822,7 +1966,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		42 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1839,7 +1984,8 @@ strict digraph LDC_expanded {
 		subgraph cluster_13 {
 			fontsize=12 label=_DenseLayer labeljust=l style=dashed
 			43 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1851,7 +1997,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			44 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1863,7 +2010,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			45 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1875,7 +2023,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			46 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1887,7 +2036,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			47 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1899,7 +2049,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			48 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1911,7 +2062,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			49 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1923,7 +2075,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			50 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">mul<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1938,7 +2091,8 @@ strict digraph LDC_expanded {
 		subgraph cluster_14 {
 			fontsize=12 label=_DenseLayer labeljust=l style=dashed
 			51 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1950,7 +2104,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			52 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1962,7 +2117,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			53 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1974,7 +2130,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			54 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1986,7 +2143,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			55 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -1998,7 +2156,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			56 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2010,7 +2169,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			57 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2022,7 +2182,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			58 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">mul<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2037,7 +2198,8 @@ strict digraph LDC_expanded {
 		subgraph cluster_15 {
 			fontsize=12 label=_DenseLayer labeljust=l style=dashed
 			59 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2049,7 +2211,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			60 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2061,7 +2224,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			61 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2073,7 +2237,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			62 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2085,7 +2250,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			63 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2097,7 +2263,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			64 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2109,7 +2276,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			65 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">add<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2121,7 +2289,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 			66 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">mul<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2139,7 +2308,8 @@ strict digraph LDC_expanded {
 		subgraph cluster_17 {
 			fontsize=12 label=Sequential labeljust=l style=dashed
 			67 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2151,7 +2321,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			68 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2163,7 +2334,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			69 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2181,7 +2353,8 @@ strict digraph LDC_expanded {
 		subgraph cluster_19 {
 			fontsize=12 label=Sequential labeljust=l style=dashed
 			70 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2193,7 +2366,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			71 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2205,7 +2379,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			72 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2223,7 +2398,8 @@ strict digraph LDC_expanded {
 		subgraph cluster_21 {
 			fontsize=12 label=Sequential labeljust=l style=dashed
 			73 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2235,7 +2411,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			74 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2247,7 +2424,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			75 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2259,7 +2437,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			76 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2271,7 +2450,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			77 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2283,7 +2463,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			78 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2301,7 +2482,8 @@ strict digraph LDC_expanded {
 		subgraph cluster_23 {
 			fontsize=12 label=Sequential labeljust=l style=dashed
 			79 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2313,7 +2495,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			80 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2325,7 +2508,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			81 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2337,7 +2521,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			82 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2349,7 +2534,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			83 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2361,7 +2547,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			84 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2373,7 +2560,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			85 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2385,7 +2573,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			86 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2397,7 +2586,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 			87 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2411,7 +2601,8 @@ strict digraph LDC_expanded {
 		}
 	}
 	88 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">cat<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2425,7 +2616,8 @@ strict digraph LDC_expanded {
 	subgraph cluster_24 {
 		fontsize=12 label=CoFusion labeljust=l style=dashed
 		89 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2437,7 +2629,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		90 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">GroupNorm<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2449,7 +2642,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		91 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2461,7 +2655,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		92 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2473,7 +2668,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 		93 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">softmax<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2485,7 +2681,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 		94 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">mul<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2497,7 +2694,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 		95 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">sum<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2509,7 +2707,8 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 		96 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">unsqueeze<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -2521,25 +2720,30 @@ strict digraph LDC_expanded {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 		97 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	}
 	98 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	99 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	100 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	101 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	0 -> 1
 	1 -> 2

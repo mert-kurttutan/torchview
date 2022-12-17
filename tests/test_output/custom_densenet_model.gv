@@ -1,13 +1,15 @@
 strict digraph CustomDenseNet {
-	graph [ordering=in size="55.0,55.0"]
+	graph [ordering=in size="33.0,33.0"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
 	0 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 3, 224, 224)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 3, 224, 224)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	1 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -19,7 +21,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	2 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -31,7 +34,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	3 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -43,7 +47,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	4 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -55,7 +60,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	5 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -67,7 +73,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	6 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -79,7 +86,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	7 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">cat<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -91,7 +99,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	8 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -103,7 +112,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	9 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -115,7 +125,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	10 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -127,7 +138,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	11 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">AvgPool2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -139,7 +151,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	12 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -151,7 +164,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	13 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -163,7 +177,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	14 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -175,7 +190,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	15 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -187,7 +203,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	16 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -199,7 +216,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	17 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">cat<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -211,7 +229,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	18 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -223,7 +242,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	19 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -235,7 +255,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	20 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -247,7 +268,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	21 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">AvgPool2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -259,7 +281,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	22 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -271,7 +294,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	23 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -283,7 +307,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	24 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -295,7 +320,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	25 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -307,7 +333,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	26 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -319,7 +346,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	27 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">cat<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -331,7 +359,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	28 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -343,7 +372,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	29 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">adaptive_avg_pool2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -355,7 +385,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	30 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">flatten<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -367,7 +398,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	31 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -379,8 +411,9 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	32 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 10)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 10)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	0 -> 1
 	1 -> 2
@@ -461,15 +494,17 @@ strict digraph CustomDenseNet {
 	31 -> 32
 }
 strict digraph CustomDenseNet {
-	graph [ordering=in size="55.0,55.0"]
+	graph [ordering=in size="33.0,33.0"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
 	0 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 3, 224, 224)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 3, 224, 224)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	1 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -481,7 +516,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	2 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -493,7 +529,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	3 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -505,7 +542,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	4 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -517,7 +555,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	5 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -529,7 +568,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	6 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -541,7 +581,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	7 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">cat<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -553,7 +594,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	8 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -565,7 +607,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	9 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -577,7 +620,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	10 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -589,7 +633,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	11 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">AvgPool2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -601,7 +646,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	12 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -613,7 +659,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	13 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -625,7 +672,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	14 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -637,7 +685,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	15 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -649,7 +698,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	16 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -661,7 +711,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	17 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">cat<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -673,7 +724,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	18 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -685,7 +737,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	19 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -697,7 +750,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	20 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -709,7 +763,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	21 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">AvgPool2d<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -721,7 +776,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	22 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -733,7 +789,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	23 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -745,7 +802,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	24 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -757,7 +815,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	25 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -769,7 +828,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	26 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">BottleneckUnit<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -781,7 +841,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	27 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">cat<BR/>depth:3</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -793,7 +854,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	28 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">relu<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -805,7 +867,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	29 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">adaptive_avg_pool2d<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -817,7 +880,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	30 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">flatten<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -829,7 +893,8 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
 	31 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -841,8 +906,9 @@ strict digraph CustomDenseNet {
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	32 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
-                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 10)</TD></TR>
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 10)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
 	0 -> 1
 	1 -> 2
