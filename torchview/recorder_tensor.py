@@ -9,6 +9,8 @@ from torch.nn import functional as F
 
 from .computation_node import ModuleNode, FunctionNode, TensorNode, NodeContainer
 
+from .utils import OrderedSet
+
 # Needed for module wrapper and resetting
 _orig_module_forward = torch.nn.Module.__call__
 
@@ -129,7 +131,8 @@ def module_forward_wrapper() -> Callable[..., Any]:
         )
 
         traverse_data_inplace(
-            set(output_recorder), process_output_node(-1, 'output-tensor', cur_node)
+            OrderedSet(output_recorder),
+            process_output_node(-1, 'output-tensor', cur_node)
         )
 
         traverse_data_inplace(
@@ -207,6 +210,11 @@ class RecorderTensor(torch.Tensor):
         args_nodes: NodeContainer[TensorNode] = (
             reduce_data_info([args, kwargs], collect_tensor_node, NodeContainer())
         )
+
+        # if func is torch.cat:
+        #     for in_arg in args_nodes:
+        #         print('-------------------------------------------')
+        #         print(in_arg.input_hierarchy[1].input_shape)
 
         # This is necessary for torch version < 1.10
         if func in [F.linear, F.embedding]:
@@ -337,7 +345,7 @@ def attach_node(
 
 def pop_after_forward(
     r_in: RecorderTensor,
-    recorded_output: NodeContainer[RecorderTensor]
+    recorded_output: OrderedSet[RecorderTensor]
 ) -> None:
     '''Removes/pops nodes from RecorderTensors to maintain correct nodes
     Two types of process exist for types of modules:
@@ -348,7 +356,7 @@ def pop_after_forward(
     in_place_func_message = (
         'Tensor before and after inplace operation must have the same memory address'
     )
-    output_id: NodeContainer[int] = NodeContainer(id(x) for x in recorded_output)
+    output_id: OrderedSet[int] = OrderedSet(id(x) for x in recorded_output)
 
     if not id(r_in) in output_id:
         _ = reduce_data_info(
