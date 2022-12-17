@@ -439,7 +439,8 @@ def get_output_id(head_node: COMPUTATION_NODES) -> str | int:
     '''
     if isinstance(head_node, ModuleNode):
         if head_node.is_activation:
-            output_id = head_node.node_id
+            # TODO: try also compute_unit_id
+            output_id = head_node.compute_unit_id
         else:
             output_id = head_node.compute_unit_id
     else:

@@ -105,10 +105,6 @@ def module_forward_wrapper() -> Callable[..., Any]:
         for node in input_nodes:
             node.add_outputs(cur_node)
 
-        cur_node.set_input_shape(
-            reduce_data_info([args, kwargs], collect_shape, [])
-        )
-
         tensor_to_node: dict[RecorderTensor, TensorNode] = (
             reduce_data_info([args, kwargs], collect_tensor_node_id_dict, {})
         )
@@ -149,6 +145,9 @@ def module_forward_wrapper() -> Callable[..., Any]:
             cur_node.end_nodes.add(output_node)
             output_node.context = input_context
 
+        cur_node.set_input_shape(
+            reduce_data_info([args, kwargs], collect_shape, [])
+        )
         cur_node.set_output_shape(reduce_data_info(out, collect_shape, []))
         return out
 

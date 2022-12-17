@@ -28,21 +28,21 @@ strict digraph RecursiveRelu {
 	edge [fontsize=10]
 	0 [label="input-tensor&#92;ndepth:0|(1, 2)" fillcolor=lightyellow]
 	1 [label="ReLU&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
+	1 [label="ReLU&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
+	1 [label="ReLU&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
+	1 [label="ReLU&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
+	1 [label="ReLU&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
+	1 [label="ReLU&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
+	1 [label="ReLU&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
 	2 [label="ReLU&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
-	3 [label="ReLU&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
-	4 [label="ReLU&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
-	5 [label="ReLU&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
-	6 [label="ReLU&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
-	7 [label="ReLU&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
-	8 [label="ReLU&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
-	9 [label="output-tensor&#92;ndepth:0|(1, 2)" fillcolor=lightyellow]
+	3 [label="output-tensor&#92;ndepth:0|(1, 2)" fillcolor=lightyellow]
 	0 -> 1
+	1 -> 1
+	1 -> 1 [label=" x2"]
+	1 -> 1 [label=" x3"]
+	1 -> 1 [label=" x4"]
+	1 -> 1 [label=" x5"]
+	1 -> 1 [label=" x6"]
 	1 -> 2
 	2 -> 3
-	3 -> 4
-	4 -> 5
-	5 -> 6
-	6 -> 7
-	7 -> 8
-	8 -> 9
 }

@@ -190,6 +190,29 @@ def test_expand_nested_recursive_net(verify_result: Callable[..., Any]) -> None:
     verify_result([model_graph_1, model_graph_2])
 
 
+def test_expand_nested_explicit_recursive_net(
+    verify_result: Callable[..., Any]
+) -> None:
+
+    model_graph_1 = draw_graph(
+        SimpleRNN(), input_size=(2, 3),
+        graph_name='RecursiveNet',
+        expand_nested=True,
+        hide_module_functions=False,
+        roll=True,
+    )
+
+    model_graph_2 = draw_graph(
+        SimpleRNN(), input_size=(2, 3),
+        graph_name='RecursiveNet',
+        expand_nested=True,
+        hide_module_functions=False,
+        roll=False,
+    )
+
+    verify_result([model_graph_1, model_graph_2])
+
+
 def test_inplace_recursive_net(verify_result: Callable[..., Any]) -> None:
 
     model_graph_1 = draw_graph(
@@ -213,7 +236,6 @@ def test_simple_siamese_nets(verify_result: Callable[..., Any]) -> None:
     model_graph_1 = draw_graph(
         SiameseNets(), input_size=[(1, 1, 88, 88), (1, 1, 88, 88)],
         graph_name='SiameseNets',
-        roll=True,
     )
 
     verify_result([model_graph_1])
