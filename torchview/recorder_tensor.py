@@ -211,11 +211,6 @@ class RecorderTensor(torch.Tensor):
             reduce_data_info([args, kwargs], collect_tensor_node, NodeContainer())
         )
 
-        # if func is torch.cat:
-        #     for in_arg in args_nodes:
-        #         print('-------------------------------------------')
-        #         print(in_arg.input_hierarchy[1].input_shape)
-
         # This is necessary for torch version < 1.10
         if func in [F.linear, F.embedding]:
             out = nn.parameter.Parameter.__torch_function__(
