@@ -215,8 +215,8 @@ strict digraph LDC {
 	96 -> 97
 	69 -> 98
 	87 -> 99
-	72 -> 100
-	78 -> 101
+	78 -> 100
+	72 -> 101
 }
 strict digraph LDC_expanded {
 	graph [ordering=in size="85.2,85.2"]
