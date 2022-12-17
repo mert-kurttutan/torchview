@@ -221,13 +221,15 @@ class ComputationGraph:
         # add edges
         # {cur_node -> head} part
         tail_node = self.get_tail_node(cur_node)
+        is_main_node_visible = self.is_node_visible(cur_node.main_node)
+        is_tail_node_visible = self.is_node_visible(tail_node)
         if not cur_node.is_main_output():
             for output_node in cur_node.outputs:
                 is_output_visible = self.is_node_visible(output_node)
                 if is_output_visible:
-                    if not self.hide_inner_tensors:
+                    if is_main_node_visible:
                         self.edge_list.append((cur_node, output_node))
-                    elif self.is_node_visible(tail_node):
+                    elif is_tail_node_visible:
                         self.edge_list.append((tail_node, output_node))
 
         # {tail -> cur_node} part
@@ -289,7 +291,7 @@ class ComputationGraph:
             'Only Computation Nodes are allowed for this function as an input'
         )
 
-    def get_tail_node(self, _tensor_node):
+    def get_tail_node(self, _tensor_node: TensorNode):
 
         tensor_node = _tensor_node.main_node if _tensor_node.is_aux else _tensor_node
 
@@ -297,30 +299,39 @@ class ComputationGraph:
         if tensor_node.is_main_input():
             return tensor_node
 
-        sorted_depth = sorted(depth for depth in tensor_node.input_hierarchy)
-        chosen_input = next(iter(tensor_node.inputs))
+        current_input_h = tensor_node.input_hierarchy
+
+        sorted_depth = sorted(depth for depth in current_input_h)
+        tail_node = next(iter(tensor_node.inputs))
         depth = 0
         for depth in sorted_depth:
-            chosen_input = tensor_node.input_hierarchy[depth]
-            if depth == self.depth:
+            tail_node = current_input_h[depth]
+            if depth >= self.depth:
                 break
 
+        module_depth = depth-1
         # if returned by container module and hide_module_functions
         if (
-            isinstance(tensor_node.input_hierarchy[depth], FunctionNode) and
-            tensor_node.input_hierarchy.get(depth-1) and self.hide_module_functions
+            isinstance(current_input_h[depth], FunctionNode) and
+            module_depth in tensor_node.input_hierarchy and self.hide_module_functions
         ):
-            if tensor_node.input_hierarchy[depth-1].is_container:
-                return tensor_node.input_hierarchy[depth-1]
+            if current_input_h[module_depth].is_container:
+                return current_input_h[module_depth]
 
-        if chosen_input.name == 'empty-pass':
-            empty_pass_input = next(iter((chosen_input.inputs)))
+        # Even though this is recursive, not harmful for complexity
+        # The reason: the (time) complexity ~ O(L^2) where L
+        # is the length of CONTINUOUS path along which the same tensor is passed
+        # without any operation on it. L is always small since we dont use
+        # infinitely big network with infinitely big continuou pass of unchanged
+        # tensor. This recursion is necessary e.g. for LDC model
+        if tail_node.name == 'empty-pass':
+            empty_pass_input = next(iter((tail_node.inputs)))
             assert isinstance(empty_pass_input, TensorNode), (
-                f'{empty_pass_input} is input of {chosen_input}'
+                f'{empty_pass_input} is input of {tail_node}'
                 f'and must a be TensorNode'
             )
             return self.get_tail_node(empty_pass_input)
-        return chosen_input
+        return tail_node
 
     def add_edge(
         self, tail_id: int, head_id: int, edg_cnt: int
