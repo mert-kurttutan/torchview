@@ -49,8 +49,8 @@ class _DenseLayer(nn.Sequential):
         self.add_module('norm2', nn.BatchNorm2d(out_features))
 
     def forward(
-        self, inputs: Tuple[torch.Tensor, torch.Tensor]
-    ) -> Tuple[torch.Tensor, torch.Tensor]:
+        self, inputs: tuple[torch.Tensor, torch.Tensor]
+    ) -> tuple[torch.Tensor, torch.Tensor]:
         x1, x2 = inputs
         new_features = super().forward(F.relu(x1))
         return 0.5 * (new_features + x2), x2
