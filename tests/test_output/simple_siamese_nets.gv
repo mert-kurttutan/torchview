@@ -16,30 +16,30 @@ strict digraph SiameseNets {
 	11 [label="Conv2d&#92;ndepth:1|{input:|output:}|{(1, 128, 6, 6)|(1, 256, 3, 3)}" fillcolor=darkseagreen1]
 	12 [label="relu&#92;ndepth:1|{input:|output:}|{(1, 256, 3, 3)|(1, 256, 3, 3)}" fillcolor=aliceblue]
 	13 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 256, 3, 3)|(1, 256, 1, 1)}" fillcolor=darkseagreen1]
-	2 [label="Conv2d&#92;ndepth:1|{input:|output:}|{(1, 1, 88, 88)|(1, 64, 79, 79)}" fillcolor=darkseagreen1]
-	14 [label="relu&#92;ndepth:1|{input:|output:}|{(1, 64, 79, 79)|(1, 64, 79, 79)}" fillcolor=aliceblue]
-	4 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 64, 79, 79)|(1, 64, 39, 39)}" fillcolor=darkseagreen1]
-	5 [label="Conv2d&#92;ndepth:1|{input:|output:}|{(1, 64, 39, 39)|(1, 128, 33, 33)}" fillcolor=darkseagreen1]
-	15 [label="relu&#92;ndepth:1|{input:|output:}|{(1, 128, 33, 33)|(1, 128, 33, 33)}" fillcolor=aliceblue]
-	7 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 128, 33, 33)|(1, 128, 16, 16)}" fillcolor=darkseagreen1]
-	8 [label="Conv2d&#92;ndepth:1|{input:|output:}|{(1, 128, 16, 16)|(1, 128, 13, 13)}" fillcolor=darkseagreen1]
-	16 [label="relu&#92;ndepth:1|{input:|output:}|{(1, 128, 13, 13)|(1, 128, 13, 13)}" fillcolor=aliceblue]
-	10 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 128, 13, 13)|(1, 128, 6, 6)}" fillcolor=darkseagreen1]
-	11 [label="Conv2d&#92;ndepth:1|{input:|output:}|{(1, 128, 6, 6)|(1, 256, 3, 3)}" fillcolor=darkseagreen1]
-	17 [label="relu&#92;ndepth:1|{input:|output:}|{(1, 256, 3, 3)|(1, 256, 3, 3)}" fillcolor=aliceblue]
-	18 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 256, 3, 3)|(1, 256, 1, 1)}" fillcolor=darkseagreen1]
-	19 [label="view&#92;ndepth:1|{input:|output:}|{(1, 256, 1, 1)|(1, 256)}" fillcolor=aliceblue]
-	19 [label="view&#92;ndepth:1|{input:|output:}|{(1, 256, 1, 1)|(1, 256)}" fillcolor=aliceblue]
-	20 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 256)|(1, 4096)}" fillcolor=darkseagreen1]
-	20 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 256)|(1, 4096)}" fillcolor=darkseagreen1]
-	21 [label="sub&#92;ndepth:1|{input:|output:}|{2 x (1, 4096)|(1, 4096)}" fillcolor=aliceblue]
-	22 [label="abs&#92;ndepth:1|{input:|output:}|{(1, 4096)|(1, 4096)}" fillcolor=aliceblue]
-	23 [label="Dropout&#92;ndepth:1|{input:|output:}|{(1, 4096)|(1, 4096)}" fillcolor=darkseagreen1]
-	24 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 4096)|(1, 1)}" fillcolor=darkseagreen1]
-	25 [label="sigmoid&#92;ndepth:1|{input:|output:}|{(1, 1)|(1, 1)}" fillcolor=aliceblue]
-	26 [label="output-tensor&#92;ndepth:0|(1, 1)" fillcolor=lightyellow]
+	14 [label="Conv2d&#92;ndepth:1|{input:|output:}|{(1, 1, 88, 88)|(1, 64, 79, 79)}" fillcolor=darkseagreen1]
+	15 [label="relu&#92;ndepth:1|{input:|output:}|{(1, 64, 79, 79)|(1, 64, 79, 79)}" fillcolor=aliceblue]
+	16 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 64, 79, 79)|(1, 64, 39, 39)}" fillcolor=darkseagreen1]
+	17 [label="Conv2d&#92;ndepth:1|{input:|output:}|{(1, 64, 39, 39)|(1, 128, 33, 33)}" fillcolor=darkseagreen1]
+	18 [label="relu&#92;ndepth:1|{input:|output:}|{(1, 128, 33, 33)|(1, 128, 33, 33)}" fillcolor=aliceblue]
+	19 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 128, 33, 33)|(1, 128, 16, 16)}" fillcolor=darkseagreen1]
+	20 [label="Conv2d&#92;ndepth:1|{input:|output:}|{(1, 128, 16, 16)|(1, 128, 13, 13)}" fillcolor=darkseagreen1]
+	21 [label="relu&#92;ndepth:1|{input:|output:}|{(1, 128, 13, 13)|(1, 128, 13, 13)}" fillcolor=aliceblue]
+	22 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 128, 13, 13)|(1, 128, 6, 6)}" fillcolor=darkseagreen1]
+	23 [label="Conv2d&#92;ndepth:1|{input:|output:}|{(1, 128, 6, 6)|(1, 256, 3, 3)}" fillcolor=darkseagreen1]
+	24 [label="relu&#92;ndepth:1|{input:|output:}|{(1, 256, 3, 3)|(1, 256, 3, 3)}" fillcolor=aliceblue]
+	25 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 256, 3, 3)|(1, 256, 1, 1)}" fillcolor=darkseagreen1]
+	26 [label="view&#92;ndepth:1|{input:|output:}|{(1, 256, 1, 1)|(1, 256)}" fillcolor=aliceblue]
+	27 [label="view&#92;ndepth:1|{input:|output:}|{(1, 256, 1, 1)|(1, 256)}" fillcolor=aliceblue]
+	28 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 256)|(1, 4096)}" fillcolor=darkseagreen1]
+	29 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 256)|(1, 4096)}" fillcolor=darkseagreen1]
+	30 [label="sub&#92;ndepth:1|{input:|output:}|{2 x (1, 4096)|(1, 4096)}" fillcolor=aliceblue]
+	31 [label="abs&#92;ndepth:1|{input:|output:}|{(1, 4096)|(1, 4096)}" fillcolor=aliceblue]
+	32 [label="Dropout&#92;ndepth:1|{input:|output:}|{(1, 4096)|(1, 4096)}" fillcolor=darkseagreen1]
+	33 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 4096)|(1, 1)}" fillcolor=darkseagreen1]
+	34 [label="sigmoid&#92;ndepth:1|{input:|output:}|{(1, 1)|(1, 1)}" fillcolor=aliceblue]
+	35 [label="output-tensor&#92;ndepth:0|(1, 1)" fillcolor=lightyellow]
 	0 -> 2
-	1 -> 2
+	1 -> 14
 	2 -> 3
 	3 -> 4
 	4 -> 5
@@ -51,26 +51,26 @@ strict digraph SiameseNets {
 	10 -> 11
 	11 -> 12
 	12 -> 13
-	13 -> 19
-	2 -> 14
-	14 -> 4
-	4 -> 5 [label=" x2"]
-	5 -> 15
-	15 -> 7
-	7 -> 8 [label=" x2"]
-	8 -> 16
-	16 -> 10
-	10 -> 11 [label=" x2"]
-	11 -> 17
+	13 -> 26
+	14 -> 15
+	15 -> 16
+	16 -> 17
 	17 -> 18
 	18 -> 19
 	19 -> 20
-	19 -> 20 [label=" x2"]
 	20 -> 21
-	20 -> 21 [label=" x2"]
 	21 -> 22
 	22 -> 23
 	23 -> 24
 	24 -> 25
-	25 -> 26
+	25 -> 27
+	26 -> 28
+	27 -> 29
+	28 -> 30
+	29 -> 30
+	30 -> 31
+	31 -> 32
+	32 -> 33
+	33 -> 34
+	34 -> 35
 }

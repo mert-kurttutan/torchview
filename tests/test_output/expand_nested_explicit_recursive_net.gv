@@ -1,0 +1,108 @@
+strict digraph RecursiveNet {
+	graph [ordering=in size="14.7,14.7"]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	edge [fontsize=10]
+	0 [label="input-tensor&#92;ndepth:0|(2, 3)" fillcolor=lightyellow]
+	subgraph cluster_2 {
+		fontsize=12 label=LSTMCell labeljust=l style=dashed
+		1 [label="lstm_cell&#92;ndepth:2|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=aliceblue]
+	}
+	subgraph cluster_3 {
+		fontsize=12 label=LeakyReLU labeljust=l style=dashed
+		2 [label="leaky_relu&#92;ndepth:2|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=aliceblue]
+	}
+	subgraph cluster_2 {
+		fontsize=12 label=LSTMCell labeljust=l style=dashed
+		1 [label="lstm_cell&#92;ndepth:2|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=aliceblue]
+	}
+	subgraph cluster_3 {
+		fontsize=12 label=LeakyReLU labeljust=l style=dashed
+		2 [label="leaky_relu&#92;ndepth:2|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=aliceblue]
+	}
+	subgraph cluster_2 {
+		fontsize=12 label=LSTMCell labeljust=l style=dashed
+		1 [label="lstm_cell&#92;ndepth:2|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=aliceblue]
+	}
+	subgraph cluster_3 {
+		fontsize=12 label=LeakyReLU labeljust=l style=dashed
+		2 [label="leaky_relu&#92;ndepth:2|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=aliceblue]
+	}
+	subgraph cluster_2 {
+		fontsize=12 label=LSTMCell labeljust=l style=dashed
+		1 [label="lstm_cell&#92;ndepth:2|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=aliceblue]
+	}
+	subgraph cluster_4 {
+		fontsize=12 label=LeakyReLU labeljust=l style=dashed
+		3 [label="leaky_relu&#92;ndepth:2|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=aliceblue]
+		4 [label="output-tensor&#92;ndepth:0|(2, 2)" fillcolor=lightyellow]
+	}
+	0 -> 1
+	1 -> 2
+	0 -> 1 [label=" x2"]
+	2 -> 1
+	1 -> 1
+	1 -> 2 [label=" x2"]
+	0 -> 1 [label=" x3"]
+	2 -> 1 [label=" x2"]
+	1 -> 1 [label=" x2"]
+	1 -> 2 [label=" x3"]
+	0 -> 1 [label=" x4"]
+	2 -> 1 [label=" x3"]
+	1 -> 1 [label=" x3"]
+	1 -> 3
+	3 -> 4
+}
+strict digraph RecursiveNet {
+	graph [ordering=in size="14.7,14.7"]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	edge [fontsize=10]
+	0 [label="input-tensor&#92;ndepth:0|(2, 3)" fillcolor=lightyellow]
+	subgraph cluster_2 {
+		fontsize=12 label=LSTMCell labeljust=l style=dashed
+		1 [label="lstm_cell&#92;ndepth:2|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=aliceblue]
+	}
+	subgraph cluster_3 {
+		fontsize=12 label=LeakyReLU labeljust=l style=dashed
+		2 [label="leaky_relu&#92;ndepth:2|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=aliceblue]
+	}
+	subgraph cluster_4 {
+		fontsize=12 label=LSTMCell labeljust=l style=dashed
+		3 [label="lstm_cell&#92;ndepth:2|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=aliceblue]
+	}
+	subgraph cluster_5 {
+		fontsize=12 label=LeakyReLU labeljust=l style=dashed
+		4 [label="leaky_relu&#92;ndepth:2|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=aliceblue]
+	}
+	subgraph cluster_6 {
+		fontsize=12 label=LSTMCell labeljust=l style=dashed
+		5 [label="lstm_cell&#92;ndepth:2|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=aliceblue]
+	}
+	subgraph cluster_7 {
+		fontsize=12 label=LeakyReLU labeljust=l style=dashed
+		6 [label="leaky_relu&#92;ndepth:2|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=aliceblue]
+	}
+	subgraph cluster_8 {
+		fontsize=12 label=LSTMCell labeljust=l style=dashed
+		7 [label="lstm_cell&#92;ndepth:2|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=aliceblue]
+	}
+	subgraph cluster_9 {
+		fontsize=12 label=LeakyReLU labeljust=l style=dashed
+		8 [label="leaky_relu&#92;ndepth:2|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=aliceblue]
+		9 [label="output-tensor&#92;ndepth:0|(2, 2)" fillcolor=lightyellow]
+	}
+	0 -> 1
+	1 -> 2
+	0 -> 3
+	2 -> 3
+	1 -> 3
+	3 -> 4
+	0 -> 5
+	4 -> 5
+	3 -> 5
+	5 -> 6
+	0 -> 7
+	6 -> 7
+	5 -> 7
+	7 -> 8
+	8 -> 9
+}

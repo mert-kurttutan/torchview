@@ -105,10 +105,6 @@ def module_forward_wrapper() -> Callable[..., Any]:
         for node in input_nodes:
             node.add_outputs(cur_node)
 
-        cur_node.set_input_shape(
-            reduce_data_info([args, kwargs], collect_shape, [])
-        )
-
         tensor_to_node: dict[RecorderTensor, TensorNode] = (
             reduce_data_info([args, kwargs], collect_tensor_node_id_dict, {})
         )
@@ -127,12 +123,12 @@ def module_forward_wrapper() -> Callable[..., Any]:
         out = _orig_module_forward(mod, *args, **kwargs)
 
         # pop appropriate nodes, see implementation below
-        output_recorder: list[RecorderTensor] = (
-            reduce_data_info(out, collect_tensor, [])
+        output_recorder: OrderedSet[RecorderTensor] = (
+            reduce_data_info(out, collect_tensor, OrderedSet())
         )
 
         traverse_data_inplace(
-            OrderedSet(output_recorder),
+            output_recorder,
             process_output_node(cur_node)
         )
 
@@ -149,6 +145,9 @@ def module_forward_wrapper() -> Callable[..., Any]:
             cur_node.end_nodes.add(output_node)
             output_node.context = input_context
 
+        cur_node.set_input_shape(
+            reduce_data_info([args, kwargs], collect_shape, [])
+        )
         cur_node.set_output_shape(reduce_data_info(out, collect_shape, []))
         return out
 
@@ -222,7 +221,7 @@ class RecorderTensor(torch.Tensor):
         # dont create any node, give the result only
         if not args_nodes:
             return out
-        if not reduce_data_info(out, collect_tensor, []):
+        if not reduce_data_info(out, collect_tensor, OrderedSet()):
             return out
 
         # Create function_node and connect to its inputs tensor node
@@ -390,9 +389,9 @@ def collect_tensor_node_id_dict(
 
 
 def collect_tensor(
-    recorded_data: RecorderTensor, collected: list[RecorderTensor]
+    recorded_data: RecorderTensor, collected: OrderedSet[RecorderTensor]
 ) -> None:
-    collected.append(recorded_data)
+    collected.add(recorded_data)
 
 
 def collect_shape(
