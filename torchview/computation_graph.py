@@ -111,10 +111,6 @@ class ComputationGraph:
     def fill_visual_graph(self):
         '''Fills the graphviz graph with desired nodes and edges.'''
 
-        # First add input nodes
-        for root_node in self.root_container:
-            root_node.name = 'input-tensor'
-
         self.render_nodes()
         self.render_edges()
         self.resize_graph()
@@ -129,7 +125,8 @@ class ComputationGraph:
         self.traverse_graph(self.collect_graph, **kwargs)
 
     def render_edges(self):
-        '''Adds edges to graphviz graph using node ids from edge_list'''
+        '''Adds all edges in self.edge_list to
+        the graphviz graph using node ids from edge_list'''
         counter_edge = {}
         for tail, head in self.edge_list:
             tail_id, head_id = self.id_dict[tail.node_id], self.id_dict[head.node_id]
@@ -224,7 +221,7 @@ class ComputationGraph:
         # add edges
         # {cur_node -> head} part
         tail_node = self.get_tail_node(cur_node)
-        if cur_node.outputs:
+        if not cur_node.is_main_output():
             for output_node in cur_node.outputs:
                 is_output_visible = self.is_node_visible(output_node)
                 if is_output_visible:
@@ -236,7 +233,8 @@ class ComputationGraph:
         # {tail -> cur_node} part
         # # output node
         # visible tensor and non-input tensor nodes
-        if is_cur_visible and not isinstance(tail_node, TensorNode):
+        if is_cur_visible and not cur_node.is_main_input():
+            assert not isinstance(tail_node, TensorNode)
             self.edge_list.append((tail_node, cur_node))
 
     def rollify(
@@ -249,7 +247,7 @@ class ComputationGraph:
         For more details see docs'''
 
         head_node = next(iter(cur_node.end_nodes))
-        if head_node.outputs and self.hide_inner_tensors:
+        if not head_node.is_main_output() and self.hide_inner_tensors:
             head_node = next(iter(head_node.outputs))
 
         # identify recursively used modules
@@ -261,7 +259,7 @@ class ComputationGraph:
         '''Returns True if node should be displayed on the visual
         graph. Otherwise False'''
 
-        if compute_node.name == 'output-pass':
+        if compute_node.name == 'empty-pass':
             return False
 
         if isinstance(compute_node, (ModuleNode, FunctionNode)):
@@ -274,15 +272,15 @@ class ComputationGraph:
             return is_visible
 
         if isinstance(compute_node, TensorNode):
-            if compute_node.main_node.depth < 0:
+            if compute_node.main_node.depth < 0 or compute_node.is_aux:
                 return False
 
+            is_main_output_or_input = (
+                (compute_node.is_main_input() or compute_node.is_main_output())
+                and compute_node.depth == 0
+            )
             is_visible = (
-                not self.hide_inner_tensors or
-                (
-                    (not compute_node.inputs or not compute_node.outputs)
-                    and compute_node.depth == 0
-                )
+                not self.hide_inner_tensors or is_main_output_or_input
             )
 
             if compute_node.is_aux:
@@ -296,16 +294,12 @@ class ComputationGraph:
         )
 
     def get_tail_node(self, _tensor_node):
-        tensor_node = _tensor_node
-        # non-output nodes eminating from input node
-        if not tensor_node.main_node.inputs and tensor_node.outputs:
-            return tensor_node.main_node
 
-        # inner auxiliary nodes
-        if tensor_node.outputs and tensor_node.is_aux:
-            # empty module should display auxiliary nodes
-            if next(iter(tensor_node.inputs)).depth < tensor_node.depth:
-                tensor_node = tensor_node.main_node
+        tensor_node = _tensor_node.main_node if _tensor_node.is_aux else _tensor_node
+
+        # non-output nodes eminating from input node
+        if not tensor_node.inputs and not tensor_node.is_main_output():
+            return tensor_node
 
         sorted_depth = sorted(depth for depth in tensor_node.input_hierarchy)
         chosen_input = next(iter(tensor_node.inputs))
@@ -323,7 +317,7 @@ class ComputationGraph:
             if tensor_node.input_hierarchy[depth-1].is_container:
                 return tensor_node.input_hierarchy[depth-1]
 
-        if chosen_input.name == 'output-pass':
+        if chosen_input.name == 'empty-pass':
             return self.get_tail_node(next(iter((chosen_input.inputs))))
         return chosen_input
 
@@ -393,7 +387,7 @@ class ComputationGraph:
     def check_node(self, node):
         assert node.node_id != 'null', f'wrong id {node} {type(node)}'
         assert '-' not in node.node_id, 'No repetition of node recording'
-        assert any(node.outputs) or any(node.inputs), f'isolated node! {node}'
+        assert not node.is_main_output() or not node.is_main_input(), f'isolated node! {node}'
         assert node.depth <= self.depth, f"exceeds depth limit, {node}"
         assert (
             sum(1 for _ in node.inputs) in [0, 1] or not isinstance(node, TensorNode)
