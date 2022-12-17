@@ -5,7 +5,7 @@ import torch
 from torch import nn
 import torch.nn.functional as F
 
-from typing import Any
+from typing import Any, List, Tuple
 
 
 class CoFusion(nn.Module):
@@ -47,8 +47,8 @@ class _DenseLayer(nn.Sequential):
         self.add_module('norm2', nn.BatchNorm2d(out_features))
 
     def forward(
-        self, inputs: tuple[torch.Tensor, torch.Tensor]
-    ) -> tuple[torch.Tensor, torch.Tensor]:
+        self, inputs: Tuple[torch.Tensor, torch.Tensor]
+    ) -> Tuple[torch.Tensor, torch.Tensor]:
         x1, x2 = inputs
         new_features = super().forward(F.relu(x1))
         return 0.5 * (new_features + x2), x2
@@ -77,8 +77,8 @@ class UpConvBlock(nn.Module):
 
     def make_deconv_layers(
         self, in_features: int, up_scale: int
-    ) -> list[nn.Module]:
-        layers: list[nn.Module] = []
+    ) -> List[nn.Module]:
+        layers: List[nn.Module] = []
         all_pads = [0, 0, 1, 3, 7]
         for i in range(up_scale):
             kernel_size = 2 ** up_scale
@@ -173,7 +173,7 @@ class LDC(nn.Module):
         self.up_block_4 = UpConvBlock(96, 3)  # 128
         self.block_cat = CoFusion(4, 4)  # cats fusion method
 
-    def forward(self, x: torch.Tensor) -> list[torch.Tensor]:
+    def forward(self, x: torch.Tensor) -> List[torch.Tensor]:
         assert x.ndim == 4, x.shape
         # supose the image size is 352x352
         # Block 1
@@ -204,7 +204,7 @@ class LDC(nn.Module):
         out_2 = self.up_block_2(block_2)
         out_3 = self.up_block_3(block_3)
         out_4 = self.up_block_4(block_4)
-        results: list[torch.Tensor] = [out_1, out_2, out_3, out_4]
+        results: List[torch.Tensor] = [out_1, out_2, out_3, out_4]
 
         # concatenate multiscale outputs
         block_cat = torch.cat(results, dim=1)  # Bx6xHxW
