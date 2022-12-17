@@ -283,10 +283,6 @@ class ComputationGraph:
                 not self.hide_inner_tensors or is_main_output_or_input
             )
 
-            if compute_node.is_aux:
-                input_node = next(iter(compute_node.inputs))
-                is_input_visible = self.is_node_visible(input_node)
-                is_visible = is_visible and is_input_visible
             return is_visible
 
         raise ValueError(
@@ -298,7 +294,7 @@ class ComputationGraph:
         tensor_node = _tensor_node.main_node if _tensor_node.is_aux else _tensor_node
 
         # non-output nodes eminating from input node
-        if not tensor_node.inputs and not tensor_node.is_main_output():
+        if tensor_node.is_main_input():
             return tensor_node
 
         sorted_depth = sorted(depth for depth in tensor_node.input_hierarchy)
@@ -318,7 +314,12 @@ class ComputationGraph:
                 return tensor_node.input_hierarchy[depth-1]
 
         if chosen_input.name == 'empty-pass':
-            return self.get_tail_node(next(iter((chosen_input.inputs))))
+            empty_pass_input = next(iter((chosen_input.inputs)))
+            assert isinstance(empty_pass_input, TensorNode), (
+                f'{empty_pass_input} is input of {chosen_input}'
+                f'and must a be TensorNode'
+            )
+            return self.get_tail_node(empty_pass_input)
         return chosen_input
 
     def add_edge(
