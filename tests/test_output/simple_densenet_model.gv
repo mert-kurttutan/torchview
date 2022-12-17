@@ -1,25 +1,225 @@
 strict digraph DenseNet121 {
 	graph [ordering=in size="12.0,12.0"]
-	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
-	0 [label="input-tensor&#92;ndepth:0|(1, 3, 224, 224)" fillcolor=lightyellow]
-	1 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 3, 224, 224)|(1, 64, 112, 112)}" fillcolor=darkseagreen1]
-	2 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 64, 112, 112)|(1, 64, 112, 112)}" fillcolor=darkseagreen1]
-	3 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 64, 112, 112)|(1, 64, 112, 112)}" fillcolor=darkseagreen1]
-	4 [label="MaxPool2d&#92;ndepth:2|{input:|output:}|{(1, 64, 112, 112)|(1, 64, 56, 56)}" fillcolor=darkseagreen1]
-	5 [label="_DenseBlock&#92;ndepth:2|{input:|output:}|{(1, 64, 56, 56)|(1, 256, 56, 56)}" fillcolor=darkseagreen1]
-	6 [label="_Transition&#92;ndepth:2|{input:|output:}|{(1, 256, 56, 56)|(1, 128, 28, 28)}" fillcolor=darkseagreen1]
-	7 [label="_DenseBlock&#92;ndepth:2|{input:|output:}|{(1, 128, 28, 28)|(1, 512, 28, 28)}" fillcolor=darkseagreen1]
-	8 [label="_Transition&#92;ndepth:2|{input:|output:}|{(1, 512, 28, 28)|(1, 256, 14, 14)}" fillcolor=darkseagreen1]
-	9 [label="_DenseBlock&#92;ndepth:2|{input:|output:}|{(1, 256, 14, 14)|(1, 1024, 14, 14)}" fillcolor=darkseagreen1]
-	10 [label="_Transition&#92;ndepth:2|{input:|output:}|{(1, 1024, 14, 14)|(1, 512, 7, 7)}" fillcolor=darkseagreen1]
-	11 [label="_DenseBlock&#92;ndepth:2|{input:|output:}|{(1, 512, 7, 7)|(1, 1024, 7, 7)}" fillcolor=darkseagreen1]
-	12 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 1024, 7, 7)|(1, 1024, 7, 7)}" fillcolor=darkseagreen1]
-	13 [label="relu&#92;ndepth:1|{input:|output:}|{(1, 1024, 7, 7)|(1, 1024, 7, 7)}" fillcolor=aliceblue]
-	14 [label="adaptive_avg_pool2d&#92;ndepth:1|{input:|output:}|{(1, 1024, 7, 7)|(1, 1024, 1, 1)}" fillcolor=aliceblue]
-	15 [label="flatten&#92;ndepth:1|{input:|output:}|{(1, 1024, 1, 1)|(1, 1024)}" fillcolor=aliceblue]
-	16 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 1024)|(1, 1000)}" fillcolor=darkseagreen1]
-	17 [label="output-tensor&#92;ndepth:0|(1, 1000)" fillcolor=lightyellow]
+	0 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 3, 224, 224)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	1 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 3, 224, 224) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 112, 112) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	2 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 112, 112) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 112, 112) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	3 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 112, 112) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 112, 112) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	4 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MaxPool2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 112, 112) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	5 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseBlock<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 256, 56, 56) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	6 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_Transition<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 56, 56) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 128, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	7 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseBlock<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 128, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 512, 28, 28) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	8 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_Transition<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 512, 28, 28) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	9 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseBlock<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 256, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1024, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	10 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_Transition<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1024, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 512, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	11 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">_DenseBlock<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 512, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1024, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	12 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1024, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1024, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	13 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">relu<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1024, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1024, 7, 7) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	14 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">adaptive_avg_pool2d<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1024, 7, 7) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1024, 1, 1) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	15 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">flatten<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1024, 1, 1) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1024) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	16 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Linear<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1024) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1000) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	17 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1000)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
 	0 -> 1
 	1 -> 2
 	2 -> 3

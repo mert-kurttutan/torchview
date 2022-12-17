@@ -1,102 +1,1226 @@
 strict digraph ViT_b_16 {
 	graph [ordering=in size="63.9,63.9"]
-	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
-	0 [label="input-tensor&#92;ndepth:0|(1, 3, 224, 224)" fillcolor=lightyellow]
-	1 [label="Conv2d&#92;ndepth:1|{input:|output:}|{(1, 3, 224, 224)|(1, 768, 14, 14)}" fillcolor=darkseagreen1]
-	2 [label="reshape&#92;ndepth:1|{input:|output:}|{(1, 768, 14, 14)|(1, 768, 196)}" fillcolor=aliceblue]
-	3 [label="permute&#92;ndepth:1|{input:|output:}|{(1, 768, 196)|(1, 196, 768)}" fillcolor=aliceblue]
-	4 [label="cat&#92;ndepth:1|{input:|output:}|{(1, 196, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	5 [label="add&#92;ndepth:2|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	6 [label="Dropout&#92;ndepth:2|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	7 [label="LayerNorm&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	8 [label="MultiheadAttention&#92;ndepth:4|{input:|output:}|{3 x (1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	9 [label="Dropout&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	10 [label="add&#92;ndepth:4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	11 [label="LayerNorm&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	12 [label="MLPBlock&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	13 [label="add&#92;ndepth:4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	14 [label="LayerNorm&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	15 [label="MultiheadAttention&#92;ndepth:4|{input:|output:}|{3 x (1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	16 [label="Dropout&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	17 [label="add&#92;ndepth:4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	18 [label="LayerNorm&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	19 [label="MLPBlock&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	20 [label="add&#92;ndepth:4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	21 [label="LayerNorm&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	22 [label="MultiheadAttention&#92;ndepth:4|{input:|output:}|{3 x (1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	23 [label="Dropout&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	24 [label="add&#92;ndepth:4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	25 [label="LayerNorm&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	26 [label="MLPBlock&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	27 [label="add&#92;ndepth:4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	28 [label="LayerNorm&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	29 [label="MultiheadAttention&#92;ndepth:4|{input:|output:}|{3 x (1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	30 [label="Dropout&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	31 [label="add&#92;ndepth:4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	32 [label="LayerNorm&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	33 [label="MLPBlock&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	34 [label="add&#92;ndepth:4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	35 [label="LayerNorm&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	36 [label="MultiheadAttention&#92;ndepth:4|{input:|output:}|{3 x (1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	37 [label="Dropout&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	38 [label="add&#92;ndepth:4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	39 [label="LayerNorm&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	40 [label="MLPBlock&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	41 [label="add&#92;ndepth:4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	42 [label="LayerNorm&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	43 [label="MultiheadAttention&#92;ndepth:4|{input:|output:}|{3 x (1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	44 [label="Dropout&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	45 [label="add&#92;ndepth:4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	46 [label="LayerNorm&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	47 [label="MLPBlock&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	48 [label="add&#92;ndepth:4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	49 [label="LayerNorm&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	50 [label="MultiheadAttention&#92;ndepth:4|{input:|output:}|{3 x (1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	51 [label="Dropout&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	52 [label="add&#92;ndepth:4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	53 [label="LayerNorm&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	54 [label="MLPBlock&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	55 [label="add&#92;ndepth:4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	56 [label="LayerNorm&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	57 [label="MultiheadAttention&#92;ndepth:4|{input:|output:}|{3 x (1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	58 [label="Dropout&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	59 [label="add&#92;ndepth:4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	60 [label="LayerNorm&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	61 [label="MLPBlock&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	62 [label="add&#92;ndepth:4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	63 [label="LayerNorm&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	64 [label="MultiheadAttention&#92;ndepth:4|{input:|output:}|{3 x (1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	65 [label="Dropout&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	66 [label="add&#92;ndepth:4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	67 [label="LayerNorm&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	68 [label="MLPBlock&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	69 [label="add&#92;ndepth:4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	70 [label="LayerNorm&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	71 [label="MultiheadAttention&#92;ndepth:4|{input:|output:}|{3 x (1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	72 [label="Dropout&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	73 [label="add&#92;ndepth:4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	74 [label="LayerNorm&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	75 [label="MLPBlock&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	76 [label="add&#92;ndepth:4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	77 [label="LayerNorm&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	78 [label="MultiheadAttention&#92;ndepth:4|{input:|output:}|{3 x (1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	79 [label="Dropout&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	80 [label="add&#92;ndepth:4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	81 [label="LayerNorm&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	82 [label="MLPBlock&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	83 [label="add&#92;ndepth:4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	84 [label="LayerNorm&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	85 [label="MultiheadAttention&#92;ndepth:4|{input:|output:}|{3 x (1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	86 [label="Dropout&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	87 [label="add&#92;ndepth:4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	88 [label="LayerNorm&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	89 [label="MLPBlock&#92;ndepth:4|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	90 [label="add&#92;ndepth:4|{input:|output:}|{2 x (1, 197, 768)|(1, 197, 768)}" fillcolor=aliceblue]
-	91 [label="LayerNorm&#92;ndepth:2|{input:|output:}|{(1, 197, 768)|(1, 197, 768)}" fillcolor=darkseagreen1]
-	92 [label="__getitem__&#92;ndepth:1|{input:|output:}|{(1, 197, 768)|(1, 768)}" fillcolor=aliceblue]
-	93 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 768)|(1, 1000)}" fillcolor=darkseagreen1]
-	94 [label="output-tensor&#92;ndepth:0|(1, 1000)" fillcolor=lightyellow]
+	0 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 3, 224, 224)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	1 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 3, 224, 224) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 768, 14, 14) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	2 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">reshape<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 768, 14, 14) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 768, 196) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	3 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">permute<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 768, 196) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 196, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	4 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">cat<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 196, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	5 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	6 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Dropout<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	7 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	8 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MultiheadAttention<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">3 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	9 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Dropout<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	10 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	11 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	12 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MLPBlock<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	13 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	14 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	15 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MultiheadAttention<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">3 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	16 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Dropout<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	17 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	18 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	19 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MLPBlock<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	20 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	21 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	22 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MultiheadAttention<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">3 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	23 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Dropout<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	24 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	25 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	26 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MLPBlock<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	27 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	28 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	29 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MultiheadAttention<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">3 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	30 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Dropout<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	31 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	32 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	33 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MLPBlock<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	34 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	36 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MultiheadAttention<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">3 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	37 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Dropout<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	38 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	39 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	40 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MLPBlock<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	41 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	42 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	43 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MultiheadAttention<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">3 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	44 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Dropout<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	45 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	46 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	47 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MLPBlock<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	48 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	49 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	50 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MultiheadAttention<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">3 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	51 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Dropout<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	52 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	53 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	54 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MLPBlock<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	55 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	56 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	57 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MultiheadAttention<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">3 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	58 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Dropout<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	59 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	60 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	61 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MLPBlock<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	62 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	63 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	64 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MultiheadAttention<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">3 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	65 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Dropout<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	66 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	67 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	68 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MLPBlock<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	69 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	70 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	71 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MultiheadAttention<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">3 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	72 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Dropout<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	73 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	74 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	75 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MLPBlock<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	76 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	77 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	78 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MultiheadAttention<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">3 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	79 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Dropout<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	80 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	81 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	82 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MLPBlock<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	83 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	84 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	85 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MultiheadAttention<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">3 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	86 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Dropout<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	87 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	88 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	89 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MLPBlock<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	90 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	91 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	92 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">__getitem__<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 197, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	93 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Linear<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1000) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	94 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1000)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
 	0 -> 1
 	1 -> 2
 	2 -> 3

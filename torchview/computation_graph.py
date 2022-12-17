@@ -82,6 +82,15 @@ class ComputationGraph:
         self.roll = roll
         self.depth = depth
 
+        # specs for html table
+        self.html_config = {
+            'border': 0,
+            'cell_border': 1,
+            'cell_spacing': 0,
+            'cell_padding': 4,
+            'col_span': 2,
+            'row_span': 2,
+        }
         self.reset_graph_history()
 
     def reset_graph_history(self):
@@ -359,23 +368,39 @@ class ComputationGraph:
     def get_node_label(self, node: COMPUTATION_NODES) -> str:
         input_str = 'input'
         output_str = 'output'
-        new_line = '&#92;n'  # needed for record shape config in graphviz
+        border = self.html_config['border']
+        cell_sp = self.html_config['cell_spacing']
+        cell_pad = self.html_config['cell_padding']
+        cell_bor = self.html_config['cell_border']
         if self.show_shapes:
             if isinstance(node, TensorNode):
-                label = (
-                    f"{node.name}{new_line}depth:{node.depth}|"
-                    f"{node.tensor_shape}"
-                )
+                label = f'''<
+                    <TABLE BORDER="{border}" CELLBORDER="{cell_bor}"
+                    CELLSPACING="{cell_sp}" CELLPADDING="{cell_pad}">
+                        <TR><TD>{node.name}<BR/>depth:{node.depth}</TD><TD>{node.tensor_shape}</TD></TR>
+                    </TABLE>>'''
             else:
                 input_repr = compact_list_repr(node.input_shape)
                 output_repr = compact_list_repr(node.output_shape)
-                label = (
-                    f"{node.name}{new_line}depth:{node.depth}|"
-                    f"{{{input_str}:|{output_str}:}}|"
-                    f"{{{input_repr}|{output_repr}}}"
-                )
+                label = f'''<
+                    <TABLE BORDER="{border}" CELLBORDER="{cell_bor}"
+                    CELLSPACING="{cell_sp}" CELLPADDING="{cell_pad}">
+                    <TR>
+                        <TD ROWSPAN="2">{node.name}<BR/>depth:{node.depth}</TD>
+                        <TD COLSPAN="2">{input_str}:</TD>
+                        <TD COLSPAN="2">{input_repr} </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">{output_str}: </TD>
+                        <TD COLSPAN="2">{output_repr} </TD>
+                    </TR>
+                    </TABLE>>'''
         else:
-            label = f"{node.name}{new_line}depth:{node.depth}"
+            label = f'''<
+                    <TABLE BORDER="{border}" CELLBORDER="{cell_bor}"
+                    CELLSPACING="{cell_sp}" CELLPADDING="{cell_pad}">
+                        <TR><TD>{node.name}<BR/>depth:{node.depth}</TD></TR>
+                    </TABLE>>'''
         return label
 
     def resize_graph(self, scale=1.0, size_per_element=0.3, min_size=12):

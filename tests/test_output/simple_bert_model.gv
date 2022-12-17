@@ -1,34 +1,342 @@
 strict digraph Roberta {
 	graph [ordering=in size="20.099999999999998,20.099999999999998"]
-	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
-	0 [label="input-tensor&#92;ndepth:0|(2, 6)" fillcolor=lightyellow]
-	1 [label="eq&#92;ndepth:3|{input:|output:}|{(2, 6)|(2, 6)}" fillcolor=aliceblue]
-	2 [label="Embedding&#92;ndepth:3|{input:|output:}|{(2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	3 [label="ne&#92;ndepth:4|{input:|output:}|{(2, 6)|(2, 6)}" fillcolor=aliceblue]
-	4 [label="long&#92;ndepth:4|{input:|output:}|{(2, 6)|(2, 6)}" fillcolor=aliceblue]
-	5 [label="cumsum&#92;ndepth:4|{input:|output:}|{(2, 6)|(2, 6)}" fillcolor=aliceblue]
-	6 [label="mul&#92;ndepth:4|{input:|output:}|{2 x (2, 6)|(2, 6)}" fillcolor=aliceblue]
-	7 [label="add&#92;ndepth:4|{input:|output:}|{(2, 6)|(2, 6)}" fillcolor=aliceblue]
-	8 [label="Embedding&#92;ndepth:4|{input:|output:}|{(2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	9 [label="add&#92;ndepth:3|{input:|output:}|{2 x (2, 6, 768)|(2, 6, 768)}" fillcolor=aliceblue]
-	10 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(2, 6, 768)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	11 [label="Dropout&#92;ndepth:3|{input:|output:}|{(2, 6, 768)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	12 [label="TransformerEncoderLayer&#92;ndepth:4|{input:|output:}|{(2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	13 [label="TransformerEncoderLayer&#92;ndepth:4|{input:|output:}|{(2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	14 [label="TransformerEncoderLayer&#92;ndepth:4|{input:|output:}|{(2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	15 [label="TransformerEncoderLayer&#92;ndepth:4|{input:|output:}|{(2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	16 [label="TransformerEncoderLayer&#92;ndepth:4|{input:|output:}|{(2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	17 [label="TransformerEncoderLayer&#92;ndepth:4|{input:|output:}|{(2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	18 [label="TransformerEncoderLayer&#92;ndepth:4|{input:|output:}|{(2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	19 [label="TransformerEncoderLayer&#92;ndepth:4|{input:|output:}|{(2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	20 [label="TransformerEncoderLayer&#92;ndepth:4|{input:|output:}|{(2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	21 [label="TransformerEncoderLayer&#92;ndepth:4|{input:|output:}|{(2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	22 [label="TransformerEncoderLayer&#92;ndepth:4|{input:|output:}|{(2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	23 [label="TransformerEncoderLayer&#92;ndepth:4|{input:|output:}|{(2, 6, 768), (2, 6)|(2, 6, 768)}" fillcolor=darkseagreen1]
-	24 [label="transpose&#92;ndepth:3|{input:|output:}|{(2, 6, 768)|(6, 2, 768)}" fillcolor=aliceblue]
-	25 [label="transpose&#92;ndepth:2|{input:|output:}|{(6, 2, 768)|(2, 6, 768)}" fillcolor=aliceblue]
-	26 [label="output-tensor&#92;ndepth:0|(2, 6, 768)" fillcolor=lightyellow]
+	0 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(2, 6)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	1 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">eq<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	2 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Embedding<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	3 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ne<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	4 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">long<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	5 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">cumsum<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	6 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">mul<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (2, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	7 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	8 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Embedding<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	9 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (2, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	10 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	11 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Dropout<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	12 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">TransformerEncoderLayer<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 6, 768), (2, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	13 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">TransformerEncoderLayer<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 6, 768), (2, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	14 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">TransformerEncoderLayer<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 6, 768), (2, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	15 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">TransformerEncoderLayer<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 6, 768), (2, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	16 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">TransformerEncoderLayer<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 6, 768), (2, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	17 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">TransformerEncoderLayer<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 6, 768), (2, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	18 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">TransformerEncoderLayer<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 6, 768), (2, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	19 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">TransformerEncoderLayer<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 6, 768), (2, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	20 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">TransformerEncoderLayer<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 6, 768), (2, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	21 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">TransformerEncoderLayer<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 6, 768), (2, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	22 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">TransformerEncoderLayer<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 6, 768), (2, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	23 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">TransformerEncoderLayer<BR/>depth:4</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 6, 768), (2, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	24 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">transpose<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(6, 2, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	25 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">transpose<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(6, 2, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	26 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(2, 6, 768)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
 	0 -> 1
 	0 -> 2
 	2 -> 9

@@ -1,40 +1,144 @@
 strict digraph RecursiveNet {
 	graph [ordering=in size="14.7,14.7"]
-	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
-	0 [label="input-tensor&#92;ndepth:0|(2, 3)" fillcolor=lightyellow]
+	0 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(2, 3)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
 	subgraph cluster_2 {
 		fontsize=12 label=LSTMCell labeljust=l style=dashed
-		1 [label="lstm_cell&#92;ndepth:2|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=aliceblue]
+		1 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">lstm_cell<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 3), 2 x (2, 2) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">2 x (2, 2) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 	}
 	subgraph cluster_3 {
 		fontsize=12 label=LeakyReLU labeljust=l style=dashed
-		2 [label="leaky_relu&#92;ndepth:2|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=aliceblue]
+		2 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">leaky_relu<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 2) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 2) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 	}
 	subgraph cluster_2 {
 		fontsize=12 label=LSTMCell labeljust=l style=dashed
-		1 [label="lstm_cell&#92;ndepth:2|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=aliceblue]
+		1 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">lstm_cell<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 3), 2 x (2, 2) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">2 x (2, 2) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 	}
 	subgraph cluster_3 {
 		fontsize=12 label=LeakyReLU labeljust=l style=dashed
-		2 [label="leaky_relu&#92;ndepth:2|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=aliceblue]
+		2 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">leaky_relu<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 2) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 2) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 	}
 	subgraph cluster_2 {
 		fontsize=12 label=LSTMCell labeljust=l style=dashed
-		1 [label="lstm_cell&#92;ndepth:2|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=aliceblue]
+		1 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">lstm_cell<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 3), 2 x (2, 2) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">2 x (2, 2) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 	}
 	subgraph cluster_3 {
 		fontsize=12 label=LeakyReLU labeljust=l style=dashed
-		2 [label="leaky_relu&#92;ndepth:2|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=aliceblue]
+		2 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">leaky_relu<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 2) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 2) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 	}
 	subgraph cluster_2 {
 		fontsize=12 label=LSTMCell labeljust=l style=dashed
-		1 [label="lstm_cell&#92;ndepth:2|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=aliceblue]
+		1 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">lstm_cell<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 3), 2 x (2, 2) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">2 x (2, 2) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 	}
 	subgraph cluster_4 {
 		fontsize=12 label=LeakyReLU labeljust=l style=dashed
-		3 [label="leaky_relu&#92;ndepth:2|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=aliceblue]
-		4 [label="output-tensor&#92;ndepth:0|(2, 2)" fillcolor=lightyellow]
+		3 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">leaky_relu<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 2) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 2) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		4 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(2, 2)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
 	}
 	0 -> 1
 	1 -> 2
@@ -54,41 +158,145 @@ strict digraph RecursiveNet {
 }
 strict digraph RecursiveNet {
 	graph [ordering=in size="14.7,14.7"]
-	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
-	0 [label="input-tensor&#92;ndepth:0|(2, 3)" fillcolor=lightyellow]
+	0 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(2, 3)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
 	subgraph cluster_2 {
 		fontsize=12 label=LSTMCell labeljust=l style=dashed
-		1 [label="lstm_cell&#92;ndepth:2|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=aliceblue]
+		1 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">lstm_cell<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 3), 2 x (2, 2) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">2 x (2, 2) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 	}
 	subgraph cluster_3 {
 		fontsize=12 label=LeakyReLU labeljust=l style=dashed
-		2 [label="leaky_relu&#92;ndepth:2|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=aliceblue]
+		2 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">leaky_relu<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 2) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 2) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 	}
 	subgraph cluster_4 {
 		fontsize=12 label=LSTMCell labeljust=l style=dashed
-		3 [label="lstm_cell&#92;ndepth:2|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=aliceblue]
+		3 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">lstm_cell<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 3), 2 x (2, 2) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">2 x (2, 2) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 	}
 	subgraph cluster_5 {
 		fontsize=12 label=LeakyReLU labeljust=l style=dashed
-		4 [label="leaky_relu&#92;ndepth:2|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=aliceblue]
+		4 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">leaky_relu<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 2) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 2) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 	}
 	subgraph cluster_6 {
 		fontsize=12 label=LSTMCell labeljust=l style=dashed
-		5 [label="lstm_cell&#92;ndepth:2|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=aliceblue]
+		5 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">lstm_cell<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 3), 2 x (2, 2) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">2 x (2, 2) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 	}
 	subgraph cluster_7 {
 		fontsize=12 label=LeakyReLU labeljust=l style=dashed
-		6 [label="leaky_relu&#92;ndepth:2|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=aliceblue]
+		6 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">leaky_relu<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 2) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 2) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 	}
 	subgraph cluster_8 {
 		fontsize=12 label=LSTMCell labeljust=l style=dashed
-		7 [label="lstm_cell&#92;ndepth:2|{input:|output:}|{(2, 3), 2 x (2, 2)|2 x (2, 2)}" fillcolor=aliceblue]
+		7 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">lstm_cell<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 3), 2 x (2, 2) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">2 x (2, 2) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 	}
 	subgraph cluster_9 {
 		fontsize=12 label=LeakyReLU labeljust=l style=dashed
-		8 [label="leaky_relu&#92;ndepth:2|{input:|output:}|{(2, 2)|(2, 2)}" fillcolor=aliceblue]
-		9 [label="output-tensor&#92;ndepth:0|(2, 2)" fillcolor=lightyellow]
+		8 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">leaky_relu<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(2, 2) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(2, 2) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		9 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(2, 2)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
 	}
 	0 -> 1
 	1 -> 2

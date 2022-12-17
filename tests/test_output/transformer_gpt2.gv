@@ -1,118 +1,1234 @@
 strict digraph gpt2 {
 	graph [ordering=in size="76.8,76.8"]
-	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
-	0 [label="input-tensor&#92;ndepth:0|(1, 6)" fillcolor=lightyellow]
-	1 [label="input-tensor&#92;ndepth:0|(1, 6)" fillcolor=lightyellow]
-	2 [label="view&#92;ndepth:2|{input:|output:}|{(1, 6)|(1, 6)}" fillcolor=aliceblue]
-	3 [label="view&#92;ndepth:2|{input:|output:}|{(1, 6)|(1, 6)}" fillcolor=aliceblue]
-	4 [label="__getitem__&#92;ndepth:2|{input:|output:}|{(1, 6)|(1, 1, 1, 6)}" fillcolor=aliceblue]
-	5 [label="to&#92;ndepth:2|{input:|output:}|{(1, 1, 1, 6)|(1, 1, 1, 6)}" fillcolor=aliceblue]
-	6 [label="__rsub__&#92;ndepth:2|{input:|output:}|{(1, 1, 1, 6)|(1, 1, 1, 6)}" fillcolor=aliceblue]
-	7 [label="mul&#92;ndepth:2|{input:|output:}|{(1, 1, 1, 6)|(1, 1, 1, 6)}" fillcolor=aliceblue]
-	8 [label="Embedding&#92;ndepth:2|{input:|output:}|{(1, 6)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	9 [label="add&#92;ndepth:2|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	10 [label="Dropout&#92;ndepth:2|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	11 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	12 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-	13 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	14 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	15 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	16 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	17 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	18 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	19 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	20 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-	21 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	22 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	23 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	24 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	25 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	26 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	27 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	28 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-	29 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	30 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	31 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	32 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	33 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	34 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	35 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	36 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-	37 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	38 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	39 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	40 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	41 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	42 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	43 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	44 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-	45 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	46 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	47 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	48 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	49 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	50 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	51 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	52 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-	53 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	54 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	55 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	56 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	57 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	58 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	59 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	60 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-	61 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	62 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	63 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	64 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	65 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	66 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	67 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	68 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-	69 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	70 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	71 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	72 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	73 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	74 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	75 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	76 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-	77 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	78 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	79 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	80 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	81 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	82 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	83 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	84 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-	85 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	86 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	87 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	88 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	89 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	90 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	91 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	92 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-	93 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	94 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	95 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	96 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	97 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	98 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	99 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	100 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-	101 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	102 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	103 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	104 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	105 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	106 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	107 [label="LayerNorm&#92;ndepth:2|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	108 [label="view&#92;ndepth:2|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	109 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 6, 768)|(1, 6, 50257)}" fillcolor=darkseagreen1]
-	110 [label="output-tensor&#92;ndepth:0|(1, 6, 50257)" fillcolor=lightyellow]
+	0 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 6)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	1 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 6)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	2 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">view<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	3 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">view<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	4 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">__getitem__<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 1, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	5 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">to<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 1, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	6 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">__rsub__<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 1, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	7 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">mul<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 1, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	8 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Embedding<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	9 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	10 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Dropout<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	11 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	12 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768), (1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768), 2 x (1, 12, 6, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	13 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	14 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	15 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	16 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	17 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	18 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	19 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	20 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768), (1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768), 2 x (1, 12, 6, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	21 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	22 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	23 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	24 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	25 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	26 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	27 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	28 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768), (1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768), 2 x (1, 12, 6, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	29 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	30 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	31 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	32 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	33 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	34 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	36 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768), (1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768), 2 x (1, 12, 6, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	37 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	38 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	39 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	40 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	41 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	42 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	43 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	44 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768), (1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768), 2 x (1, 12, 6, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	45 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	46 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	47 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	48 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	49 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	50 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	51 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	52 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768), (1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768), 2 x (1, 12, 6, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	53 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	54 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	55 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	56 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	57 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	58 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	59 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	60 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768), (1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768), 2 x (1, 12, 6, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	61 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	62 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	63 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	64 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	65 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	66 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	67 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	68 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768), (1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768), 2 x (1, 12, 6, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	69 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	70 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	71 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	72 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	73 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	74 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	75 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	76 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768), (1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768), 2 x (1, 12, 6, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	77 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	78 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	79 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	80 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	81 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	82 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	83 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	84 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768), (1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768), 2 x (1, 12, 6, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	85 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	86 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	87 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	88 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	89 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	90 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	91 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	92 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768), (1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768), 2 x (1, 12, 6, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	93 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	94 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	95 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	96 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	97 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	98 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	99 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	100 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768), (1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768), 2 x (1, 12, 6, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	101 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	102 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	103 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	104 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	105 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	106 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	107 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	108 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">view<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	109 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Linear<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 50257) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	110 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 6, 50257)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
 	0 -> 2
 	1 -> 3
 	2 -> 8
@@ -261,158 +1377,1274 @@ strict digraph gpt2 {
 }
 strict digraph gpt2 {
 	graph [ordering=in size="88.5,88.5"]
-	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
-	0 [label="input-tensor&#92;ndepth:0|(1, 6)" fillcolor=lightyellow]
-	1 [label="input-tensor&#92;ndepth:0|(1, 6)" fillcolor=lightyellow]
+	0 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 6)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	1 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 6)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
 	subgraph cluster_2 {
 		fontsize=12 label=GPT2Model labeljust=l style=dashed
-		2 [label="view&#92;ndepth:2|{input:|output:}|{(1, 6)|(1, 6)}" fillcolor=aliceblue]
-		3 [label="view&#92;ndepth:2|{input:|output:}|{(1, 6)|(1, 6)}" fillcolor=aliceblue]
-		4 [label="__getitem__&#92;ndepth:2|{input:|output:}|{(1, 6)|(1, 1, 1, 6)}" fillcolor=aliceblue]
-		5 [label="to&#92;ndepth:2|{input:|output:}|{(1, 1, 1, 6)|(1, 1, 1, 6)}" fillcolor=aliceblue]
-		6 [label="__rsub__&#92;ndepth:2|{input:|output:}|{(1, 1, 1, 6)|(1, 1, 1, 6)}" fillcolor=aliceblue]
-		7 [label="mul&#92;ndepth:2|{input:|output:}|{(1, 1, 1, 6)|(1, 1, 1, 6)}" fillcolor=aliceblue]
-		8 [label="Embedding&#92;ndepth:2|{input:|output:}|{(1, 6)|(1, 6, 768)}" fillcolor=darkseagreen1]
-		9 [label="add&#92;ndepth:2|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-		10 [label="Dropout&#92;ndepth:2|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+		2 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">view<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		3 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">view<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		4 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">__getitem__<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 1, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		5 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">to<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 1, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		6 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">__rsub__<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 1, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		7 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">mul<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 1, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		8 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Embedding<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		9 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		10 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Dropout<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
 		subgraph cluster_3 {
 			fontsize=12 label=GPT2Block labeljust=l style=dashed
-			11 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			12 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-			13 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-			14 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-			15 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-			16 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			17 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			18 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+			11 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			12 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768), (1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768), 2 x (1, 12, 6, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			13 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+			14 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+			15 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+			16 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			17 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			18 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 		}
 		subgraph cluster_4 {
 			fontsize=12 label=GPT2Block labeljust=l style=dashed
-			19 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			20 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-			21 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-			22 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-			23 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-			24 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			25 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			26 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+			19 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			20 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768), (1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768), 2 x (1, 12, 6, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			21 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+			22 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+			23 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+			24 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			25 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			26 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 		}
 		subgraph cluster_5 {
 			fontsize=12 label=GPT2Block labeljust=l style=dashed
-			27 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			28 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-			29 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-			30 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-			31 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-			32 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			33 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			34 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+			27 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			28 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768), (1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768), 2 x (1, 12, 6, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			29 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+			30 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+			31 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+			32 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			33 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			34 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 		}
 		subgraph cluster_6 {
 			fontsize=12 label=GPT2Block labeljust=l style=dashed
-			35 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			36 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-			37 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-			38 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-			39 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-			40 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			41 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			42 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+			35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			36 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768), (1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768), 2 x (1, 12, 6, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			37 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+			38 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+			39 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+			40 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			41 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			42 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 		}
 		subgraph cluster_7 {
 			fontsize=12 label=GPT2Block labeljust=l style=dashed
-			43 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			44 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-			45 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-			46 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-			47 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-			48 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			49 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			50 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+			43 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			44 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768), (1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768), 2 x (1, 12, 6, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			45 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+			46 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+			47 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+			48 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			49 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			50 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 		}
 		subgraph cluster_8 {
 			fontsize=12 label=GPT2Block labeljust=l style=dashed
-			51 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			52 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-			53 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-			54 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-			55 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-			56 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			57 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			58 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+			51 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			52 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768), (1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768), 2 x (1, 12, 6, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			53 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+			54 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+			55 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+			56 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			57 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			58 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 		}
 		subgraph cluster_9 {
 			fontsize=12 label=GPT2Block labeljust=l style=dashed
-			59 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			60 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-			61 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-			62 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-			63 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-			64 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			65 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			66 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+			59 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			60 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768), (1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768), 2 x (1, 12, 6, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			61 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+			62 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+			63 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+			64 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			65 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			66 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 		}
 		subgraph cluster_10 {
 			fontsize=12 label=GPT2Block labeljust=l style=dashed
-			67 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			68 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-			69 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-			70 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-			71 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-			72 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			73 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			74 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+			67 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			68 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768), (1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768), 2 x (1, 12, 6, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			69 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+			70 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+			71 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+			72 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			73 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			74 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 		}
 		subgraph cluster_11 {
 			fontsize=12 label=GPT2Block labeljust=l style=dashed
-			75 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			76 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-			77 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-			78 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-			79 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-			80 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			81 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			82 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+			75 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			76 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768), (1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768), 2 x (1, 12, 6, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			77 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+			78 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+			79 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+			80 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			81 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			82 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 		}
 		subgraph cluster_12 {
 			fontsize=12 label=GPT2Block labeljust=l style=dashed
-			83 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			84 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-			85 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-			86 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-			87 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-			88 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			89 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			90 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+			83 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			84 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768), (1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768), 2 x (1, 12, 6, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			85 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+			86 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+			87 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+			88 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			89 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			90 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 		}
 		subgraph cluster_13 {
 			fontsize=12 label=GPT2Block labeljust=l style=dashed
-			91 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			92 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-			93 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-			94 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-			95 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-			96 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			97 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			98 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+			91 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			92 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768), (1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768), 2 x (1, 12, 6, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			93 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+			94 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+			95 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+			96 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			97 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			98 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 		}
 		subgraph cluster_14 {
 			fontsize=12 label=GPT2Block labeljust=l style=dashed
-			99 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			100 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-			101 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-			102 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-			103 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-			104 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			105 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-			106 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+			99 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			100 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2Attention<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768), (1, 1, 1, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768), 2 x (1, 12, 6, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			101 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+			102 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 12, 6, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+			103 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+			104 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			105 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GPT2MLP<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			106 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 		}
-		107 [label="LayerNorm&#92;ndepth:2|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-		108 [label="view&#92;ndepth:2|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+		107 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">LayerNorm<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		108 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">view<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 	}
-	109 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 6, 768)|(1, 6, 50257)}" fillcolor=darkseagreen1]
-	110 [label="output-tensor&#92;ndepth:0|(1, 6, 50257)" fillcolor=lightyellow]
+	109 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Linear<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 768) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 50257) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	110 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 6, 50257)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
 	0 -> 2
 	1 -> 3
 	2 -> 8
