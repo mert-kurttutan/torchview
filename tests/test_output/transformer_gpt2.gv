@@ -1,5 +1,5 @@
 strict digraph gpt2 {
-	graph [ordering=in size="33.6,33.6"]
+	graph [ordering=in size="76.8,76.8"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
 	edge [fontsize=10]
 	0 [label="input-tensor&#92;ndepth:0|(1, 6)" fillcolor=lightyellow]
@@ -13,46 +13,106 @@ strict digraph gpt2 {
 	8 [label="Embedding&#92;ndepth:2|{input:|output:}|{(1, 6)|(1, 6, 768)}" fillcolor=darkseagreen1]
 	9 [label="add&#92;ndepth:2|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
 	10 [label="Dropout&#92;ndepth:2|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	11 [label="GPT2Block&#92;ndepth:2|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-	12 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+	11 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	12 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
 	13 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	14 [label="GPT2Block&#92;ndepth:2|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-	15 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	16 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	17 [label="GPT2Block&#92;ndepth:2|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-	18 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	19 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	20 [label="GPT2Block&#92;ndepth:2|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
+	14 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+	15 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	16 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	17 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	18 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	19 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	20 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
 	21 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
 	22 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	23 [label="GPT2Block&#92;ndepth:2|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-	24 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	25 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	26 [label="GPT2Block&#92;ndepth:2|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-	27 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	28 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	29 [label="GPT2Block&#92;ndepth:2|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
+	23 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	24 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	25 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	26 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	27 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	28 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
+	29 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
 	30 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	31 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	32 [label="GPT2Block&#92;ndepth:2|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-	33 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	34 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	35 [label="GPT2Block&#92;ndepth:2|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-	36 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+	31 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	32 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	33 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	34 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	35 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	36 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
 	37 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	38 [label="GPT2Block&#92;ndepth:2|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-	39 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	40 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	41 [label="GPT2Block&#92;ndepth:2|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
-	42 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	43 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	44 [label="GPT2Block&#92;ndepth:2|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
+	38 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+	39 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	40 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	41 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	42 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	43 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	44 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
 	45 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
 	46 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
-	47 [label="LayerNorm&#92;ndepth:2|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
-	48 [label="view&#92;ndepth:2|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
-	49 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 6, 768)|(1, 6, 50257)}" fillcolor=darkseagreen1]
-	50 [label="output-tensor&#92;ndepth:0|(1, 6, 50257)" fillcolor=lightyellow]
+	47 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	48 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	49 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	50 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	51 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	52 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
+	53 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+	54 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+	55 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	56 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	57 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	58 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	59 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	60 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
+	61 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+	62 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+	63 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	64 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	65 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	66 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	67 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	68 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
+	69 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+	70 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+	71 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	72 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	73 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	74 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	75 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	76 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
+	77 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+	78 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+	79 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	80 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	81 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	82 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	83 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	84 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
+	85 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+	86 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+	87 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	88 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	89 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	90 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	91 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	92 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
+	93 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+	94 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+	95 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	96 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	97 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	98 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	99 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	100 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
+	101 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+	102 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+	103 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	104 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	105 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	106 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	107 [label="LayerNorm&#92;ndepth:2|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+	108 [label="view&#92;ndepth:2|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	109 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 6, 768)|(1, 6, 50257)}" fillcolor=darkseagreen1]
+	110 [label="output-tensor&#92;ndepth:0|(1, 6, 50257)" fillcolor=lightyellow]
 	0 -> 2
 	1 -> 3
 	2 -> 8
@@ -60,58 +120,442 @@ strict digraph gpt2 {
 	4 -> 5
 	5 -> 6
 	6 -> 7
-	7 -> 11
-	7 -> 14
-	7 -> 17
-	7 -> 20
-	7 -> 23
-	7 -> 26
-	7 -> 29
-	7 -> 32
-	7 -> 35
-	7 -> 38
-	7 -> 41
-	7 -> 44
 	8 -> 9
 	9 -> 10
 	10 -> 11
+	10 -> 15
+	7 -> 12
 	11 -> 12
-	11 -> 13
-	11 -> 14
-	14 -> 15
-	14 -> 16
-	14 -> 17
+	12 -> 15
+	12 -> 13
+	12 -> 14
+	15 -> 16
+	15 -> 18
+	16 -> 17
 	17 -> 18
-	17 -> 19
-	17 -> 20
+	18 -> 19
+	18 -> 23
+	7 -> 20
+	19 -> 20
+	20 -> 23
 	20 -> 21
 	20 -> 22
-	20 -> 23
 	23 -> 24
-	23 -> 25
 	23 -> 26
+	24 -> 25
+	25 -> 26
 	26 -> 27
-	26 -> 28
-	26 -> 29
-	29 -> 30
-	29 -> 31
-	29 -> 32
+	26 -> 31
+	7 -> 28
+	27 -> 28
+	28 -> 31
+	28 -> 29
+	28 -> 30
+	31 -> 32
+	31 -> 34
 	32 -> 33
-	32 -> 34
-	32 -> 35
+	33 -> 34
+	34 -> 35
+	34 -> 39
+	7 -> 36
 	35 -> 36
-	35 -> 37
-	35 -> 38
-	38 -> 39
-	38 -> 40
-	38 -> 41
+	36 -> 39
+	36 -> 37
+	36 -> 38
+	39 -> 40
+	39 -> 42
+	40 -> 41
 	41 -> 42
-	41 -> 43
-	41 -> 44
+	42 -> 43
+	42 -> 47
+	7 -> 44
+	43 -> 44
+	44 -> 47
 	44 -> 45
 	44 -> 46
-	44 -> 47
 	47 -> 48
+	47 -> 50
 	48 -> 49
 	49 -> 50
+	50 -> 51
+	50 -> 55
+	7 -> 52
+	51 -> 52
+	52 -> 55
+	52 -> 53
+	52 -> 54
+	55 -> 56
+	55 -> 58
+	56 -> 57
+	57 -> 58
+	58 -> 59
+	58 -> 63
+	7 -> 60
+	59 -> 60
+	60 -> 63
+	60 -> 61
+	60 -> 62
+	63 -> 64
+	63 -> 66
+	64 -> 65
+	65 -> 66
+	66 -> 67
+	66 -> 71
+	7 -> 68
+	67 -> 68
+	68 -> 71
+	68 -> 69
+	68 -> 70
+	71 -> 72
+	71 -> 74
+	72 -> 73
+	73 -> 74
+	74 -> 75
+	74 -> 79
+	7 -> 76
+	75 -> 76
+	76 -> 79
+	76 -> 77
+	76 -> 78
+	79 -> 80
+	79 -> 82
+	80 -> 81
+	81 -> 82
+	82 -> 83
+	82 -> 87
+	7 -> 84
+	83 -> 84
+	84 -> 87
+	84 -> 85
+	84 -> 86
+	87 -> 88
+	87 -> 90
+	88 -> 89
+	89 -> 90
+	90 -> 91
+	90 -> 95
+	7 -> 92
+	91 -> 92
+	92 -> 95
+	92 -> 93
+	92 -> 94
+	95 -> 96
+	95 -> 98
+	96 -> 97
+	97 -> 98
+	98 -> 99
+	98 -> 103
+	7 -> 100
+	99 -> 100
+	100 -> 103
+	100 -> 101
+	100 -> 102
+	103 -> 104
+	103 -> 106
+	104 -> 105
+	105 -> 106
+	106 -> 107
+	107 -> 108
+	108 -> 109
+	109 -> 110
+}
+strict digraph gpt2 {
+	graph [ordering=in size="88.5,88.5"]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	edge [fontsize=10]
+	0 [label="input-tensor&#92;ndepth:0|(1, 6)" fillcolor=lightyellow]
+	1 [label="input-tensor&#92;ndepth:0|(1, 6)" fillcolor=lightyellow]
+	subgraph cluster_2 {
+		fontsize=12 label=GPT2Model labeljust=l style=dashed
+		2 [label="view&#92;ndepth:2|{input:|output:}|{(1, 6)|(1, 6)}" fillcolor=aliceblue]
+		3 [label="view&#92;ndepth:2|{input:|output:}|{(1, 6)|(1, 6)}" fillcolor=aliceblue]
+		4 [label="__getitem__&#92;ndepth:2|{input:|output:}|{(1, 6)|(1, 1, 1, 6)}" fillcolor=aliceblue]
+		5 [label="to&#92;ndepth:2|{input:|output:}|{(1, 1, 1, 6)|(1, 1, 1, 6)}" fillcolor=aliceblue]
+		6 [label="__rsub__&#92;ndepth:2|{input:|output:}|{(1, 1, 1, 6)|(1, 1, 1, 6)}" fillcolor=aliceblue]
+		7 [label="mul&#92;ndepth:2|{input:|output:}|{(1, 1, 1, 6)|(1, 1, 1, 6)}" fillcolor=aliceblue]
+		8 [label="Embedding&#92;ndepth:2|{input:|output:}|{(1, 6)|(1, 6, 768)}" fillcolor=darkseagreen1]
+		9 [label="add&#92;ndepth:2|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+		10 [label="Dropout&#92;ndepth:2|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+		subgraph cluster_3 {
+			fontsize=12 label=GPT2Block labeljust=l style=dashed
+			11 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			12 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
+			13 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+			14 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+			15 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+			16 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			17 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			18 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+		}
+		subgraph cluster_4 {
+			fontsize=12 label=GPT2Block labeljust=l style=dashed
+			19 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			20 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
+			21 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+			22 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+			23 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+			24 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			25 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			26 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+		}
+		subgraph cluster_5 {
+			fontsize=12 label=GPT2Block labeljust=l style=dashed
+			27 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			28 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
+			29 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+			30 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+			31 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+			32 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			33 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			34 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+		}
+		subgraph cluster_6 {
+			fontsize=12 label=GPT2Block labeljust=l style=dashed
+			35 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			36 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
+			37 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+			38 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+			39 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+			40 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			41 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			42 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+		}
+		subgraph cluster_7 {
+			fontsize=12 label=GPT2Block labeljust=l style=dashed
+			43 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			44 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
+			45 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+			46 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+			47 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+			48 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			49 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			50 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+		}
+		subgraph cluster_8 {
+			fontsize=12 label=GPT2Block labeljust=l style=dashed
+			51 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			52 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
+			53 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+			54 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+			55 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+			56 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			57 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			58 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+		}
+		subgraph cluster_9 {
+			fontsize=12 label=GPT2Block labeljust=l style=dashed
+			59 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			60 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
+			61 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+			62 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+			63 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+			64 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			65 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			66 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+		}
+		subgraph cluster_10 {
+			fontsize=12 label=GPT2Block labeljust=l style=dashed
+			67 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			68 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
+			69 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+			70 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+			71 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+			72 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			73 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			74 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+		}
+		subgraph cluster_11 {
+			fontsize=12 label=GPT2Block labeljust=l style=dashed
+			75 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			76 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
+			77 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+			78 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+			79 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+			80 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			81 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			82 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+		}
+		subgraph cluster_12 {
+			fontsize=12 label=GPT2Block labeljust=l style=dashed
+			83 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			84 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
+			85 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+			86 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+			87 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+			88 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			89 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			90 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+		}
+		subgraph cluster_13 {
+			fontsize=12 label=GPT2Block labeljust=l style=dashed
+			91 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			92 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
+			93 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+			94 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+			95 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+			96 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			97 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			98 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+		}
+		subgraph cluster_14 {
+			fontsize=12 label=GPT2Block labeljust=l style=dashed
+			99 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			100 [label="GPT2Attention&#92;ndepth:3|{input:|output:}|{(1, 6, 768), (1, 1, 1, 6)|(1, 6, 768), 2 x (1, 12, 6, 64)}" fillcolor=darkseagreen1]
+			101 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+			102 [label="output-tensor&#92;ndepth:0|(1, 12, 6, 64)" fillcolor=lightyellow]
+			103 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+			104 [label="LayerNorm&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			105 [label="GPT2MLP&#92;ndepth:3|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+			106 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+		}
+		107 [label="LayerNorm&#92;ndepth:2|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=darkseagreen1]
+		108 [label="view&#92;ndepth:2|{input:|output:}|{(1, 6, 768)|(1, 6, 768)}" fillcolor=aliceblue]
+	}
+	109 [label="Linear&#92;ndepth:1|{input:|output:}|{(1, 6, 768)|(1, 6, 50257)}" fillcolor=darkseagreen1]
+	110 [label="output-tensor&#92;ndepth:0|(1, 6, 50257)" fillcolor=lightyellow]
+	0 -> 2
+	1 -> 3
+	2 -> 8
+	3 -> 4
+	4 -> 5
+	5 -> 6
+	6 -> 7
+	8 -> 9
+	9 -> 10
+	10 -> 11
+	10 -> 15
+	7 -> 12
+	11 -> 12
+	12 -> 15
+	12 -> 13
+	12 -> 14
+	15 -> 16
+	15 -> 18
+	16 -> 17
+	17 -> 18
+	18 -> 19
+	18 -> 23
+	7 -> 20
+	19 -> 20
+	20 -> 23
+	20 -> 21
+	20 -> 22
+	23 -> 24
+	23 -> 26
+	24 -> 25
+	25 -> 26
+	26 -> 27
+	26 -> 31
+	7 -> 28
+	27 -> 28
+	28 -> 31
+	28 -> 29
+	28 -> 30
+	31 -> 32
+	31 -> 34
+	32 -> 33
+	33 -> 34
+	34 -> 35
+	34 -> 39
+	7 -> 36
+	35 -> 36
+	36 -> 39
+	36 -> 37
+	36 -> 38
+	39 -> 40
+	39 -> 42
+	40 -> 41
+	41 -> 42
+	42 -> 43
+	42 -> 47
+	7 -> 44
+	43 -> 44
+	44 -> 47
+	44 -> 45
+	44 -> 46
+	47 -> 48
+	47 -> 50
+	48 -> 49
+	49 -> 50
+	50 -> 51
+	50 -> 55
+	7 -> 52
+	51 -> 52
+	52 -> 55
+	52 -> 53
+	52 -> 54
+	55 -> 56
+	55 -> 58
+	56 -> 57
+	57 -> 58
+	58 -> 59
+	58 -> 63
+	7 -> 60
+	59 -> 60
+	60 -> 63
+	60 -> 61
+	60 -> 62
+	63 -> 64
+	63 -> 66
+	64 -> 65
+	65 -> 66
+	66 -> 67
+	66 -> 71
+	7 -> 68
+	67 -> 68
+	68 -> 71
+	68 -> 69
+	68 -> 70
+	71 -> 72
+	71 -> 74
+	72 -> 73
+	73 -> 74
+	74 -> 75
+	74 -> 79
+	7 -> 76
+	75 -> 76
+	76 -> 79
+	76 -> 77
+	76 -> 78
+	79 -> 80
+	79 -> 82
+	80 -> 81
+	81 -> 82
+	82 -> 83
+	82 -> 87
+	7 -> 84
+	83 -> 84
+	84 -> 87
+	84 -> 85
+	84 -> 86
+	87 -> 88
+	87 -> 90
+	88 -> 89
+	89 -> 90
+	90 -> 91
+	90 -> 95
+	7 -> 92
+	91 -> 92
+	92 -> 95
+	92 -> 93
+	92 -> 94
+	95 -> 96
+	95 -> 98
+	96 -> 97
+	97 -> 98
+	98 -> 99
+	98 -> 103
+	7 -> 100
+	99 -> 100
+	100 -> 103
+	100 -> 101
+	100 -> 102
+	103 -> 104
+	103 -> 106
+	104 -> 105
+	105 -> 106
+	106 -> 107
+	107 -> 108
+	108 -> 109
+	109 -> 110
 }
