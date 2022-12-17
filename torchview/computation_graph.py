@@ -234,7 +234,7 @@ class ComputationGraph:
         # # output node
         # visible tensor and non-input tensor nodes
         if is_cur_visible and not cur_node.is_main_input():
-            assert not isinstance(tail_node, TensorNode)
+            assert not isinstance(tail_node, TensorNode) or tail_node.is_main_input()
             self.edge_list.append((tail_node, cur_node))
 
     def rollify(
@@ -387,7 +387,9 @@ class ComputationGraph:
     def check_node(self, node):
         assert node.node_id != 'null', f'wrong id {node} {type(node)}'
         assert '-' not in node.node_id, 'No repetition of node recording'
-        assert not node.is_main_output() or not node.is_main_input(), f'isolated node! {node}'
+        assert not node.is_main_output() or not node.is_main_input(), (
+            f'isolated node! {node}'
+        )
         assert node.depth <= self.depth, f"exceeds depth limit, {node}"
         assert (
             sum(1 for _ in node.inputs) in [0, 1] or not isinstance(node, TensorNode)

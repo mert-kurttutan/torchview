@@ -306,3 +306,38 @@ class TowerBranches(nn.Module):
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         return torch.add(self.tower1(x) + self.tower2(x), self.tower3(x))
+
+
+class OutputReuse(nn.Module):
+    """Multi Layer Perceptron with inplace option.
+    Make sure inplace=true and false has the same visual graph"""
+
+    def __init__(self, inplace: bool = True) -> None:
+        super().__init__()
+        self.layers = nn.Sequential(
+            nn.Linear(128, 64),
+            nn.ReLU(inplace),
+            nn.Linear(64, 32),
+            nn.ReLU(inplace),
+            nn.Linear(32, 16),
+            nn.ReLU(inplace),
+            nn.Linear(16, 8),
+            nn.ReLU(inplace),
+            nn.Linear(8, 4),
+            nn.ReLU(inplace),
+            nn.Linear(4, 2),
+        )
+
+        self.empty = nn.Identity(())
+        self.act = nn.ReLU(inplace)
+
+    def forward(
+        self, x1: torch.Tensor,
+        x2: torch.Tensor, x3: torch.Tensor,
+        x4: torch.Tensor
+    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
+        x = self.layers(x1)
+        x = x + x2
+        y = self.empty(self.act(x2)) + x3
+        # x3 += 1
+        return x, y, x3, x4

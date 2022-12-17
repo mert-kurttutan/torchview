@@ -149,16 +149,6 @@ def module_forward_wrapper() -> Callable[..., Any]:
             cur_node.end_nodes.add(output_node)
             output_node.context = input_context
 
-            # ensure process_output worked as intended
-            assert output_node.depth == cur_depth
-
-            # # output of empty modules
-            if output_node.is_aux:
-                assert output_node in cur_node.outputs
-                output_node.is_aux = False
-                output_node.main_node = output_node
-                output_node.node_id = str(id(output_node))
-
         cur_node.set_output_shape(reduce_data_info(out, collect_shape, []))
         return out
 
@@ -417,10 +407,9 @@ def process_output_node(
     def _func(recorded_data: RecorderTensor) -> None:
         output_node = recorded_data.tensor_nodes[-1]
         cur_depth = cur_node.depth
-        # if output node is reused inside module
+        # if output node is reused inside module or empty module is used
         # introduce node for empty pass function
-        if not output_node.is_main_output():
-
+        if not output_node.is_main_output() or output_node.is_aux:
             out_pass = FunctionNode(
                 lambda x: x, output_node.depth, output_node,
                 name='empty-pass'

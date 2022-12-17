@@ -1,0 +1,52 @@
+strict digraph OutputReused {
+	graph [ordering=in size="14.1,14.1"]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	edge [fontsize=10]
+	0 [label="input-tensor&#92;ndepth:0|(1, 128)" fillcolor=lightyellow]
+	1 [label="input-tensor&#92;ndepth:0|(1, 2)" fillcolor=lightyellow]
+	2 [label="input-tensor&#92;ndepth:0|(1, 2)" fillcolor=lightyellow]
+	3 [label="input-tensor&#92;ndepth:0|(1, 64)" fillcolor=lightyellow]
+	subgraph cluster_2 {
+		fontsize=12 label=Sequential labeljust=l style=dashed
+		4 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 128)|(1, 64)}" fillcolor=darkseagreen1]
+		5 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 64)|(1, 64)}" fillcolor=darkseagreen1]
+		6 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 64)|(1, 32)}" fillcolor=darkseagreen1]
+		7 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 32)|(1, 32)}" fillcolor=darkseagreen1]
+		8 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 32)|(1, 16)}" fillcolor=darkseagreen1]
+		9 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 16)|(1, 16)}" fillcolor=darkseagreen1]
+		10 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 16)|(1, 8)}" fillcolor=darkseagreen1]
+		11 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 8)|(1, 8)}" fillcolor=darkseagreen1]
+		12 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 8)|(1, 4)}" fillcolor=darkseagreen1]
+		13 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 4)|(1, 4)}" fillcolor=darkseagreen1]
+		14 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 4)|(1, 2)}" fillcolor=darkseagreen1]
+	}
+	15 [label="add&#92;ndepth:1|{input:|output:}|{2 x (1, 2)|(1, 2)}" fillcolor=aliceblue]
+	16 [label="output-tensor&#92;ndepth:0|(1, 2)" fillcolor=lightyellow]
+	17 [label="ReLU&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
+	18 [label="Identity&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
+	19 [label="add&#92;ndepth:1|{input:|output:}|{2 x (1, 2)|(1, 2)}" fillcolor=aliceblue]
+	20 [label="output-tensor&#92;ndepth:0|(1, 2)" fillcolor=lightyellow]
+	21 [label="output-tensor&#92;ndepth:0|(1, 2)" fillcolor=lightyellow]
+	22 [label="output-tensor&#92;ndepth:0|(1, 64)" fillcolor=lightyellow]
+	1 -> 15
+	1 -> 17
+	2 -> 19
+	0 -> 4
+	4 -> 5
+	5 -> 6
+	6 -> 7
+	7 -> 8
+	8 -> 9
+	9 -> 10
+	10 -> 11
+	11 -> 12
+	12 -> 13
+	13 -> 14
+	14 -> 15
+	15 -> 16
+	17 -> 18
+	18 -> 19
+	19 -> 20
+	2 -> 21
+	3 -> 22
+}

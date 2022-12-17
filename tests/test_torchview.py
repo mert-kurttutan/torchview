@@ -21,6 +21,7 @@ from tests.fixtures.models import (
     RecursiveRelu,
     ScalarNet,
     TowerBranches,
+    OutputReuse,
 )
 from torchview import draw_graph
 
@@ -88,6 +89,16 @@ def test_simple_MLP(verify_result: Callable[..., Any]) -> None:
     model_graph_1 = draw_graph(
         MLP(), input_size=(1, 128),
         graph_name='MLP',
+    )
+
+    verify_result([model_graph_1])
+
+
+def test_simple_OutputReuse(verify_result: Callable[..., Any]) -> None:
+    model_graph_1 = draw_graph(
+        OutputReuse(), input_size=[(1, 128), (1, 2), (1, 2), (1, 64)],
+        graph_name='OutputReused',
+        expand_nested=True,
     )
 
     verify_result([model_graph_1])
