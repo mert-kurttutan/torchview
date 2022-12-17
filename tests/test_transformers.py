@@ -51,6 +51,6 @@ def test_transformer_automodel(verify_result: Callable[..., Any]) -> None:
     )
 
     model_graph2 = draw_graph(
-        model, input_data=not_paraphrase, graph_name='bert', depth=3
+        model, input_data=not_paraphrase, graph_name='bert', depth=3, expand_nested=True
     )
     verify_result([model_graph1, model_graph2])

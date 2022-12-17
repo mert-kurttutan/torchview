@@ -1,33 +1,222 @@
 strict digraph OutputReused {
-	graph [ordering=in size="14.1,14.1"]
-	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	graph [ordering=in size="23.5,23.5"]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
-	0 [label="input-tensor&#92;ndepth:0|(1, 128)" fillcolor=lightyellow]
-	1 [label="input-tensor&#92;ndepth:0|(1, 2)" fillcolor=lightyellow]
-	2 [label="input-tensor&#92;ndepth:0|(1, 2)" fillcolor=lightyellow]
-	3 [label="input-tensor&#92;ndepth:0|(1, 64)" fillcolor=lightyellow]
+	0 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 128)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	1 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 2)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	2 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 2)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	3 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
 	subgraph cluster_2 {
 		fontsize=12 label=Sequential labeljust=l style=dashed
-		4 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 128)|(1, 64)}" fillcolor=darkseagreen1]
-		5 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 64)|(1, 64)}" fillcolor=darkseagreen1]
-		6 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 64)|(1, 32)}" fillcolor=darkseagreen1]
-		7 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 32)|(1, 32)}" fillcolor=darkseagreen1]
-		8 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 32)|(1, 16)}" fillcolor=darkseagreen1]
-		9 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 16)|(1, 16)}" fillcolor=darkseagreen1]
-		10 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 16)|(1, 8)}" fillcolor=darkseagreen1]
-		11 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 8)|(1, 8)}" fillcolor=darkseagreen1]
-		12 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 8)|(1, 4)}" fillcolor=darkseagreen1]
-		13 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 4)|(1, 4)}" fillcolor=darkseagreen1]
-		14 [label="Linear&#92;ndepth:2|{input:|output:}|{(1, 4)|(1, 2)}" fillcolor=darkseagreen1]
+		4 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Linear<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 128) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		5 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		6 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Linear<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		7 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		8 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Linear<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		9 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		10 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Linear<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		11 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		12 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Linear<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		13 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		14 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Linear<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 2) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
 	}
-	15 [label="add&#92;ndepth:1|{input:|output:}|{2 x (1, 2)|(1, 2)}" fillcolor=aliceblue]
-	16 [label="output-tensor&#92;ndepth:0|(1, 2)" fillcolor=lightyellow]
-	17 [label="ReLU&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
-	18 [label="Identity&#92;ndepth:1|{input:|output:}|{(1, 2)|(1, 2)}" fillcolor=darkseagreen1]
-	19 [label="add&#92;ndepth:1|{input:|output:}|{2 x (1, 2)|(1, 2)}" fillcolor=aliceblue]
-	20 [label="output-tensor&#92;ndepth:0|(1, 2)" fillcolor=lightyellow]
-	21 [label="output-tensor&#92;ndepth:0|(1, 2)" fillcolor=lightyellow]
-	22 [label="output-tensor&#92;ndepth:0|(1, 64)" fillcolor=lightyellow]
+	15 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 2) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 2) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	16 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 2)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	17 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 2) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 2) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	18 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Identity<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 2) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 2) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	19 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 2) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 2) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	20 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 2)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	21 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 2)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	22 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 64)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
 	1 -> 15
 	1 -> 17
 	2 -> 19

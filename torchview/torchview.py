@@ -177,12 +177,13 @@ def draw_graph(
     # seems to work visually well
     node_attr = {
         'style': 'filled',
-        'shape': 'record',
+        'shape': 'plaintext',
         'align': 'left',
         'fontsize': '10',
         'ranksep': '0.1',
         'height': '0.2',
         'fontname': 'Linux libertine',
+        'margin': '0',
     }
 
     edge_attr = {

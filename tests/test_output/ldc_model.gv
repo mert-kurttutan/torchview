@@ -1,109 +1,1183 @@
 strict digraph LDC {
-	graph [ordering=in size="64.5,64.5"]
-	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	graph [ordering=in size="107.5,107.5"]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
-	0 [label="input-tensor&#92;ndepth:0|(1, 3, 32, 32)" fillcolor=lightyellow]
-	1 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 3, 32, 32)|(1, 16, 16, 16)}" fillcolor=darkseagreen1]
-	2 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 16, 16, 16)|(1, 16, 16, 16)}" fillcolor=darkseagreen1]
-	3 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 16, 16, 16)|(1, 16, 16, 16)}" fillcolor=darkseagreen1]
-	4 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 16, 16, 16)|(1, 16, 16, 16)}" fillcolor=darkseagreen1]
-	5 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 16, 16, 16)|(1, 16, 16, 16)}" fillcolor=darkseagreen1]
-	6 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 16, 16, 16)|(1, 16, 16, 16)}" fillcolor=darkseagreen1]
-	7 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 16, 16, 16)|(1, 32, 8, 8)}" fillcolor=darkseagreen1]
-	8 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 32, 8, 8)|(1, 32, 8, 8)}" fillcolor=darkseagreen1]
-	9 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 16, 16, 16)|(1, 32, 16, 16)}" fillcolor=darkseagreen1]
-	10 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 32, 16, 16)|(1, 32, 16, 16)}" fillcolor=darkseagreen1]
-	11 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 32, 16, 16)|(1, 32, 16, 16)}" fillcolor=darkseagreen1]
-	12 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 32, 16, 16)|(1, 32, 16, 16)}" fillcolor=darkseagreen1]
-	13 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 32, 16, 16)|(1, 32, 16, 16)}" fillcolor=darkseagreen1]
-	14 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 32, 16, 16)|(1, 32, 8, 8)}" fillcolor=darkseagreen1]
-	15 [label="add&#92;ndepth:1|{input:|output:}|{2 x (1, 32, 8, 8)|(1, 32, 8, 8)}" fillcolor=aliceblue]
-	16 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 32, 8, 8)|(1, 64, 4, 4)}" fillcolor=darkseagreen1]
-	17 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 64, 4, 4)|(1, 64, 4, 4)}" fillcolor=darkseagreen1]
-	18 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 32, 8, 8)|(1, 64, 8, 8)}" fillcolor=darkseagreen1]
-	19 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 64, 8, 8)|(1, 64, 8, 8)}" fillcolor=darkseagreen1]
-	20 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 32, 8, 8)|(1, 32, 8, 8)}" fillcolor=aliceblue]
-	21 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 32, 8, 8)|(1, 64, 10, 10)}" fillcolor=darkseagreen1]
-	22 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 64, 10, 10)|(1, 64, 10, 10)}" fillcolor=darkseagreen1]
-	23 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 64, 10, 10)|(1, 64, 10, 10)}" fillcolor=darkseagreen1]
-	24 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 64, 10, 10)|(1, 64, 8, 8)}" fillcolor=darkseagreen1]
-	25 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 64, 8, 8)|(1, 64, 8, 8)}" fillcolor=darkseagreen1]
-	26 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 64, 8, 8)|(1, 64, 8, 8)}" fillcolor=aliceblue]
-	27 [label="mul&#92;ndepth:3|{input:|output:}|{(1, 64, 8, 8)|(1, 64, 8, 8)}" fillcolor=aliceblue]
-	28 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 64, 8, 8)|(1, 64, 8, 8)}" fillcolor=aliceblue]
-	29 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 64, 8, 8)|(1, 64, 10, 10)}" fillcolor=darkseagreen1]
-	30 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 64, 10, 10)|(1, 64, 10, 10)}" fillcolor=darkseagreen1]
-	31 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 64, 10, 10)|(1, 64, 10, 10)}" fillcolor=darkseagreen1]
-	32 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 64, 10, 10)|(1, 64, 8, 8)}" fillcolor=darkseagreen1]
-	33 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 64, 8, 8)|(1, 64, 8, 8)}" fillcolor=darkseagreen1]
-	34 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 64, 8, 8)|(1, 64, 8, 8)}" fillcolor=aliceblue]
-	35 [label="mul&#92;ndepth:3|{input:|output:}|{(1, 64, 8, 8)|(1, 64, 8, 8)}" fillcolor=aliceblue]
-	36 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 64, 8, 8)|(1, 64, 4, 4)}" fillcolor=darkseagreen1]
-	37 [label="add&#92;ndepth:1|{input:|output:}|{2 x (1, 64, 4, 4)|(1, 64, 4, 4)}" fillcolor=aliceblue]
-	38 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 32, 8, 8)|(1, 64, 4, 4)}" fillcolor=darkseagreen1]
-	39 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 64, 4, 4)|(1, 64, 4, 4)}" fillcolor=darkseagreen1]
-	40 [label="add&#92;ndepth:1|{input:|output:}|{2 x (1, 64, 4, 4)|(1, 64, 4, 4)}" fillcolor=aliceblue]
-	41 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 64, 4, 4)|(1, 96, 4, 4)}" fillcolor=darkseagreen1]
-	42 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 96, 4, 4)|(1, 96, 4, 4)}" fillcolor=darkseagreen1]
-	43 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 64, 4, 4)|(1, 64, 4, 4)}" fillcolor=aliceblue]
-	44 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 64, 4, 4)|(1, 96, 6, 6)}" fillcolor=darkseagreen1]
-	45 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 96, 6, 6)|(1, 96, 6, 6)}" fillcolor=darkseagreen1]
-	46 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 96, 6, 6)|(1, 96, 6, 6)}" fillcolor=darkseagreen1]
-	47 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 96, 6, 6)|(1, 96, 4, 4)}" fillcolor=darkseagreen1]
-	48 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 96, 4, 4)|(1, 96, 4, 4)}" fillcolor=darkseagreen1]
-	49 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 96, 4, 4)|(1, 96, 4, 4)}" fillcolor=aliceblue]
-	50 [label="mul&#92;ndepth:3|{input:|output:}|{(1, 96, 4, 4)|(1, 96, 4, 4)}" fillcolor=aliceblue]
-	51 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 96, 4, 4)|(1, 96, 4, 4)}" fillcolor=aliceblue]
-	52 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 96, 4, 4)|(1, 96, 6, 6)}" fillcolor=darkseagreen1]
-	53 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 96, 6, 6)|(1, 96, 6, 6)}" fillcolor=darkseagreen1]
-	54 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 96, 6, 6)|(1, 96, 6, 6)}" fillcolor=darkseagreen1]
-	55 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 96, 6, 6)|(1, 96, 4, 4)}" fillcolor=darkseagreen1]
-	56 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 96, 4, 4)|(1, 96, 4, 4)}" fillcolor=darkseagreen1]
-	57 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 96, 4, 4)|(1, 96, 4, 4)}" fillcolor=aliceblue]
-	58 [label="mul&#92;ndepth:3|{input:|output:}|{(1, 96, 4, 4)|(1, 96, 4, 4)}" fillcolor=aliceblue]
-	59 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 96, 4, 4)|(1, 96, 4, 4)}" fillcolor=aliceblue]
-	60 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 96, 4, 4)|(1, 96, 6, 6)}" fillcolor=darkseagreen1]
-	61 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 96, 6, 6)|(1, 96, 6, 6)}" fillcolor=darkseagreen1]
-	62 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 96, 6, 6)|(1, 96, 6, 6)}" fillcolor=darkseagreen1]
-	63 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 96, 6, 6)|(1, 96, 4, 4)}" fillcolor=darkseagreen1]
-	64 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 96, 4, 4)|(1, 96, 4, 4)}" fillcolor=darkseagreen1]
-	65 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 96, 4, 4)|(1, 96, 4, 4)}" fillcolor=aliceblue]
-	66 [label="mul&#92;ndepth:3|{input:|output:}|{(1, 96, 4, 4)|(1, 96, 4, 4)}" fillcolor=aliceblue]
-	67 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 16, 16, 16)|(1, 1, 16, 16)}" fillcolor=darkseagreen1]
-	68 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 1, 16, 16)|(1, 1, 16, 16)}" fillcolor=darkseagreen1]
-	69 [label="ConvTranspose2d&#92;ndepth:3|{input:|output:}|{(1, 1, 16, 16)|(1, 1, 32, 32)}" fillcolor=darkseagreen1]
-	70 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 32, 16, 16)|(1, 1, 16, 16)}" fillcolor=darkseagreen1]
-	71 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 1, 16, 16)|(1, 1, 16, 16)}" fillcolor=darkseagreen1]
-	72 [label="ConvTranspose2d&#92;ndepth:3|{input:|output:}|{(1, 1, 16, 16)|(1, 1, 32, 32)}" fillcolor=darkseagreen1]
-	73 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 64, 8, 8)|(1, 16, 8, 8)}" fillcolor=darkseagreen1]
-	74 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 16, 8, 8)|(1, 16, 8, 8)}" fillcolor=darkseagreen1]
-	75 [label="ConvTranspose2d&#92;ndepth:3|{input:|output:}|{(1, 16, 8, 8)|(1, 16, 16, 16)}" fillcolor=darkseagreen1]
-	76 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 16, 16, 16)|(1, 1, 16, 16)}" fillcolor=darkseagreen1]
-	77 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 1, 16, 16)|(1, 1, 16, 16)}" fillcolor=darkseagreen1]
-	78 [label="ConvTranspose2d&#92;ndepth:3|{input:|output:}|{(1, 1, 16, 16)|(1, 1, 32, 32)}" fillcolor=darkseagreen1]
-	79 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 96, 4, 4)|(1, 16, 4, 4)}" fillcolor=darkseagreen1]
-	80 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 16, 4, 4)|(1, 16, 4, 4)}" fillcolor=darkseagreen1]
-	81 [label="ConvTranspose2d&#92;ndepth:3|{input:|output:}|{(1, 16, 4, 4)|(1, 16, 8, 8)}" fillcolor=darkseagreen1]
-	82 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 16, 8, 8)|(1, 16, 8, 8)}" fillcolor=darkseagreen1]
-	83 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 16, 8, 8)|(1, 16, 8, 8)}" fillcolor=darkseagreen1]
-	84 [label="ConvTranspose2d&#92;ndepth:3|{input:|output:}|{(1, 16, 8, 8)|(1, 16, 16, 16)}" fillcolor=darkseagreen1]
-	85 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 16, 16, 16)|(1, 1, 16, 16)}" fillcolor=darkseagreen1]
-	86 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 1, 16, 16)|(1, 1, 16, 16)}" fillcolor=darkseagreen1]
-	87 [label="ConvTranspose2d&#92;ndepth:3|{input:|output:}|{(1, 1, 16, 16)|(1, 1, 32, 32)}" fillcolor=darkseagreen1]
-	88 [label="cat&#92;ndepth:1|{input:|output:}|{4 x (1, 1, 32, 32)|(1, 4, 32, 32)}" fillcolor=aliceblue]
-	89 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 4, 32, 32)|(1, 32, 32, 32)}" fillcolor=darkseagreen1]
-	90 [label="GroupNorm&#92;ndepth:2|{input:|output:}|{(1, 32, 32, 32)|(1, 32, 32, 32)}" fillcolor=darkseagreen1]
-	91 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 32, 32, 32)|(1, 32, 32, 32)}" fillcolor=darkseagreen1]
-	92 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 32, 32, 32)|(1, 4, 32, 32)}" fillcolor=darkseagreen1]
-	93 [label="softmax&#92;ndepth:2|{input:|output:}|{(1, 4, 32, 32)|(1, 4, 32, 32)}" fillcolor=aliceblue]
-	94 [label="mul&#92;ndepth:2|{input:|output:}|{2 x (1, 4, 32, 32)|(1, 4, 32, 32)}" fillcolor=aliceblue]
-	95 [label="sum&#92;ndepth:2|{input:|output:}|{(1, 4, 32, 32)|(1, 32, 32)}" fillcolor=aliceblue]
-	96 [label="unsqueeze&#92;ndepth:2|{input:|output:}|{(1, 32, 32)|(1, 1, 32, 32)}" fillcolor=aliceblue]
-	97 [label="output-tensor&#92;ndepth:0|(1, 1, 32, 32)" fillcolor=lightyellow]
-	98 [label="output-tensor&#92;ndepth:0|(1, 1, 32, 32)" fillcolor=lightyellow]
-	99 [label="output-tensor&#92;ndepth:0|(1, 1, 32, 32)" fillcolor=lightyellow]
-	100 [label="output-tensor&#92;ndepth:0|(1, 1, 32, 32)" fillcolor=lightyellow]
-	101 [label="output-tensor&#92;ndepth:0|(1, 1, 32, 32)" fillcolor=lightyellow]
+	0 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 3, 32, 32)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	1 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 3, 32, 32) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	2 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	3 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	4 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	5 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	6 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	7 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	8 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	9 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	10 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	11 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	12 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	13 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	14 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MaxPool2d<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	15 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 32, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	16 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	17 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	18 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	19 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	20 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">relu<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	21 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 10, 10) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	22 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 10, 10) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 10, 10) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	23 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 10, 10) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 10, 10) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	24 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 10, 10) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	25 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	26 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 64, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	27 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">mul<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	28 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">relu<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	29 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 10, 10) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	30 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 10, 10) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 10, 10) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	31 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 10, 10) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 10, 10) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	32 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 10, 10) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	33 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	34 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 64, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">mul<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	36 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MaxPool2d<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	37 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 64, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	38 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	39 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	40 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 64, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	41 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	42 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	43 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">relu<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	44 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	45 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	46 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	47 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	48 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	49 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	50 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">mul<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	51 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">relu<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	52 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	53 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	54 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	55 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	56 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	57 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	58 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">mul<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	59 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">relu<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	60 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	61 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	62 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	63 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	64 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	65 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	66 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">mul<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	67 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	68 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	69 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	70 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	71 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	72 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	73 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	74 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	75 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	76 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	77 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	78 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	79 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	80 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	81 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	82 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	83 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	84 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	85 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	86 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	87 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	88 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">cat<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">4 x (1, 1, 32, 32) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 4, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	89 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 4, 32, 32) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	90 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GroupNorm<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 32, 32) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	91 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 32, 32) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	92 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 32, 32) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 4, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	93 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">softmax<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 4, 32, 32) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 4, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	94 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">mul<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 4, 32, 32) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 4, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	95 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">sum<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 4, 32, 32) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	96 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">unsqueeze<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 32) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+	97 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	98 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	99 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	100 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	101 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
 	0 -> 1
 	1 -> 2
 	2 -> 3
@@ -219,180 +1293,1254 @@ strict digraph LDC {
 	87 -> 101
 }
 strict digraph LDC_expanded {
-	graph [ordering=in size="85.2,85.2"]
-	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 ranksep=0.1 shape=record style=filled]
+	graph [ordering=in size="142.0,142.0"]
+	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
-	0 [label="input-tensor&#92;ndepth:0|(1, 3, 32, 32)" fillcolor=lightyellow]
+	0 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 3, 32, 32)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
 	subgraph cluster_2 {
 		fontsize=12 label=DoubleConvBlock labeljust=l style=dashed
-		1 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 3, 32, 32)|(1, 16, 16, 16)}" fillcolor=darkseagreen1]
-		2 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 16, 16, 16)|(1, 16, 16, 16)}" fillcolor=darkseagreen1]
-		3 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 16, 16, 16)|(1, 16, 16, 16)}" fillcolor=darkseagreen1]
-		4 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 16, 16, 16)|(1, 16, 16, 16)}" fillcolor=darkseagreen1]
-		5 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 16, 16, 16)|(1, 16, 16, 16)}" fillcolor=darkseagreen1]
-		6 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 16, 16, 16)|(1, 16, 16, 16)}" fillcolor=darkseagreen1]
+		1 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 3, 32, 32) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		2 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		3 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		4 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		5 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		6 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
 	}
 	subgraph cluster_3 {
 		fontsize=12 label=SingleConvBlock labeljust=l style=dashed
-		7 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 16, 16, 16)|(1, 32, 8, 8)}" fillcolor=darkseagreen1]
-		8 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 32, 8, 8)|(1, 32, 8, 8)}" fillcolor=darkseagreen1]
+		7 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		8 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
 	}
 	subgraph cluster_4 {
 		fontsize=12 label=DoubleConvBlock labeljust=l style=dashed
-		9 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 16, 16, 16)|(1, 32, 16, 16)}" fillcolor=darkseagreen1]
-		10 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 32, 16, 16)|(1, 32, 16, 16)}" fillcolor=darkseagreen1]
-		11 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 32, 16, 16)|(1, 32, 16, 16)}" fillcolor=darkseagreen1]
-		12 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 32, 16, 16)|(1, 32, 16, 16)}" fillcolor=darkseagreen1]
-		13 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 32, 16, 16)|(1, 32, 16, 16)}" fillcolor=darkseagreen1]
+		9 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		10 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		11 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		12 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		13 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
 	}
-	14 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 32, 16, 16)|(1, 32, 8, 8)}" fillcolor=darkseagreen1]
-	15 [label="add&#92;ndepth:1|{input:|output:}|{2 x (1, 32, 8, 8)|(1, 32, 8, 8)}" fillcolor=aliceblue]
+	14 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MaxPool2d<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	15 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 32, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 	subgraph cluster_5 {
 		fontsize=12 label=SingleConvBlock labeljust=l style=dashed
-		16 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 32, 8, 8)|(1, 64, 4, 4)}" fillcolor=darkseagreen1]
-		17 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 64, 4, 4)|(1, 64, 4, 4)}" fillcolor=darkseagreen1]
+		16 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		17 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
 	}
 	subgraph cluster_6 {
 		fontsize=12 label=SingleConvBlock labeljust=l style=dashed
-		18 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 32, 8, 8)|(1, 64, 8, 8)}" fillcolor=darkseagreen1]
-		19 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 64, 8, 8)|(1, 64, 8, 8)}" fillcolor=darkseagreen1]
+		18 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		19 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
 	}
 	subgraph cluster_7 {
 		fontsize=12 label=_DenseBlock labeljust=l style=dashed
 		subgraph cluster_8 {
 			fontsize=12 label=_DenseLayer labeljust=l style=dashed
-			20 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 32, 8, 8)|(1, 32, 8, 8)}" fillcolor=aliceblue]
-			21 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 32, 8, 8)|(1, 64, 10, 10)}" fillcolor=darkseagreen1]
-			22 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 64, 10, 10)|(1, 64, 10, 10)}" fillcolor=darkseagreen1]
-			23 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 64, 10, 10)|(1, 64, 10, 10)}" fillcolor=darkseagreen1]
-			24 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 64, 10, 10)|(1, 64, 8, 8)}" fillcolor=darkseagreen1]
-			25 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 64, 8, 8)|(1, 64, 8, 8)}" fillcolor=darkseagreen1]
-			26 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 64, 8, 8)|(1, 64, 8, 8)}" fillcolor=aliceblue]
-			27 [label="mul&#92;ndepth:3|{input:|output:}|{(1, 64, 8, 8)|(1, 64, 8, 8)}" fillcolor=aliceblue]
+			20 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">relu<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+			21 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 10, 10) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			22 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 10, 10) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 10, 10) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			23 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 10, 10) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 10, 10) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			24 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 10, 10) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			25 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			26 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 64, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+			27 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">mul<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 		}
 		subgraph cluster_9 {
 			fontsize=12 label=_DenseLayer labeljust=l style=dashed
-			28 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 64, 8, 8)|(1, 64, 8, 8)}" fillcolor=aliceblue]
-			29 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 64, 8, 8)|(1, 64, 10, 10)}" fillcolor=darkseagreen1]
-			30 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 64, 10, 10)|(1, 64, 10, 10)}" fillcolor=darkseagreen1]
-			31 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 64, 10, 10)|(1, 64, 10, 10)}" fillcolor=darkseagreen1]
-			32 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 64, 10, 10)|(1, 64, 8, 8)}" fillcolor=darkseagreen1]
-			33 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 64, 8, 8)|(1, 64, 8, 8)}" fillcolor=darkseagreen1]
-			34 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 64, 8, 8)|(1, 64, 8, 8)}" fillcolor=aliceblue]
-			35 [label="mul&#92;ndepth:3|{input:|output:}|{(1, 64, 8, 8)|(1, 64, 8, 8)}" fillcolor=aliceblue]
+			28 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">relu<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+			29 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 10, 10) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			30 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 10, 10) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 10, 10) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			31 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 10, 10) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 10, 10) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			32 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 10, 10) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			33 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			34 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 64, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+			35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">mul<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 		}
 	}
-	36 [label="MaxPool2d&#92;ndepth:1|{input:|output:}|{(1, 64, 8, 8)|(1, 64, 4, 4)}" fillcolor=darkseagreen1]
-	37 [label="add&#92;ndepth:1|{input:|output:}|{2 x (1, 64, 4, 4)|(1, 64, 4, 4)}" fillcolor=aliceblue]
+	36 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">MaxPool2d<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	37 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 64, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 	subgraph cluster_10 {
 		fontsize=12 label=SingleConvBlock labeljust=l style=dashed
-		38 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 32, 8, 8)|(1, 64, 4, 4)}" fillcolor=darkseagreen1]
-		39 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 64, 4, 4)|(1, 64, 4, 4)}" fillcolor=darkseagreen1]
+		38 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		39 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
 	}
-	40 [label="add&#92;ndepth:1|{input:|output:}|{2 x (1, 64, 4, 4)|(1, 64, 4, 4)}" fillcolor=aliceblue]
+	40 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 64, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 	subgraph cluster_11 {
 		fontsize=12 label=SingleConvBlock labeljust=l style=dashed
-		41 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 64, 4, 4)|(1, 96, 4, 4)}" fillcolor=darkseagreen1]
-		42 [label="BatchNorm2d&#92;ndepth:2|{input:|output:}|{(1, 96, 4, 4)|(1, 96, 4, 4)}" fillcolor=darkseagreen1]
+		41 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		42 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
 	}
 	subgraph cluster_12 {
 		fontsize=12 label=_DenseBlock labeljust=l style=dashed
 		subgraph cluster_13 {
 			fontsize=12 label=_DenseLayer labeljust=l style=dashed
-			43 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 64, 4, 4)|(1, 64, 4, 4)}" fillcolor=aliceblue]
-			44 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 64, 4, 4)|(1, 96, 6, 6)}" fillcolor=darkseagreen1]
-			45 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 96, 6, 6)|(1, 96, 6, 6)}" fillcolor=darkseagreen1]
-			46 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 96, 6, 6)|(1, 96, 6, 6)}" fillcolor=darkseagreen1]
-			47 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 96, 6, 6)|(1, 96, 4, 4)}" fillcolor=darkseagreen1]
-			48 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 96, 4, 4)|(1, 96, 4, 4)}" fillcolor=darkseagreen1]
-			49 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 96, 4, 4)|(1, 96, 4, 4)}" fillcolor=aliceblue]
-			50 [label="mul&#92;ndepth:3|{input:|output:}|{(1, 96, 4, 4)|(1, 96, 4, 4)}" fillcolor=aliceblue]
+			43 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">relu<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+			44 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			45 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			46 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			47 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			48 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			49 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+			50 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">mul<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 		}
 		subgraph cluster_14 {
 			fontsize=12 label=_DenseLayer labeljust=l style=dashed
-			51 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 96, 4, 4)|(1, 96, 4, 4)}" fillcolor=aliceblue]
-			52 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 96, 4, 4)|(1, 96, 6, 6)}" fillcolor=darkseagreen1]
-			53 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 96, 6, 6)|(1, 96, 6, 6)}" fillcolor=darkseagreen1]
-			54 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 96, 6, 6)|(1, 96, 6, 6)}" fillcolor=darkseagreen1]
-			55 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 96, 6, 6)|(1, 96, 4, 4)}" fillcolor=darkseagreen1]
-			56 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 96, 4, 4)|(1, 96, 4, 4)}" fillcolor=darkseagreen1]
-			57 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 96, 4, 4)|(1, 96, 4, 4)}" fillcolor=aliceblue]
-			58 [label="mul&#92;ndepth:3|{input:|output:}|{(1, 96, 4, 4)|(1, 96, 4, 4)}" fillcolor=aliceblue]
+			51 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">relu<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+			52 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			53 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			54 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			55 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			56 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			57 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+			58 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">mul<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 		}
 		subgraph cluster_15 {
 			fontsize=12 label=_DenseLayer labeljust=l style=dashed
-			59 [label="relu&#92;ndepth:3|{input:|output:}|{(1, 96, 4, 4)|(1, 96, 4, 4)}" fillcolor=aliceblue]
-			60 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 96, 4, 4)|(1, 96, 6, 6)}" fillcolor=darkseagreen1]
-			61 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 96, 6, 6)|(1, 96, 6, 6)}" fillcolor=darkseagreen1]
-			62 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 96, 6, 6)|(1, 96, 6, 6)}" fillcolor=darkseagreen1]
-			63 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 96, 6, 6)|(1, 96, 4, 4)}" fillcolor=darkseagreen1]
-			64 [label="BatchNorm2d&#92;ndepth:3|{input:|output:}|{(1, 96, 4, 4)|(1, 96, 4, 4)}" fillcolor=darkseagreen1]
-			65 [label="add&#92;ndepth:3|{input:|output:}|{2 x (1, 96, 4, 4)|(1, 96, 4, 4)}" fillcolor=aliceblue]
-			66 [label="mul&#92;ndepth:3|{input:|output:}|{(1, 96, 4, 4)|(1, 96, 4, 4)}" fillcolor=aliceblue]
+			59 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">relu<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+			60 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			61 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			62 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			63 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 6, 6) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			64 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">BatchNorm2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			65 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">add<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+			66 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">mul<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 		}
 	}
 	subgraph cluster_16 {
 		fontsize=12 label=UpConvBlock labeljust=l style=dashed
 		subgraph cluster_17 {
 			fontsize=12 label=Sequential labeljust=l style=dashed
-			67 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 16, 16, 16)|(1, 1, 16, 16)}" fillcolor=darkseagreen1]
-			68 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 1, 16, 16)|(1, 1, 16, 16)}" fillcolor=darkseagreen1]
-			69 [label="ConvTranspose2d&#92;ndepth:3|{input:|output:}|{(1, 1, 16, 16)|(1, 1, 32, 32)}" fillcolor=darkseagreen1]
+			67 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			68 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			69 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
 		}
 	}
 	subgraph cluster_18 {
 		fontsize=12 label=UpConvBlock labeljust=l style=dashed
 		subgraph cluster_19 {
 			fontsize=12 label=Sequential labeljust=l style=dashed
-			70 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 32, 16, 16)|(1, 1, 16, 16)}" fillcolor=darkseagreen1]
-			71 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 1, 16, 16)|(1, 1, 16, 16)}" fillcolor=darkseagreen1]
-			72 [label="ConvTranspose2d&#92;ndepth:3|{input:|output:}|{(1, 1, 16, 16)|(1, 1, 32, 32)}" fillcolor=darkseagreen1]
+			70 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			71 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			72 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
 		}
 	}
 	subgraph cluster_20 {
 		fontsize=12 label=UpConvBlock labeljust=l style=dashed
 		subgraph cluster_21 {
 			fontsize=12 label=Sequential labeljust=l style=dashed
-			73 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 64, 8, 8)|(1, 16, 8, 8)}" fillcolor=darkseagreen1]
-			74 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 16, 8, 8)|(1, 16, 8, 8)}" fillcolor=darkseagreen1]
-			75 [label="ConvTranspose2d&#92;ndepth:3|{input:|output:}|{(1, 16, 8, 8)|(1, 16, 16, 16)}" fillcolor=darkseagreen1]
-			76 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 16, 16, 16)|(1, 1, 16, 16)}" fillcolor=darkseagreen1]
-			77 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 1, 16, 16)|(1, 1, 16, 16)}" fillcolor=darkseagreen1]
-			78 [label="ConvTranspose2d&#92;ndepth:3|{input:|output:}|{(1, 1, 16, 16)|(1, 1, 32, 32)}" fillcolor=darkseagreen1]
+			73 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 64, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			74 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			75 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			76 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			77 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			78 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
 		}
 	}
 	subgraph cluster_22 {
 		fontsize=12 label=UpConvBlock labeljust=l style=dashed
 		subgraph cluster_23 {
 			fontsize=12 label=Sequential labeljust=l style=dashed
-			79 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 96, 4, 4)|(1, 16, 4, 4)}" fillcolor=darkseagreen1]
-			80 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 16, 4, 4)|(1, 16, 4, 4)}" fillcolor=darkseagreen1]
-			81 [label="ConvTranspose2d&#92;ndepth:3|{input:|output:}|{(1, 16, 4, 4)|(1, 16, 8, 8)}" fillcolor=darkseagreen1]
-			82 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 16, 8, 8)|(1, 16, 8, 8)}" fillcolor=darkseagreen1]
-			83 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 16, 8, 8)|(1, 16, 8, 8)}" fillcolor=darkseagreen1]
-			84 [label="ConvTranspose2d&#92;ndepth:3|{input:|output:}|{(1, 16, 8, 8)|(1, 16, 16, 16)}" fillcolor=darkseagreen1]
-			85 [label="Conv2d&#92;ndepth:3|{input:|output:}|{(1, 16, 16, 16)|(1, 1, 16, 16)}" fillcolor=darkseagreen1]
-			86 [label="ReLU&#92;ndepth:3|{input:|output:}|{(1, 1, 16, 16)|(1, 1, 16, 16)}" fillcolor=darkseagreen1]
-			87 [label="ConvTranspose2d&#92;ndepth:3|{input:|output:}|{(1, 1, 16, 16)|(1, 1, 32, 32)}" fillcolor=darkseagreen1]
+			79 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 96, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			80 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 4, 4) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			81 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 4, 4) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			82 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			83 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 8, 8) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			84 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 8, 8) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			85 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 16, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			86 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+			87 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ConvTranspose2d<BR/>depth:3</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 1, 16, 16) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
 		}
 	}
-	88 [label="cat&#92;ndepth:1|{input:|output:}|{4 x (1, 1, 32, 32)|(1, 4, 32, 32)}" fillcolor=aliceblue]
+	88 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">cat<BR/>depth:1</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">4 x (1, 1, 32, 32) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 4, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
 	subgraph cluster_24 {
 		fontsize=12 label=CoFusion labeljust=l style=dashed
-		89 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 4, 32, 32)|(1, 32, 32, 32)}" fillcolor=darkseagreen1]
-		90 [label="GroupNorm&#92;ndepth:2|{input:|output:}|{(1, 32, 32, 32)|(1, 32, 32, 32)}" fillcolor=darkseagreen1]
-		91 [label="ReLU&#92;ndepth:2|{input:|output:}|{(1, 32, 32, 32)|(1, 32, 32, 32)}" fillcolor=darkseagreen1]
-		92 [label="Conv2d&#92;ndepth:2|{input:|output:}|{(1, 32, 32, 32)|(1, 4, 32, 32)}" fillcolor=darkseagreen1]
-		93 [label="softmax&#92;ndepth:2|{input:|output:}|{(1, 4, 32, 32)|(1, 4, 32, 32)}" fillcolor=aliceblue]
-		94 [label="mul&#92;ndepth:2|{input:|output:}|{2 x (1, 4, 32, 32)|(1, 4, 32, 32)}" fillcolor=aliceblue]
-		95 [label="sum&#92;ndepth:2|{input:|output:}|{(1, 4, 32, 32)|(1, 32, 32)}" fillcolor=aliceblue]
-		96 [label="unsqueeze&#92;ndepth:2|{input:|output:}|{(1, 32, 32)|(1, 1, 32, 32)}" fillcolor=aliceblue]
-		97 [label="output-tensor&#92;ndepth:0|(1, 1, 32, 32)" fillcolor=lightyellow]
+		89 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 4, 32, 32) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		90 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">GroupNorm<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 32, 32) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		91 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">ReLU<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 32, 32) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		92 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">Conv2d<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 32, 32) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 4, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+		93 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">softmax<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 4, 32, 32) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 4, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		94 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">mul<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">2 x (1, 4, 32, 32) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 4, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		95 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">sum<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 4, 32, 32) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		96 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">unsqueeze<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 32, 32) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 1, 32, 32) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=aliceblue]
+		97 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
 	}
-	98 [label="output-tensor&#92;ndepth:0|(1, 1, 32, 32)" fillcolor=lightyellow]
-	99 [label="output-tensor&#92;ndepth:0|(1, 1, 32, 32)" fillcolor=lightyellow]
-	100 [label="output-tensor&#92;ndepth:0|(1, 1, 32, 32)" fillcolor=lightyellow]
-	101 [label="output-tensor&#92;ndepth:0|(1, 1, 32, 32)" fillcolor=lightyellow]
+	98 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	99 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	100 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	101 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                    <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 1, 32, 32)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
 	0 -> 1
 	1 -> 2
 	2 -> 3
