@@ -369,7 +369,7 @@ def get_recorder_tensor(
     input_node = TensorNode(
         tensor=input_recorder_tensor,
         depth=0,
-        name='input_node',
+        name='input-tensor',
     )
 
     input_recorder_tensor.tensor_nodes.append(input_node)

@@ -11,6 +11,7 @@ from torchvision import __version__ as torchvision_version
 from torchview import draw_graph
 from tests.fixtures.u_net import UNet2  # type: ignore[attr-defined]
 from tests.fixtures.dense_net import DenseNet  # type: ignore[attr-defined]
+from tests.fixtures.ldc import LDC
 
 # pass verify_result fixture to test functions
 # so it can be used as a wrapper function
@@ -136,3 +137,27 @@ def test_simple_ViT_model(verify_result: Callable[..., Any]) -> None:
     )
 
     verify_result([model_graph])
+
+
+def test_ldc_model(verify_result: Callable[..., Any]) -> None:
+
+    # needed depth=2, otherwise denseblock with 24
+    # conv units will have 24*23/2 edges, too crowded image
+
+    model1 = LDC()
+    model_graph1 = draw_graph(
+        model1,
+        input_size=(1, 3, 32, 32),
+        graph_name='LDC',
+        depth=3
+    )
+
+    model_graph2 = draw_graph(
+        model1,
+        input_size=(1, 3, 32, 32),
+        graph_name='LDC_expanded',
+        depth=3,
+        expand_nested=True,
+    )
+
+    verify_result([model_graph1, model_graph2])
