@@ -82,6 +82,7 @@ This problem does not occur on other platforms e.g. JupyterLab or Google Colab.
 * Almost all the models, RNN, Sequentials, Skip Connection
 * Shows operations between tensors (in addition to module calls)
 * Rolling/Unrolling feature. Recursively used modules can be rolled visually, see below.
+* Diverse set of inputs/output types, e.g. nested data structure (dict, list, etc), huggingface tokenizer outputs 
 
 # Documentation
 
