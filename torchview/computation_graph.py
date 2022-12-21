@@ -244,8 +244,8 @@ class ComputationGraph:
         # {tail -> cur_node} part
         # # output node
         # visible tensor and non-input tensor nodes
-        if is_cur_visible and not cur_node.is_main_input():
-            assert not isinstance(tail_node, TensorNode) or tail_node.is_main_input()
+        if is_cur_visible and not cur_node.is_main_parent():
+            assert not isinstance(tail_node, TensorNode) or tail_node.is_main_parent()
             self.edge_list.append((tail_node, cur_node))
 
     def rollify(
@@ -286,12 +286,12 @@ class ComputationGraph:
             if compute_node.main_node.depth < 0 or compute_node.is_aux:
                 return False
 
-            is_main_output_or_input = (
-                (compute_node.is_main_input() or compute_node.is_main_output())
+            is_main_output_or_parent = (
+                (compute_node.is_main_parent() or compute_node.is_main_output())
                 and compute_node.depth == 0
             )
             is_visible = (
-                not self.hide_inner_tensors or is_main_output_or_input
+                not self.hide_inner_tensors or is_main_output_or_parent
             )
 
             return is_visible
@@ -305,27 +305,27 @@ class ComputationGraph:
         tensor_node = _tensor_node.main_node if _tensor_node.is_aux else _tensor_node
 
         # non-output nodes eminating from input node
-        if tensor_node.is_main_input():
+        if tensor_node.is_main_parent():
             return tensor_node
 
-        current_input_h = tensor_node.input_hierarchy
+        current_parent_h = tensor_node.parent_hierarchy
 
-        sorted_depth = sorted(depth for depth in current_input_h)
-        tail_node = next(iter(tensor_node.inputs))
+        sorted_depth = sorted(depth for depth in current_parent_h)
+        tail_node = next(iter(tensor_node.parents))
         depth = 0
         for depth in sorted_depth:
-            tail_node = current_input_h[depth]
+            tail_node = current_parent_h[depth]
             if depth >= self.depth:
                 break
 
         module_depth = depth-1
         # if returned by container module and hide_module_functions
         if (
-            isinstance(current_input_h[depth], FunctionNode) and
-            module_depth in tensor_node.input_hierarchy and self.hide_module_functions
+            isinstance(current_parent_h[depth], FunctionNode) and
+            module_depth in tensor_node.parent_hierarchy and self.hide_module_functions
         ):
-            if current_input_h[module_depth].is_container:
-                return current_input_h[module_depth]
+            if current_parent_h[module_depth].is_container:
+                return current_parent_h[module_depth]
 
         # Even though this is recursive, not harmful for complexity
         # The reason: the (time) complexity ~ O(L^2) where L
@@ -334,12 +334,12 @@ class ComputationGraph:
         # infinitely big network with infinitely big continuou pass of unchanged
         # tensor. This recursion is necessary e.g. for LDC model
         if tail_node.name == 'empty-pass':
-            empty_pass_input = next(iter((tail_node.inputs)))
-            assert isinstance(empty_pass_input, TensorNode), (
-                f'{empty_pass_input} is input of {tail_node}'
+            empty_pass_parent = next(iter((tail_node.parents)))
+            assert isinstance(empty_pass_parent, TensorNode), (
+                f'{empty_pass_parent} is input of {tail_node}'
                 f'and must a be TensorNode'
             )
-            return self.get_tail_node(empty_pass_input)
+            return self.get_tail_node(empty_pass_parent)
         return tail_node
 
     def add_edge(
@@ -424,12 +424,12 @@ class ComputationGraph:
     def check_node(self, node):
         assert node.node_id != 'null', f'wrong id {node} {type(node)}'
         assert '-' not in node.node_id, 'No repetition of node recording'
-        assert not node.is_main_output() or not node.is_main_input(), (
+        assert not node.is_main_output() or not node.is_main_parent(), (
             f'isolated node! {node}'
         )
         assert node.depth <= self.depth, f"exceeds depth limit, {node}"
         assert (
-            sum(1 for _ in node.inputs) in [0, 1] or not isinstance(node, TensorNode)
+            sum(1 for _ in node.parents) in [0, 1] or not isinstance(node, TensorNode)
         ), (
             f'tensor must have single input node {node}'
         )

@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from ..utils import OrderedSet
 
-# arr_type is the fundemental data structure to store input and
+# arr_type is the fundemental data structure to store parent and
 # outputs nodes. For normal usage, the set is used. This seemed most
-# appropriate data structure bec. input and outputs nodes have to be
+# appropriate data structure bec. parent and outputs nodes have to be
 # unique. If they are not unique, this leads to multiple edges between nodes
 # which I dont see as reasonable in any representation of torch models
 # Other proposals are welcome. One drawback is the order of iteration of set is not
@@ -26,29 +26,23 @@ class Node:
     def __init__(
         self,
         depth: int,
-        inputs: NodeContainer[Node] | Node | None = None,
+        parents: NodeContainer[Node] | Node | None = None,
         outputs: NodeContainer[Node] | Node | None = None,
         name: str = 'node',
-        children: NodeContainer[Node] | Node | None = None,
     ) -> None:
         if outputs is None:
             outputs = NodeContainer()
-        if inputs is None:
-            inputs = NodeContainer()
+        if parents is None:
+            parents = NodeContainer()
 
         self.outputs = (
             NodeContainer([outputs]) if isinstance(outputs, Node)
             else outputs
         )
 
-        self.inputs = (
-            NodeContainer([inputs]) if isinstance(inputs, Node)
-            else inputs
-        )
-
-        self.children = (
-            NodeContainer([children]) if isinstance(children, Node)
-            else children
+        self.parents = (
+            NodeContainer([parents]) if isinstance(parents, Node)
+            else parents
         )
 
         self.name = name
@@ -64,23 +58,23 @@ class Node:
     def add_outputs(self, node: Node) -> None:
         self.outputs.add(node)
 
-    def add_inputs(self, node: Node) -> None:
-        self.inputs.add(node)
+    def add_parents(self, node: Node) -> None:
+        self.parents.add(node)
 
     def remove_outputs(self, node: Node) -> None:
         self.outputs.remove(node)
 
-    def remove_inputs(self, node: Node) -> None:
-        self.inputs.remove(node)
+    def remove_parents(self, node: Node) -> None:
+        self.parents.remove(node)
 
     def set_outputs(self, node_arr: NodeContainer[Node]) -> None:
         self.outputs = node_arr
 
-    def set_inputs(self, node_arr: NodeContainer[Node]) -> None:
-        self.inputs = node_arr
+    def set_parents(self, node_arr: NodeContainer[Node]) -> None:
+        self.parents = node_arr
 
-    def is_main_input(self) -> bool:
-        return not self.inputs
+    def is_main_parent(self) -> bool:
+        return not self.parents
 
     def is_main_output(self) -> bool:
         return not self.outputs

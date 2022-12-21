@@ -83,7 +83,7 @@ def module_forward_wrapper() -> Callable[..., Any]:
         Construct Module Node => forward-prop => change output nodes to retain
         module hierarchy correctly
         '''
-        # Create module node and connect to its inputs tensor node
+        # Create module node and connect to its parents tensor node
         input_nodes: NodeContainer[TensorNode] = (
             reduce_data_info([args, kwargs], collect_tensor_node, NodeContainer())
         )
@@ -92,7 +92,7 @@ def module_forward_wrapper() -> Callable[..., Any]:
         if not input_nodes:
             return _orig_module_forward(mod, *args, **kwargs)
 
-        # Create module_node and connect to its inputs tensor node
+        # Create module_node and connect to its parents tensor node
         cur_depth = next(iter(input_nodes)).depth
         input_context = next(iter(input_nodes)).context
         cur_node = ModuleNode(
@@ -109,7 +109,7 @@ def module_forward_wrapper() -> Callable[..., Any]:
             reduce_data_info([args, kwargs], collect_tensor_node_id_dict, {})
         )
         attach_kwargs = {
-            'inputs': cur_node, 'depth': cur_depth+1,
+            'parents': cur_node, 'depth': cur_depth+1,
             'context': input_context[-1][cur_node], 'is_aux': True,
             'name': 'auxiliary-tensor'
         }
@@ -224,7 +224,7 @@ class RecorderTensor(torch.Tensor):
         if not reduce_data_info(out, collect_tensor, OrderedSet()):
             return out
 
-        # Create function_node and connect to its inputs tensor node
+        # Create function_node and connect to its parents tensor node
         cur_depth = next(iter(args_nodes)).depth
         input_context = next(iter(args_nodes)).context
         cur_node = FunctionNode(
@@ -236,8 +236,8 @@ class RecorderTensor(torch.Tensor):
 
         input_context.append(cur_node)
         attach_kwargs = {
-            'inputs': cur_node, 'depth': cur_depth, "context": input_context,
-            'is_aux': False, 'input_hierarchy': {cur_depth: cur_node},
+            'parents': cur_node, 'depth': cur_depth, "context": input_context,
+            'is_aux': False, 'parent_hierarchy': {cur_depth: cur_node},
             'name': 'output-tensor' if cur_depth == 0 else 'hidden-tensor'
         }
         traverse_data_inplace(out, attach_node(attach_kwargs))
@@ -314,24 +314,24 @@ def attach_node(
             tensor=recorded_tensor,
             **new_kwargs
         )
-        if isinstance(kwargs["inputs"], ModuleNode):
+        if isinstance(kwargs["parents"], ModuleNode):
             assert getattr(recorded_tensor, 'tensor_nodes', None) is not None, (
                 f'RecorderTensor to be attached to the Node'
-                f'{kwargs["inputs"]} must have tensor node'
+                f'{kwargs["parents"]} must have tensor node'
             )
-        assert isinstance(kwargs["inputs"], (FunctionNode, ModuleNode)), (
-            f'Node {kwargs["inputs"]} to which to attach must be either'
+        assert isinstance(kwargs["parents"], (FunctionNode, ModuleNode)), (
+            f'Node {kwargs["parents"]} to which to attach must be either'
             f'FunctionNode or ModuleNode'
         )
 
         if getattr(recorded_tensor, 'tensor_nodes', None) is None:
             recorded_tensor.tensor_nodes = [tensor_node]
         else:
-            if isinstance(kwargs["inputs"], ModuleNode):
+            if isinstance(kwargs["parents"], ModuleNode):
                 recorded_tensor.tensor_nodes.append(tensor_node)
-            elif isinstance(kwargs["inputs"], FunctionNode):
+            elif isinstance(kwargs["parents"], FunctionNode):
                 recorded_tensor.tensor_nodes[-1] = tensor_node
-        kwargs["inputs"].add_outputs(tensor_node)
+        kwargs["parents"].add_outputs(tensor_node)
         kwargs['context'].append(tensor_node)
     return _func
 
@@ -351,7 +351,7 @@ def pop_after_forward(
     )
     output_id: OrderedSet[int] = OrderedSet(id(x) for x in recorded_output)
 
-    if not id(r_in) in output_id:
+    if id(r_in) not in output_id:
         _ = reduce_data_info(
             r_in, collect_tensor_node, NodeContainer(), is_pop=True
         )
@@ -419,7 +419,7 @@ def process_output_node(
             recorded_data.tensor_nodes[-1] = TensorNode(
                 recorded_data, output_node.depth, out_pass,
                 context=output_node.context, is_aux=False,
-                input_hierarchy={
+                parent_hierarchy={
                     recorded_data.tensor_nodes[-1].depth: out_pass
                 }
             )
@@ -429,5 +429,5 @@ def process_output_node(
         recorded_data.tensor_nodes[-1].depth = cur_depth
         name = 'output-tensor' if cur_depth == 0 else 'hidden-tensor'
         recorded_data.tensor_nodes[-1].name = name
-        recorded_data.tensor_nodes[-1].input_hierarchy[cur_depth] = cur_node
+        recorded_data.tensor_nodes[-1].parent_hierarchy[cur_depth] = cur_node
     return _func
