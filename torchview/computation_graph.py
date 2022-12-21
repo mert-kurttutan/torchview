@@ -1,7 +1,7 @@
 # mypy: ignore-errors
 from __future__ import annotations
 
-from typing import Union, Any, TypedDict
+from typing import Union
 from collections import Counter
 from contextlib import nullcontext
 
@@ -98,13 +98,7 @@ class ComputationGraph:
         needed for getting reproducible/deterministic node name and
         graphviz graphs. This is especially important for output tests
         '''
-        class ContextTracker(TypedDict):
-            '''Typed Ddict for context tracker'''
-            current_context: list[Any]
-            current_depth: int
-        self.context_tracker: ContextTracker = {
-            'current_context': [], 'current_depth': 0
-        }
+        self.context_tracker = {'current_context': [], 'current_depth': 0}
         self.running_node_id: int = 0
         self.running_subgraph_id: int = 0
         self.id_dict: dict[str, int] = {}

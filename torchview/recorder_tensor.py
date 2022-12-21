@@ -67,18 +67,18 @@ def creation_ops_wrapper(
     def _func(*args: Any, **kwargs: Any) -> RecorderTensor:
 
         input_tensor = _orig_op(*args, **kwargs)
-        current_depth: int = model_graph.context_tracker['current_depth']
+        current_depth = model_graph.context_tracker['current_depth']
         current_context = model_graph.context_tracker['current_context']
 
         input_recorder_tensor: RecorderTensor = input_tensor.as_subclass(RecorderTensor)
         input_recorder_tensor.tensor_nodes = []
         input_node = TensorNode(
             tensor=input_recorder_tensor,
-            depth=current_depth,
+            depth=current_depth,  # type: ignore[arg-type]
             name='input-tensor' if current_depth == 0 else 'hidden-tensor',
             context=current_context
         )
-        current_context.append(input_node)
+        current_context.append(input_node)  # type: ignore[attr-defined]
 
         input_recorder_tensor.tensor_nodes.append(input_node)
         return input_recorder_tensor
