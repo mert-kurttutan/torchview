@@ -59,7 +59,7 @@ class ModuleNode(Node):
         parents: NodeContainer[Node] | Node | None = None,
         children: NodeContainer[Node] | Node | None = None,
         name: str = 'module-node',
-        end_nodes: NodeContainer[Node] | None = None,
+        output_nodes: NodeContainer[Node] | None = None,
     ) -> None:
         super(ModuleNode, self).__init__(
             depth, parents, children, name
@@ -69,7 +69,7 @@ class ModuleNode(Node):
         self.is_container = not any(module_unit.children())
         self.input_shape: list[Tuple[int, ...]] = []
         self.output_shape: list[Tuple[int, ...]] = []
-        self.end_nodes = NodeContainer() if end_nodes is None else end_nodes
+        self.output_nodes = NodeContainer() if output_nodes is None else output_nodes
         self.set_node_id()
 
     def set_input_shape(self, input_shape: list[Tuple[int, ...]]) -> None:
@@ -77,6 +77,9 @@ class ModuleNode(Node):
 
     def set_output_shape(self, output_shape: list[Tuple[int, ...]]) -> None:
         self.output_shape = output_shape
+
+    def add_output_nodes(self, output_node: Node) -> None:
+        self.output_nodes.add(output_node)
 
     def set_node_id(self, output_id: int | str | None = None) -> None:
         '''Sets the id of ModuleNode.
@@ -116,13 +119,16 @@ class FunctionNode(Node):
         self.input_shape: list[Tuple[int, ...]] = []
         self.output_shape: list[Tuple[int, ...]] = []
         self.set_node_id()
-        self.end_nodes = self.children
+        self.output_nodes = self.children
 
     def set_input_shape(self, input_shape: list[Tuple[int, ...]]) -> None:
         self.input_shape = input_shape
 
     def set_output_shape(self, output_shape: list[Tuple[int, ...]]) -> None:
         self.output_shape = output_shape
+
+    def add_output_nodes(self, output_node: Node) -> None:
+        self.output_nodes.add(output_node)
 
     def set_node_id(self, output_id: int | str | None = None) -> None:
         '''Sets the id of FunctionNode.

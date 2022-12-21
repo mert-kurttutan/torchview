@@ -165,7 +165,7 @@ class ComputationGraph:
 
             # if it is container module, move directly to outputs
             if self.hide_module_functions and k.is_container:
-                for g in k.end_nodes:
+                for g in k.output_nodes:
                     new_kwargs = updated_dict(new_kwargs, 'cur_node', g)
                     self.traverse_graph(action_fn, **new_kwargs)
                 return
@@ -257,7 +257,7 @@ class ComputationGraph:
         This becomes complex when there are stateless and torch.functions.
         For more details see docs'''
 
-        head_node = next(iter(cur_node.end_nodes))
+        head_node = next(iter(cur_node.output_nodes))
         if not head_node.is_leaf() and self.hide_inner_tensors:
             head_node = next(iter(head_node.parents))
 

@@ -142,7 +142,7 @@ def module_forward_wrapper() -> Callable[..., Any]:
         )
 
         for output_node in output_nodes:
-            cur_node.end_nodes.add(output_node)
+            cur_node.add_output_nodes(output_node)
             output_node.context = input_context
 
         cur_node.set_input_shape(
