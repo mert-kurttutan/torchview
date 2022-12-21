@@ -291,7 +291,7 @@ class ComputationGraph:
                 and compute_node.depth == 0
             )
             is_visible = (
-                not self.hide_inner_tensors or is_main_input_or_output 
+                not self.hide_inner_tensors or is_main_input_or_output
             )
 
             return is_visible
