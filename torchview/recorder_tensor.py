@@ -103,7 +103,7 @@ def module_forward_wrapper() -> Callable[..., Any]:
         # update context with current modules's context
         input_context.append({cur_node: []})
         for node in input_nodes:
-            node.add_children(cur_node)
+            node.add_child(cur_node)
 
         tensor_to_node: dict[RecorderTensor, TensorNode] = (
             reduce_data_info([args, kwargs], collect_tensor_node_id_dict, {})
@@ -232,7 +232,7 @@ class RecorderTensor(torch.Tensor):
         )
 
         for i in args_nodes:
-            i.add_children(cur_node)
+            i.add_child(cur_node)
 
         input_context.append(cur_node)
         attach_kwargs = {
@@ -331,7 +331,7 @@ def attach_node(
                 recorded_tensor.tensor_nodes.append(tensor_node)
             elif isinstance(kwargs["parents"], FunctionNode):
                 recorded_tensor.tensor_nodes[-1] = tensor_node
-        kwargs["parents"].add_children(tensor_node)
+        kwargs["parents"].add_child(tensor_node)
         kwargs['context'].append(tensor_node)
     return _func
 
@@ -413,7 +413,7 @@ def process_output_node(
                 lambda x: x, output_node.depth, output_node,
                 name='empty-pass'
             )
-            output_node.add_children(out_pass)
+            output_node.add_child(out_pass)
             output_node.context.append(out_pass)
 
             recorded_data.tensor_nodes[-1] = TensorNode(
@@ -423,7 +423,7 @@ def process_output_node(
                     recorded_data.tensor_nodes[-1].depth: out_pass
                 }
             )
-            out_pass.add_children(recorded_data.tensor_nodes[-1])
+            out_pass.add_child(recorded_data.tensor_nodes[-1])
             output_node.context.append(recorded_data.tensor_nodes[-1])
 
         recorded_data.tensor_nodes[-1].depth = cur_depth

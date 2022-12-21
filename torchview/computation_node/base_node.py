@@ -55,16 +55,16 @@ class Node:
     def __repr__(self) -> str:
         return f"{self.name} at {hex(id(self))}"
 
-    def add_children(self, node: Node) -> None:
+    def add_child(self, node: Node) -> None:
         self.children.add(node)
 
-    def add_parents(self, node: Node) -> None:
+    def add_parent(self, node: Node) -> None:
         self.parents.add(node)
 
-    def remove_children(self, node: Node) -> None:
+    def remove_child(self, node: Node) -> None:
         self.children.remove(node)
 
-    def remove_parents(self, node: Node) -> None:
+    def remove_parent(self, node: Node) -> None:
         self.parents.remove(node)
 
     def set_children(self, node_arr: NodeContainer[Node]) -> None:
