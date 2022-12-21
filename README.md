@@ -80,6 +80,7 @@ This problem does not occur on other platforms e.g. JupyterLab or Google Colab.
 
 **Supported Features**
 * Almost all the models, RNN, Sequentials, Skip Connection
+* Support for meta tensors -> no memory consumption (for very Large models) (pytorch version $\geq$ 1.13) .
 * Shows operations between tensors (in addition to module calls)
 * Rolling/Unrolling feature. Recursively used modules can be rolled visually, see below.
 * Diverse set of inputs/output types, e.g. nested data structure (dict, list, etc), huggingface tokenizer outputs 
@@ -275,5 +276,5 @@ All issues and pull requests are much appreciated! If you are wondering how to b
 # References
 
 - Parts related to input processing and validation are taken/inspired from torchinfo repository!!.
-- Many of the software related parts (e.g. CI, testing) are also taken/inspired from torchinfo repository. So big thanks to @TylerYep!!!
-- The algorithm for constructing visual graphs is thanks to `__torch_function__` and subclassing torch.Tensor. Big thanks to all those who developed this API!!.
+- Many of the software related parts (e.g. testing) are also taken/inspired from torchinfo repository. So big thanks to @TylerYep!!!
+- The algorithm for constructing visual graphs is thanks to `__torch_function__` and subclassing `torch.Tensor`. Big thanks to all those who developed this API!!.
