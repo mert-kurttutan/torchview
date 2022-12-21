@@ -259,7 +259,7 @@ class ComputationGraph:
 
         head_node = next(iter(cur_node.output_nodes))
         if not head_node.is_leaf() and self.hide_inner_tensors:
-            head_node = next(iter(head_node.parents))
+            head_node = next(iter(head_node.children))
 
         # identify recursively used modules
         # with the same node id
