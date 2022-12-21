@@ -28,8 +28,6 @@ classifiers = [
 ]
 
 dependencies = [
-    "torch",
-    'graphviz',
 ]
 
 [build-system]
