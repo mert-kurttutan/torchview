@@ -19,7 +19,7 @@ class TensorNode(Node):
         tensor: torch.Tensor,
         depth: int,
         parents: NodeContainer[Node] | Node | None = None,
-        outputs: NodeContainer[Node] | Node | None = None,
+        children: NodeContainer[Node] | Node | None = None,
         name: str = 'tensor',
         context: Any | None = None,
         is_aux: bool = False,
@@ -28,7 +28,7 @@ class TensorNode(Node):
     ):
 
         super(TensorNode, self).__init__(
-            depth, parents, outputs, name,
+            depth, parents, children, name,
         )
         self.tensor_id = id(tensor)
         self.tensor_shape = tuple(tensor.shape)
@@ -57,12 +57,12 @@ class ModuleNode(Node):
         module_unit: nn.Module,
         depth: int,
         parents: NodeContainer[Node] | Node | None = None,
-        outputs: NodeContainer[Node] | Node | None = None,
+        children: NodeContainer[Node] | Node | None = None,
         name: str = 'module-node',
         end_nodes: NodeContainer[Node] | None = None,
     ) -> None:
         super(ModuleNode, self).__init__(
-            depth, parents, outputs, name
+            depth, parents, children, name
         )
         self.compute_unit_id = id(module_unit)
         self.is_activation = is_generator_empty(module_unit.parameters())
@@ -105,18 +105,18 @@ class FunctionNode(Node):
         function_unit: Callable[..., Any],
         depth: int,
         parents: NodeContainer[Node] | Node | None = None,
-        outputs: NodeContainer[Node] | Node | None = None,
+        children: NodeContainer[Node] | Node | None = None,
         name: str = 'function-node',
     ) -> None:
         super(FunctionNode, self).__init__(
-            depth, parents, outputs, name
+            depth, parents, children, name
         )
         self.compute_unit_id = id(function_unit)
         self.is_container = True
         self.input_shape: list[Tuple[int, ...]] = []
         self.output_shape: list[Tuple[int, ...]] = []
         self.set_node_id()
-        self.end_nodes = self.outputs
+        self.end_nodes = self.children
 
     def set_input_shape(self, input_shape: list[Tuple[int, ...]]) -> None:
         self.input_shape = input_shape

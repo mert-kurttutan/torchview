@@ -232,24 +232,24 @@ class ComputationGraph:
         tail_node = self.get_tail_node(cur_node)
         is_main_node_visible = self.is_node_visible(cur_node.main_node)
         is_tail_node_visible = self.is_node_visible(tail_node)
-        if not cur_node.is_main_output():
-            for output_node in cur_node.outputs:
-                is_output_visible = self.is_node_visible(output_node)
+        if not cur_node.is_leaf():
+            for children_node in cur_node.children:
+                is_output_visible = self.is_node_visible(children_node)
                 if is_output_visible:
                     if is_main_node_visible:
-                        self.edge_list.append((cur_node, output_node))
+                        self.edge_list.append((cur_node, children_node))
                     elif is_tail_node_visible:
-                        self.edge_list.append((tail_node, output_node))
+                        self.edge_list.append((tail_node, children_node))
 
         # {tail -> cur_node} part
         # # output node
         # visible tensor and non-input tensor nodes
-        if is_cur_visible and not cur_node.is_main_parent():
-            assert not isinstance(tail_node, TensorNode) or tail_node.is_main_parent()
+        if is_cur_visible and not cur_node.is_root():
+            assert not isinstance(tail_node, TensorNode) or tail_node.is_root()
             self.edge_list.append((tail_node, cur_node))
 
     def rollify(
-        self, cur_node: COMPUTATION_NODES
+        self, cur_node: ModuleNode | FunctionNode
     ):
         '''Rolls computational graph by identifying recursively used
         Modules. This is done by giving the same id for nodes that are
@@ -258,8 +258,8 @@ class ComputationGraph:
         For more details see docs'''
 
         head_node = next(iter(cur_node.end_nodes))
-        if not head_node.is_main_output() and self.hide_inner_tensors:
-            head_node = next(iter(head_node.outputs))
+        if not head_node.is_leaf() and self.hide_inner_tensors:
+            head_node = next(iter(head_node.parents))
 
         # identify recursively used modules
         # with the same node id
@@ -286,12 +286,12 @@ class ComputationGraph:
             if compute_node.main_node.depth < 0 or compute_node.is_aux:
                 return False
 
-            is_main_output_or_parent = (
-                (compute_node.is_main_parent() or compute_node.is_main_output())
+            is_main_input_or_output = (
+                (compute_node.is_root() or compute_node.is_leaf())
                 and compute_node.depth == 0
             )
             is_visible = (
-                not self.hide_inner_tensors or is_main_output_or_parent
+                not self.hide_inner_tensors or is_main_input_or_output 
             )
 
             return is_visible
@@ -305,7 +305,7 @@ class ComputationGraph:
         tensor_node = _tensor_node.main_node if _tensor_node.is_aux else _tensor_node
 
         # non-output nodes eminating from input node
-        if tensor_node.is_main_parent():
+        if tensor_node.is_root():
             return tensor_node
 
         current_parent_h = tensor_node.parent_hierarchy
@@ -424,7 +424,7 @@ class ComputationGraph:
     def check_node(self, node):
         assert node.node_id != 'null', f'wrong id {node} {type(node)}'
         assert '-' not in node.node_id, 'No repetition of node recording'
-        assert not node.is_main_output() or not node.is_main_parent(), (
+        assert not node.is_leaf() or not node.is_root(), (
             f'isolated node! {node}'
         )
         assert node.depth <= self.depth, f"exceeds depth limit, {node}"
