@@ -438,3 +438,25 @@ def test_meta_transformer_automodel(verify_result: Callable[..., Any]) -> None:
         depth=3, expand_nested=True, device=DEVICE,
     )
     verify_result([model_graph1, model_graph2])
+
+
+@pytest.mark.skipif(
+    TRANSFORMERS_MODULE not in sys.modules,
+    reason=f"{TRANSFORMERS_MODULE} module is not installed."
+)
+def test_transformer_t5(verify_result: Callable[..., Any]) -> None:
+
+    tokenizer = transformers.T5Tokenizer.from_pretrained("t5-small")
+    model = transformers.T5ForConditionalGeneration.from_pretrained("t5-small")
+
+    input_ids = tokenizer(
+        "translate English to German: The house is wonderful.", return_tensors="pt"
+    ).input_ids
+    labels = tokenizer("Das Haus ist wunderbar.", return_tensors="pt").input_ids
+    input_data = {
+        'input_ids': input_ids.to('meta'),
+        'labels': labels.to('meta'),
+    }
+
+    model_graph = draw_graph(model, input_data=input_data, device='meta')
+    verify_result([model_graph])

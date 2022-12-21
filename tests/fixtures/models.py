@@ -375,3 +375,18 @@ class InputNotUsed(nn.Module):
         x = x + x2
         y = self.empty(self.act(x2)) + x3
         return x, y
+
+
+class CreateTensorsInside(nn.Module):
+    '''Module that creates tensor during forward prop'''
+    def __init__(self,) -> None:
+        super().__init__()
+        self.layer1 = nn.Linear(10, 30)
+        self.layer2 = nn.Linear(30, 50)
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        x = self.layer1(x)
+        x += torch.abs(torch.ones(1, 1))
+        x = self.layer2(x)
+
+        return x

@@ -23,6 +23,7 @@ from tests.fixtures.models import (
     TowerBranches,
     OutputReused,
     InputNotUsed,
+    CreateTensorsInside
 )
 from torchview import draw_graph
 
@@ -322,5 +323,18 @@ def test_reusing_activation_layers(verify_result: Callable[..., Any]) -> None:
 def test_expand_nested_tower(verify_result: Callable[..., Any]) -> None:
     model = TowerBranches()
     model_graph = draw_graph(model, input_size=[(1, 10)], expand_nested=True)
+
+    verify_result([model_graph])
+
+
+def test_simple_create_tensor_inside(verify_result: Callable[..., Any]) -> None:
+    model = CreateTensorsInside()
+    model_graph = draw_graph(
+        model,
+        input_size=(1, 10),
+        graph_name='CreateTensorInside',
+        hide_inner_tensors=False,
+        device='cpu'
+    )
 
     verify_result([model_graph])

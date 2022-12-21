@@ -205,7 +205,7 @@ def draw_graph(
     )
 
     forward_prop(
-        model, input_recorder_tensor, device,
+        model, input_recorder_tensor, device, model_graph,
         model_mode, **kwargs_record_tensor
     )
 
@@ -220,6 +220,7 @@ def forward_prop(
     model: nn.Module,
     x: CORRECTED_INPUT_DATA_TYPE,
     device: torch.device | str,
+    model_graph: ComputationGraph,
     mode: str,
     **kwargs: Any,
 ) -> None:
@@ -235,8 +236,8 @@ def forward_prop(
             raise RuntimeError(
                 f"Specified model mode not recognized: {mode}"
             )
-        new_module_forward = module_forward_wrapper()
-        with Recorder(_orig_module_forward, new_module_forward):
+        new_module_forward = module_forward_wrapper(model_graph)
+        with Recorder(_orig_module_forward, new_module_forward, model_graph):
             with torch.no_grad():
                 if isinstance(x, (list, tuple)):
                     _ = model.to(device)(*x, **kwargs)
