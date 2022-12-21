@@ -55,7 +55,8 @@ from torchview import draw_graph
 
 model = MLP()
 batch_size = 2
-model_graph = draw_graph(model, input_size=(batch_size, 128))
+# device='meta' -> no memory is consumed during for visualization
+model_graph = draw_graph(model, input_size=(batch_size, 128), device='meta')
 model_graph.visual_graph
 ```
 ![output](https://user-images.githubusercontent.com/88637659/206028431-b114f48e-6307-4ff3-b31a-a74185eb61b5.png)
