@@ -10,6 +10,7 @@ import torchtext
 import torchvision
 
 from torch import nn
+from torch import __version__ as torch_version
 from torchtext import __version__ as torchtext_version
 from torchvision import __version__ as torchvision_version
 
@@ -31,8 +32,9 @@ from tests.fixtures.models import (
 )
 
 from tests.fixtures.custom_attention import (  # type: ignore[attr-defined]
-    get_default_cfg, Block)
-  
+    get_default_cfg, Block
+)
+
 from tests.fixtures.u_net import UNet2  # type: ignore[attr-defined]
 from tests.fixtures.dense_net import DenseNet  # type: ignore[attr-defined]
 from tests.fixtures.ldc import LDC
@@ -40,8 +42,13 @@ from tests.fixtures.ldc import LDC
 from torchview import draw_graph
 
 
+if version.parse(torch_version) < version.parse('1.13.0'):
+    pytest.skip("Meta tensor is not support for this version", allow_module_level=True)
+
+
 DEVICE = 'meta'
 TRANSFORMERS_MODULE = 'transformers'
+
 
 def test_meta_identity_model(verify_result: Callable[..., Any]) -> None:
     model = IdentityModel()
@@ -376,7 +383,7 @@ def test_meta_ldc_model(verify_result: Callable[..., Any]) -> None:
 
     verify_result([model_graph1, model_graph2])
 
-  
+
 @pytest.mark.skipif(
     TRANSFORMERS_MODULE not in sys.modules,
     reason=f"{TRANSFORMERS_MODULE} module is not installed."
@@ -397,7 +404,6 @@ def test_meta_transformer_gpt2(verify_result: Callable[..., Any]) -> None:
         device=DEVICE,
     )
     verify_result([model_graph1, model_graph2])
-
 
 
 @pytest.mark.skipif(
@@ -428,7 +434,7 @@ def test_meta_transformer_automodel(verify_result: Callable[..., Any]) -> None:
     )
 
     model_graph2 = draw_graph(
-        model, input_data=not_paraphrase, graph_name='bert', depth=3, expand_nested=True,
-        device=DEVICE,
+        model, input_data=not_paraphrase, graph_name='bert',
+        depth=3, expand_nested=True, device=DEVICE,
     )
     verify_result([model_graph1, model_graph2])
