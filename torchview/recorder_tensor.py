@@ -8,6 +8,7 @@ from torch import nn
 from torch.nn import functional as F
 
 from .computation_node import ModuleNode, FunctionNode, TensorNode, NodeContainer
+from .computation_graph import ComputationGraph
 
 from .utils import OrderedSet
 
@@ -31,10 +32,12 @@ class Recorder:
     '''Context Manager that sets modules forward and torch creation ops
     to record them in computation graph'''
     def __init__(
-        self, orig_mod_forward: Callable[..., Any], new_mod_forward: Callable[..., Any]
+        self, orig_mod_forward: Callable[..., Any], new_mod_forward: Callable[..., Any],
+        model_graph: ComputationGraph
     ) -> None:
         self.orig_module_forward = orig_mod_forward
         self.new_module_forward = new_mod_forward
+        self.model_graph = model_graph
 
     def __enter__(self) -> None:
         setattr(
@@ -43,7 +46,7 @@ class Recorder:
 
         for name, op in zip(orig_name_list, _orig_op_list):
             setattr(
-                torch, name, creation_ops_wrapper(op)
+                torch, name, creation_ops_wrapper(op, self.model_graph)
             )
 
     def __exit__(self, exc_type: Any, exc_value: Any, exc_traceback: Any) -> None:
@@ -58,25 +61,31 @@ class Recorder:
             )
 
 
-def creation_ops_wrapper(_orig_op: Callable[..., Any]) -> Callable[..., Any]:
+def creation_ops_wrapper(
+    _orig_op: Callable[..., Any], model_graph: ComputationGraph
+) -> Callable[..., Any]:
     def _func(*args: Any, **kwargs: Any) -> RecorderTensor:
 
         input_tensor = _orig_op(*args, **kwargs)
+        current_depth = model_graph.context_tracker['current_depth']
+        current_context = model_graph.context_tracker['current_context']
 
         input_recorder_tensor: RecorderTensor = input_tensor.as_subclass(RecorderTensor)
         input_recorder_tensor.tensor_nodes = []
         input_node = TensorNode(
             tensor=input_recorder_tensor,
-            depth=-10,
-            name='temporary-tensor',
+            depth=current_depth,  # type: ignore[arg-type]
+            name='input-tensor' if current_depth == 0 else 'hidden-tensor',
+            context=current_context
         )
+        current_context.append(input_node)  # type: ignore[attr-defined]
 
         input_recorder_tensor.tensor_nodes.append(input_node)
         return input_recorder_tensor
     return _func
 
 
-def module_forward_wrapper() -> Callable[..., Any]:
+def module_forward_wrapper(model_graph: ComputationGraph) -> Callable[..., Any]:
     '''Wrapper for forward functions of modules'''
     def _module_forward_wrapper(mod: nn.Module, *args: Any, **kwargs: Any) -> Any:
         '''Forward prop of module for RecorderTensor subclass
@@ -118,9 +127,15 @@ def module_forward_wrapper() -> Callable[..., Any]:
             [args, kwargs], attach_node(attach_kwargs, tensor_to_node)
         )
 
+        model_graph.context_tracker['current_depth'] = cur_depth+1
+        model_graph.context_tracker['current_context'] = input_context[-1][cur_node]
+
         # TODO: check if output contains RecorderTensor
         # this seems not to be necessary so far
         out = _orig_module_forward(mod, *args, **kwargs)
+
+        model_graph.context_tracker['current_depth'] = cur_depth
+        model_graph.context_tracker['current_context'] = input_context
 
         # pop appropriate nodes, see implementation below
         output_recorder: OrderedSet[RecorderTensor] = (

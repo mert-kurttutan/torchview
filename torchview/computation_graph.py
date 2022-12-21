@@ -98,6 +98,7 @@ class ComputationGraph:
         needed for getting reproducible/deterministic node name and
         graphviz graphs. This is especially important for output tests
         '''
+        self.context_tracker = {'current_context': [], 'current_depth': 0}
         self.running_node_id: int = 0
         self.running_subgraph_id: int = 0
         self.id_dict: dict[str, int] = {}
