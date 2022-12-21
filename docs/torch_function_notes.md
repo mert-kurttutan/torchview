@@ -29,3 +29,8 @@ F.embedding returns `NotImplemented` for versions 1.7.1, 1.8, 1.9
 This package does not support torch version <= 1.6 since torch.Tensor does not have `__torch_function__` as class methods in these version.
 
 * Some other relevant PRs: [PR1](https://github.com/pytorch/pytorch/pull/32799), [PR2](https://github.com/pytorch/pytorch/issues/24015)
+
+
+# Meta tensor related links
+* https://github.com/pytorch/pytorch/blob/orig/release/1.9/torch/_tensor.py
+* https://github.com/pytorch/pytorch/issues/87990
