@@ -61,11 +61,13 @@ class Recorder:
             )
 
 
-def creation_ops_wrapper(_orig_op: Callable[..., Any], model_graph: ComputationGraph) -> Callable[..., Any]:
+def creation_ops_wrapper(
+    _orig_op: Callable[..., Any], model_graph: ComputationGraph
+) -> Callable[..., Any]:
     def _func(*args: Any, **kwargs: Any) -> RecorderTensor:
 
         input_tensor = _orig_op(*args, **kwargs)
-        current_depth = model_graph.context_tracker['current_depth']
+        current_depth: int = model_graph.context_tracker['current_depth']
         current_context = model_graph.context_tracker['current_context']
 
         input_recorder_tensor: RecorderTensor = input_tensor.as_subclass(RecorderTensor)

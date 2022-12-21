@@ -334,7 +334,8 @@ def test_simple_create_tensor_inside(verify_result: Callable[..., Any]) -> None:
         input_size=(1, 10),
         graph_name='CreateTensorInside',
         hide_inner_tensors=False,
-        device='cpu'
+        device='cpu',
+        expand_nested=True,
     )
 
     verify_result([model_graph])
