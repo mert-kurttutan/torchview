@@ -4,7 +4,7 @@ version = "0.2.2"
 description = "Visualization of Pytorch Models"
 readme = "README.md"
 requires-python = ">=3.7"
-license = {file = "LICENSE"}
+license = "MIT"
 keywords = [
     "pytorch", "visualization", "keras",
     "torch", "deep learning", "machine learning",
