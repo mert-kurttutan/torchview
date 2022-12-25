@@ -1,7 +1,6 @@
 from os.path import exists
-from packaging import version
-
 from typing import Callable, Any
+from packaging import version
 
 import pytest
 
@@ -23,7 +22,8 @@ from tests.fixtures.models import (
     TowerBranches,
     OutputReused,
     InputNotUsed,
-    CreateTensorsInside
+    CreateTensorsInside,
+    EnsembleMLP,
 )
 from torchview import draw_graph
 
@@ -339,3 +339,22 @@ def test_simple_create_tensor_inside(verify_result: Callable[..., Any]) -> None:
     )
 
     verify_result([model_graph])
+
+
+def test_simple_graph_dir(verify_result: Callable[..., Any]) -> None:
+    model_graph_1 = draw_graph(
+        MLP(), input_size=(1, 128),
+        graph_name='MLP',
+        graph_dir='LR'
+    )
+    verify_result([model_graph_1])
+
+
+
+def test_simple_ensemble(verify_result: Callable[..., Any]) -> None:
+    model_graph_1 = draw_graph(
+        EnsembleMLP(), input_size=(1, 128), depth=1,
+        graph_name='EnsembleMLP',
+        graph_dir='LR'
+    )
+    verify_result([model_graph_1])

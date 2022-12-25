@@ -1,5 +1,5 @@
 strict digraph Resnet {
-	graph [ordering=in size="132.29999999999998,132.29999999999998"]
+	graph [ordering=in rankdir=TB size="132.29999999999998,132.29999999999998"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
 	0 [label=<

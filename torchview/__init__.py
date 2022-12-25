@@ -1,3 +1,4 @@
+import importlib.metadata
 from .torchview import draw_graph
 from .computation_graph import ComputationGraph
 from .computation_node import Node, TensorNode, ModuleNode, FunctionNode
@@ -12,4 +13,4 @@ __all__ = (
     'TensorNode',
     'RecorderTensor',
 )
-__version__ = "0.2.2"
+__version__ = importlib.metadata.version(__package__)

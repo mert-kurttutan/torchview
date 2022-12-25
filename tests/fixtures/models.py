@@ -390,3 +390,33 @@ class CreateTensorsInside(nn.Module):
         x = self.layer2(x)
 
         return x
+
+
+class EnsembleMLP(nn.Module):
+    """Multi Layer Perceptron with inplace option.
+    Make sure inplace=true and false has the same visual graph"""
+
+    def __init__(self, inplace: bool = True) -> None:
+        super().__init__()
+        num_model = 16
+        self.mlp_layers = [
+            nn.Sequential(
+                nn.Linear(128, 64),
+                nn.ReLU(inplace),
+                nn.Linear(64, 32),
+                nn.ReLU(inplace),
+                nn.Linear(32, 16),
+            )
+            for _ in range(16)
+        ]
+
+        self.fc_layer = nn.Linear(16, 2)
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        x_arr = [
+            mlp(x) for mlp in self.mlp_layers
+        ]
+        x_concated = torch.cat(x_arr, dim=0)
+
+        out = self.fc_layer(x_concated)
+        return out
