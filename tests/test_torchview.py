@@ -350,7 +350,6 @@ def test_simple_graph_dir(verify_result: Callable[..., Any]) -> None:
     verify_result([model_graph_1])
 
 
-
 def test_simple_ensemble(verify_result: Callable[..., Any]) -> None:
     model_graph_1 = draw_graph(
         EnsembleMLP(), input_size=(1, 128), depth=1,

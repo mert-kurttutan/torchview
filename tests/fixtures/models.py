@@ -398,7 +398,7 @@ class EnsembleMLP(nn.Module):
 
     def __init__(self, inplace: bool = True) -> None:
         super().__init__()
-        num_model = 16
+        self.num_model = 16
         self.mlp_layers = [
             nn.Sequential(
                 nn.Linear(128, 64),
@@ -407,12 +407,12 @@ class EnsembleMLP(nn.Module):
                 nn.ReLU(inplace),
                 nn.Linear(32, 16),
             )
-            for _ in range(16)
+            for _ in range(self.num_model)
         ]
 
         self.fc_layer = nn.Linear(16, 2)
 
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
+    def forward(self, x: torch.Tensor) -> Any:
         x_arr = [
             mlp(x) for mlp in self.mlp_layers
         ]
