@@ -458,5 +458,7 @@ def test_transformer_t5(verify_result: Callable[..., Any]) -> None:
         'labels': labels.to('meta'),
     }
 
-    model_graph = draw_graph(model, input_data=input_data, device='meta')
+    model_graph = draw_graph(
+        model, input_data=input_data, device='meta', merge_outputs=True, depth=2
+    )
     verify_result([model_graph])

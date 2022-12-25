@@ -1,5 +1,5 @@
 strict digraph model {
-	graph [ordering=in rankdir=TB size="66.0,66.0"]
+	graph [ordering=in rankdir=TB size="55.199999999999996,55.199999999999996"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
 	0 [label=<
@@ -107,7 +107,7 @@ strict digraph model {
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">T5LayerSelfAttention<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">T5Block<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
                         <TD COLSPAN="2">(1, 11, 512), (1, 1, 1, 11) </TD>
                     </TR>
@@ -120,20 +120,20 @@ strict digraph model {
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">T5LayerFF<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">T5Block<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 11, 512) </TD>
+                        <TD COLSPAN="2">(1, 11, 512), (1, 1, 1, 11), (1, 8, 11, 11) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 11, 512) </TD>
+                        <TD COLSPAN="2">(1, 11, 512), (1, 8, 11, 11) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	11 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">T5LayerSelfAttention<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">T5Block<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
                         <TD COLSPAN="2">(1, 11, 512), (1, 1, 1, 11), (1, 8, 11, 11) </TD>
                     </TR>
@@ -146,20 +146,20 @@ strict digraph model {
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">T5LayerFF<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">T5Block<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 11, 512) </TD>
+                        <TD COLSPAN="2">(1, 11, 512), (1, 1, 1, 11), (1, 8, 11, 11) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 11, 512) </TD>
+                        <TD COLSPAN="2">(1, 11, 512), (1, 8, 11, 11) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
 	13 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">T5LayerSelfAttention<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">T5Block<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
                         <TD COLSPAN="2">(1, 11, 512), (1, 1, 1, 11), (1, 8, 11, 11) </TD>
                     </TR>
@@ -172,20 +172,7 @@ strict digraph model {
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">T5LayerFF<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 11, 512) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 11, 512) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-	15 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">T5LayerSelfAttention<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">T5Block<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
                         <TD COLSPAN="2">(1, 11, 512), (1, 1, 1, 11), (1, 8, 11, 11) </TD>
                     </TR>
@@ -194,11 +181,24 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 11, 512), (1, 8, 11, 11) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
+	15 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">T5LayerNorm<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 11, 512) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 11, 512) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
 	16 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">T5LayerFF<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">Dropout<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
                         <TD COLSPAN="2">(1, 11, 512) </TD>
                     </TR>
@@ -211,84 +211,6 @@ strict digraph model {
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">T5LayerSelfAttention<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 11, 512), (1, 1, 1, 11), (1, 8, 11, 11) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 11, 512), (1, 8, 11, 11) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-	18 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">T5LayerFF<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 11, 512) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 11, 512) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-	19 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">T5LayerSelfAttention<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 11, 512), (1, 1, 1, 11), (1, 8, 11, 11) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 11, 512), (1, 8, 11, 11) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-	20 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">T5LayerFF<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 11, 512) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 11, 512) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-	21 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">T5LayerNorm<BR/>depth:2</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 11, 512) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 11, 512) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-	22 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">Dropout<BR/>depth:2</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 11, 512) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 11, 512) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-	23 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
                         <TD ROWSPAN="2">new_zeros<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
                         <TD COLSPAN="2">(1, 6) </TD>
@@ -298,7 +220,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 6) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
-	24 [label=<
+	18 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -311,7 +233,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 5) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
-	25 [label=<
+	19 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -324,7 +246,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 5) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
-	26 [label=<
+	20 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -337,7 +259,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 6) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
-	27 [label=<
+	21 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -350,7 +272,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 6) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
-	28 [label=<
+	22 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -363,7 +285,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 6) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
-	29 [label=<
+	23 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -376,7 +298,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 6, 512) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
-	30 [label=<
+	24 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -389,7 +311,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 1, 1, 6) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
-	31 [label=<
+	25 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -402,7 +324,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 1, 6, 6) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
-	32 [label=<
+	26 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -415,7 +337,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 1, 6, 6) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
-	33 [label=<
+	27 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -428,7 +350,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 1, 6, 6) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
-	34 [label=<
+	28 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -441,7 +363,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 1, 6, 6) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
-	35 [label=<
+	29 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -454,7 +376,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 1, 1, 11) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
-	36 [label=<
+	30 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -467,7 +389,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 1, 1, 11) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
-	37 [label=<
+	31 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -480,7 +402,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 1, 1, 11) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
-	38 [label=<
+	32 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -493,7 +415,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 1, 1, 11) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
-	39 [label=<
+	33 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -506,361 +428,205 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 6, 512) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
+	34 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">T5Block<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 512), (1, 1, 6, 6), (1, 11, 512), (1, 1, 1, 11) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 512), 2 x (1, 8, 6, 64), 2 x (1, 8, 11, 64), (1, 8, 6, 6), (1, 8, 6, 11) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	36 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">T5Block<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 512), (1, 1, 6, 6), (1, 8, 6, 6), (1, 11, 512), (1, 1, 1, 11), (1, 8, 6, 11) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 512), 2 x (1, 8, 6, 64), 2 x (1, 8, 11, 64), (1, 8, 6, 6), (1, 8, 6, 11) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	37 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">T5Block<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 512), (1, 1, 6, 6), (1, 8, 6, 6), (1, 11, 512), (1, 1, 1, 11), (1, 8, 6, 11) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 512), 2 x (1, 8, 6, 64), 2 x (1, 8, 11, 64), (1, 8, 6, 6), (1, 8, 6, 11) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	38 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">T5Block<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 512), (1, 1, 6, 6), (1, 8, 6, 6), (1, 11, 512), (1, 1, 1, 11), (1, 8, 6, 11) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 512), 2 x (1, 8, 6, 64), 2 x (1, 8, 11, 64), (1, 8, 6, 6), (1, 8, 6, 11) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	39 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                    <TR>
+                        <TD ROWSPAN="2">T5Block<BR/>depth:2</TD>
+                        <TD COLSPAN="2">input:</TD>
+                        <TD COLSPAN="2">(1, 6, 512), (1, 1, 6, 6), (1, 8, 6, 6), (1, 11, 512), (1, 1, 1, 11), (1, 8, 6, 11) </TD>
+                    </TR>
+                    <TR>
+                        <TD COLSPAN="2">output: </TD>
+                        <TD COLSPAN="2">(1, 6, 512), 2 x (1, 8, 6, 64), 2 x (1, 8, 11, 64), (1, 8, 6, 6), (1, 8, 6, 11) </TD>
+                    </TR>
+                    </TABLE>> fillcolor=darkseagreen1]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
 	40 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
-                        <TD ROWSPAN="2">T5LayerSelfAttention<BR/>depth:3</TD>
+                        <TD ROWSPAN="2">T5Block<BR/>depth:2</TD>
                         <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 6, 512), (1, 1, 6, 6) </TD>
+                        <TD COLSPAN="2">(1, 6, 512), (1, 1, 6, 6), (1, 8, 6, 6), (1, 11, 512), (1, 1, 1, 11), (1, 8, 6, 11) </TD>
                     </TR>
                     <TR>
                         <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 6, 512), 2 x (1, 8, 6, 64), (1, 8, 6, 6) </TD>
+                        <TD COLSPAN="2">(1, 6, 512), 2 x (1, 8, 6, 64), 2 x (1, 8, 11, 64), (1, 8, 6, 6), (1, 8, 6, 11) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
+	35 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1"
+                    CELLSPACING="0" CELLPADDING="4">
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
+                    </TABLE>> fillcolor=lightyellow]
 	41 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 8, 6, 64)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	42 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 8, 6, 64)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	43 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">T5LayerCrossAttention<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 6, 512), (1, 11, 512), (1, 1, 1, 11) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 6, 512), 2 x (1, 8, 11, 64), (1, 8, 6, 11) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-	44 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 8, 11, 64)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	45 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 8, 11, 64)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	46 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">T5LayerFF<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 6, 512) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 6, 512) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-	47 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">T5LayerSelfAttention<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 6, 512), (1, 1, 6, 6), (1, 8, 6, 6) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 6, 512), 2 x (1, 8, 6, 64), (1, 8, 6, 6) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-	48 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 8, 6, 64)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	49 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 8, 6, 64)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	50 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">T5LayerCrossAttention<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 6, 512), (1, 11, 512), (1, 1, 1, 11), (1, 8, 6, 11) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 6, 512), 2 x (1, 8, 11, 64), (1, 8, 6, 11) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-	51 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 8, 11, 64)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	52 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 8, 11, 64)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	53 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">T5LayerFF<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 6, 512) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 6, 512) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-	54 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">T5LayerSelfAttention<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 6, 512), (1, 1, 6, 6), (1, 8, 6, 6) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 6, 512), 2 x (1, 8, 6, 64), (1, 8, 6, 6) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-	55 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 8, 6, 64)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	56 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 8, 6, 64)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	57 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">T5LayerCrossAttention<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 6, 512), (1, 11, 512), (1, 1, 1, 11), (1, 8, 6, 11) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 6, 512), 2 x (1, 8, 11, 64), (1, 8, 6, 11) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-	58 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 8, 11, 64)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	59 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 8, 11, 64)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	60 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">T5LayerFF<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 6, 512) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 6, 512) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-	61 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">T5LayerSelfAttention<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 6, 512), (1, 1, 6, 6), (1, 8, 6, 6) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 6, 512), 2 x (1, 8, 6, 64), (1, 8, 6, 6) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-	62 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 8, 6, 64)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	63 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 8, 6, 64)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	64 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">T5LayerCrossAttention<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 6, 512), (1, 11, 512), (1, 1, 1, 11), (1, 8, 6, 11) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 6, 512), 2 x (1, 8, 11, 64), (1, 8, 6, 11) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-	65 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 8, 11, 64)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	66 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 8, 11, 64)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	67 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">T5LayerFF<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 6, 512) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 6, 512) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-	68 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">T5LayerSelfAttention<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 6, 512), (1, 1, 6, 6), (1, 8, 6, 6) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 6, 512), 2 x (1, 8, 6, 64), (1, 8, 6, 6) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-	69 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 8, 6, 64)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	70 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 8, 6, 64)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	71 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">T5LayerCrossAttention<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 6, 512), (1, 11, 512), (1, 1, 1, 11), (1, 8, 6, 11) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 6, 512), 2 x (1, 8, 11, 64), (1, 8, 6, 11) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-	72 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 8, 11, 64)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	73 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 8, 11, 64)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	74 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">T5LayerFF<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 6, 512) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 6, 512) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-	75 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">T5LayerSelfAttention<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 6, 512), (1, 1, 6, 6), (1, 8, 6, 6) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 6, 512), 2 x (1, 8, 6, 64), (1, 8, 6, 6) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-	76 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 8, 6, 64)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	77 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 8, 6, 64)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	78 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">T5LayerCrossAttention<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 6, 512), (1, 11, 512), (1, 1, 1, 11), (1, 8, 6, 11) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 6, 512), 2 x (1, 8, 11, 64), (1, 8, 6, 11) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-	79 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 8, 11, 64)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	80 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 8, 11, 64)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	81 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
-                    <TR>
-                        <TD ROWSPAN="2">T5LayerFF<BR/>depth:3</TD>
-                        <TD COLSPAN="2">input:</TD>
-                        <TD COLSPAN="2">(1, 6, 512) </TD>
-                    </TR>
-                    <TR>
-                        <TD COLSPAN="2">output: </TD>
-                        <TD COLSPAN="2">(1, 6, 512) </TD>
-                    </TR>
-                    </TABLE>> fillcolor=darkseagreen1]
-	82 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -873,7 +639,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 6, 512) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
-	83 [label=<
+	42 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -886,7 +652,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 6, 512) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
-	84 [label=<
+	43 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -899,7 +665,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 6, 512) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
-	85 [label=<
+	44 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -912,7 +678,7 @@ strict digraph model {
                         <TD COLSPAN="2">(1, 6, 32128) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
-	86 [label=<
+	45 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -925,7 +691,7 @@ strict digraph model {
                         <TD COLSPAN="2">(6, 32128) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
-	87 [label=<
+	46 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -938,7 +704,7 @@ strict digraph model {
                         <TD COLSPAN="2">(6,) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
-	88 [label=<
+	47 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -951,147 +717,129 @@ strict digraph model {
                         <TD COLSPAN="2">() </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
-	89 [label=<
+	35 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>()</TD></TR>
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
-	90 [label=<
+	35 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 6, 32128)</TD></TR>
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
-	91 [label=<
+	35 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 11, 512)</TD></TR>
+                        <TR><TD>output-tensor<BR/>depth:0</TD><TD>(), (1, 6, 32128), 12 x (1, 8, 6, 64), 12 x (1, 8, 11, 64), (1, 11, 512)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
-	1 -> 23
-	1 -> 24
-	1 -> 87
+	1 -> 17
+	1 -> 18
+	1 -> 46
 	0 -> 2
 	2 -> 3
 	3 -> 8
 	4 -> 5
 	5 -> 6
 	6 -> 7
-	8 -> 9
 	7 -> 9
-	9 -> 10
-	10 -> 11
+	7 -> 10
 	7 -> 11
-	9 -> 11
-	11 -> 12
-	12 -> 13
+	7 -> 12
 	7 -> 13
-	11 -> 13
+	7 -> 14
+	8 -> 9
+	9 -> 10
+	9 -> 10 [label=" x2"]
+	10 -> 11
+	10 -> 11 [label=" x2"]
+	11 -> 12
+	11 -> 12 [label=" x2"]
+	12 -> 13
+	12 -> 13 [label=" x2"]
 	13 -> 14
+	13 -> 14 [label=" x2"]
 	14 -> 15
-	7 -> 15
-	13 -> 15
 	15 -> 16
-	16 -> 17
-	7 -> 17
-	15 -> 17
-	17 -> 18
+	17 -> 20
+	17 -> 21
 	18 -> 19
-	7 -> 19
-	17 -> 19
-	19 -> 20
 	20 -> 21
 	21 -> 22
-	23 -> 26
-	23 -> 27
+	16 -> 34
+	16 -> 36
+	16 -> 37
+	16 -> 38
+	16 -> 39
+	16 -> 40
+	22 -> 23
+	23 -> 33
 	24 -> 25
+	25 -> 26
 	26 -> 27
 	27 -> 28
-	28 -> 29
-	29 -> 39
+	28 -> 34
+	28 -> 36
+	28 -> 37
+	28 -> 38
+	28 -> 39
+	28 -> 40
+	29 -> 30
 	30 -> 31
 	31 -> 32
-	32 -> 33
+	32 -> 34
+	32 -> 36
+	32 -> 37
+	32 -> 38
+	32 -> 39
+	32 -> 40
 	33 -> 34
-	35 -> 36
+	34 -> 35
+	34 -> 35 [label=" x2"]
+	34 -> 36
+	34 -> 35 [label=" x3"]
+	34 -> 35 [label=" x4"]
+	34 -> 36 [label=" x2"]
+	34 -> 36 [label=" x3"]
+	36 -> 35
+	36 -> 35 [label=" x2"]
 	36 -> 37
+	36 -> 35 [label=" x3"]
+	36 -> 35 [label=" x4"]
+	36 -> 37 [label=" x2"]
+	36 -> 37 [label=" x3"]
+	37 -> 35
+	37 -> 35 [label=" x2"]
 	37 -> 38
+	37 -> 35 [label=" x3"]
+	37 -> 35 [label=" x4"]
+	37 -> 38 [label=" x2"]
+	37 -> 38 [label=" x3"]
+	38 -> 35
+	38 -> 35 [label=" x2"]
+	38 -> 39
+	38 -> 35 [label=" x3"]
+	38 -> 35 [label=" x4"]
+	38 -> 39 [label=" x2"]
+	38 -> 39 [label=" x3"]
+	39 -> 35
+	39 -> 35 [label=" x2"]
 	39 -> 40
-	34 -> 40
-	22 -> 43
-	38 -> 43
+	39 -> 35 [label=" x3"]
+	39 -> 35 [label=" x4"]
+	39 -> 40 [label=" x2"]
+	39 -> 40 [label=" x3"]
+	40 -> 35
+	40 -> 35 [label=" x2"]
+	40 -> 35 [label=" x3"]
+	40 -> 35 [label=" x4"]
 	40 -> 41
-	40 -> 42
-	40 -> 43
+	41 -> 42
+	42 -> 43
 	43 -> 44
-	43 -> 45
-	43 -> 46
+	44 -> 45
+	45 -> 47
 	46 -> 47
-	34 -> 47
-	40 -> 47
-	22 -> 50
-	38 -> 50
-	43 -> 50
-	47 -> 48
-	47 -> 49
-	47 -> 50
-	50 -> 51
-	50 -> 52
-	50 -> 53
-	53 -> 54
-	34 -> 54
-	47 -> 54
-	22 -> 57
-	38 -> 57
-	50 -> 57
-	54 -> 55
-	54 -> 56
-	54 -> 57
-	57 -> 58
-	57 -> 59
-	57 -> 60
-	60 -> 61
-	34 -> 61
-	54 -> 61
-	22 -> 64
-	38 -> 64
-	57 -> 64
-	61 -> 62
-	61 -> 63
-	61 -> 64
-	64 -> 65
-	64 -> 66
-	64 -> 67
-	67 -> 68
-	34 -> 68
-	61 -> 68
-	22 -> 71
-	38 -> 71
-	64 -> 71
-	68 -> 69
-	68 -> 70
-	68 -> 71
-	71 -> 72
-	71 -> 73
-	71 -> 74
-	74 -> 75
-	34 -> 75
-	68 -> 75
-	22 -> 78
-	38 -> 78
-	71 -> 78
-	75 -> 76
-	75 -> 77
-	75 -> 78
-	78 -> 79
-	78 -> 80
-	78 -> 81
-	81 -> 82
-	82 -> 83
-	83 -> 84
-	84 -> 85
-	85 -> 86
-	86 -> 88
-	87 -> 88
-	88 -> 89
-	85 -> 90
-	22 -> 91
+	47 -> 35
+	44 -> 35
+	16 -> 35
 }

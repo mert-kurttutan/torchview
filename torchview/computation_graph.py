@@ -68,6 +68,7 @@ class ComputationGraph:
         hide_module_functions: bool = True,
         roll: bool = True,
         depth: int | float = 3,
+        merge_outputs: bool = False,
     ):
         '''
         Resets the running_node_id, id_dict when a new ComputationGraph is initialized.
@@ -81,6 +82,7 @@ class ComputationGraph:
         self.hide_module_functions = hide_module_functions
         self.roll = roll
         self.depth = depth
+        self.merge_outputs = merge_outputs
 
         # specs for html table
         self.html_config = {
@@ -213,6 +215,8 @@ class ComputationGraph:
                 self.add_node(cur_node, subgraph)
 
             if isinstance(cur_node, TensorNode):
+                if cur_node.is_leaf() and self.merge_outputs:
+                    cur_node.node_id = 'output-tensor-id'
                 self.add_node(cur_node, subgraph)
 
         elif isinstance(cur_node, ModuleNode):
@@ -375,10 +379,16 @@ class ComputationGraph:
         cell_bor = self.html_config['cell_border']
         if self.show_shapes:
             if isinstance(node, TensorNode):
+                if node.is_leaf() and self.merge_outputs:
+                    node_shape = compact_list_repr(
+                        node.parent_hierarchy[0].output_shape
+                    )
+                else:
+                    node_shape = node.tensor_shape
                 label = f'''<
                     <TABLE BORDER="{border}" CELLBORDER="{cell_bor}"
                     CELLSPACING="{cell_sp}" CELLPADDING="{cell_pad}">
-                        <TR><TD>{node.name}<BR/>depth:{node.depth}</TD><TD>{node.tensor_shape}</TD></TR>
+                        <TR><TD>{node.name}<BR/>depth:{node.depth}</TD><TD>{node_shape}</TD></TR>
                     </TABLE>>'''
             else:
                 input_repr = compact_list_repr(node.input_shape)

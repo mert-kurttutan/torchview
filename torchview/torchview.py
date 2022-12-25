@@ -43,6 +43,7 @@ def draw_graph(
     strict: bool = True,
     expand_nested: bool = False,
     graph_dir: str | None = None,
+    merge_outputs: bool = False,
     hide_module_functions: bool = True,
     hide_inner_tensors: bool = True,
     roll: bool = False,
@@ -120,6 +121,10 @@ def draw_graph(
             'BT' -> Bottom to Top
             'RL' -> Right to Left
             Default: None -> TB
+
+        merge_outputs (bool):
+            Whether to merge all output tensor nodes
+            into one node
 
         hide_module_function (bool):
             Determines whether to hide module torch_functions. Some
@@ -214,7 +219,8 @@ def draw_graph(
 
     model_graph = ComputationGraph(
         visual_graph, input_nodes, show_shapes, expand_nested,
-        hide_inner_tensors, hide_module_functions, roll, depth
+        hide_inner_tensors, hide_module_functions, roll, depth,
+        merge_outputs
     )
 
     forward_prop(
