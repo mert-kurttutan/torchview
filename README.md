@@ -106,6 +106,7 @@ def draw_graph(
     mode: str | None = None,
     strict: bool = True,
     expand_nested: bool = False,
+    graph_dir: str | None = None,
     hide_module_functions: bool = True,
     hide_inner_tensors: bool = True,
     roll: bool = False,
