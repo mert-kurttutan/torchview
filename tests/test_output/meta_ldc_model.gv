@@ -1,5 +1,5 @@
 strict digraph LDC {
-	graph [ordering=in size="64.5,64.5"]
+	graph [ordering=in rankdir=TB size="64.5,64.5"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
 	0 [label=<
@@ -1395,7 +1395,7 @@ strict digraph LDC {
 	87 -> 101
 }
 strict digraph LDC_expanded {
-	graph [ordering=in size="85.2,85.2"]
+	graph [ordering=in rankdir=TB size="85.2,85.2"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
 	0 [label=<

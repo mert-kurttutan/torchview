@@ -1,5 +1,5 @@
 strict digraph gpt2 {
-	graph [ordering=in size="76.8,76.8"]
+	graph [ordering=in rankdir=TB size="76.8,76.8"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
 	0 [label=<
@@ -1376,7 +1376,7 @@ strict digraph gpt2 {
 	109 -> 110
 }
 strict digraph gpt2 {
-	graph [ordering=in size="88.5,88.5"]
+	graph [ordering=in rankdir=TB size="88.5,88.5"]
 	node [align=left fontname="Linux libertine" fontsize=10 height=0.2 margin=0 ranksep=0.1 shape=plaintext style=filled]
 	edge [fontsize=10]
 	0 [label=<

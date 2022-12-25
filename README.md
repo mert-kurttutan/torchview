@@ -48,6 +48,12 @@ or if you want via conda
 conda install -c conda-forge torchview
 ```
 
+or if you want most up-to-date version, install directly from repo
+
+```Bash
+pip install git+https://github.com/mert-kurttutan/torchview.git
+```
+
 # How To Use
 
 ```python

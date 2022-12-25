@@ -42,6 +42,7 @@ def draw_graph(
     mode: str | None = None,
     strict: bool = True,
     expand_nested: bool = False,
+    graph_dir: str | None = None,
     hide_module_functions: bool = True,
     hide_inner_tensors: bool = True,
     roll: bool = False,
@@ -109,8 +110,16 @@ def draw_graph(
             from module node to module node and hiding those tensors
             Default: True
 
-        expand_nested(bool):
+        expand_nested (bool):
             if true, shows nested modules with dashed borders
+
+        graph_dir (str):
+            Sets the direction of visual graph
+            'TB' -> Top to Bottom
+            'LR' -> Left to Right
+            'BT' -> Bottom to Top
+            'RL' -> Right to Left
+            Default: None -> TB
 
         hide_module_function (bool):
             Determines whether to hide module torch_functions. Some
@@ -165,12 +174,16 @@ def draw_graph(
     else:
         model_mode = mode
 
+    if graph_dir is None:
+        graph_dir = 'TB'
+
     validate_user_params(
         input_data, input_size, depth, device, dtypes,
     )
 
     graph_attr = {
         'ordering': 'in',
+        'rankdir': graph_dir,
     }
 
     # visual settings from torchviz
