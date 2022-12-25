@@ -176,6 +176,14 @@ def draw_graph(
         expand_nested(bool):
             if true shows nested modules with dashed borders
 
+        graph_dir (str):
+            Sets the direction of visual graph
+            'TB' -> Top to Bottom
+            'LR' -> Left to Right
+            'BT' -> Bottom to Top
+            'RL' -> Right to Left
+            Default: None -> TB
+
         hide_module_function (bool):
             Determines whether to hide module torch_functions. Some
             modules consist only of torch_functions (no submodule),
