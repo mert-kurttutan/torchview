@@ -61,7 +61,7 @@ from torchview import draw_graph
 
 model = MLP()
 batch_size = 2
-# device='meta' -> no memory is consumed during for visualization
+# device='meta' -> no memory is consumed for visualization
 model_graph = draw_graph(model, input_size=(batch_size, 128), device='meta')
 model_graph.visual_graph
 ```
