@@ -16,7 +16,7 @@ Supports PyTorch versions $\geq$ 1.7.
 
 ## Display of useful features
 
-![feature_display](https://user-images.githubusercontent.com/88637659/210227600-8603fc65-3a39-43db-ae9c-c70e224cac52.png)
+![feature_display](https://user-images.githubusercontent.com/88637659/210234536-32b564f4-5d85-4944-8300-a1c27a1a7fb3.png)
 
 ## Installation
 
