@@ -93,4 +93,5 @@ disable = [
     "no-member",
     "fixme",
     "duplicate-code",
+    "no-else-return",  # more explicit is better
 ]
