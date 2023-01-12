@@ -5,7 +5,6 @@ from typing import Union
 from collections import Counter
 from contextlib import nullcontext
 
-
 from graphviz import Digraph
 from torch.nn.modules import Identity
 
@@ -15,18 +14,18 @@ from .utils import updated_dict
 
 COMPUTATION_NODES = Union[TensorNode, ModuleNode, FunctionNode]
 
+node2color = {
+    TensorNode: "lightyellow",
+    ModuleNode: "darkseagreen1",
+    FunctionNode: "aliceblue",
+}
+
 # TODO: Currently, we only use directed graphviz graph since DNN are
 # graphs except for e.g. graph neural network (GNN). Experiment on GNN
 # and see if undirected graphviz graph can be used to represent GNNs
 
 # TODO: change api of to include also function calls, not only pytorch models
 # so, keep the api here as general as possible
-
-node2color = {
-    TensorNode: "lightyellow",
-    ModuleNode: "darkseagreen1",
-    FunctionNode: "aliceblue",
-}
 
 
 class ComputationGraph:
@@ -82,7 +81,7 @@ class ComputationGraph:
         self.roll = roll
         self.depth = depth
 
-        # specs for html table
+        # specs for html table, needed for node labels
         self.html_config = {
             'border': 0,
             'cell_border': 1,
@@ -102,7 +101,7 @@ class ComputationGraph:
         self.running_node_id: int = 0
         self.running_subgraph_id: int = 0
         self.id_dict: dict[str, int] = {}
-        self.added_nodes: set[int] = set()
+        self.node_set: set[int] = set()
         self.edge_list: list[tuple[COMPUTATION_NODES, COMPUTATION_NODES]] = []
 
         # module node  to capture whole graph
@@ -135,17 +134,13 @@ class ComputationGraph:
         self.traverse_graph(self.collect_graph, **kwargs)
 
     def render_edges(self):
-        '''Adds all edges in self.edge_list to
+        '''Records all edges in self.edge_list to
         the graphviz graph using node ids from edge_list'''
-        counter_edge = {}
+        edge_counter = {}
         for tail, head in self.edge_list:
-            tail_id, head_id = self.id_dict[tail.node_id], self.id_dict[head.node_id]
-            counter_edge[(tail_id, head_id)] = (
-                counter_edge.get((tail_id, head_id), 0) + 1
-            )
-            self.add_edge(
-                tail_id, head_id, counter_edge[(tail_id, head_id)]
-            )
+            edge_id = self.id_dict[tail.node_id], self.id_dict[head.node_id]
+            edge_counter[edge_id] = edge_counter.get(edge_id, 0) + 1
+            self.add_edge(edge_id, edge_counter[edge_id])
 
     def traverse_graph(
         self, action_fn, **kwargs
@@ -157,8 +152,9 @@ class ComputationGraph:
         if isinstance(cur_node, (TensorNode, ModuleNode, FunctionNode)):
             if cur_node.depth <= self.depth:
                 action_fn(**kwargs)
+            return
 
-        elif isinstance(cur_node, dict):
+        if isinstance(cur_node, dict):
             k, v = list(cur_node.items())[0]
             new_kwargs = updated_dict(kwargs, 'cur_node', k)
             if k.depth <= self.depth and k.depth >= 0:
@@ -187,8 +183,10 @@ class ComputationGraph:
                 for g in v:
                     new_kwargs = updated_dict(new_kwargs, 'cur_node', g)
                     self.traverse_graph(action_fn, **new_kwargs)
-        else:
-            raise ValueError('this should not be reached')
+
+            return
+
+        raise ValueError('this should not be reached')
 
     def collect_graph(
         self, **kwargs,
@@ -199,7 +197,7 @@ class ComputationGraph:
 
         cur_node = kwargs['cur_node']
         # if tensor node is traced, dont repeat collecting
-        if id(cur_node) in self.added_nodes:
+        if id(cur_node) in self.node_set:
             return
 
         self.check_node(cur_node)
@@ -298,7 +296,8 @@ class ComputationGraph:
             return is_visible
 
         raise ValueError(
-            'Only Computation Nodes are allowed for this function as an input'
+            'Only the instance of ComputationNode is allowed '
+            'for this function as an input'
         )
 
     def get_tail_node(self, _tensor_node: TensorNode):
@@ -319,7 +318,7 @@ class ComputationGraph:
             if depth >= self.depth:
                 break
 
-        module_depth = depth-1
+        module_depth = depth - 1
         # if returned by container module and hide_module_functions
         if (
             isinstance(current_parent_h[depth], FunctionNode) and
@@ -344,15 +343,19 @@ class ComputationGraph:
         return tail_node
 
     def add_edge(
-        self, tail_id: int, head_id: int, edg_cnt: int
+        self, edge_ids: tuple[int, int], edg_cnt: int
     ) -> None:
 
+        tail_id, head_id = edge_ids
         label = None if edg_cnt == 1 else f' x{edg_cnt}'
         self.visual_graph.edge(f'{tail_id}', f'{head_id}', label=label)
 
     def add_node(
         self, node: COMPUTATION_NODES, subgraph: Digraph | None = None
     ) -> None:
+        '''Adds node to the graphviz with correct id, label and color
+        settings. Updates state of running_node_id if node is not
+        identified before.'''
         if node.node_id not in self.id_dict:
             self.id_dict[node.node_id] = self.running_node_id
             self.running_node_id += 1
@@ -364,9 +367,12 @@ class ComputationGraph:
         subgraph.node(
             name=f'{self.id_dict[node.node_id]}', label=label, fillcolor=node_color,
         )
-        self.added_nodes.add(id(node))
+        self.node_set.add(id(node))
 
     def get_node_label(self, node: COMPUTATION_NODES) -> str:
+        '''Returns html-like format for the label of node. This html-like
+        label is based on Graphviz API for html-like format. For setting of node label
+        it uses graph config and html_config.'''
         input_str = 'input'
         output_str = 'output'
         border = self.html_config['border']
@@ -460,15 +466,11 @@ def get_output_id(head_node: COMPUTATION_NODES) -> str | int:
     This is used to identify the recursively used modules.
     Identification relation is as follows:
         ModuleNodes => by id of nn.Module object
-        Parameterless Modules => by id Node object
+        Parameterless ModulesNodes => by id of nn.Module object
         FunctionNodes => by id of Node object
     '''
     if isinstance(head_node, ModuleNode):
-        if head_node.is_activation:
-            # TODO: try also compute_unit_id
-            output_id = head_node.compute_unit_id
-        else:
-            output_id = head_node.compute_unit_id
+        output_id = head_node.compute_unit_id
     else:
         output_id = head_node.node_id
 
