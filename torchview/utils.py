@@ -45,14 +45,6 @@ class OrderedSet(MutableSet[T]):
             return f'{self.__class__.__name__}'
         return f'{self.__class__.__name__}({list(self)})'
 
-    def __eq__(self, other: object) -> bool:
-        if not isinstance(other, OrderedSet):
-            raise NotImplementedError
-        return len(self) == len(other) and list(self) == list(other)
-
-    def issubset(self, other: OrderedSet[T]) -> bool:
-        return self.map.keys() <= other.map.keys()
-
 
 def is_generator_empty(parameters: Iterable[Parameter]) -> bool:
     try:
@@ -69,3 +61,14 @@ def updated_dict(
         keyword: value if keyword != update_key else update_value
         for keyword, value in arg_dict.items()
     }
+
+
+def assert_input_type(
+    func_name: str, valid_input_types: tuple[type, ...], in_var: Any
+) -> None:
+
+    assert isinstance(in_var, valid_input_types), (
+        f'For an unknown reason, {func_name} function was '
+        f'given input with wrong type. The input is of type: '
+        f'{type(in_var)}. But, it should be {valid_input_types}'
+    )

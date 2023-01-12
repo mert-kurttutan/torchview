@@ -4,7 +4,7 @@ version = "0.2.3"
 description = "Visualization of Pytorch Models"
 readme = "README.md"
 requires-python = ">=3.7"
-license = "MIT"
+license = {'text'= "MIT"}
 keywords = [
     "pytorch", "visualization", "keras",
     "torch", "deep learning", "machine learning",
@@ -93,4 +93,5 @@ disable = [
     "no-member",
     "fixme",
     "duplicate-code",
+    "no-else-return",  # more explicit is better
 ]

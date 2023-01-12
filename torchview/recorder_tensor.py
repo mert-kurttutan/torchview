@@ -71,7 +71,6 @@ def creation_ops_wrapper(
         current_context = model_graph.context_tracker['current_context']
 
         input_recorder_tensor: RecorderTensor = input_tensor.as_subclass(RecorderTensor)
-        input_recorder_tensor.tensor_nodes = []
         input_node = TensorNode(
             tensor=input_recorder_tensor,
             depth=current_depth,  # type: ignore[arg-type]
@@ -79,8 +78,8 @@ def creation_ops_wrapper(
             context=current_context
         )
         current_context.append(input_node)  # type: ignore[attr-defined]
+        input_recorder_tensor.tensor_nodes = [input_node]
 
-        input_recorder_tensor.tensor_nodes.append(input_node)
         return input_recorder_tensor
     return _func
 
@@ -148,7 +147,7 @@ def module_forward_wrapper(model_graph: ComputationGraph) -> Callable[..., Any]:
         )
 
         traverse_data_inplace(
-            [args, kwargs], pop_after_forward, recorded_output=output_recorder
+            [args, kwargs], pop_after_forward, recorded_output=output_recorder,
         )
 
         # remove auxiliary tensor nodes from recorder_tensor
@@ -353,7 +352,7 @@ def attach_node(
 
 def pop_after_forward(
     r_in: RecorderTensor,
-    recorded_output: OrderedSet[RecorderTensor]
+    recorded_output: OrderedSet[RecorderTensor],
 ) -> None:
     '''Removes/pops nodes from RecorderTensors to maintain correct nodes
     Two types of process exist for types of modules:
@@ -418,31 +417,45 @@ def collect_shape(
 def process_output_node(
     cur_node: ModuleNode
 ) -> Callable[..., Any]:
+    '''Returns function to update output node after forward
+    pass of nn.Modules'''
     def _func(recorded_data: RecorderTensor) -> None:
         output_node = recorded_data.tensor_nodes[-1]
         cur_depth = cur_node.depth
         # if output node is reused inside module or empty module is used
         # introduce node for empty pass function
         if not output_node.is_leaf() or output_node.is_aux:
-            out_pass = FunctionNode(
-                lambda x: x, output_node.depth, output_node,
-                name='empty-pass'
-            )
-            output_node.add_child(out_pass)
-            output_node.context.append(out_pass)
-
-            recorded_data.tensor_nodes[-1] = TensorNode(
-                recorded_data, output_node.depth, out_pass,
-                context=output_node.context, is_aux=False,
-                parent_hierarchy={
-                    recorded_data.tensor_nodes[-1].depth: out_pass
-                }
-            )
-            out_pass.add_child(recorded_data.tensor_nodes[-1])
-            output_node.context.append(recorded_data.tensor_nodes[-1])
+            insert_empty_pass_node(recorded_data, output_node)
 
         recorded_data.tensor_nodes[-1].depth = cur_depth
         name = 'output-tensor' if cur_depth == 0 else 'hidden-tensor'
         recorded_data.tensor_nodes[-1].name = name
         recorded_data.tensor_nodes[-1].parent_hierarchy[cur_depth] = cur_node
     return _func
+
+
+def insert_empty_pass_node(
+    recorded_tensor: RecorderTensor, out_node: TensorNode
+) -> None:
+    '''First, inserts empty-pass node as a child of tensor nodes. Then, inserts
+    TensorNode as a child of this empty-pass node'''
+    out_pass = FunctionNode(
+        lambda x: x, out_node.depth, out_node,
+        name='empty-pass'
+    )
+    out_node.add_child(out_pass)
+    out_node.context.append(out_pass)
+
+    passed_out_node = TensorNode(
+        recorded_tensor, out_node.depth, out_pass,
+        context=out_node.context, is_aux=False,
+        parent_hierarchy={
+            recorded_tensor.tensor_nodes[-1].depth: out_pass
+        }
+    )
+
+    out_node.context.append(passed_out_node)
+    out_pass.add_child(passed_out_node)
+
+    # Update the current node of RecorderTensor
+    recorded_tensor.tensor_nodes[-1] = passed_out_node
