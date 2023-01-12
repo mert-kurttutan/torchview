@@ -458,4 +458,4 @@ def insert_empty_pass_node(
     out_pass.add_child(passed_out_node)
 
     # Update the current node of RecorderTensor
-    recorded_tensor.tensor_nodes[-1] = passed_out_node
+    recorded_tensor.tensor_nodes.append(passed_out_node)
