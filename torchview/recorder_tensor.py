@@ -71,7 +71,6 @@ def creation_ops_wrapper(
         current_context = model_graph.context_tracker['current_context']
 
         input_recorder_tensor: RecorderTensor = input_tensor.as_subclass(RecorderTensor)
-        input_recorder_tensor.tensor_nodes = []
         input_node = TensorNode(
             tensor=input_recorder_tensor,
             depth=current_depth,  # type: ignore[arg-type]
@@ -79,8 +78,8 @@ def creation_ops_wrapper(
             context=current_context
         )
         current_context.append(input_node)  # type: ignore[attr-defined]
+        input_recorder_tensor.tensor_nodes = [input_node]
 
-        input_recorder_tensor.tensor_nodes.append(input_node)
         return input_recorder_tensor
     return _func
 
@@ -148,7 +147,7 @@ def module_forward_wrapper(model_graph: ComputationGraph) -> Callable[..., Any]:
         )
 
         traverse_data_inplace(
-            [args, kwargs], pop_after_forward, recorded_output=output_recorder
+            [args, kwargs], pop_after_forward, recorded_output=output_recorder,
         )
 
         # remove auxiliary tensor nodes from recorder_tensor
@@ -353,7 +352,7 @@ def attach_node(
 
 def pop_after_forward(
     r_in: RecorderTensor,
-    recorded_output: OrderedSet[RecorderTensor]
+    recorded_output: OrderedSet[RecorderTensor],
 ) -> None:
     '''Removes/pops nodes from RecorderTensors to maintain correct nodes
     Two types of process exist for types of modules:
