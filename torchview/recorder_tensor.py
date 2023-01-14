@@ -95,6 +95,10 @@ def module_forward_wrapper(model_graph: ComputationGraph) -> Callable[..., Any]:
         input_nodes: NodeContainer[TensorNode] = (
             reduce_data_info([args, kwargs], collect_tensor_node, NodeContainer())
         )
+        # get unique input tensors, prevent duplications for auxiliary nodes
+        input_recorder: OrderedSet[RecorderTensor] = (
+            reduce_data_info([args, kwargs], collect_tensor, OrderedSet())
+        )
         # if none of args originated from input
         # hence only torch.Tensor
         if not input_nodes:
@@ -106,6 +110,9 @@ def module_forward_wrapper(model_graph: ComputationGraph) -> Callable[..., Any]:
         cur_node = ModuleNode(
             mod, cur_depth, input_nodes,  # type: ignore[arg-type]
             name=type(mod).__name__
+        )
+        cur_node.set_input_shape(
+            reduce_data_info([args, kwargs], collect_shape, [])
         )
 
         # update context with current modules's context
@@ -123,7 +130,7 @@ def module_forward_wrapper(model_graph: ComputationGraph) -> Callable[..., Any]:
         }
 
         traverse_data_inplace(
-            [args, kwargs], attach_node(attach_kwargs, tensor_to_node)
+            input_recorder, attach_node(attach_kwargs, tensor_to_node)
         )
 
         model_graph.context_tracker['current_depth'] = cur_depth+1
@@ -147,7 +154,7 @@ def module_forward_wrapper(model_graph: ComputationGraph) -> Callable[..., Any]:
         )
 
         traverse_data_inplace(
-            [args, kwargs], pop_after_forward, recorded_output=output_recorder,
+            input_recorder, pop_after_forward, recorded_output=output_recorder,
         )
 
         # remove auxiliary tensor nodes from recorder_tensor
@@ -159,9 +166,6 @@ def module_forward_wrapper(model_graph: ComputationGraph) -> Callable[..., Any]:
             cur_node.add_output_nodes(output_node)
             output_node.context = input_context
 
-        cur_node.set_input_shape(
-            reduce_data_info([args, kwargs], collect_shape, [])
-        )
         cur_node.set_output_shape(reduce_data_info(out, collect_shape, []))
         return out
 
@@ -341,6 +345,15 @@ def attach_node(
         if getattr(recorded_tensor, 'tensor_nodes', None) is None:
             recorded_tensor.tensor_nodes = [tensor_node]
         else:
+            # ModuleNode: Attaches auxiliary node to tensors
+            # Auxiliary nodes should be appended to keep track the node
+            # history of tensor
+            # FunctionNode: These should overwrite the last tensor node
+            # There are 2 different cases:
+            # Non-inplace ops -> New tensor and this node is the first
+            # Inplace ops -> Result tensor overwrites the intput tensor
+            # in memory, so it should overwrite in node history as well
+            # for both cases, overwritting the last tensor node is correct
             if isinstance(kwargs["parents"], ModuleNode):
                 recorded_tensor.tensor_nodes.append(tensor_node)
             elif isinstance(kwargs["parents"], FunctionNode):
@@ -458,4 +471,7 @@ def insert_empty_pass_node(
     out_pass.add_child(passed_out_node)
 
     # Update the current node of RecorderTensor
-    recorded_tensor.tensor_nodes[-1] = passed_out_node
+    # Here append instead of overwrite the last node because
+    # this is a dummy FunctionNode that has no actual place in
+    # computation graph
+    recorded_tensor.tensor_nodes.append(passed_out_node)

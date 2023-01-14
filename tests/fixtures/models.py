@@ -420,3 +420,41 @@ class EnsembleMLP(nn.Module):
 
         out = self.fc_layer(x_concated)
         return out
+
+
+class Detect(nn.Module):
+
+    def __init__(self, nc: int, ch: tuple[int, ...]) -> None:
+        super().__init__()
+        self.nc = nc  # number of classes
+        self.nl = len(ch)  # number of detection layers
+        self.reg_max = 16
+        self.no = sum(ch) * 2
+
+        self.cv2 = nn.ModuleList(
+            nn.Conv2d(x, self.reg_max * 4, 3, padding='same') for x in ch
+        )
+        self.cv3 = nn.ModuleList(nn.Conv2d(x, self.nc, 3, padding='same') for x in ch)
+
+    def forward(
+        self, x: list[torch.Tensor]
+    ) -> tuple[torch.Tensor, list[torch.Tensor]] | list[torch.Tensor]:
+        shape = x[0].shape  # BCHW
+        for i in range(self.nl):
+            x[i] = torch.cat((x[i]+1, x[i]+2), 1)
+        if self.training:
+            return x
+        return torch.cat([xi.view(shape[0], self.no, -1) for xi in x], 2), x
+
+
+class DetectionWrapper(nn.Module):
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.detector = Detect(nc=80, ch=(192, 192))
+
+    def forward(
+        self, *x: tuple[torch.Tensor]
+    ) -> Any:
+        y = list(x)
+        return self.detector(y)
