@@ -178,7 +178,7 @@ def draw_graph(
         graph_dir = 'TB'
 
     validate_user_params(
-        input_data, input_size, depth, device, dtypes,
+        model, input_data, input_size, depth, device, dtypes,
     )
 
     graph_attr = {
@@ -300,6 +300,7 @@ def process_input(
 
 
 def validate_user_params(
+    model: nn.Module,
     input_data: INPUT_DATA_TYPE | None,
     input_size: INPUT_SIZE_TYPE | None,
     depth: int | float,
@@ -311,6 +312,14 @@ def validate_user_params(
         raise ValueError(
             f"depth must be a non-negative number, depth={depth}"
         )
+
+    if isinstance(model, COMPILED_MODULES):
+        warnings.warn(
+            "Currently, traced modules are not fully supported. But, there is "
+            "a potential solution to support traced models. "
+            "For details, see relevant issue in the main repo"
+        )
+
     one_input_specified = (input_data is None) != (input_size is None)
     if not one_input_specified:
         raise RuntimeError("Only one of (input_data, input_size) should be specified.")
