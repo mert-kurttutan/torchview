@@ -6,6 +6,7 @@ from collections.abc import Callable
 import torch
 from torch import nn
 from torch.nn import functional as F
+from torch._C import ScriptMethod
 
 from .computation_node import ModuleNode, FunctionNode, TensorNode, NodeContainer
 from .computation_graph import ComputationGraph
@@ -207,7 +208,7 @@ class RecorderTensor(torch.Tensor):
 
     @classmethod
     def __torch_function__(
-        cls: Any, func: Callable[..., Any],
+        cls: Any, func: Callable[..., Any] | ScriptMethod,
         types: Any,
         args: Any = (),
         kwargs: Any = None,
@@ -245,8 +246,11 @@ class RecorderTensor(torch.Tensor):
         # Create function_node and connect to its parents tensor node
         cur_depth = next(iter(args_nodes)).depth
         input_context = next(iter(args_nodes)).context
+        func_name = (
+            func.name if isinstance(func, ScriptMethod) else func.__name__
+        )
         cur_node = FunctionNode(
-            func, cur_depth, args_nodes, name=func.__name__  # type: ignore[arg-type]
+            func, cur_depth, args_nodes, name=func_name  # type: ignore[arg-type]
         )
 
         for i in args_nodes:
