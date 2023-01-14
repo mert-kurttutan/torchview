@@ -24,6 +24,7 @@ from tests.fixtures.models import (
     InputNotUsed,
     CreateTensorsInside,
     EnsembleMLP,
+    DetectionWrapper,
 )
 from torchview import draw_graph
 
@@ -358,3 +359,20 @@ def test_simple_ensemble(verify_result: Callable[..., Any]) -> None:
         device='cpu'
     )
     verify_result([model_graph_1])
+
+
+def test_input_inplace_changed(verify_result: Callable[..., Any]) -> None:
+    input_data = [
+        torch.rand(1, 192, 44, 44),
+        torch.rand(1, 192, 44, 44),
+    ]
+    new_model = DetectionWrapper()
+    model_graph = draw_graph(
+        new_model,
+        input_data=input_data,
+        expand_nested=True,
+        depth=3,
+        graph_name='InplaceListInput',
+        device='cpu'
+    )
+    verify_result([model_graph])
