@@ -16,7 +16,15 @@ Supports PyTorch versions $\geq$ 1.7.
 
 ## Display of useful features
 
-![feature_display](https://user-images.githubusercontent.com/88637659/210234536-32b564f4-5d85-4944-8300-a1c27a1a7fb3.png)
+<p align="center">
+  <picture align="center">
+    <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/88637659/213171745-7acf07df-6578-4a50-a106-1a7b368f8d6c.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/88637659/213171745-7acf07df-6578-4a50-a106-1a7b368f8d6c.svg">
+    <img alt="Shows a bar chart with benchmark results." src="https://user-images.githubusercontent.com/88637659/213171745-7acf07df-6578-4a50-a106-1a7b368f8d6c.svg">
+  </picture>
+</p>
+
+
 
 ## Installation
 
