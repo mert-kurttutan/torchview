@@ -14,7 +14,7 @@ Pytorch version of `plot_model of keras` (and more)
 
 Supports PyTorch versions $\geq$ 1.7.
 
-## Display of useful features
+## Useful features
 
 <p align="center">
   <picture align="center">
