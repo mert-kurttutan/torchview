@@ -22,9 +22,13 @@ _orig_module_forward = torch.nn.Module.__call__
 # so that these return RecorderTensor can be recorded during
 # forward propagation
 orig_name_list = [
-    'randn', 'ones', 'range', 'linspace', 'logspace',
-    'zeros', 'randint', 'rand', 'rand_like', 'normal',
-    'bernoulli', 'multinomial', 'poisson', 'randint',
+    "as_tensor", "from_numpy", "zeros", "zeros_like",
+    "ones", "ones_like", "arange", "range", "linspace",
+    "logspace", "eye", "empty", "empty_like", "full",
+    "full_like", "complex", "heaviside", "bernoulli",
+    "multinomial", "normal", "poisson", "rand", "rand_like",
+    "randint", "randint_like", "randn", "randn_like",
+    "randperm"
 ]
 _orig_op_list = [getattr(torch, name) for name in orig_name_list]
 
