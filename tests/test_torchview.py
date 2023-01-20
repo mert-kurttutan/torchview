@@ -25,6 +25,7 @@ from tests.fixtures.models import (
     CreateTensorsInside,
     EnsembleMLP,
     DetectionWrapper,
+    IsolatedTensor,
 )
 from torchview import draw_graph
 
@@ -375,4 +376,21 @@ def test_input_inplace_changed(verify_result: Callable[..., Any]) -> None:
         graph_name='InplaceListInput',
         device='cpu'
     )
+    verify_result([model_graph])
+
+
+def test_isolated_tensor(verify_result: Callable[..., Any]) -> None:
+    input_data = [
+        torch.rand(1, 32),
+    ]
+    model = IsolatedTensor()
+    model_graph = draw_graph(
+        model,
+        input_data=input_data,
+        expand_nested=True,
+        depth=3,
+        graph_name='IsolatedTensor',
+        device='cpu'
+    )
+
     verify_result([model_graph])
