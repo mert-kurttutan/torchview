@@ -239,7 +239,9 @@ class ComputationGraph:
         # # output node
         # visible tensor and non-input tensor nodes
         if is_cur_visible and not cur_node.is_root():
-            assert not isinstance(tail_node, TensorNode) or tail_node.is_root()
+            assert not isinstance(tail_node, TensorNode) or tail_node.is_root(), (
+                "get_tail_node function returned inconsistent Node, please report this"
+            )
             self.edge_list.append((tail_node, cur_node))
 
     def rollify(self, cur_node: ModuleNode | FunctionNode) -> None:
@@ -427,11 +429,8 @@ class ComputationGraph:
 
     def check_node(self, node: COMPUTATION_NODES) -> None:
         assert node.node_id != 'null', f'wrong id {node} {type(node)}'
-        assert '-' not in node.node_id, 'No repetition of node recording'
-        assert not node.is_leaf() or not node.is_root(), (
-            f'isolated node! {node}'
-        )
-        assert node.depth <= self.depth, f"exceeds depth limit, {node}"
+        assert '-' not in node.node_id, 'No repetition of node recording is allowed'
+        assert node.depth <= self.depth, f"Exceeds display depth limit, {node}"
         assert (
             sum(1 for _ in node.parents) in [0, 1] or not isinstance(node, TensorNode)
         ), (

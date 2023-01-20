@@ -458,3 +458,15 @@ class DetectionWrapper(nn.Module):
     ) -> Any:
         y = list(x)
         return self.detector(y)
+
+
+class IsolatedTensor(nn.Module):
+    def __init__(self) -> None:
+        super().__init__()
+        self.lin = nn.Linear(32, 2)
+
+    def forward(self, x: torch.Tensor, y: torch.Tensor) -> Any:
+        y_value = y.item()
+        out = self.lin(x)
+        out = out + y_value
+        return out
