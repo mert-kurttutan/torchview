@@ -192,7 +192,9 @@ class ComputationGraph:
 
         cur_node = kwargs['cur_node']
         # if tensor node is traced, dont repeat collecting
-        if id(cur_node) in self.node_set:
+        # if node is isolated, dont record it
+        is_isolated = cur_node.is_root() and cur_node.is_leaf()
+        if id(cur_node) in self.node_set or is_isolated:
             return
 
         self.check_node(cur_node)

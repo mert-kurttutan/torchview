@@ -465,7 +465,8 @@ class IsolatedTensor(nn.Module):
         super().__init__()
         self.lin = nn.Linear(32, 2)
 
-    def forward(self, x: torch.Tensor, y: torch.Tensor) -> Any:
+    def forward(self, x: torch.Tensor) -> Any:
+        y = torch.zeros(1, 1)
         y_value = y.item()
         out = self.lin(x)
         out = out + y_value

@@ -10,11 +10,6 @@ strict digraph IsolatedTensor {
 	1 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
-                        <TR><TD>input-tensor<BR/>depth:0</TD><TD>(1, 1)</TD></TR>
-                    </TABLE>> fillcolor=lightyellow]
-	2 [label=<
-                    <TABLE BORDER="0" CELLBORDER="1"
-                    CELLSPACING="0" CELLPADDING="4">
                     <TR>
                         <TD ROWSPAN="2">Linear<BR/>depth:1</TD>
                         <TD COLSPAN="2">input:</TD>
@@ -25,7 +20,7 @@ strict digraph IsolatedTensor {
                         <TD COLSPAN="2">(1, 2) </TD>
                     </TR>
                     </TABLE>> fillcolor=darkseagreen1]
-	3 [label=<
+	2 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                     <TR>
@@ -38,12 +33,12 @@ strict digraph IsolatedTensor {
                         <TD COLSPAN="2">(1, 2) </TD>
                     </TR>
                     </TABLE>> fillcolor=aliceblue]
-	4 [label=<
+	3 [label=<
                     <TABLE BORDER="0" CELLBORDER="1"
                     CELLSPACING="0" CELLPADDING="4">
                         <TR><TD>output-tensor<BR/>depth:0</TD><TD>(1, 2)</TD></TR>
                     </TABLE>> fillcolor=lightyellow]
-	0 -> 2
+	0 -> 1
+	1 -> 2
 	2 -> 3
-	3 -> 4
 }

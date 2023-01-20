@@ -382,7 +382,6 @@ def test_input_inplace_changed(verify_result: Callable[..., Any]) -> None:
 def test_isolated_tensor(verify_result: Callable[..., Any]) -> None:
     input_data = [
         torch.rand(1, 32),
-        torch.rand(1, 1),
     ]
     model = IsolatedTensor()
     model_graph = draw_graph(
