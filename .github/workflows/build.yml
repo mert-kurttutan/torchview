@@ -129,6 +129,7 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install mypy pytest pytest-cov
           python3 -m pip install --upgrade build
+          python3 scripts/transform_readme.py --target pypi
         shell: bash
       - name: Upload to PyPI
         shell: bash -l {0}
