@@ -112,12 +112,12 @@ class Block(nn.Module):
         self.ln_1 = nn.LayerNorm(config.n_embd)
         self.attn = CausalSelfAttention(config)
         self.ln_2 = nn.LayerNorm(config.n_embd)
-        self.mlp = nn.ModuleDict(dict(
-            c_fc=nn.Linear(config.n_embd, 4 * config.n_embd),
-            c_proj=nn.Linear(4 * config.n_embd, config.n_embd),
-            act=nn.ReLU(inplace=True),
-            dropout=nn.Dropout(config.resid_pdrop),
-        ))
+        self.mlp = nn.ModuleDict({
+            "c_fc": nn.Linear(config.n_embd, 4 * config.n_embd),
+            "c_proj": nn.Linear(4 * config.n_embd, config.n_embd),
+            "act": nn.ReLU(inplace=True),
+            "dropout": nn.Dropout(config.resid_pdrop),
+        })
         m = self.mlp
         self.mlpf = lambda x: m.dropout(m.c_proj(m.act(m.c_fc(x))))  # MLP forward
 
