@@ -112,7 +112,7 @@ class ComputationGraph:
 
         # Add input nodes
         self.node_hierarchy = {
-            main_container_module: list(root_node for root_node in self.root_container)
+            main_container_module: list(self.root_container)
         }
         for root_node in self.root_container:
             root_node.context = self.node_hierarchy[main_container_module]

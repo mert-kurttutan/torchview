@@ -156,7 +156,7 @@ class _DenseBlock(nn.Module):
 
     def forward(self, init_features):
         features = [init_features]
-        for name, layer in self.named_children():
+        for _, layer in self.named_children():
             new_features = layer(*features)
             features.append(new_features)
         return torch.cat(features, 1)

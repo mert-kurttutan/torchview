@@ -1,6 +1,6 @@
 black
 codecov
-flake8
+ruff=0.0.246
 isort
 mypy
 pycln
