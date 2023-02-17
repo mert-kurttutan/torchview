@@ -43,7 +43,8 @@ repository = "https://github.com/mert-kurttutan/torchview"
 # Scan the project directory with the default parameters
 packages = [
     'torchview',
-    'torchview.computation_node'
+    'torchview.computation_node',
+    'torchview.experimental',
 ]  
 
 [tool.setuptools.package-data]
