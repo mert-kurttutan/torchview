@@ -44,13 +44,6 @@ const config = {
           editUrl:
             'https://github.com/mert-kurttutan/torchview/tree/main/docs/docs',
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/mert-kurttutan/torchview/tree/main/docs/docs',
-        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -81,7 +74,7 @@ const config = {
             position: 'left',
             label: 'Documentation',
           },
-          {to: '/tutorial', label: 'Tutorial', position: 'left'},
+          {to: '/docs/tutorial', label: 'Tutorial', position: 'left'},
           {
             href: 'https://github.com/mert-kurttutan/torchview',
             label: 'GitHub',
@@ -106,7 +99,7 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/tutorial',
+                to: '/docs/tutorial',
               },
               {
                 label: 'GitHub',
