@@ -2,6 +2,10 @@ name: testing
 on:
   push:
     branches: [ main ]
+    paths:
+      - torchview
+      - .github
+      - pyproject.toml
   pull_request:
     branches: [ main ]
 
