@@ -3,8 +3,8 @@ on:
   push:
     branches: [ main ]
     paths:
-      - torchview
-      - .github
+      - torchview/**
+      - .github/**
       - pyproject.toml
   pull_request:
     branches: [ main ]
