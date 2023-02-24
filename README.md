@@ -9,6 +9,7 @@
 [![Downloads](https://pepy.tech/badge/torchview)](https://pepy.tech/project/torchview)
 
 Torchview provides visualization of pytorch models in the form of visual graphs. Visualization includes tensors, modules, torch.functions and info such as input/output shapes.
+Random change
 
 Pytorch version of `plot_model of keras` (and more)
 
