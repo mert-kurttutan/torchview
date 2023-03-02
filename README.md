@@ -92,11 +92,11 @@ model_graph.visual_graph
 
 For more examples, see colab notebooks below,
 
-**Introduction Notebook:** [![Introduction](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mert-kurttutan/torchview/blob/main/docs/example_introduction.ipynb)
+**Introduction Notebook:** [![Introduction](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mert-kurttutan/torchview/blob/main/docs/docs/tutorial/notebook/example_introduction.ipynb)
 
-**Computer Vision Models:** [![Vision](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mert-kurttutan/torchview/blob/main/docs/example_vision.ipynb)
+**Computer Vision Models:** [![Vision](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mert-kurttutan/torchview/blob/main/docs/docs/tutorial/notebook/example_vision.ipynb)
 
-**NLP Models:** [![NLP](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mert-kurttutan/torchview/blob/main/docs/example_text.ipynb)
+**NLP Models:** [![NLP](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mert-kurttutan/torchview/blob/main/docs/docs/tutorial/notebook/example_text.ipynb)
 
 <!-- single_input_all_cols.out -->
 
