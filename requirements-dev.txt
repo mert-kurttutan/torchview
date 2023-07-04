@@ -1,6 +1,6 @@
 black
 codecov
-ruff=0.0.246
+ruff==0.0.246
 isort
 mypy
 pycln
