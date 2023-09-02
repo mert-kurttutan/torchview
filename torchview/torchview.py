@@ -8,6 +8,7 @@ from typing import (
 
 import graphviz
 import torch
+import numpy as np
 from torch import nn
 from torch.jit import ScriptModule
 
@@ -350,6 +351,9 @@ def traverse_data(
     """
     if isinstance(data, torch.Tensor):
         return action_fn(data)
+
+    if isinstance(data, np.ndarray):
+        return data
 
     # Recursively apply to collection items
     aggregate = aggregate_fn(data)

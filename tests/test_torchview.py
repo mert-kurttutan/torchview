@@ -394,3 +394,33 @@ def test_isolated_tensor(verify_result: Callable[..., Any]) -> None:
     )
 
     verify_result([model_graph])
+
+
+def test_process_input_ndarray():
+    from torchview.torchview import process_input
+    import numpy as np
+    input_data = [{'array': np.random.rand(2, 3, 5)}]
+    x, kwargs_recorder_tensor, input_data_node = process_input(
+        input_data=input_data,
+        input_size=None,
+        kwargs={},
+        device='cpu'
+    )
+    assert x is not input_data, 'should not have the same id'
+    assert x[0]['array'] is input_data[0]['array'], 'ndarrays should be unmodified'
+
+
+def test_process_input_ndarray_and_tensor():
+    from torchview.torchview import process_input
+    import numpy as np
+
+    input_data = [{'array': np.random.rand(2, 3, 5), 'tensor': torch.rand(2, 3, 5)}]
+    x, kwargs_recorder_tensor, input_data_node = process_input(
+        input_data=input_data,
+        input_size=None,
+        kwargs={},
+        device='cpu'
+    )
+    assert x is not input_data, 'should not have the same id'
+    assert x[0]['array'] is input_data[0]['array'], 'ndarrays should be unmodified'
+    assert x[0]['tensor'] is not input_data[0]['tensor'], 'tensor should be modified'
