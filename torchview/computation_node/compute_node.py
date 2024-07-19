@@ -11,7 +11,7 @@ from ..utils import is_generator_empty
 
 
 class TensorNode(Node):
-    '''Subclass of node specialzed for nodes that
+    '''Subclass of node specialized for nodes that
     stores tensor (subclass of torch.Tensor called RecorderTensor)
     '''
     def __init__(
