@@ -23,7 +23,7 @@ jobs:
           python-version: 3.12
 
       - name: "Install dev dependecies"
-        run: pip install -r docs/requirements-dev.txt
+        run: pip install -r ./requirements-dev.txt
 
       - name: "Copy README File"
         run: |
