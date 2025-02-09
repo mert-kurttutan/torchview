@@ -47,6 +47,7 @@ def draw_graph(
     hide_inner_tensors: bool = True,
     roll: bool = False,
     show_shapes: bool = True,
+    colors: dict | None = None,
     save_graph: bool = False,
     filename: str | None = None,
     directory: str = '.',
@@ -145,6 +146,13 @@ def draw_graph(
             False => Dont show
             Default: True
 
+        colors (dict):
+            Color scheme used for the plotting. The dictionary can
+            contain a graphiz color for "TensorNode", "ModuleNode"
+            and "FunctionNode". If not given, the default colors will
+            be used. Example: colors = {TensorNode: "lightyellow"}
+            Default: default color scheme
+
         save_graph (bool):
             True => Saves output file of graphviz graph
             False => Does not save
@@ -213,7 +221,7 @@ def draw_graph(
     )
 
     model_graph = ComputationGraph(
-        visual_graph, input_nodes, show_shapes, expand_nested,
+        visual_graph, input_nodes, show_shapes, colors, expand_nested,
         hide_inner_tensors, hide_module_functions, roll, depth
     )
 
