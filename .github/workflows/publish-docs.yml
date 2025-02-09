@@ -1,17 +1,13 @@
 name: mkdocs
 
 on:
+  # Runs on pushes targeting the `main` branch. Change this to `master` if you're
+  # using the `master` branch as the default branch.
+  push:
+    branches: [main]
+
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-    inputs:
-      ref:
-        description: "The commit SHA, tag, or branch to publish. Uses the default branch if not specified."
-        default: ""
-        type: string
-  workflow_call:
-    inputs:
-      plan:
-        required: true
-        type: string
 
 jobs:
   mkdocs:
