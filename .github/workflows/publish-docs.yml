@@ -1,0 +1,38 @@
+name: mkdocs
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: "The commit SHA, tag, or branch to publish. Uses the default branch if not specified."
+        default: ""
+        type: string
+  workflow_call:
+    inputs:
+      plan:
+        required: true
+        type: string
+
+jobs:
+  mkdocs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.12
+
+      - name: "Install dev dependecies"
+        run: pip install -r docs/requirements-dev.txt
+
+      - name: "Copy README File"
+        run: |
+          python scripts/transform_readme.py --target mkdocs
+          python scripts/generate_mkdocs.py
+
+      - name: "Build docs"
+        run: mkdocs build --strict -f mkdocs.public.yml
