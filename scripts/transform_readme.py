@@ -1,20 +1,20 @@
-"""
-Taken from here: 
-https://github.com/charliermarsh/ruff/blob/main/scripts/transform_readme.py
-
-Transform the README.md to support a specific deployment target.
+"""Transform the README.md to support a specific deployment target.
 
 By default, we assume that our README.md will be rendered on GitHub. However, different
 targets have different strategies for rendering light- and dark-mode images. This script
 adjusts the images in the README.md to support the given target.
 """
+
+from __future__ import annotations
+
 import argparse
 from pathlib import Path
 
-URL = "https://user-images.githubusercontent.com/88637659/{}.svg"
-URL_DARK = URL.format("213171745-7acf07df-6578-4a50-a106-1a7b368f8d6c")
-URL_LIGHT = URL.format("213173736-6e91724c-8de1-4568-9d52-297b4b5ff0d2")
+URL = "https://user-images.githubusercontent.com/1309177/{}.svg"
+URL_LIGHT = URL.format("232603516-4fb4892d-585c-4b20-b810-3db9161831e4")
+URL_DARK = URL.format("232603514-c95e9b0f-6b31-43de-9a80-9e844173fd6a")
 
+# https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#specifying-the-theme-an-image-is-shown-to
 GITHUB = f"""
 <p align="center">
   <picture align="center">
@@ -32,6 +32,18 @@ PYPI = f"""
 </p>
 """
 
+# https://squidfunk.github.io/mkdocs-material/reference/images/#light-and-dark-mode
+MK_DOCS = f"""
+<p align="center">
+  <img alt="Shows a bar chart with benchmark results." src="{URL_LIGHT}#only-light">
+</p>
+
+<p align="center">
+  <img alt="Shows a bar chart with benchmark results." src="{URL_DARK}#only-dark">
+</p>
+"""
+
+
 def main(target: str) -> None:
     """Modify the README.md to support the given target."""
     with Path("README.md").open(encoding="utf8") as fp:
@@ -43,6 +55,9 @@ def main(target: str) -> None:
     if target == "pypi":
         with Path("README.md").open("w", encoding="utf8") as fp:
             fp.write(content.replace(GITHUB, PYPI))
+    elif target == "mkdocs":
+        with Path("README.md").open("w", encoding="utf8") as fp:
+            fp.write(content.replace(GITHUB, MK_DOCS))
     else:
         msg = f"Unknown target: {target}"
         raise ValueError(msg)
@@ -56,7 +71,7 @@ if __name__ == "__main__":
         "--target",
         type=str,
         required=True,
-        choices=("pypi",),
+        choices=("pypi", "mkdocs"),
     )
     args = parser.parse_args()
 
