@@ -28,7 +28,7 @@ jobs:
       - name: "Copy README File"
         run: |
           python scripts/transform_readme.py --target mkdocs
-          python scripts/generate_mkdocs.py
+          python scripts/generate_ref_pages.py
 
       - name: "Build docs"
-        run: mkdocs build --strict -f mkdocs.public.yml
+        run: mkdocs build -f mkdocs.yml
