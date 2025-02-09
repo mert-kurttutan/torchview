@@ -10,9 +10,9 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-URL = "https://user-images.githubusercontent.com/1309177/{}.svg"
-URL_LIGHT = URL.format("232603516-4fb4892d-585c-4b20-b810-3db9161831e4")
-URL_DARK = URL.format("232603514-c95e9b0f-6b31-43de-9a80-9e844173fd6a")
+URL = "https://user-images.githubusercontent.com/88637659/{}.svg"
+URL_DARK = URL.format("213171745-7acf07df-6578-4a50-a106-1a7b368f8d6c")
+URL_LIGHT = URL.format("213173736-6e91724c-8de1-4568-9d52-297b4b5ff0d2")
 
 # https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#specifying-the-theme-an-image-is-shown-to
 GITHUB = f"""
