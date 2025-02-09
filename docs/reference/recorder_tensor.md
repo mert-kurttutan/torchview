@@ -1,0 +1,1 @@
+::: torchview.recorder_tensor
