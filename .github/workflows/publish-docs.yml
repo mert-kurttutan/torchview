@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  mkdocs:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -32,3 +32,7 @@ jobs:
 
       - name: "Build docs"
         run: mkdocs build -f mkdocs.yml
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: ./site
