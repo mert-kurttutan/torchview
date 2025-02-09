@@ -1,0 +1,995 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../../reference/computation_graph/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.38">
+    
+    
+      
+        <title>Example introduction - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Example introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Docs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Docs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    torchview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Developer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Developer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Developer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/rolling_graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to identify nodes and roll recursive graphs ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/torch_function_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    torch_function
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorial
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorial
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Example introduction
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/computation_graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Computation graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/recorder_tensor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recorder tensor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/torchview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Torchview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/utils/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Utils
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Computation node
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Computation node
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/computation_node/base_node/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Base node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/computation_node/compute_node/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compute node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Example introduction</h1>
+
+<div class="cell code" id="RhMRbU15NRhT">
+
+
+<pre><code class="language-python">! pip install -q torchview
+! pip install -q -U graphviz
+</code></pre>
+
+
+</div>
+
+<div class="cell code"
+colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:35}"
+id="4Vt6oiY8NRhV" outputId="17a2d67e-9b39-4931-f86f-80939867e9e8">
+
+
+<pre><code class="language-python">from torchview import draw_graph
+from torch import nn
+import torch
+import graphviz
+
+# when running on VSCode run the below command
+# svg format on vscode does not give desired result
+graphviz.set_jupyter_format('png')
+</code></pre>
+
+
+<div class="output execute_result" execution_count="2">
+
+
+<pre><code class="language-json">{&quot;type&quot;:&quot;string&quot;}
+</code></pre>
+
+
+</div>
+
+</div>
+
+<div class="cell markdown" id="1VX_jUboNRhX">
+
+The purpose of this notebook is to introduce API and notation of
+torchview package with common use cases.
+
+</div>
+
+<div class="cell markdown" id="ISzPg6OENRhY">
+
+We start with simple MLP model
+
+</div>
+
+<div class="cell code" id="LQsuPp0ENRhY">
+
+
+<pre><code class="language-python">class MLP(nn.Module):
+    &quot;&quot;&quot;Multi Layer Perceptron with inplace option.
+    Make sure inplace=true and false has the same visual graph&quot;&quot;&quot;
+
+    def __init__(self, inplace: bool = True) -&gt; None:
+        super().__init__()
+        self.layers = nn.Sequential(
+            nn.Linear(128, 128),
+            nn.ReLU(inplace),
+            nn.Linear(128, 128),
+        )
+
+    def forward(self, x: torch.Tensor) -&gt; torch.Tensor:
+        x = self.layers(x)
+        return x
+</code></pre>
+
+
+</div>
+
+<div class="cell code" id="qyzL2xjrNRhZ">
+
+
+<pre><code class="language-python">model_graph_1 = draw_graph(
+    MLP(), input_size=(2, 128),
+    graph_name='MLP',
+    hide_inner_tensors=False,
+    hide_module_functions=False,
+)
+</code></pre>
+
+
+</div>
+
+<div class="cell code"
+colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:654}"
+id="h7O2V3mENRhZ" outputId="a44ec58a-fe42-42ca-a980-d3e85ff35913">
+
+
+<pre><code class="language-python">model_graph_1.visual_graph
+</code></pre>
+
+
+<div class="output execute_result" execution_count="5">
+
+<!-- ![](a479e7729cfc48e5bba6303977af81a0bb50e63a.png) -->
+
+</div>
+
+</div>
+
+<div class="cell markdown" id="5UMryxUNNRha">
+
+Any visual graph representation of pytorch models provided by torchview
+package consists of nodes and directed edges (maybe also undirected ones
+for future releases). Each node is connected by an edge that indicates
+information flow in the neural network.
+
+There are 3 types of nodes:
+
+-   Tensor Node
+-   Function Node
+-   Module Node
+
+</div>
+
+<div class="cell markdown" id="kJVDsJzCNRha">
+
+1\) Tensor Node: This node is represented by bright yellow color. It has
+the label is of the form `{tensor-name}{depth}: {tensor-shape}`.
+`tensor-name` can take 3 values input-tensor, hidden-tensor, or
+output-tensor. Depth is the depth of tensor in hierarchy of modules.
+
+2\) Function Node: This node is represented by bright blue color. Its
+label is of the form `{Function-name}{depth}: {input and output shape}`.
+
+3\) Module Node: This node is represented by bright green color. Its
+label is of the form `{Module-name}{depth}: {input and output shape}`.
+
+</div>
+
+<div class="cell markdown" id="Ae9HPM1tNRhb">
+
+In the example of MLP above, input tensor is called by main module MLP.
+This input tensor is called by its submodules, Sequential. Then, it is
+called by its submodule linear. Now, inside linear module exists linear
+function `F.linear`. This finally applied to input-tensor and returns
+output-tensor. This is sent to ReLU layer and so on.
+
+</div>
+
+<div class="cell markdown" id="Uo_JGDyfNRhb">
+
+Now, we show how rolling mechanism on recursive modules implemented. To
+demonstrate this, we use RNN module
+
+</div>
+
+<div class="cell code" id="Sxj3gz7JNRhc">
+
+
+<pre><code class="language-python">class SimpleRNN(nn.Module):
+    &quot;&quot;&quot;Simple RNN&quot;&quot;&quot;
+
+    def __init__(self, inplace: bool = True) -&gt; None:
+        super().__init__()
+        self.hid_dim = 2
+        self.input_dim = 3
+        self.max_length = 4
+        self.lstm = nn.LSTMCell(self.input_dim, self.hid_dim)
+        self.activation = nn.LeakyReLU(inplace=inplace)
+        self.projection = nn.Linear(self.hid_dim, self.input_dim)
+
+    def forward(self, token_embedding: torch.Tensor) -&gt; torch.Tensor:
+        b_size = token_embedding.size()[0]
+        hx = torch.randn(b_size, self.hid_dim, device=token_embedding.device)
+        cx = torch.randn(b_size, self.hid_dim, device=token_embedding.device)
+
+        for _ in range(self.max_length):
+            hx, cx = self.lstm(token_embedding, (hx, cx))
+            hx = self.activation(hx)
+
+        return hx
+</code></pre>
+
+
+</div>
+
+<div class="cell code" id="jkPr268pNRhc">
+
+
+<pre><code class="language-python">model_graph_2 = draw_graph(
+    SimpleRNN(), input_size=(2, 3),
+    graph_name='RecursiveNet',
+    roll=True
+)
+</code></pre>
+
+
+</div>
+
+<div class="cell code"
+colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:400}"
+id="GRXKwRmENRhc" outputId="5a062dba-302a-439a-ed2d-1b05ce77f28e">
+
+
+<pre><code class="language-python">model_graph_2.visual_graph
+</code></pre>
+
+
+<div class="output execute_result" execution_count="8">
+
+<!-- ![](195da364971b52cd768860ada125ffd07f705908.png) -->
+
+</div>
+
+</div>
+
+<div class="cell markdown" id="Eu1WJvTANRhd">
+
+In the graph above, we see a rolled representation of RNN with LSTM
+units. We see that LSTMCell and LeakyReLU nodes. This is representated
+by the numbers show on edges. These number near edges represent the
+number of edges that occur in `forward prop`. For instance, the first
+number 4 represent the number of times token_embedding is used.
+
+If the number of times that edge is used is 1, then it is not shown.
+
+</div>
+
+<div class="cell markdown" id="SDoq8wEhNRhd">
+
+Another useful feature is the resize feature. Say, the previous image of
+RNN is too big for your purpose. What we can do is to use resize feature
+rescale it by 0.5
+
+</div>
+
+<div class="cell code" id="ju2uNsapNRhd">
+
+
+<pre><code class="language-python">model_graph_2.resize_graph(scale=0.5)
+</code></pre>
+
+
+</div>
+
+<div class="cell code"
+colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:400}"
+id="P8gQzaTGNRhd" outputId="e5c87b69-ea8a-4c0b-82c8-1f793b4f17a1">
+
+
+<pre><code class="language-python">model_graph_2.visual_graph
+</code></pre>
+
+
+<div class="output execute_result" execution_count="10">
+
+<!-- ![](195da364971b52cd768860ada125ffd07f705908.png) -->
+
+</div>
+
+</div>
+
+<div class="cell markdown" id="5t3-aW3rNRhd">
+
+It got smaller !!!
+
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d6f25eb3.min.js"></script>
+      
+    
+  </body>
+</html>
