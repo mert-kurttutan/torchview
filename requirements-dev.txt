@@ -15,3 +15,5 @@ mkdocs-redirects==1.2.2
 mdformat==0.7.22
 mdformat-mkdocs==4.1.2
 mkdocs-gen-files
+mkdocstrings
+mkdocstrings-python
