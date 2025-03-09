@@ -16,7 +16,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest,]
-        python-version: ["3.7", "3.8", "3.9", "3.10"]
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
         graphviz-version: ["0.20"]
         torch-version-map: [
           {torch: "1.7", torchvision: "0.8", torchtext: "0.8"},
@@ -26,6 +26,7 @@ jobs:
           {torch: "1.11", torchvision: "0.12", torchtext: "0.12"},
           {torch: "1.12", torchvision: "0.13", torchtext: "0.13"},
           {torch: "1.13", torchvision: "0.14", torchtext: "0.14"},
+          {torch: "2.0", torchvision: "0.14", torchtext: "0.14"},
         ]
         include:
           - os: ubuntu-latest
