@@ -23,7 +23,7 @@ jobs:
           python-version: 3.12
 
       - name: "Install dev dependecies"
-        run: pip install ".[dev]"
+        run: pip install -e ".[dev]"
 
       - name: "Copy README File"
         run: |
