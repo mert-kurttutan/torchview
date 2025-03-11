@@ -26,6 +26,8 @@ jobs:
         with:
           version: "latest"
           python-version: 3.12
+      - name: Set up Python
+        run: uv python install
 
       - name: Configure
         id: configure
