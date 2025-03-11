@@ -41,7 +41,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         graphviz-version: ["0.20"]
-        id-list: ${{fromJson(needs.configure.outputs.ID_LIST)}}
+        id-number: ${{fromJson(needs.configure.outputs.ID_LIST)}}
     steps:
     - uses: actions/checkout@v3.1.0
     - name: Set up version variables
