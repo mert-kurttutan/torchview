@@ -118,14 +118,14 @@ jobs:
     - name: mypy
       if: ${{ steps.set-version.outputs.PYTHON_VERSION == '3.12' }}
       run: |
-        uv run mypy .
+        mypy .
     - name: pytest
       if: ${{ steps.set-version.outputs.PYTHON_VERSION == '3.12' }}
       run: |
-        uv run pytest --cov=torchview --cov-report= --durations=0
+        pytest --cov=torchview --cov-report= --durations=0
     - name: pytest
       if: ${{ steps.set-version.outputs.PYTHON_VERSION != '3.12' }}
       run: |
-        uv run pytest --no-output
+        pytest --no-output
     - name: codecov
       uses: codecov/codecov-action@v3.1.1
