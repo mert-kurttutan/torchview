@@ -30,7 +30,7 @@ jobs:
       - name: Configure
         id: configure
         run: |
-          ID_LIST=$(python scripts/get_version.py 0 --variable-name=ids)
+          ID_LIST=$(uv python scripts/get_version.py 0 --variable-name=ids)
           echo "ID_LIST=$ID_LIST" >> $GITHUB_OUTPUT
 
   tests:
@@ -80,9 +80,10 @@ jobs:
         echo "::notice::dot installed ${DOT_VERSION#dot - }"
         echo "::endgroup::"
       shell: bash
-    - name: Set up Python ${{ steps.set-version.outputs.PYTHON_VERSION }}
-      uses: actions/setup-python@v4.3.0
+    - name: Install the latest version of uv
+      uses: astral-sh/setup-uv@v5
       with:
+        version: "latest"
         python-version: ${{ steps.set-version.outputs.PYTHON_VERSION }}
 
     - name: Pip install python dependencies
