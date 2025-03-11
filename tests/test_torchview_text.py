@@ -3,8 +3,8 @@ from typing import Callable, Any
 from packaging import version
 
 import pytest
-
-# import torchtxt if torch version is <= 2.3
+import torch
+# import torchtext if torch version is <= 2.3
 if version.parse(torch.__version__) <= version.parse('2.3.0'):
     import torchtext
     from torchtext import __version__ as torchtext_version
