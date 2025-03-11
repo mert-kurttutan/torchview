@@ -46,7 +46,7 @@ jobs:
     - name: Set up version variables
       id: set-version
       run: |
-        echo "Current directory: $(pwd)"
+        echo "Current directory: $(ls)"
         PYTHON_VERSION=$(python scripts/get_version.py ${{ matrix.id-number }} --variable-name=python)
         echo "PYTHON_VERSION=$PYTHON_VERSION" >> $GITHUB_OUTPUT
         TORCH_VERSION=$(python scripts/get_version.py ${{ matrix.id-number }} --variable-name=torch)
