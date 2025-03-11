@@ -27,7 +27,9 @@ jobs:
           version: "latest"
           python-version: 3.12
       - name: Set up Python
-        run: uv python install
+        # see here for the preview feature, https://github.com/astral-sh/uv/issues/6067
+        # this install python globally
+        run: uv python install --preview
 
       - name: Configure
         id: configure
@@ -90,7 +92,7 @@ jobs:
     - name: Allow uv to use the system Python by default
       run: echo "UV_SYSTEM_PYTHON=1" >> $GITHUB_ENV
     - name: Set up Python
-      run: uv python install
+      run: uv python install --preview
 
     - name: Pip install python dependencies
       run: |
