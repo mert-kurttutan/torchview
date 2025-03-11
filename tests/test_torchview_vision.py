@@ -1,3 +1,4 @@
+# type: ignore
 from typing import Callable, Any
 from packaging import version
 

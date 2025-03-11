@@ -1,3 +1,4 @@
+ # type: ignore
 import sys
 
 from typing import Callable, Any

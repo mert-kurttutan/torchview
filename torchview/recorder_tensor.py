@@ -197,7 +197,7 @@ class RecorderTensor(torch.Tensor):
         **kwargs: Any
     ) -> Any:
         # pylint: disable=unused-argument
-        return super().__new__(cls, x, *args, **kwargs)  # type: ignore[call-arg]
+        return super().__new__(cls, x, *args, **kwargs)
 
     def __init__(
         self, x: Any, tensor_node: TensorNode | list[TensorNode]
@@ -212,7 +212,7 @@ class RecorderTensor(torch.Tensor):
 
     @classmethod
     def __torch_function__(
-        cls: Any, func: Callable[..., Any] | ScriptMethod,
+        cls: Any, func: Callable[..., Any] | ScriptMethod,  # type: ignore[type-arg]
         types: Any,
         args: Any = (),
         kwargs: Any = None,

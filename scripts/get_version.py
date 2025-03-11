@@ -2,14 +2,18 @@
 # // https://github.com/pytorch/text
 # https://github.com/pytorch/vision
 
+from __future__ import annotations
 
-def get_version_dict(file_path):
+from typing import Any, Callable, Union
+
+
+def get_version_dict(file_path: str) -> Any:
     # reads json file and returns the version number
     import json
     with open(file_path) as json_file:
         data = json.load(json_file)
     return data
-def flatten_dict(d):
+def flatten_dict(d: dict[str, Any]) -> list[dict[str, str]]:
     x = []
     for k, v in d.items():
         for (torch_v, torchvision_v, torchtext_v) in v:

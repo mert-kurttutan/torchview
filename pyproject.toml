@@ -69,6 +69,8 @@ module = [
     'tests.fixtures.custom_attention',
     'torchtext.functional',
     'transformers',
+    'mkdocs_gen_files',
+    'pytest',
 ]
 ignore_missing_imports = true
 

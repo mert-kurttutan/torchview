@@ -1,10 +1,16 @@
+# type: ignore
 from typing import Callable, Any
 from packaging import version
 
 import pytest
-import torchtext
 
-from torchtext import __version__ as torchtext_version
+# import torchtxt if torch version is <= 2.3
+if version.parse(torch.__version__) <= version.parse('2.3.0'):
+    import torchtext
+    from torchtext import __version__ as torchtext_version
+else:
+    torchtext = None
+    torchtext_version = "0.0.0"
 
 from tests.fixtures.custom_attention import (  # type: ignore[attr-defined]
     get_default_cfg, Block)
@@ -12,8 +18,9 @@ from tests.fixtures.custom_attention import (  # type: ignore[attr-defined]
 from torchview import draw_graph
 
 
+
 @pytest.mark.skipif(
-    version.parse(torchtext_version) < version.parse('0.12.0'),
+    version.parse(torchtext_version) < version.parse('0.12.0') or torchtext is None,
     reason=f"Torchtext version {torchtext_version} doesn't have this model."
 )
 def test_simple_bert_model(verify_result: Callable[..., Any]) -> None:
