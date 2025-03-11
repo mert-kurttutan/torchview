@@ -87,6 +87,8 @@ jobs:
       with:
         version: "latest"
         python-version: ${{ steps.set-version.outputs.PYTHON_VERSION }}
+    - name: Allow uv to use the system Python by default
+      run: echo "UV_SYSTEM_PYTHON=1" >> $GITHUB_ENV
     - name: Set up Python
       run: uv python install
 
