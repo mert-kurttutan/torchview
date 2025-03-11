@@ -10,59 +10,50 @@ on:
     branches: [ main ]
 
 jobs:
+  configure:
+    runs-on: ubuntu-latest
+    outputs:
+      ID_LIST: ${{ steps.configure.outputs.ID_LIST }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+
+      - name: Configure
+        id: configure
+        run: |
+          ID_LIST=$(python scripts/get_version.py 0 --variable-name=ids)
+          echo "ID_LIST=$ID_LIST" >> $GITHUB_OUTPUT
+
   tests:
+    needs: configure
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest,]
-        python-version: ["3.9", "3.10", "3.11", "3.12"]
+        os: [ubuntu-latest]
         graphviz-version: ["0.20"]
-        torch-version-map: [
-          {torch: "1.7", torchvision: "0.8", torchtext: "0.8"},
-          {torch: "1.8", torchvision: "0.9", torchtext: "0.9"},
-          {torch: "1.9", torchvision: "0.10", torchtext: "0.10"},
-          {torch: "1.10", torchvision: "0.11.1", torchtext: "0.11"},
-          {torch: "1.11", torchvision: "0.12", torchtext: "0.12"},
-          {torch: "1.12", torchvision: "0.13", torchtext: "0.13"},
-          {torch: "1.13", torchvision: "0.14", torchtext: "0.14"},
-          {torch: "2.0", torchvision: "0.14", torchtext: "0.14"},
-        ]
-        include:
-          - os: ubuntu-latest
-            python-version: "3.9"
-            graphviz-version: "0.20"
-            torch-version-map: {torch: "1.7.1", torchvision: "0.8.2", torchtext: "0.8.1"}
-          - os: macos-latest
-            python-version: "3.10"
-            graphviz-version: "0.20"
-            torch-version-map: {torch: "1.13", torchvision: "0.14", torchtext: "0.14"}
-          - os: windows-latest
-            python-version: "3.10"
-            graphviz-version: "0.20"
-            torch-version-map: {torch: "1.13", torchvision: "0.14", torchtext: "0.14"}
-
-        exclude:
-          - python-version: 3.7
-            torch-version-map: {torch: "1.11", torchvision: "0.12", torchtext: "0.12"}
-          - python-version: 3.7
-            torch-version-map: {torch: "1.12", torchvision: "0.13", torchtext: "0.13"}
-          - python-version: 3.7
-            torch-version-map: {torch: "1.13", torchvision: "0.14", torchtext: "0.14"}
-          
-          - python-version: 3.9
-            torch-version-map: {torch: "1.7", torchvision: "0.8", torchtext: "0.8"}
-
-          - python-version: 3.10
-            torch-version-map: {torch: "1.7", torchvision: "0.8", torchtext: "0.8"}
-          - python-version: 3.10
-            torch-version-map: {torch: "1.8", torchvision: "0.9", torchtext: "0.9"}
-          - python-version: 3.10
-            torch-version-map: {torch: "1.9", torchvision: "0.10", torchtext: "0.10"}
-          - python-version: 3.10
-            torch-version-map: {torch: "1.10", torchvision: "0.11.1", torchtext: "0.11"}
-
+        id-list: ${{fromJson(needs.configure.outputs.ID_LIST)}}
     steps:
+    - name: Set up version variables
+        id: set-version
+        run: |
+        PYTHON_VERSION=$(python scripts/get_version.py ${{ matrix.id-number }} --variable-name=python)
+        echo "PYTHON_VERSION=$PYTHON_VERSION" >> $GITHUB_OUTPUT
+        TORCH_VERSION=$(python scripts/get_version.py ${{ matrix.id-number }} --variable-name=torch)
+        echo "TORCH_VERSION=$TORCH_VERSION" >> $GITHUB_OUTPUT
+        TORCHVISION_VERSION=$(python scripts/get_version.py ${{ matrix.id-number }} --variable-name=torchvision)
+        echo "TORCHVISION_VERSION=$TORCHVISION_VERSION" >> $GITHUB_OUTPUT
+        TORCHTEXT_VERSION=$(python scripts/get_version.py ${{ matrix.id-number }} --variable-name=torchtext)
+        echo "TORCHTEXT_VERSION=$TORCHTEXT_VERSION" >> $GITHUB_OUTPUT
     - uses: actions/checkout@v3.1.0
     - name: Install system dependencies
       run: |
@@ -88,35 +79,35 @@ jobs:
         echo "::notice::dot installed ${DOT_VERSION#dot - }"
         echo "::endgroup::"
       shell: bash
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python ${{ steps.set-version.outputs.PYTHON_VERSION }}
       uses: actions/setup-python@v4.3.0
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: ${{ steps.set-version.outputs.PYTHON_VERSION }}
 
     - name: Pip install python dependencies
       run: |
         python -m pip install --upgrade pip
         python -m pip install mypy pytest pytest-cov
         pip install graphviz==${{ matrix.graphviz-version }}
-        pip install torch==${{ matrix.torch-version-map.torch }} \
-          torchvision==${{ matrix.torch-version-map.torchvision }} \
-          torchtext==${{ matrix.torch-version-map.torchtext }}
-        if [ ${{matrix.torch-version-map.torch}} == '1.13' ]; then
+        pip install torch==${{ steps.set-version.outputs.TORCH_VERSION }} \
+          torchvision==${{ steps.set-version.outputs.TORCHVISION_VERSION }} \
+          torchtext==${{ steps.set-version.outputs.TORCHTEXT_VERSION }}
+        if [ ${{steps.set-version.outputs.TORCH_VERSION}} == '1.13' ]; then
           pip install transformers
           pip install sentencepiece
         fi
         
       shell: bash
     - name: mypy
-      if: ${{ matrix.torch-version-map.torch == '1.13' }}
+      if: ${{ steps.set-version.outputs.TORCH_VERSION == '1.13' }}
       run: |
         mypy .
     - name: pytest
-      if: ${{ matrix.torch-version-map.torch == '1.13' }}
+      if: ${{ steps.set-version.outputs.TORCH_VERSION == '1.13' }}
       run: |
         pytest --cov=torchview --cov-report= --durations=0
     - name: pytest
-      if: ${{ matrix.torch-version-map.torch != '1.13' }}
+      if: ${{ steps.set-version.outputs.TORCH_VERSION != '1.13' }}
       run: |
         pytest --no-output
     - name: codecov
