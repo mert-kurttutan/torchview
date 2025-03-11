@@ -1,3 +1,4 @@
+ # type: ignore
 import sys
 
 from typing import Callable, Any
@@ -6,13 +7,20 @@ from packaging import version
 import pytest
 
 import torch
-import torchtext
 import torchvision
 
 from torch import nn
 from torch import __version__ as torch_version
-from torchtext import __version__ as torchtext_version
 from torchvision import __version__ as torchvision_version
+
+# import torchtext if torch version is <= 2.3
+if version.parse(torch.__version__) <= version.parse('2.3.0'):
+    import torchtext
+    from torchtext import __version__ as torchtext_version
+else:
+    torchtext = None
+    torchtext_version = "0.0.0"
+
 
 try:
     import transformers
@@ -217,7 +225,7 @@ def test_meta_reusing_activation_layers(verify_result: Callable[..., Any]) -> No
 
 
 @pytest.mark.skipif(
-    version.parse(torchtext_version) < version.parse('0.12.0'),
+    version.parse(torchtext_version) < version.parse('0.12.0') or torchtext is None,
     reason=f"Torchtext version {torchtext_version} doesn't have this model."
 )
 def test_meta_bert_model(verify_result: Callable[..., Any]) -> None:
