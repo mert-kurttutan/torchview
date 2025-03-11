@@ -30,7 +30,7 @@ jobs:
       - name: Configure
         id: configure
         run: |
-          ID_LIST=$(uv python scripts/get_version.py 0 --variable-name=ids)
+          ID_LIST=$(uv run scripts/get_version.py 0 --variable-name=ids)
           echo "ID_LIST=$ID_LIST" >> $GITHUB_OUTPUT
 
   tests:
@@ -102,14 +102,14 @@ jobs:
     - name: mypy
       if: ${{ steps.set-version.outputs.PYTHON_VERSION == '3.12' }}
       run: |
-        mypy .
+        uv run mypy .
     - name: pytest
       if: ${{ steps.set-version.outputs.PYTHON_VERSION == '3.12' }}
       run: |
-        pytest --cov=torchview --cov-report= --durations=0
+        uv run pytest --cov=torchview --cov-report= --durations=0
     - name: pytest
       if: ${{ steps.set-version.outputs.PYTHON_VERSION != '3.12' }}
       run: |
-        pytest --no-output
+        uv run pytest --no-output
     - name: codecov
       uses: codecov/codecov-action@v3.1.1
