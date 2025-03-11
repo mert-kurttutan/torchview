@@ -47,7 +47,14 @@ jobs:
       id: set-version
       run: |
         ls
-
+        PYTHON_VERSION=$(python scripts/get_version.py ${{ matrix.id-number }} --variable-name=python)
+        echo "PYTHON_VERSION=$PYTHON_VERSION" >> $GITHUB_OUTPUT
+        TORCH_VERSION=$(python scripts/get_version.py ${{ matrix.id-number }} --variable-name=torch)
+        echo "TORCH_VERSION=$TORCH_VERSION" >> $GITHUB_OUTPUT
+        TORCHVISION_VERSION=$(python scripts/get_version.py ${{ matrix.id-number }} --variable-name=torchvision)
+        echo "TORCHVISION_VERSION=$TORCHVISION_VERSION" >> $GITHUB_OUTPUT
+        TORCHTEXT_VERSION=$(python scripts/get_version.py ${{ matrix.id-number }} --variable-name=torchtext)
+        echo "TORCHTEXT_VERSION=$TORCHTEXT_VERSION" >> $GITHUB_OUTPUT
     - uses: actions/checkout@v3.1.0
     - name: Install system dependencies
       run: |
