@@ -105,8 +105,7 @@ jobs:
 
     - name: Pip install python dependencies
       run: |
-        uv pip install mypy pytest pytest-cov
-        uv pip install graphviz~=${{ matrix.graphviz-version }}
+        uv pip install -e ".[dev]"
         uv pip install torch~=${{ steps.set-version.outputs.TORCH_VERSION }} \
           torchvision~=${{ steps.set-version.outputs.TORCHVISION_VERSION }} \
           torchtext~=${{ steps.set-version.outputs.TORCHTEXT_VERSION }}
