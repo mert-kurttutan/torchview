@@ -43,6 +43,7 @@ jobs:
         graphviz-version: ["0.20"]
         id-list: ${{fromJson(needs.configure.outputs.ID_LIST)}}
     steps:
+    - uses: actions/checkout@v3.1.0
     - name: Set up version variables
       id: set-version
       run: |
@@ -55,7 +56,6 @@ jobs:
         echo "TORCHVISION_VERSION=$TORCHVISION_VERSION" >> $GITHUB_OUTPUT
         TORCHTEXT_VERSION=$(python scripts/get_version.py ${{ matrix.id-number }} --variable-name=torchtext)
         echo "TORCHTEXT_VERSION=$TORCHTEXT_VERSION" >> $GITHUB_OUTPUT
-    - uses: actions/checkout@v3.1.0
     - name: Install system dependencies
       run: |
         if [ "$RUNNER_OS" == "Linux" ]; then
