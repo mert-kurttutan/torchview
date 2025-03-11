@@ -87,6 +87,8 @@ jobs:
       with:
         version: "latest"
         python-version: ${{ steps.set-version.outputs.PYTHON_VERSION }}
+    - name: Set up Python
+      run: uv python install
 
     - name: Pip install python dependencies
       run: |
