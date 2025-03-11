@@ -881,6 +881,7 @@
 
 
 
+
   <div class="doc doc-children">
 
 
@@ -980,7 +981,7 @@ Default: None</p>
                 <code>graph_name</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -998,7 +999,7 @@ Default: 'model'</p>
                 <code>depth</code>
             </td>
             <td>
-                  <code>int</code>
+                  <code><span title="int">int</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -1018,7 +1019,7 @@ Default: 3</p>
                 <code>device</code>
             </td>
             <td>
-                  <code>str or <span title="torch.device">device</span></code>
+                  <code><span title="str">str</span> or <span title="torch.device">device</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -1053,7 +1054,7 @@ input size is given.</p>
                 <code>mode</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -1071,7 +1072,7 @@ Default: None</p>
                 <code>strict</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -1090,7 +1091,7 @@ Default: True</p>
                 <code>expand_nested</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -1106,7 +1107,7 @@ Default: True</p>
                 <code>graph_dir</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -1127,7 +1128,7 @@ Default: None -&gt; TB</p>
                 <code>hide_module_function</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -1148,7 +1149,7 @@ Default: True</p>
                 <code>hide_inner_tensors</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -1168,7 +1169,7 @@ Default: True</p>
                 <code>roll</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -1185,7 +1186,7 @@ Default: False</p>
                 <code>show_shapes</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -1203,7 +1204,7 @@ Default: True</p>
                 <code>save_graph</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -1221,7 +1222,7 @@ Default: False</p>
                 <code>filename</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -1238,7 +1239,7 @@ image file of graphviz graph. Defaults to graph_name</p>
                 <code>directory</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -1265,7 +1266,7 @@ Default: .</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code><a class="autorefs autorefs-internal" title="torchview.computation_graph.ComputationGraph" href="../computation_graph/#torchview.computation_graph.ComputationGraph">ComputationGraph</a></code>
+                  <code><a class="autorefs autorefs-internal" title="ComputationGraph (torchview.computation_graph.ComputationGraph)" href="../computation_graph/#torchview.computation_graph.ComputationGraph">ComputationGraph</a></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -1275,7 +1276,7 @@ Default: .</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                  <code><a class="autorefs autorefs-internal" title="torchview.computation_graph.ComputationGraph" href="../computation_graph/#torchview.computation_graph.ComputationGraph">ComputationGraph</a></code>
+                  <code><a class="autorefs autorefs-internal" title="ComputationGraph (torchview.computation_graph.ComputationGraph)" href="../computation_graph/#torchview.computation_graph.ComputationGraph">ComputationGraph</a></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -1285,6 +1286,7 @@ Default: .</p>
           </tr>
       </tbody>
     </table>
+
 
             <details class="quote">
               <summary>Source code in <code>torchview/torchview.py</code></summary>
@@ -1698,6 +1700,7 @@ Default: .</p>
 
         <p>Flattens a nested array.</p>
 
+
             <details class="quote">
               <summary>Source code in <code>torchview/torchview.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">441</span>
@@ -1732,6 +1735,7 @@ Default: .</p>
 
         <p>Performs forward propagation of model on RecorderTensor
 inside context to use module_forward_wrapper</p>
+
 
             <details class="quote">
               <summary>Source code in <code>torchview/torchview.py</code></summary>
@@ -1828,6 +1832,7 @@ inside context to use module_forward_wrapper</p>
         <p>Convert input_size to the correct form, which is a list of tuples.
 Also handles multiple inputs to the network.</p>
 
+
             <details class="quote">
               <summary>Source code in <code>torchview/torchview.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">418</span>
@@ -1890,6 +1895,7 @@ Also handles multiple inputs to the network.</p>
 
         <p>Get input_tensor for use in model.forward()</p>
 
+
             <details class="quote">
               <summary>Source code in <code>torchview/torchview.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">403</span>
@@ -1936,6 +1942,7 @@ Also handles multiple inputs to the network.</p>
 
         <p>returns RecorderTensor version of input_tensor with
 TensorNode instance attached to it</p>
+
 
             <details class="quote">
               <summary>Source code in <code>torchview/torchview.py</code></summary>
@@ -1990,6 +1997,7 @@ TensorNode instance attached to it</p>
     <div class="doc doc-contents ">
 
         <p>Reads sample input data to get the input size.</p>
+
 
             <details class="quote">
               <summary>Source code in <code>torchview/torchview.py</code></summary>
@@ -2069,6 +2077,7 @@ TensorNode instance attached to it</p>
 
         <p>Sets device for all data types and collections of input types.</p>
 
+
             <details class="quote">
               <summary>Source code in <code>torchview/torchview.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">375</span>
@@ -2103,6 +2112,7 @@ TensorNode instance attached to it</p>
 
         <p>Traverses any type of nested data. On a tensor, returns the action given by
 action_fn, and afterwards aggregates the results using aggregate_fn.</p>
+
 
             <details class="quote">
               <summary>Source code in <code>torchview/torchview.py</code></summary>
@@ -2181,6 +2191,7 @@ action_fn, and afterwards aggregates the results using aggregate_fn.</p>
     <div class="doc doc-contents ">
 
         <p>Raise exceptions if the user's input is invalid.</p>
+
 
             <details class="quote">
               <summary>Source code in <code>torchview/torchview.py</code></summary>

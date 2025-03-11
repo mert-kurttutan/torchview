@@ -947,6 +947,7 @@
 
 
 
+
   <div class="doc doc-children">
 
 
@@ -1010,7 +1011,7 @@ of pytorch model.</p>
           <tr class="doc-section-item">
             <td><code><span title="torchview.computation_graph.ComputationGraph.show_shapes">show_shapes</span></code></td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -1021,7 +1022,7 @@ of pytorch model.</p>
           <tr class="doc-section-item">
             <td><code><span title="torchview.computation_graph.ComputationGraph.hide_module_functions">hide_module_functions</span></code></td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -1036,7 +1037,7 @@ while ignoring its inner functions.</p>
           <tr class="doc-section-item">
             <td><code><span title="torchview.computation_graph.ComputationGraph.hide_inner_tensors">hide_inner_tensors</span></code></td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -1047,7 +1048,7 @@ while ignoring its inner functions.</p>
           <tr class="doc-section-item">
             <td><code><span title="torchview.computation_graph.ComputationGraph.node_hierarchy">node_hierarchy</span></code></td>
             <td>
-                  <code>dict</code>
+                  <code><span title="dict">dict</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -1057,6 +1058,7 @@ while ignoring its inner functions.</p>
           </tr>
       </tbody>
     </table>
+
 
 
 
@@ -1913,6 +1915,7 @@ while ignoring its inner functions.</p>
         <p>Resets the running_node_id, id_dict when a new ComputationGraph is initialized.
 Otherwise, labels would depend on previous ComputationGraph runs</p>
 
+
             <details class="quote">
               <summary>Source code in <code>torchview/computation_graph.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">60</span>
@@ -2003,6 +2006,7 @@ Otherwise, labels would depend on previous ComputationGraph runs</p>
 settings. Updates state of running_node_id if node is not
 identified before.</p>
 
+
             <details class="quote">
               <summary>Source code in <code>torchview/computation_graph.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">349</span>
@@ -2060,6 +2064,7 @@ identified before.</p>
         <p>Adds edges and nodes with appropriate node name/id (so it respects
 properties e.g. if rolled recursive nodes are given the same node name
 in graphviz graph)</p>
+
 
             <details class="quote">
               <summary>Source code in <code>torchview/computation_graph.py</code></summary>
@@ -2201,6 +2206,7 @@ in graphviz graph)</p>
 
         <p>Fills the graphviz graph with desired nodes and edges.</p>
 
+
             <details class="quote">
               <summary>Source code in <code>torchview/computation_graph.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">120</span>
@@ -2234,6 +2240,7 @@ in graphviz graph)</p>
         <p>Returns html-like format for the label of node. This html-like
 label is based on Graphviz API for html-like format. For setting of node label
 it uses graph config and html_config.</p>
+
 
             <details class="quote">
               <summary>Source code in <code>torchview/computation_graph.py</code></summary>
@@ -2336,6 +2343,7 @@ it uses graph config and html_config.</p>
         <p>Returns True if node should be displayed on the visual
 graph. Otherwise False</p>
 
+
             <details class="quote">
               <summary>Source code in <code>torchview/computation_graph.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">265</span>
@@ -2423,6 +2431,7 @@ graph. Otherwise False</p>
         <p>Records all edges in self.edge_list to
 the graphviz graph using node ids from edge_list</p>
 
+
             <details class="quote">
               <summary>Source code in <code>torchview/computation_graph.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">134</span>
@@ -2460,6 +2469,7 @@ the graphviz graph using node ids from edge_list</p>
         <p>Resets to id config to the setting of empty visual graph
 needed for getting reproducible/deterministic node name and
 graphviz graphs. This is especially important for output tests</p>
+
 
             <details class="quote">
               <summary>Source code in <code>torchview/computation_graph.py</code></summary>
@@ -2531,6 +2541,7 @@ graphviz graphs. This is especially important for output tests</p>
 Modify the graph in place. Default values are subject to change,
 so far they seem to work fine.</p>
 
+
             <details class="quote">
               <summary>Source code in <code>torchview/computation_graph.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">409</span>
@@ -2586,6 +2597,7 @@ Modules. This is done by giving the same id for nodes that are
 recursively used.
 This becomes complex when there are stateless and torch.functions.
 For more details see docs</p>
+
 
             <details class="quote">
               <summary>Source code in <code>torchview/computation_graph.py</code></summary>
@@ -2649,6 +2661,7 @@ repeated elements. This is useful for e.g. output of transformer/rnn
 models where hidden state outputs shapes is repetation of one hidden unit
 output</p>
 
+
             <details class="quote">
               <summary>Source code in <code>torchview/computation_graph.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">443</span>
@@ -2707,6 +2720,7 @@ Identification relation is as follows:
     ModuleNodes =&gt; by id of nn.Module object
     Parameterless ModulesNodes =&gt; by id of nn.Module object
     FunctionNodes =&gt; by id of Node object</p>
+
 
             <details class="quote">
               <summary>Source code in <code>torchview/computation_graph.py</code></summary>
