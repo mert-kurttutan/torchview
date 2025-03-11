@@ -93,22 +93,22 @@ jobs:
         pip install torch~=${{ steps.set-version.outputs.TORCH_VERSION }} \
           torchvision~=${{ steps.set-version.outputs.TORCHVISION_VERSION }} \
           torchtext~=${{ steps.set-version.outputs.TORCHTEXT_VERSION }}
-        if [ ${{steps.set-version.outputs.TORCH_VERSION}} == '1.13' ]; then
+        if [ ${{steps.set-version.outputs.TORCH_VERSION}} >= '1.13' ]; then
           pip install transformers
           pip install sentencepiece
         fi
         
       shell: bash
     - name: mypy
-      if: ${{ steps.set-version.outputs.TORCH_VERSION == '1.13' }}
+      if: ${{ steps.set-version.outputs.PYTHON_VERSION == '3.12' }}
       run: |
         mypy .
     - name: pytest
-      if: ${{ steps.set-version.outputs.TORCH_VERSION == '1.13' }}
+      if: ${{ steps.set-version.outputs.PYTHON_VERSION == '3.12' }}
       run: |
         pytest --cov=torchview --cov-report= --durations=0
     - name: pytest
-      if: ${{ steps.set-version.outputs.TORCH_VERSION != '1.13' }}
+      if: ${{ steps.set-version.outputs.PYTHON_VERSION != '3.12' }}
       run: |
         pytest --no-output
     - name: codecov
