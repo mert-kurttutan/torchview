@@ -71,6 +71,7 @@ class ModuleNode(Node):
         self.output_shape: list[Tuple[int, ...]] = []
         self.output_nodes = NodeContainer() if output_nodes is None else output_nodes
         self.set_node_id()
+        self.attributes = str({k: str(v) for k, v in module_unit.__dict__.items() if isinstance(v, (int, float, str, bool, tuple))})
 
     def set_input_shape(self, input_shape: list[Tuple[int, ...]]) -> None:
         self.input_shape = input_shape
@@ -110,6 +111,7 @@ class FunctionNode(Node):
         parents: NodeContainer[Node] | Node | None = None,
         children: NodeContainer[Node] | Node | None = None,
         name: str = 'function-node',
+        attributes: str = None,
     ) -> None:
         super(FunctionNode, self).__init__(
             depth, parents, children, name
@@ -120,6 +122,7 @@ class FunctionNode(Node):
         self.output_shape: list[Tuple[int, ...]] = []
         self.set_node_id()
         self.output_nodes = self.children
+        self.attributes = attributes
 
     def set_input_shape(self, input_shape: list[Tuple[int, ...]]) -> None:
         self.input_shape = input_shape

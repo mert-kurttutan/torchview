@@ -247,6 +247,17 @@ class RecorderTensor(torch.Tensor):
         if not reduce_data_info(out, collect_tensor, OrderedSet()):
             return out
 
+        # record attributes of the function
+        # if an attribute is a tensor (or a group of tensors), record the shapes
+        def convert(arg: Any) -> str:
+            if isinstance(arg, torch.Tensor):
+                return f"Tensor[{(tuple(arg.shape))}]"
+            elif (isinstance(arg, tuple) or isinstance(arg, list)) and all(isinstance(t, torch.Tensor) for t in arg):
+                return " ".join([f"Tensor[{tuple(t.shape)}]" for t in arg])
+            return str(arg)
+
+        attributes = ", ".join([convert(arg) for arg in args])
+
         # Create function_node and connect to its parents tensor node
         cur_depth = next(iter(args_nodes)).depth
         input_context = next(iter(args_nodes)).context
@@ -254,7 +265,7 @@ class RecorderTensor(torch.Tensor):
             func.name if isinstance(func, ScriptMethod) else func.__name__
         )
         cur_node = FunctionNode(
-            func, cur_depth, args_nodes, name=func_name  # type: ignore[arg-type]
+            func, cur_depth, args_nodes, name=func_name, attributes=attributes # type: ignore[arg-type]
         )
 
         for i in args_nodes:
