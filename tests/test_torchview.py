@@ -395,3 +395,23 @@ def test_isolated_tensor(verify_result: Callable[..., Any]) -> None:
     )
 
     verify_result([model_graph])
+
+
+def test_change_color_scheme(verify_result: Callable[..., Any]) -> None:
+    input_data = [
+        torch.rand(1, 32),
+    ]
+    model = IsolatedTensor()
+    model_graph = draw_graph(
+        model,
+        input_data=input_data,
+        expand_nested=True,
+        depth=3,
+        graph_name='ColorSchemeChanged',
+        colors={'TensorNode': "aquamarine1",
+                'ModuleNode': "deepskyblue1",
+                'FunctionNode': "turquoise1"},
+        device='cpu',
+    )
+
+    verify_result([model_graph])

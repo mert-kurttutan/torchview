@@ -14,12 +14,6 @@ from .utils import updated_dict, assert_input_type
 
 COMPUTATION_NODES = Union[TensorNode, ModuleNode, FunctionNode]
 
-node2color = {
-    TensorNode: "lightyellow",
-    ModuleNode: "darkseagreen1",
-    FunctionNode: "aliceblue",
-}
-
 # TODO: Currently, we only use directed graphviz graph since DNN are
 # graphs except for e.g. graph neural network (GNN). Experiment on GNN
 # and see if undirected graphviz graph can be used to represent GNNs
@@ -62,6 +56,7 @@ class ComputationGraph:
         visual_graph: Digraph,
         root_container: NodeContainer[TensorNode],
         show_shapes: bool = True,
+        colors: dict | None = None,
         expand_nested: bool = False,
         hide_inner_tensors: bool = True,
         hide_module_functions: bool = True,
@@ -90,6 +85,15 @@ class ComputationGraph:
             'col_span': 2,
             'row_span': 2,
         }
+
+        self.node2color = {
+            'TensorNode': 'lightyellow',
+            'ModuleNode': 'darkseagreen1',
+            'FunctionNode': 'aliceblue',
+        }
+        if colors:
+            self.node2color.update(colors)
+
         self.reset_graph_history()
 
     def reset_graph_history(self) -> None:
@@ -356,7 +360,7 @@ class ComputationGraph:
             self.id_dict[node.node_id] = self.running_node_id
             self.running_node_id += 1
         label = self.get_node_label(node)
-        node_color = ComputationGraph.get_node_color(node)
+        node_color = self.get_node_color(node)
 
         if subgraph is None:
             subgraph = self.visual_graph
@@ -423,11 +427,8 @@ class ComputationGraph:
         size_str = str(size) + "," + str(size)
         self.visual_graph.graph_attr.update(size=size_str,)
 
-    @staticmethod
-    def get_node_color(
-        node: COMPUTATION_NODES
-    ) -> str:
-        return node2color[type(node)]
+    def get_node_color(self, node: COMPUTATION_NODES) -> str:
+        return self.node2color[node.__class__.__name__]
 
     def check_node(self, node: COMPUTATION_NODES) -> None:
         assert node.node_id != 'null', f'wrong id {node} {type(node)}'
