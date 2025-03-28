@@ -11,7 +11,7 @@ from torch._C import ScriptMethod
 from .computation_node import ModuleNode, FunctionNode, TensorNode, NodeContainer
 from .computation_graph import ComputationGraph
 
-from .utils import OrderedSet
+from .utils import OrderedSet, stringify_attributes
 
 # Needed for module wrapper and resetting
 _orig_module_forward = torch.nn.Module.__call__
@@ -248,15 +248,7 @@ class RecorderTensor(torch.Tensor):
             return out
 
         # record attributes of the function
-        # if an attribute is a tensor (or a group of tensors), record the shapes
-        def convert(arg: Any) -> str:
-            if isinstance(arg, torch.Tensor):
-                return f"Tensor[{(tuple(arg.shape))}]"
-            elif (isinstance(arg, tuple) or isinstance(arg, list)) and all(isinstance(t, torch.Tensor) for t in arg):
-                return " ".join([f"Tensor[{tuple(t.shape)}]" for t in arg])
-            return str(arg)
-
-        attributes = ", ".join([convert(arg) for arg in args])
+        attributes = stringify_attributes(args)
 
         # Create function_node and connect to its parents tensor node
         cur_depth = next(iter(args_nodes)).depth

@@ -112,7 +112,7 @@ def test_simple_OutputReused(verify_result: Callable[..., Any]) -> None:
 def test_simple_InputNotUsed(verify_result: Callable[..., Any]) -> None:
     model_graph_1 = draw_graph(
         InputNotUsed(), input_size=[(1, 128), (1, 2), (1, 2), (1, 64)],
-        graph_name='OutputNotUsed',
+        graph_name='InputNotUsed',
         expand_nested=True,
     )
 

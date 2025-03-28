@@ -7,7 +7,7 @@ import torch
 from torch import nn
 
 from .base_node import Node, NodeContainer
-from ..utils import is_generator_empty
+from ..utils import is_generator_empty, stringify_attributes
 
 
 class TensorNode(Node):
@@ -71,7 +71,7 @@ class ModuleNode(Node):
         self.output_shape: list[Tuple[int, ...]] = []
         self.output_nodes = NodeContainer() if output_nodes is None else output_nodes
         self.set_node_id()
-        self.attributes = str({k: str(v) for k, v in module_unit.__dict__.items() if isinstance(v, (int, float, str, bool, tuple))})
+        self.attributes = stringify_attributes(module_unit)
 
     def set_input_shape(self, input_shape: list[Tuple[int, ...]]) -> None:
         self.input_shape = input_shape
