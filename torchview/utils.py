@@ -74,6 +74,7 @@ def assert_input_type(
         f'{type(in_var)}. But, it should be {valid_input_types}'
     )
 
+
 def stringify_attributes(
         obj, max_depth=3, current_depth=0, seen=None
 ) -> str:
@@ -83,17 +84,9 @@ def stringify_attributes(
     - If `obj` is a `torch.Tensor`, only its shape and dtype are included.
     - Stops recursion at `max_depth`.
     """
-    if seen is None:
-        seen = set()
-
-    obj_id = id(obj)
-    if obj_id in seen:  # Prevent infinite recursion
-        return "<recursion>"
 
     if current_depth > max_depth:
         return "..."
-
-    seen.add(obj_id)
 
     if isinstance(obj, dict):
         return "{" + ", ".join(f"{k}: {stringify_attributes(v, max_depth, current_depth + 1, seen)}" for k, v in obj.items()) + "}"
@@ -107,9 +100,11 @@ def stringify_attributes(
             dtype = Tensor.dtype.__get__(obj)
             return f"Tensor(shape={tuple(shape)}, dtype={dtype})"
     elif hasattr(obj, "__dict__"):  # If it's a class instance
+        attributes_limit = 20 if current_depth == 0 else 5 # Attributes are more interesting on the base level
+        public_attributes = [(k, v) for k, v in vars(obj).items() if not k.startswith("_")]
         return f"{obj.__class__.__name__}(" + ", ".join(
             f"{k}={stringify_attributes(v, max_depth, current_depth + 1, seen)}"
-            for k, v in vars(obj).items() if not k.startswith("_")
-        ) + ")"
+            for k, v in public_attributes[:attributes_limit]
+        ) + ("..." if len(public_attributes) > attributes_limit else "") + ")"
     else:
         return repr(obj)
