@@ -112,9 +112,14 @@ def module_forward_wrapper(model_graph: ComputationGraph) -> Callable[..., Any]:
         # Create module_node and connect to its parents tensor node
         cur_depth = next(iter(input_nodes)).depth
         input_context = next(iter(input_nodes)).context
+
+        # record attributes of the module
+        attributes = stringify_attributes(mod)
+
         cur_node = ModuleNode(
             mod, cur_depth, input_nodes,  # type: ignore[arg-type]
-            name=type(mod).__name__
+            name=type(mod).__name__,
+            attributes=attributes
         )
         cur_node.set_input_shape(
             reduce_data_info([args, kwargs], collect_shape, [])
@@ -247,15 +252,16 @@ class RecorderTensor(torch.Tensor):
         if not reduce_data_info(out, collect_tensor, OrderedSet()):
             return out
 
-        # record attributes of the function
-        attributes = stringify_attributes(args)
-
         # Create function_node and connect to its parents tensor node
         cur_depth = next(iter(args_nodes)).depth
         input_context = next(iter(args_nodes)).context
         func_name = (
             func.name if isinstance(func, ScriptMethod) else func.__name__
         )
+
+        # record attributes of the function
+        attributes = stringify_attributes((args, kwargs))
+
         cur_node = FunctionNode(
             func, cur_depth, args_nodes, name=func_name, attributes=attributes # type: ignore[arg-type]
         )

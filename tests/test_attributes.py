@@ -63,7 +63,7 @@ def test_attributes_InputNotUsed() -> None:
     ]
 
     functions_verify = [
-        'add, [(1, 2), (1, 2)], [(1, 2)], [Tensor(shape=(1, 2), dtype=torch.float32), Tensor(shape=(1, 2), dtype=torch.float32)]'
+        'add, [(1, 2), (1, 2)], [(1, 2)], [[Tensor(shape=(1, 2), dtype=torch.float32), Tensor(shape=(1, 2), dtype=torch.float32)], {}]'
     ]
 
     # Ignore dtype in the comparison, as it can vary

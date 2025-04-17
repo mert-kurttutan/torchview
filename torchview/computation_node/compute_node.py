@@ -1,13 +1,13 @@
 from __future__ import annotations
 
-from typing import Tuple, Any
+from typing import Tuple, Any, Optional
 from collections.abc import Callable
 
 import torch
 from torch import nn
 
 from .base_node import Node, NodeContainer
-from ..utils import is_generator_empty, stringify_attributes
+from ..utils import is_generator_empty
 
 
 class TensorNode(Node):
@@ -60,6 +60,7 @@ class ModuleNode(Node):
         children: NodeContainer[Node] | Node | None = None,
         name: str = 'module-node',
         output_nodes: NodeContainer[Node] | None = None,
+        attributes: Optional[str] = None,
     ) -> None:
         super(ModuleNode, self).__init__(
             depth, parents, children, name
@@ -71,7 +72,7 @@ class ModuleNode(Node):
         self.output_shape: list[Tuple[int, ...]] = []
         self.output_nodes = NodeContainer() if output_nodes is None else output_nodes
         self.set_node_id()
-        self.attributes = stringify_attributes(module_unit)
+        self.attributes = attributes
 
     def set_input_shape(self, input_shape: list[Tuple[int, ...]]) -> None:
         self.input_shape = input_shape
@@ -111,7 +112,7 @@ class FunctionNode(Node):
         parents: NodeContainer[Node] | Node | None = None,
         children: NodeContainer[Node] | Node | None = None,
         name: str = 'function-node',
-        attributes: str = None,
+        attributes: Optional[str] = None,
     ) -> None:
         super(FunctionNode, self).__init__(
             depth, parents, children, name

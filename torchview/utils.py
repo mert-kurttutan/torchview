@@ -76,7 +76,7 @@ def assert_input_type(
 
 
 def stringify_attributes(
-        obj, max_depth=3, current_depth=0, seen=None
+        obj: Any, max_depth: int = 3, current_depth: int = 0
 ) -> str:
     """Recursively create a one-line string representation of an object's attributes.
 
@@ -89,21 +89,21 @@ def stringify_attributes(
         return "..."
 
     if isinstance(obj, dict):
-        return "{" + ", ".join(f"{k}: {stringify_attributes(v, max_depth, current_depth + 1, seen)}" for k, v in obj.items()) + "}"
+        return "{" + ", ".join(f"{k}: {stringify_attributes(v, max_depth, current_depth + 1)}" for k, v in obj.items()) + "}"
     elif isinstance(obj, (list, tuple)):
-        return "[" + ", ".join(stringify_attributes(v, max_depth, current_depth + 1, seen) for v in obj) + "]"
+        return "[" + ", ".join(stringify_attributes(v, max_depth, current_depth + 1) for v in obj) + "]"
     elif isinstance(obj, Tensor):
         if isinstance(obj, UninitializedParameter):
             return "Tensor(<uninitialized>)"
         else:
-            shape = Tensor.shape.__get__(obj)
-            dtype = Tensor.dtype.__get__(obj)
+            shape = Tensor.shape.__get__(obj) # type: ignore[attr-defined]
+            dtype = Tensor.dtype.__get__(obj) # type: ignore[attr-defined]
             return f"Tensor(shape={tuple(shape)}, dtype={dtype})"
     elif hasattr(obj, "__dict__"):  # If it's a class instance
         attributes_limit = 20 if current_depth == 0 else 5 # Attributes are more interesting on the base level
         public_attributes = [(k, v) for k, v in vars(obj).items() if not k.startswith("_")]
         return f"{obj.__class__.__name__}(" + ", ".join(
-            f"{k}={stringify_attributes(v, max_depth, current_depth + 1, seen)}"
+            f"{k}={stringify_attributes(v, max_depth, current_depth + 1)}"
             for k, v in public_attributes[:attributes_limit]
         ) + ("..." if len(public_attributes) > attributes_limit else "") + ")"
     else:
