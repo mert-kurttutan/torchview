@@ -25,6 +25,7 @@ class TensorNode(Node):
         is_aux: bool = False,
         main_node: TensorNode | None = None,
         parent_hierarchy: dict[int, ModuleNode | FunctionNode] | None = None,
+        collect_attributes: bool = False,
     ):
 
         super(TensorNode, self).__init__(
@@ -38,6 +39,7 @@ class TensorNode(Node):
         self.context = [] if context is None else context
         self.parent_hierarchy = {} if parent_hierarchy is None else parent_hierarchy
         self.set_node_id()
+        self.collect_attributes = collect_attributes
 
     def set_node_id(self, children_id: int | str | None = None) -> None:
         if children_id is None:

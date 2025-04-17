@@ -74,13 +74,15 @@ def creation_ops_wrapper(
         input_tensor = _orig_op(*args, **kwargs)
         current_depth = model_graph.context_tracker['current_depth']
         current_context = model_graph.context_tracker['current_context']
+        collect_attributes = model_graph.context_tracker['collect_attributes']
 
         input_recorder_tensor: RecorderTensor = input_tensor.as_subclass(RecorderTensor)
         input_node = TensorNode(
             tensor=input_recorder_tensor,
             depth=current_depth,  # type: ignore[arg-type]
             name='input-tensor' if current_depth == 0 else 'hidden-tensor',
-            context=current_context
+            context=current_context,
+            collect_attributes=collect_attributes # type: ignore[arg-type]
         )
         current_context.append(input_node)  # type: ignore[attr-defined]
         input_recorder_tensor.tensor_nodes = [input_node]
@@ -112,14 +114,15 @@ def module_forward_wrapper(model_graph: ComputationGraph) -> Callable[..., Any]:
         # Create module_node and connect to its parents tensor node
         cur_depth = next(iter(input_nodes)).depth
         input_context = next(iter(input_nodes)).context
+        collect_attributes = next(iter(input_nodes)).collect_attributes
 
         # record attributes of the module
-        attributes = stringify_attributes(mod)
+        attributes = stringify_attributes(mod) if collect_attributes else None
 
         cur_node = ModuleNode(
             mod, cur_depth, input_nodes,  # type: ignore[arg-type]
-            name=type(mod).__name__,
-            attributes=attributes
+            name = type(mod).__name__,
+            attributes = attributes
         )
         cur_node.set_input_shape(
             reduce_data_info([args, kwargs], collect_shape, [])
@@ -136,7 +139,7 @@ def module_forward_wrapper(model_graph: ComputationGraph) -> Callable[..., Any]:
         attach_kwargs = {
             'parents': cur_node, 'depth': cur_depth+1,
             'context': input_context[-1][cur_node], 'is_aux': True,
-            'name': 'auxiliary-tensor'
+            'name': 'auxiliary-tensor', 'collect_attributes': collect_attributes
         }
 
         traverse_data_inplace(
@@ -175,6 +178,7 @@ def module_forward_wrapper(model_graph: ComputationGraph) -> Callable[..., Any]:
         for output_node in output_nodes:
             cur_node.add_output_nodes(output_node)
             output_node.context = input_context
+            output_node.collect_attributes = collect_attributes
 
         cur_node.set_output_shape(reduce_data_info(out, collect_shape, []))
         return out
@@ -255,12 +259,14 @@ class RecorderTensor(torch.Tensor):
         # Create function_node and connect to its parents tensor node
         cur_depth = next(iter(args_nodes)).depth
         input_context = next(iter(args_nodes)).context
+        collect_attributes = next(iter(args_nodes)).collect_attributes
+
         func_name = (
             func.name if isinstance(func, ScriptMethod) else func.__name__
         )
 
         # record attributes of the function
-        attributes = stringify_attributes((args, kwargs))
+        attributes = stringify_attributes((args, kwargs)) if collect_attributes else None
 
         cur_node = FunctionNode(
             func, cur_depth, args_nodes, name=func_name, attributes=attributes # type: ignore[arg-type]
@@ -481,7 +487,8 @@ def insert_empty_pass_node(
         context=out_node.context, is_aux=False,
         parent_hierarchy={
             recorded_tensor.tensor_nodes[-1].depth: out_pass
-        }
+        },
+        collect_attributes=out_node.collect_attributes
     )
 
     out_node.context.append(passed_out_node)
