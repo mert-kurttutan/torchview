@@ -3,7 +3,8 @@ from __future__ import annotations
 from collections.abc import Iterable
 from typing import TypeVar, MutableSet, Any, Generator
 
-from torch.nn.parameter import Parameter
+from torch.nn.parameter import Parameter, UninitializedParameter
+from torch import Tensor
 
 T = TypeVar('T')
 
@@ -72,3 +73,38 @@ def assert_input_type(
         f'given input with wrong type. The input is of type: '
         f'{type(in_var)}. But, it should be {valid_input_types}'
     )
+
+
+def stringify_attributes(
+        obj: Any, max_depth: int = 3, current_depth: int = 0
+) -> str:
+    """Recursively create a one-line string representation of an object's attributes.
+
+    - Handles dictionaries, class instances, lists, and tuples.
+    - If `obj` is a `torch.Tensor`, only its shape and dtype are included.
+    - Stops recursion at `max_depth`.
+    """
+
+    if current_depth > max_depth:
+        return "..."
+
+    if isinstance(obj, dict):
+        return "{" + ", ".join(f"{k}: {stringify_attributes(v, max_depth, current_depth + 1)}" for k, v in obj.items()) + "}"
+    elif isinstance(obj, (list, tuple)):
+        return "[" + ", ".join(stringify_attributes(v, max_depth, current_depth + 1) for v in obj) + "]"
+    elif isinstance(obj, Tensor):
+        if isinstance(obj, UninitializedParameter):
+            return "Tensor(<uninitialized>)"
+        else:
+            shape = Tensor.shape.__get__(obj) # type: ignore[attr-defined]
+            dtype = Tensor.dtype.__get__(obj) # type: ignore[attr-defined]
+            return f"Tensor(shape={tuple(shape)}, dtype={dtype})"
+    elif hasattr(obj, "__dict__"):  # If it's a class instance
+        attributes_limit = 20 if current_depth == 0 else 5 # Attributes are more interesting on the base level
+        public_attributes = [(k, v) for k, v in vars(obj).items() if not k.startswith("_")]
+        return f"{obj.__class__.__name__}(" + ", ".join(
+            f"{k}={stringify_attributes(v, max_depth, current_depth + 1)}"
+            for k, v in public_attributes[:attributes_limit]
+        ) + ("..." if len(public_attributes) > attributes_limit else "") + ")"
+    else:
+        return repr(obj)

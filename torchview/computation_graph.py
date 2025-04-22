@@ -67,6 +67,7 @@ class ComputationGraph:
         hide_module_functions: bool = True,
         roll: bool = True,
         depth: int | float = 3,
+        collect_attributes: bool = False,
     ):
         '''
         Resets the running_node_id, id_dict when a new ComputationGraph is initialized.
@@ -80,6 +81,7 @@ class ComputationGraph:
         self.hide_module_functions = hide_module_functions
         self.roll = roll
         self.depth = depth
+        self.collect_attributes = collect_attributes
 
         # specs for html table, needed for node labels
         self.html_config = {
@@ -97,7 +99,11 @@ class ComputationGraph:
         needed for getting reproducible/deterministic node name and
         graphviz graphs. This is especially important for output tests
         '''
-        self.context_tracker = {'current_context': [], 'current_depth': 0}
+        self.context_tracker = {
+            'current_context': [],
+            'current_depth': 0,
+            'collect_attributes': self.collect_attributes,
+        }
         self.running_node_id: int = 0
         self.running_subgraph_id: int = 0
         self.id_dict: dict[str, int] = {}

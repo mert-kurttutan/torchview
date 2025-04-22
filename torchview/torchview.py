@@ -50,6 +50,7 @@ def draw_graph(
     save_graph: bool = False,
     filename: str | None = None,
     directory: str = '.',
+    collect_attributes: bool = False,
     **kwargs: Any,
 ) -> ComputationGraph:
     '''Returns visual representation of the input Pytorch Module with
@@ -158,6 +159,10 @@ def draw_graph(
             directory in which to store graphviz output files.
             Default: .
 
+        collect_attributes (bool):
+            If true, nodes keep attributes of modules and functions
+            Default: False
+
     Returns:
         ComputationGraph object that contains visualization of the input
         pytorch model in the form of graphviz Digraph object
@@ -209,12 +214,12 @@ def draw_graph(
     )
 
     input_recorder_tensor, kwargs_record_tensor, input_nodes = process_input(
-        input_data, input_size, kwargs, device, dtypes
+        input_data, input_size, kwargs, device, dtypes, collect_attributes
     )
 
     model_graph = ComputationGraph(
         visual_graph, input_nodes, show_shapes, expand_nested,
-        hide_inner_tensors, hide_module_functions, roll, depth
+        hide_inner_tensors, hide_module_functions, roll, depth, collect_attributes
     )
 
     forward_prop(
@@ -274,6 +279,7 @@ def process_input(
     kwargs: Any,
     device: torch.device | str,
     dtypes: list[torch.dtype] | None = None,
+    collect_attributes: bool = False,
 ) -> tuple[CORRECTED_INPUT_DATA_TYPE, Any, NodeContainer[TensorNode]]:
     """Reads sample input data to get the input size."""
     x = None
@@ -289,7 +295,7 @@ def process_input(
         if dtypes is None:
             dtypes = [torch.float] * len(input_size)
         correct_input_size = get_correct_input_sizes(input_size)
-        x = get_input_tensor(correct_input_size, dtypes, device)
+        x = get_input_tensor(correct_input_size, dtypes, device, collect_attributes)
 
     input_data_node: NodeContainer[TensorNode] = (
         reduce_data_info(
@@ -382,7 +388,8 @@ def set_device(data: Any, device: torch.device | str) -> Any:
 
 
 def get_recorder_tensor(
-    input_tensor: torch.Tensor
+    input_tensor: torch.Tensor,
+    collect_attributes: bool = False,
 ) -> RecorderTensor:
     '''returns RecorderTensor version of input_tensor with
     TensorNode instance attached to it'''
@@ -394,6 +401,7 @@ def get_recorder_tensor(
         tensor=input_recorder_tensor,
         depth=0,
         name='input-tensor',
+        collect_attributes = collect_attributes,
     )
 
     input_recorder_tensor.tensor_nodes.append(input_node)
@@ -404,13 +412,14 @@ def get_input_tensor(
     input_size: CORRECTED_INPUT_SIZE_TYPE,
     dtypes: list[torch.dtype],
     device: torch.device | str,
+    collect_attributes: bool = False,
 ) -> list[RecorderTensor]:
     """Get input_tensor for use in model.forward()"""
     x = []
     for size, dtype in zip(input_size, dtypes):
         input_tensor = torch.rand(*size)
         x.append(
-            get_recorder_tensor(input_tensor.to(device).type(dtype))
+            get_recorder_tensor(input_tensor.to(device).type(dtype), collect_attributes)
         )
     return x
 
