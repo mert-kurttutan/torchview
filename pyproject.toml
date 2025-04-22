@@ -1,6 +1,6 @@
 [project]
 name = "torchview"
-version = "0.2.6"
+version = "0.2.7"
 description = "Visualization of Pytorch Models"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -20,7 +20,6 @@ maintainers = [
 classifiers = [
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
@@ -30,8 +29,8 @@ classifiers = [
 dependencies = ["graphviz"]
 
 [build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
+requires = ["flit_core<4"]
+build-backend = "flit_core.buildapi"
 
 [project.urls]
 homepage = "https://github.com/mert-kurttutan/torchview"
@@ -59,14 +58,6 @@ dev = [
     "mkdocstrings",
     "mkdocstrings-python",
 ]
-
-
-[tool.setuptools]
-# Scan the project directory with the default parameters
-packages = [
-    'torchview',
-    'torchview.computation_node'
-]  
 
 [tool.setuptools.package-data]
 torchview = ["py.typed"]
@@ -121,6 +112,7 @@ disable = [
 ]
 
 [tool.ruff]
+src = ["src"]
 select = [
     "E",  # pycodestyle errors
     "W",  # pycodestyle warnings
