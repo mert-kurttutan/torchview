@@ -49,7 +49,6 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        graphviz-version: ["0.20"]
         id-number: ${{fromJson(needs.configure.outputs.ID_LIST)}}
     steps:
     - uses: actions/checkout@v3.1.0
