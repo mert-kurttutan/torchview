@@ -5,37 +5,35 @@ on:
   release:
     types:
       - "published"
-  pull_request:
-    branches: [ main ]
 
 jobs:
   tests:
     uses: ./.github/workflows/test.yml
 
   # TODO figure out how to deduplicate steps
-  # upload_to_pypi:
-  #   needs: tests
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v3.1.0
-  #     - name: Set up Python 3.13
-  #       uses: actions/setup-python@v4.3.0
-  #       with:
-  #         python-version: 3.13
+  upload_to_pypi:
+    needs: tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.1.0
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v4.3.0
+        with:
+          python-version: 3.13
 
-  #     - name: Pip install python dependencies
-  #       run: |
-  #         python -m pip install --upgrade pip
-  #         python3 -m pip install --upgrade build
-  #         python3 scripts/transform_readme.py --target pypi
-  #       shell: bash
-  #     - name: Upload to PyPI
-  #       shell: bash -l {0}
-  #       env:
-  #         PYPI_USER: ${{ secrets.PYPI_USER }}
-  #         PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
-  #       run: |
-  #         set -eux
-  #         pip install twine
-  #         python3 -m build
-  #         twine upload --username "$PYPI_USER" --password "$PYPI_TOKEN" dist/* --verbose
+      - name: Pip install python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python3 -m pip install --upgrade build
+          python3 scripts/transform_readme.py --target pypi
+        shell: bash
+      - name: Upload to PyPI
+        shell: bash -l {0}
+        env:
+          PYPI_USER: ${{ secrets.PYPI_USER }}
+          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+        run: |
+          set -eux
+          pip install twine
+          python3 -m build
+          twine upload --username "$PYPI_USER" --password "$PYPI_TOKEN" dist/* --verbose
