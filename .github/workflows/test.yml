@@ -1,5 +1,6 @@
 name: testing
 on:
+  workflow_call:
   push:
     branches: [ main ]
     paths:
