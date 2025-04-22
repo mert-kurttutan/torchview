@@ -2,7 +2,6 @@
 import sys
 from pathlib import Path
 from typing import Iterable, Callable, Any
-
 import pytest
 import graphviz
 

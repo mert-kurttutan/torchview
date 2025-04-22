@@ -3,7 +3,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - torchview/**
+      - src/torchview/**
       - .github/**
       - pyproject.toml
   pull_request:
@@ -49,7 +49,6 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        graphviz-version: ["0.20"]
         id-number: ${{fromJson(needs.configure.outputs.ID_LIST)}}
     steps:
     - uses: actions/checkout@v3.1.0
@@ -122,10 +121,10 @@ jobs:
     - name: pytest
       if: ${{ steps.set-version.outputs.PYTHON_VERSION == '3.12' }}
       run: |
-        pytest --cov=torchview --cov-report= --durations=0
+        python -m pytest --cov=torchview --cov-report= --durations=0
     - name: pytest
       if: ${{ steps.set-version.outputs.PYTHON_VERSION != '3.12' }}
       run: |
-        pytest --no-output
+        python -m pytest --no-output
     - name: codecov
       uses: codecov/codecov-action@v3.1.1

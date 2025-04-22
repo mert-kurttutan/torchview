@@ -14,7 +14,6 @@ jobs:
       matrix:
         os: [ubuntu-latest,]
         python-version: ["3.7", "3.8", "3.9", "3.10"]
-        graphviz-version: ["0.20"]
         torch-version-map: [
           {torch: "1.7", torchvision: "0.8", torchtext: "0.8"},
           {torch: "1.8", torchvision: "0.9", torchtext: "0.9"},
@@ -27,15 +26,12 @@ jobs:
         include:
           - os: ubuntu-latest
             python-version: "3.9"
-            graphviz-version: "0.20"
             torch-version-map: {torch: "1.7.1", torchvision: "0.8.2", torchtext: "0.8.1"}
           - os: macos-latest
             python-version: "3.10"
-            graphviz-version: "0.20"
             torch-version-map: {torch: "1.13", torchvision: "0.14", torchtext: "0.14"}
           - os: windows-latest
             python-version: "3.10"
-            graphviz-version: "0.20"
             torch-version-map: {torch: "1.13", torchvision: "0.14", torchtext: "0.14"}
 
         exclude:
@@ -92,8 +88,7 @@ jobs:
     - name: Pip install python dependencies
       run: |
         python -m pip install --upgrade pip
-        python -m pip install mypy pytest pytest-cov
-        pip install graphviz==${{ matrix.graphviz-version }}
+        python -m pip install ".[dev]"
         pip install torch==${{ matrix.torch-version-map.torch }} \
           torchvision==${{ matrix.torch-version-map.torchvision }} \
           torchtext==${{ matrix.torch-version-map.torchtext }}
@@ -105,11 +100,11 @@ jobs:
     - name: pytest
       if: ${{ matrix.torch-version-map.torch == '1.13' }}
       run: |
-        pytest --cov=torchview --cov-report= --durations=0
+        python -m pytest --cov=torchview --cov-report= --durations=0
     - name: pytest
       if: ${{ matrix.torch-version-map.torch != '1.13' }}
       run: |
-        pytest --no-output
+        python -m pytest --no-output
     - name: codecov
       uses: codecov/codecov-action@v3.1.1
 
@@ -127,7 +122,6 @@ jobs:
       - name: Pip install python dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install mypy pytest pytest-cov
           python3 -m pip install --upgrade build
           python3 scripts/transform_readme.py --target pypi
         shell: bash
