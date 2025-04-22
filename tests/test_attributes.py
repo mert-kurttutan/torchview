@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import re
 
 from torchview.computation_node import ModuleNode, FunctionNode
