@@ -20,10 +20,10 @@ jobs:
       ID_LIST: ${{ steps.configure.outputs.ID_LIST }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: Install the latest version of uv
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5.4.2
         with:
           version: "latest"
           python-version: 3.12
@@ -33,7 +33,7 @@ jobs:
       #   # this install python globally
       #   run: uv python install --preview
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@8d9ed9ac5c53483de85588cdf95a591a75ab9f55 # v5.5.0
         with:
           python-version: 3.12
 
@@ -52,7 +52,7 @@ jobs:
         os: [ubuntu-latest]
         id-number: ${{fromJson(needs.configure.outputs.ID_LIST)}}
     steps:
-    - uses: actions/checkout@v3.1.0
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
     - name: Set up version variables
       id: set-version
       run: |
@@ -90,7 +90,7 @@ jobs:
         echo "::endgroup::"
       shell: bash
     - name: Install the latest version of uv
-      uses: astral-sh/setup-uv@v5
+      uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5.4.2
       with:
         version: "latest"
         python-version: ${{ steps.set-version.outputs.PYTHON_VERSION }}
@@ -99,7 +99,7 @@ jobs:
     # - name: Set up Python
     #   run: uv python install --preview
 
-    - uses: actions/setup-python@v5
+    - uses: actions/setup-python@8d9ed9ac5c53483de85588cdf95a591a75ab9f55 # v5.5.0
       with:
         python-version: ${{ steps.set-version.outputs.PYTHON_VERSION }}
 
@@ -128,4 +128,4 @@ jobs:
       run: |
         python -m pytest --no-output
     - name: codecov
-      uses: codecov/codecov-action@v3.1.1
+      uses: codecov/codecov-action@ad3126e916f78f00edff4ed0317cf185271ccc2d # 5.4.2
