@@ -8,105 +8,7 @@ on:
 
 jobs:
   tests:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest,]
-        python-version: ["3.7", "3.8", "3.9", "3.10"]
-        torch-version-map: [
-          {torch: "1.7", torchvision: "0.8", torchtext: "0.8"},
-          {torch: "1.8", torchvision: "0.9", torchtext: "0.9"},
-          {torch: "1.9", torchvision: "0.10", torchtext: "0.10"},
-          {torch: "1.10", torchvision: "0.11.1", torchtext: "0.11"},
-          {torch: "1.11", torchvision: "0.12", torchtext: "0.12"},
-          {torch: "1.12", torchvision: "0.13", torchtext: "0.13"},
-          {torch: "1.13", torchvision: "0.14", torchtext: "0.14"},
-        ]
-        include:
-          - os: ubuntu-latest
-            python-version: "3.9"
-            torch-version-map: {torch: "1.7.1", torchvision: "0.8.2", torchtext: "0.8.1"}
-          - os: macos-latest
-            python-version: "3.10"
-            torch-version-map: {torch: "1.13", torchvision: "0.14", torchtext: "0.14"}
-          - os: windows-latest
-            python-version: "3.10"
-            torch-version-map: {torch: "1.13", torchvision: "0.14", torchtext: "0.14"}
-
-        exclude:
-          - python-version: 3.7
-            torch-version-map: {torch: "1.11", torchvision: "0.12", torchtext: "0.12"}
-          - python-version: 3.7
-            torch-version-map: {torch: "1.12", torchvision: "0.13", torchtext: "0.13"}
-          - python-version: 3.7
-            torch-version-map: {torch: "1.13", torchvision: "0.14", torchtext: "0.14"}
-          
-          - python-version: 3.9
-            torch-version-map: {torch: "1.7", torchvision: "0.8", torchtext: "0.8"}
-
-          - python-version: 3.10
-            torch-version-map: {torch: "1.7", torchvision: "0.8", torchtext: "0.8"}
-          - python-version: 3.10
-            torch-version-map: {torch: "1.8", torchvision: "0.9", torchtext: "0.9"}
-          - python-version: 3.10
-            torch-version-map: {torch: "1.9", torchvision: "0.10", torchtext: "0.10"}
-          - python-version: 3.10
-            torch-version-map: {torch: "1.10", torchvision: "0.11.1", torchtext: "0.11"}
-
-    steps:
-    - uses: actions/checkout@v3.1.0
-    - name: Install system dependencies
-      run: |
-        if [ "$RUNNER_OS" == "Linux" ]; then
-          echo "::group::Run sudo apt-get update"
-          sudo apt-get update
-          echo "::endgroup::"
-          echo "::group::Run sudo apt-get install graphviz"
-          sudo apt-get install graphviz
-        elif [ "$RUNNER_OS" == "macOS" ]; then
-          echo "::group::Run brew install graphviz"
-          brew install graphviz
-        elif [ "$RUNNER_OS" == "Windows" ]; then
-          echo "::group::Run choco install graphviz"
-          choco install graphviz
-        else
-          echo "$RUNNER_OS not supported"
-          exit 1
-        echo "::endgroup::"
-        fi
-        echo "::group:: check dot version"
-        DOT_VERSION="$(dot -V 2>&1)"
-        echo "::notice::dot installed ${DOT_VERSION#dot - }"
-        echo "::endgroup::"
-      shell: bash
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v4.3.0
-      with:
-        python-version: ${{ matrix.python-version }}
-
-    - name: Pip install python dependencies
-      run: |
-        python -m pip install --upgrade pip
-        python -m pip install ".[dev]"
-        pip install torch==${{ matrix.torch-version-map.torch }} \
-          torchvision==${{ matrix.torch-version-map.torchvision }} \
-          torchtext==${{ matrix.torch-version-map.torchtext }}
-      shell: bash
-    - name: mypy
-      if: ${{ matrix.torch-version-map.torch == '1.13' }}
-      run: |
-        mypy .
-    - name: pytest
-      if: ${{ matrix.torch-version-map.torch == '1.13' }}
-      run: |
-        python -m pytest --cov=torchview --cov-report= --durations=0
-    - name: pytest
-      if: ${{ matrix.torch-version-map.torch != '1.13' }}
-      run: |
-        python -m pytest --no-output
-    - name: codecov
-      uses: codecov/codecov-action@v3.1.1
+    uses: ./.github/workflows/test.yml
 
   # TODO figure out how to deduplicate steps
   upload_to_pypi:
@@ -114,10 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.1.0
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python 3.13
         uses: actions/setup-python@v4.3.0
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: 3.13
 
       - name: Pip install python dependencies
         run: |
