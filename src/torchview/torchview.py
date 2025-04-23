@@ -11,6 +11,8 @@ import torch
 from torch import nn
 from torch.jit import ScriptModule
 
+from functools import partial
+
 from .computation_node import NodeContainer
 from .computation_graph import ComputationGraph
 from .computation_node import TensorNode
@@ -284,10 +286,10 @@ def process_input(
     """Reads sample input data to get the input size."""
     x = None
     correct_input_size = []
-    kwargs_recorder_tensor = traverse_data(kwargs, get_recorder_tensor, type)
+    kwargs_recorder_tensor = traverse_data(kwargs, partial(get_recorder_tensor, collect_attributes=collect_attributes), type)
     if input_data is not None:
         x = set_device(input_data, device)
-        x = traverse_data(x, get_recorder_tensor, type)
+        x = traverse_data(x, partial(get_recorder_tensor, collect_attributes=collect_attributes), type)
         if isinstance(x, RecorderTensor):
             x = [x]
 

@@ -279,7 +279,8 @@ class RecorderTensor(torch.Tensor):
         attach_kwargs = {
             'parents': cur_node, 'depth': cur_depth, "context": input_context,
             'is_aux': False, 'parent_hierarchy': {cur_depth: cur_node},
-            'name': 'output-tensor' if cur_depth == 0 else 'hidden-tensor'
+            'name': 'output-tensor' if cur_depth == 0 else 'hidden-tensor',
+            'collect_attributes': collect_attributes
         }
         traverse_data_inplace(out, attach_node(attach_kwargs))
 
