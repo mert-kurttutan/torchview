@@ -423,11 +423,13 @@ class ComputationGraph:
         so far they seem to work fine.
         """
         # Get the approximate number of nodes and edges
-        num_rows = len(self.visual_graph.body)
+        # num_rows = len(self.visual_graph.body)
+        num_rows = self.visual_graph.num_rows()
         content_size = num_rows * size_per_element
         size = scale * max(min_size, content_size)
         size_str = str(size) + "," + str(size)
-        self.visual_graph.graph_attr.update(size=size_str,)
+        # self.visual_graph.graph_attr.update(size=size_str,)
+        self.visual_graph.update_graph_attr(size=size_str)
 
     @staticmethod
     def get_node_color(

@@ -6,7 +6,8 @@ from typing import (
     Iterator, List
 )
 
-import graphviz
+# import graphviz
+import laypy
 import torch
 from torch import nn
 from torch.jit import ScriptModule
@@ -209,11 +210,11 @@ def draw_graph(
     edge_attr = {
         'fontsize': '10',
     }
-    visual_graph = graphviz.Digraph(
-        name=graph_name, engine='dot', strict=strict,
-        graph_attr=graph_attr, node_attr=node_attr, edge_attr=edge_attr,
-        directory=directory, filename=filename
-    )
+    visual_graph = laypy.Digraph()
+    #     name=graph_name, strict=strict,
+    #     graph_attr=graph_attr, node_attr=node_attr, edge_attr=edge_attr,
+    #     directory=directory, filename=filename
+    # )
 
     input_recorder_tensor, kwargs_record_tensor, input_nodes = process_input(
         input_data, input_size, kwargs, device, dtypes, collect_attributes
@@ -232,7 +233,7 @@ def draw_graph(
     model_graph.fill_visual_graph()
 
     if save_graph:
-        model_graph.visual_graph.render(format='png')
+        model_graph.visual_graph.render(format='svg', file_name="out.svg")
     return model_graph
 
 
