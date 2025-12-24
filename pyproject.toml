@@ -51,6 +51,7 @@ dev = [
     "packaging",
     "mkdocs",
     "mkdocs-material",
+    "mkdocs-static-i18n",
     "mkdocs-redirects",
     "mdformat",
     "mdformat-mkdocs",
