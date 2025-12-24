@@ -1,4 +1,6 @@
 site_name: torchview Docs
+repo_name: mert-kurttutan/torchview
+repo_url: https://github.com/mert-kurttutan/torchview
 theme:
   name: "material"
   palette:
