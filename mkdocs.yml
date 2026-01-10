@@ -72,8 +72,8 @@ markdown_extensions:
 extra:
   alternate:
     - name: English
-      link: /
+      link: /torchview/
       lang: en
     - name: 中文
-      link: /zh/
+      link: /torchview/zh/
       lang: zh
