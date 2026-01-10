@@ -51,6 +51,7 @@ dev = [
     "packaging",
     "mkdocs",
     "mkdocs-material",
+    "mkdocs-glightbox",
     "mkdocs-static-i18n",
     "mkdocs-redirects",
     "mdformat",
