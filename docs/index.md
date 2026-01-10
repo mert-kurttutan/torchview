@@ -8,6 +8,8 @@
 [![codecov](https://codecov.io/gh/mert-kurttutan/torchview/branch/main/graph/badge.svg)](https://codecov.io/gh/mert-kurttutan/torchview)
 [![Downloads](https://pepy.tech/badge/torchview)](https://pepy.tech/project/torchview)
 
+![banner](images/banner.png)
+
 Torchview provides visualization of pytorch models in the form of visual graphs. Visualization includes tensors, modules, torch.functions and info such as input/output shapes.
 
 Pytorch version of `plot_model of keras` (and more)

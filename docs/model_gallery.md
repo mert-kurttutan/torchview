@@ -1,27 +1,84 @@
 # Model Gallery
 
-This page is a **results-only gallery** for `torchview` visualizations (final graphs), separate from the tutorial pages that explain API parameters.
+This page showcases visualizations of classic deep learning models generated using `torchview`.
 
-The goal is to showcase the *final visual results* for different architectures, without turning this page into a parameter tutorial.
+All images are in **SVG vector format**. You can **click on any image** or **zoom in** your browser to view all details.
 
-## Feed-forward / MLP
+---
 
-![MLP](https://user-images.githubusercontent.com/88637659/206188796-4b9e57ef-8d33-469b-b8e0-2c47b06fe70b.png)
+## 🖼️ Computer Vision
 
-## Recurrent (Rolled)
+### ResNet-50
+![ResNet-50](images/ResNet50.svg)
 
-![RNN Rolled](https://user-images.githubusercontent.com/88637659/206644016-23a89c81-1d6a-4558-82f4-33f179b345f3.png)
+**Residual Network**: A classic CNN architecture that solves the training challenges of deep networks through skip connections. The Bottleneck structure is clearly shown in the visualization.
 
-## ResNet / Skip Connections
+### Inception V3
+![Inception V3](images/InceptionV3.svg)
 
-![ResNet Expanded](https://user-images.githubusercontent.com/88637659/206036653-293f8ce7-04dd-4ac6-9de8-0061de505bba.png)
+**Inception Architecture**: Known for its multi-scale branches (Inception Modules), this architecture is both complex and efficient.
 
-## Contribute a new example
+### Vision Transformer (ViT)
+![ViT](images/ViT_B_16.svg)
 
-Please open a PR adding:
+**ViT**: Applies the Transformer architecture directly to image patches, completely eliminating convolutional operations.
 
-- An image (or a link to an image) of the final graph
-- The model type (CV/NLP/RecSys/…)
-- A short caption (1–2 lines)
+### FCN (Fully Convolutional Network)
+![FCN](images/FCN_ResNet50.svg)
 
+**Fully Convolutional Network**: A classic model for semantic segmentation, built on a ResNet-50 backbone.
 
+---
+
+## 📝 Natural Language Processing (NLP)
+
+### Transformer Encoder (BERT-style)
+![Transformer Encoder](images/Transformer_Encoder.svg)
+
+**Transformer Encoder**: Contains Multi-Head Attention and Feed Forward Network, serving as the foundation for models like BERT.
+
+### Seq2Seq with Attention
+![Seq2Seq](images/Seq2Seq_Attention.svg)
+
+**Sequence-to-Sequence with Attention**: A classic machine translation architecture. The visualization shows the Encoder (left) and Decoder (right) with the Attention computation process in between (horizontal layout).
+
+---
+
+## 🛒 Recommender Systems
+
+### Wide & Deep
+![Wide & Deep](images/Wide_and_Deep.svg)
+
+**Wide & Deep**: A classic recommendation architecture that combines linear models (Wide, for memorization) with deep neural networks (Deep, for generalization).
+
+---
+
+## 🎨 Generative Models
+
+### VAE (Variational Autoencoder)
+![VAE](images/VAE.svg)
+
+**Variational Autoencoder**: The visualization shows the complete generative pipeline: Encoder → Reparameterization (sampling) → Decoder.
+
+---
+
+## ⭐ Special Architectures
+
+### WaveNet
+![WaveNet](images/WaveNet.svg)
+
+**WaveNet**: A generative model for speech synthesis. The visualization clearly shows the stacked residual blocks based on dilated convolutions (horizontal layout).
+
+### GCN (Graph Convolutional Network)
+![GCN](images/GCN.svg)
+
+**Graph Convolutional Network**: A neural network for processing graph-structured data.
+
+---
+
+## How to Contribute
+
+If you'd like to add new models to the gallery, please ensure:
+1. The model architecture is representative.
+2. Use `torchview` to generate SVG format for clarity.
+3. Submit a PR to our repository.

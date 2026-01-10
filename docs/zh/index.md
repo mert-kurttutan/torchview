@@ -8,6 +8,8 @@
 [![codecov](https://codecov.io/gh/mert-kurttutan/torchview/branch/main/graph/badge.svg)](https://codecov.io/gh/mert-kurttutan/torchview/branch/main)
 [![Downloads](https://pepy.tech/badge/torchview)](https://pepy.tech/project/torchview)
 
+![banner](images/banner.png)
+
 Torchview 用于将 PyTorch 模型可视化为**计算图**（visual graph）。可视化内容包括：tensor、module、`torch` 函数调用，以及输入/输出 shape 等信息。
 
 它可以理解为 PyTorch 版本的 Keras `plot_model`（并且支持更多细节）。
