@@ -6,16 +6,16 @@
       
       
       
-        <link rel="prev" href="../tutorial/example_introduction/">
+        <link rel="prev" href="../developer/torch_function_notes/">
       
       
-        <link rel="next" href="docs/">
+        <link rel="next" href="../used_by/">
       
       
         
           <link rel="alternate" href="./" hreflang="en">
         
-          <link rel="alternate" href="../zh/developer/" hreflang="zh">
+          <link rel="alternate" href="../zh/model_gallery/" hreflang="zh">
         
       
       
@@ -24,7 +24,7 @@
     
     
       
-        <title>Overview - torchview Docs</title>
+        <title>Model Gallery - torchview Docs</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#developer" class="md-skip">
+        <a href="#model-gallery" class="md-skip">
           Skip to content
         </a>
       
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Model Gallery
             
           </span>
         </div>
@@ -175,7 +175,7 @@
           </li>
         
           <li class="md-select__item">
-            <a href="../zh/developer/" hreflang="zh" class="md-select__link">
+            <a href="../zh/model_gallery/" hreflang="zh" class="md-select__link">
               中文
             </a>
           </li>
@@ -427,20 +427,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -461,7 +459,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -476,19 +474,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../developer/" class="md-nav__link">
         
   
   
@@ -504,7 +493,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -517,7 +505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="docs/" class="md-nav__link">
+      <a href="../developer/docs/" class="md-nav__link">
         
   
   
@@ -545,7 +533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="rolling_graph/" class="md-nav__link">
+      <a href="../developer/rolling_graph/" class="md-nav__link">
         
   
   
@@ -573,7 +561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="torch_function_notes/" class="md-nav__link">
+      <a href="../developer/torch_function_notes/" class="md-nav__link">
         
   
   
@@ -605,10 +593,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../model_gallery/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Model Gallery
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -624,6 +639,232 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#computer-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🖼️ Computer Vision
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🖼️ Computer Vision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resnet-50" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResNet-50
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inception-v3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inception V3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vision-transformer-vit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vision Transformer (ViT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fcn-fully-convolutional-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FCN (Fully Convolutional Network)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#natural-language-processing-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 Natural Language Processing (NLP)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 Natural Language Processing (NLP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transformer-encoder-bert-style" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transformer Encoder (BERT-style)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seq2seq-with-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seq2Seq with Attention
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommender-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛒 Recommender Systems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛒 Recommender Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wide-deep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wide &amp; Deep
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generative-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎨 Generative Models
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎨 Generative Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vae-variational-autoencoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VAE (Variational Autoencoder)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⭐ Special Architectures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⭐ Special Architectures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wavenet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WaveNet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gcn-graph-convolutional-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GCN (Graph Convolutional Network)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-contribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Contribute
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -675,6 +916,220 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#computer-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🖼️ Computer Vision
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🖼️ Computer Vision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resnet-50" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResNet-50
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inception-v3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inception V3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vision-transformer-vit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vision Transformer (ViT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fcn-fully-convolutional-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FCN (Fully Convolutional Network)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#natural-language-processing-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 Natural Language Processing (NLP)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 Natural Language Processing (NLP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transformer-encoder-bert-style" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transformer Encoder (BERT-style)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seq2seq-with-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seq2Seq with Attention
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommender-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛒 Recommender Systems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛒 Recommender Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wide-deep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wide &amp; Deep
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generative-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎨 Generative Models
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎨 Generative Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vae-variational-autoencoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VAE (Variational Autoencoder)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⭐ Special Architectures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⭐ Special Architectures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wavenet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WaveNet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gcn-graph-convolutional-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GCN (Graph Convolutional Network)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-contribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Contribute
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -693,8 +1148,55 @@
   
 
 
-<h1 id="developer">Developer</h1>
-<p>This part of the documentation is about the developer part of the library. For instance, it provides a documentaion on the algorithms used, visual illustration to make the algorithms clearer.</p>
+<h1 id="model-gallery">Model Gallery</h1>
+<p>This page showcases visualizations of classic deep learning models generated using <code>torchview</code>.</p>
+<p>All images are in <strong>SVG vector format</strong>. You can <strong>click on any image</strong> or <strong>zoom in</strong> your browser to view all details.</p>
+<hr>
+<h2 id="computer-vision">🖼️ Computer Vision</h2>
+<h3 id="resnet-50">ResNet-50</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/ResNet50.svg" data-desc-position="bottom"><img alt="ResNet-50" src="../images/ResNet50.svg"></a></p>
+<p><strong>Residual Network</strong>: A classic CNN architecture that solves the training challenges of deep networks through skip connections. The Bottleneck structure is clearly shown in the visualization.</p>
+<h3 id="inception-v3">Inception V3</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/InceptionV3.svg" data-desc-position="bottom"><img alt="Inception V3" src="../images/InceptionV3.svg"></a></p>
+<p><strong>Inception Architecture</strong>: Known for its multi-scale branches (Inception Modules), this architecture is both complex and efficient.</p>
+<h3 id="vision-transformer-vit">Vision Transformer (ViT)</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/ViT_B_16.svg" data-desc-position="bottom"><img alt="ViT" src="../images/ViT_B_16.svg"></a></p>
+<p><strong>ViT</strong>: Applies the Transformer architecture directly to image patches, completely eliminating convolutional operations.</p>
+<h3 id="fcn-fully-convolutional-network">FCN (Fully Convolutional Network)</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/FCN_ResNet50.svg" data-desc-position="bottom"><img alt="FCN" src="../images/FCN_ResNet50.svg"></a></p>
+<p><strong>Fully Convolutional Network</strong>: A classic model for semantic segmentation, built on a ResNet-50 backbone.</p>
+<hr>
+<h2 id="natural-language-processing-nlp">📝 Natural Language Processing (NLP)</h2>
+<h3 id="transformer-encoder-bert-style">Transformer Encoder (BERT-style)</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/Transformer_Encoder.svg" data-desc-position="bottom"><img alt="Transformer Encoder" src="../images/Transformer_Encoder.svg"></a></p>
+<p><strong>Transformer Encoder</strong>: Contains Multi-Head Attention and Feed Forward Network, serving as the foundation for models like BERT.</p>
+<h3 id="seq2seq-with-attention">Seq2Seq with Attention</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/Seq2Seq_Attention.svg" data-desc-position="bottom"><img alt="Seq2Seq" src="../images/Seq2Seq_Attention.svg"></a></p>
+<p><strong>Sequence-to-Sequence with Attention</strong>: A classic machine translation architecture. The visualization shows the Encoder (left) and Decoder (right) with the Attention computation process in between (horizontal layout).</p>
+<hr>
+<h2 id="recommender-systems">🛒 Recommender Systems</h2>
+<h3 id="wide-deep">Wide &amp; Deep</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/Wide_and_Deep.svg" data-desc-position="bottom"><img alt="Wide &amp; Deep" src="../images/Wide_and_Deep.svg"></a></p>
+<p><strong>Wide &amp; Deep</strong>: A classic recommendation architecture that combines linear models (Wide, for memorization) with deep neural networks (Deep, for generalization).</p>
+<hr>
+<h2 id="generative-models">🎨 Generative Models</h2>
+<h3 id="vae-variational-autoencoder">VAE (Variational Autoencoder)</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/VAE.svg" data-desc-position="bottom"><img alt="VAE" src="../images/VAE.svg"></a></p>
+<p><strong>Variational Autoencoder</strong>: The visualization shows the complete generative pipeline: Encoder → Reparameterization (sampling) → Decoder.</p>
+<hr>
+<h2 id="special-architectures">⭐ Special Architectures</h2>
+<h3 id="wavenet">WaveNet</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/WaveNet.svg" data-desc-position="bottom"><img alt="WaveNet" src="../images/WaveNet.svg"></a></p>
+<p><strong>WaveNet</strong>: A generative model for speech synthesis. The visualization clearly shows the stacked residual blocks based on dilated convolutions (horizontal layout).</p>
+<h3 id="gcn-graph-convolutional-network">GCN (Graph Convolutional Network)</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/GCN.svg" data-desc-position="bottom"><img alt="GCN" src="../images/GCN.svg"></a></p>
+<p><strong>Graph Convolutional Network</strong>: A neural network for processing graph-structured data.</p>
+<hr>
+<h2 id="how-to-contribute">How to Contribute</h2>
+<p>If you'd like to add new models to the gallery, please ensure:
+1. The model architecture is representative.
+2. Use <code>torchview</code> to generate SVG format for clarity.
+3. Submit a PR to our repository.</p>
 
 
 
