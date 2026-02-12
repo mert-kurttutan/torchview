@@ -120,26 +120,29 @@ jobs:
       - name: Install python dependencies
         shell: bash
         run: |
-          uv sync --group dev
-          uv pip install torch~=${{ steps.set-version.outputs.TORCH_VERSION }} \
-            torchvision~=${{ steps.set-version.outputs.TORCHVISION_VERSION }} \
-            torchtext~=${{ steps.set-version.outputs.TORCHTEXT_VERSION }}
-          if [ "$(printf '%s\n' "1.13" "${{ steps.set-version.outputs.TORCH_VERSION }}" | sort -V | head -n1)" = "1.13" ]; then
-            uv pip install transformers
-            uv pip install sentencepiece
-          fi
+          uv add --group torch --no-sync \
+            "torch~=${{ steps.set-version.outputs.TORCH_VERSION }}" \
+            "torchvision~=${{ steps.set-version.outputs.TORCHVISION_VERSION }}" \
+            "torchtext~=${{ steps.set-version.outputs.TORCHTEXT_VERSION }}"
+          uv sync --group dev --group torch
 
       - name: mypy
         if: ${{ steps.set-version.outputs.PYTHON_VERSION == '3.12' }}
-        run: uv run mypy .
+        shell: bash
+        run: |
+          uv run mypy .
 
       - name: pytest with coverage
         if: ${{ steps.set-version.outputs.PYTHON_VERSION == '3.12' }}
-        run: uv run pytest --cov=torchview --cov-report= --durations=0
+        shell: bash
+        run: |
+          uv run pytest --cov=torchview --cov-report= --durations=0
 
       - name: pytest
         if: ${{ steps.set-version.outputs.PYTHON_VERSION != '3.12' }}
-        run: uv run pytest --no-output
+        shell: bash
+        run: |
+          uv run pytest --no-output
 
       - name: codecov
         uses: codecov/codecov-action@ad3126e916f78f00edff4ed0317cf185271ccc2d # 5.4.2
