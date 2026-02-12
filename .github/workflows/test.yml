@@ -1,14 +1,15 @@
 name: testing
+
 on:
   workflow_call:
   push:
-    branches: [ main ]
+    branches: [main]
     paths:
       - src/torchview/**
       - .github/**
       - pyproject.toml
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 env:
   UV_SYSTEM_PYTHON: 1
@@ -22,26 +23,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-      - name: Install the latest version of uv
+      - name: Set up Python
+        uses: actions/setup-python@8d9ed9ac5c53483de85588cdf95a591a75ab9f55 # v5.5.0
+        with:
+          python-version: "3.12"
+
+      - name: Setup uv
         uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5.4.2
         with:
-          version: "latest"
-          python-version: 3.12
-      # dont use below since it has a bug, see the link below
-      # - name: Set up Python
-      #   # see here for the preview feature, https://github.com/astral-sh/uv/issues/6067
-      #   # this install python globally
-      #   run: uv python install --preview
+          enable-cache: true
+          cache-dependency-glob: |
+            pyproject.toml
+            uv.lock
 
-      - uses: actions/setup-python@8d9ed9ac5c53483de85588cdf95a591a75ab9f55 # v5.5.0
-        with:
-          python-version: 3.12
-
-      - name: Configure
+      - name: Configure matrix
         id: configure
         run: |
           ID_LIST=$(uv run scripts/get_version.py 0 --variable-name=ids)
-          echo "ID_LIST=$ID_LIST" >> $GITHUB_OUTPUT
+          echo "ID_LIST=$ID_LIST" >> "$GITHUB_OUTPUT"
 
   tests:
     needs: configure
@@ -50,82 +49,97 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        id-number: ${{fromJson(needs.configure.outputs.ID_LIST)}}
+        id-number: ${{ fromJson(needs.configure.outputs.ID_LIST) }}
     steps:
-    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-    - name: Set up version variables
-      id: set-version
-      run: |
-        ls
-        PYTHON_VERSION=$(python scripts/get_version.py ${{ matrix.id-number }} --variable-name=python)
-        echo "PYTHON_VERSION=$PYTHON_VERSION" >> $GITHUB_OUTPUT
-        TORCH_VERSION=$(python scripts/get_version.py ${{ matrix.id-number }} --variable-name=torch)
-        echo "TORCH_VERSION=$TORCH_VERSION" >> $GITHUB_OUTPUT
-        TORCHVISION_VERSION=$(python scripts/get_version.py ${{ matrix.id-number }} --variable-name=torchvision)
-        echo "TORCHVISION_VERSION=$TORCHVISION_VERSION" >> $GITHUB_OUTPUT
-        TORCHTEXT_VERSION=$(python scripts/get_version.py ${{ matrix.id-number }} --variable-name=torchtext)
-        echo "TORCHTEXT_VERSION=$TORCHTEXT_VERSION" >> $GITHUB_OUTPUT
-    - name: Install system dependencies
-      run: |
-        if [ "$RUNNER_OS" == "Linux" ]; then
-          echo "::group::Run sudo apt-get update"
-          sudo apt-get update
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Set up Python for matrix configuration
+        uses: actions/setup-python@8d9ed9ac5c53483de85588cdf95a591a75ab9f55 # v5.5.0
+        with:
+          python-version: "3.12"
+
+      - name: Setup uv for matrix configuration
+        uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5.4.2
+        with:
+          enable-cache: true
+          cache-dependency-glob: |
+            pyproject.toml
+            uv.lock
+
+      - name: Set up version variables
+        id: set-version
+        run: |
+          PYTHON_VERSION=$(uv run scripts/get_version.py ${{ matrix.id-number }} --variable-name=python)
+          echo "PYTHON_VERSION=$PYTHON_VERSION" >> "$GITHUB_OUTPUT"
+          TORCH_VERSION=$(uv run scripts/get_version.py ${{ matrix.id-number }} --variable-name=torch)
+          echo "TORCH_VERSION=$TORCH_VERSION" >> "$GITHUB_OUTPUT"
+          TORCHVISION_VERSION=$(uv run scripts/get_version.py ${{ matrix.id-number }} --variable-name=torchvision)
+          echo "TORCHVISION_VERSION=$TORCHVISION_VERSION" >> "$GITHUB_OUTPUT"
+          TORCHTEXT_VERSION=$(uv run scripts/get_version.py ${{ matrix.id-number }} --variable-name=torchtext)
+          echo "TORCHTEXT_VERSION=$TORCHTEXT_VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Install system dependencies
+        shell: bash
+        run: |
+          if [ "$RUNNER_OS" == "Linux" ]; then
+            echo "::group::Run sudo apt-get update"
+            sudo apt-get update
+            echo "::endgroup::"
+            echo "::group::Run sudo apt-get install graphviz"
+            sudo apt-get install graphviz
+          elif [ "$RUNNER_OS" == "macOS" ]; then
+            echo "::group::Run brew install graphviz"
+            brew install graphviz
+          elif [ "$RUNNER_OS" == "Windows" ]; then
+            echo "::group::Run choco install graphviz"
+            choco install graphviz
+          else
+            echo "$RUNNER_OS not supported"
+            exit 1
+          fi
           echo "::endgroup::"
-          echo "::group::Run sudo apt-get install graphviz"
-          sudo apt-get install graphviz
-        elif [ "$RUNNER_OS" == "macOS" ]; then
-          echo "::group::Run brew install graphviz"
-          brew install graphviz
-        elif [ "$RUNNER_OS" == "Windows" ]; then
-          echo "::group::Run choco install graphviz"
-          choco install graphviz
-        else
-          echo "$RUNNER_OS not supported"
-          exit 1
-        echo "::endgroup::"
-        fi
-        echo "::group:: check dot version"
-        DOT_VERSION="$(dot -V 2>&1)"
-        echo "::notice::dot installed ${DOT_VERSION#dot - }"
-        echo "::endgroup::"
-      shell: bash
-    - name: Install the latest version of uv
-      uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5.4.2
-      with:
-        version: "latest"
-        python-version: ${{ steps.set-version.outputs.PYTHON_VERSION }}
-    - name: Allow uv to use the system Python by default
-      run: echo "UV_SYSTEM_PYTHON=1" >> $GITHUB_ENV
-    # - name: Set up Python
-    #   run: uv python install --preview
+          echo "::group::check dot version"
+          DOT_VERSION="$(dot -V 2>&1)"
+          echo "::notice::dot installed ${DOT_VERSION#dot - }"
+          echo "::endgroup::"
 
-    - uses: actions/setup-python@8d9ed9ac5c53483de85588cdf95a591a75ab9f55 # v5.5.0
-      with:
-        python-version: ${{ steps.set-version.outputs.PYTHON_VERSION }}
+      - name: Set up Python for tests
+        uses: actions/setup-python@8d9ed9ac5c53483de85588cdf95a591a75ab9f55 # v5.5.0
+        with:
+          python-version: ${{ steps.set-version.outputs.PYTHON_VERSION }}
 
-    - name: Pip install python dependencies
-      run: |
-        uv pip install -e ".[dev]"
-        uv pip install torch~=${{ steps.set-version.outputs.TORCH_VERSION }} \
-          torchvision~=${{ steps.set-version.outputs.TORCHVISION_VERSION }} \
-          torchtext~=${{ steps.set-version.outputs.TORCHTEXT_VERSION }}
-        if [ ${{steps.set-version.outputs.TORCH_VERSION}} >= '1.13' ]; then
-          uv pip install transformers
-          uv pip install sentencepiece
-        fi
-        
-      shell: bash
-    - name: mypy
-      if: ${{ steps.set-version.outputs.PYTHON_VERSION == '3.12' }}
-      run: |
-        mypy .
-    - name: pytest
-      if: ${{ steps.set-version.outputs.PYTHON_VERSION == '3.12' }}
-      run: |
-        python -m pytest --cov=torchview --cov-report= --durations=0
-    - name: pytest
-      if: ${{ steps.set-version.outputs.PYTHON_VERSION != '3.12' }}
-      run: |
-        python -m pytest --no-output
-    - name: codecov
-      uses: codecov/codecov-action@ad3126e916f78f00edff4ed0317cf185271ccc2d # 5.4.2
+      - name: Setup uv for tests
+        uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5.4.2
+        with:
+          enable-cache: true
+          cache-dependency-glob: |
+            pyproject.toml
+            uv.lock
+
+      - name: Install python dependencies
+        shell: bash
+        run: |
+          uv sync --group dev
+          uv pip install torch~=${{ steps.set-version.outputs.TORCH_VERSION }} \
+            torchvision~=${{ steps.set-version.outputs.TORCHVISION_VERSION }} \
+            torchtext~=${{ steps.set-version.outputs.TORCHTEXT_VERSION }}
+          if [ "$(printf '%s\n' "1.13" "${{ steps.set-version.outputs.TORCH_VERSION }}" | sort -V | head -n1)" = "1.13" ]; then
+            uv pip install transformers
+            uv pip install sentencepiece
+          fi
+
+      - name: mypy
+        if: ${{ steps.set-version.outputs.PYTHON_VERSION == '3.12' }}
+        run: uv run mypy .
+
+      - name: pytest with coverage
+        if: ${{ steps.set-version.outputs.PYTHON_VERSION == '3.12' }}
+        run: uv run pytest --cov=torchview --cov-report= --durations=0
+
+      - name: pytest
+        if: ${{ steps.set-version.outputs.PYTHON_VERSION != '3.12' }}
+        run: uv run pytest --no-output
+
+      - name: codecov
+        uses: codecov/codecov-action@ad3126e916f78f00edff4ed0317cf185271ccc2d # 5.4.2
