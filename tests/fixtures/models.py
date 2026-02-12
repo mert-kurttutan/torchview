@@ -76,7 +76,7 @@ class ScalarNet(nn.Module):
             out = self.conv1(out)
         else:
             out = self.conv2(out)
-        return out
+        return out  # type: ignore[no-any-return]
 
 
 class EdgeCaseModel(nn.Module):

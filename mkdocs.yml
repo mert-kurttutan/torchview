@@ -1,11 +1,79 @@
-site_name: My Docs
+site_name: torchview Docs
+repo_name: mert-kurttutan/torchview
+repo_url: https://github.com/mert-kurttutan/torchview
 theme:
-  name: "material"
+  name: material
+  logo: images/logo.png
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+nav:
+  - Home: index.md
+  - Tutorial:
+      - Overview: tutorial/index.md
+      - Example Introduction: tutorial/example_introduction.md
+  - Developer:
+      - Overview: developer/index.md
+      - Documentation (MkDocs): developer/docs.md
+      - Rolling Graph: developer/rolling_graph.md
+      - __torch_function__ Notes: developer/torch_function_notes.md
+  - Model Gallery: model_gallery.md
+  - Used By: used_by.md
 
 exclude_docs: |
   /scripts/**
 plugins:
+  - search:
+      lang:
+        - en
+        - zh
   - mkdocstrings
+  - glightbox
+  - i18n:
+      docs_structure: folder
+      fallback_to_default: true
+      languages:
+        - locale: en
+          name: English
+          default: true
+          build: true
+        - locale: zh
+          name: 中文
+          build: true
+          theme:
+            language: zh
+          nav:
+            - 首页: index.md
+            - 教程:
+                - 概览: tutorial/index.md
+                - 示例：入门介绍: tutorial/example_introduction.md
+            - 开发者:
+                - 概览: developer/index.md
+                - 文档（MkDocs）: developer/docs.md
+                - 递归图折叠（Rolling Graph）: developer/rolling_graph.md
+                - __torch_function__ 说明: developer/torch_function_notes.md
+            - 模型画廊: model_gallery.md
+            - 生态: used_by.md
   # - gen-files:
   #     scripts:
   #       - docs/scripts/gen_ref_pages.py
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+
+extra:
+  alternate:
+    - name: English
+      link: /torchview/
+      lang: en
+    - name: 中文
+      link: /torchview/zh/
+      lang: zh
