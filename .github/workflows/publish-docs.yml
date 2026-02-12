@@ -1,38 +1,48 @@
-name: mkdocs
+name: Publish Docs
 
 on:
-  # Runs on pushes targeting the `main` branch. Change this to `master` if you're
-  # using the `master` branch as the default branch.
+  # Runs on pushes targeting the `main` branch.
   push:
-    branches: [main]
+    branches:
+      - main
 
-  # Allows you to run this workflow manually from the Actions tab
+  # Allows you to run this workflow manually from the Actions tab.
   workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
-          ref: ${{ inputs.ref }}
           persist-credentials: true
 
-      - uses: actions/setup-python@8d9ed9ac5c53483de85588cdf95a591a75ab9f55 # v5.5.0
+      - name: Set up Python
+        uses: actions/setup-python@8d9ed9ac5c53483de85588cdf95a591a75ab9f55 # v5.5.0
         with:
-          python-version: 3.12
+          python-version: "3.12"
 
-      - name: "Install dev dependecies"
-        run: pip install -e ".[dev]"
+      - name: Setup uv
+        uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5.4.2
+        with:
+          enable-cache: true
+          cache-dependency-glob: |
+            pyproject.toml
+            uv.lock
 
-      - name: "Copy README File"
+      - name: Install docs dependencies
+        run: uv sync --locked --group dev
+
+      - name: Prepare docs sources
         run: |
-          python scripts/transform_readme.py --target mkdocs
-          python scripts/generate_ref_pages.py
+          uv run scripts/transform_readme.py --target mkdocs
+          uv run scripts/generate_ref_pages.py
 
-      - name: "Build docs"
-        run: mkdocs build -f mkdocs.yml
+      - name: Build docs
+        run: uv run mkdocs build -f mkdocs.yml
+
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@6c2d9db40f9296374acc17b90404b6e8864128c8 # 4.7.3
+        uses: JamesIves/github-pages-deploy-action@6c2d9db40f9296374acc17b90404b6e8864128c8 # v4.7.3
         with:
           folder: ./site
