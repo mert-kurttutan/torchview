@@ -286,6 +286,8 @@ model_graph.visual_graph
 
 ## 贡献指南
 
+中文版本由 @1985312383（GitHub）友情提供。
+
 我们非常欢迎 issue 与 PR！如果你想了解如何构建本项目：
 
 * torchview 使用最新 Python 版本进行活跃开发。

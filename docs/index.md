@@ -304,6 +304,8 @@ model_graph.visual_graph
 
 ## Contributing
 
+The Chinese version is kindly provided by @1985312383 (on GitHub).
+
 All issues and pull requests are much appreciated! If you are wondering how to build the project:
 
 * torchview is actively developed using the latest version of Python.
