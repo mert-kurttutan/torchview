@@ -4,7 +4,7 @@ version = "0.2.7"
 description = "Visualization of Pytorch Models"
 authors = [{ name = "Mert Kurttutan", email = "kurttutan.mert@gmail.com" }]
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 license = { text = "MIT" }
 keywords = ["pytorch", "visualization", "keras", "torch", "deep learning", "machine learning", "ml", "neural network"]
 maintainers = [
