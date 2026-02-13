@@ -198,7 +198,7 @@ def draw_graph(
             between nodes. Mutiple edge occurs e.g. when there are tensors
             from module node to module node and hiding those tensors
             Default: True
-        
+
         expand_nested(bool):
             if true shows nested modules with dashed borders
 
@@ -312,7 +312,7 @@ model_graph.visual_graph
 All issues and pull requests are much appreciated! If you are wondering how to build the project:
 
 * torchview is actively developed using the latest version of Python.
-* Changes should be backward compatible to Python 3.7, and will follow Python's End-of-Life guidance for old versions.
+* Changes should be backward compatible to Python 3.8, and will follow Python's End-of-Life guidance for old versions.
 * Run `pip install -r requirements-dev.txt`. We use the latest versions of all dev packages.
 * To run unit tests, run `pytest`.
 * To update the expected output files, run `pytest --overwrite`.
