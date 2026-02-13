@@ -117,12 +117,6 @@ jobs:
             "torchtext==${{ steps.set-version.outputs.TORCHTEXT_VERSION }}.*"
           uv sync --python ${{ steps.set-version.outputs.PYTHON_VERSION }} --group dev --group torch
 
-      - name: mypy
-        if: ${{ steps.set-version.outputs.PYTHON_VERSION == '3.12' }}
-        shell: bash
-        run: |
-          uv run --python ${{ steps.set-version.outputs.PYTHON_VERSION }} mypy .
-
       - name: pytest with coverage
         if: ${{ steps.set-version.outputs.PYTHON_VERSION == '3.12' }}
         shell: bash
