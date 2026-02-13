@@ -26,7 +26,6 @@ jobs:
           enable-cache: true
           cache-dependency-glob: |
             pyproject.toml
-            uv.lock
 
       - name: Install Python for matrix configuration
         shell: bash
@@ -42,8 +41,6 @@ jobs:
   tests:
     needs: configure
     runs-on: ${{ matrix.os }}
-    env:
-      UV_SYSTEM_PYTHON: 0
     strategy:
       fail-fast: false
       matrix:
