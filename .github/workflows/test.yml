@@ -112,9 +112,9 @@ jobs:
         shell: bash
         run: |
           uv add --group torch --no-sync \
-            "torch~=${{ steps.set-version.outputs.TORCH_VERSION }}" \
-            "torchvision~=${{ steps.set-version.outputs.TORCHVISION_VERSION }}" \
-            "torchtext~=${{ steps.set-version.outputs.TORCHTEXT_VERSION }}"
+            "torch==${{ steps.set-version.outputs.TORCH_VERSION }}.*" \
+            "torchvision==${{ steps.set-version.outputs.TORCHVISION_VERSION }}.*" \
+            "torchtext==${{ steps.set-version.outputs.TORCHTEXT_VERSION }}.*"
           uv sync --python ${{ steps.set-version.outputs.PYTHON_VERSION }} --group dev --group torch
 
       - name: mypy
