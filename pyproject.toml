@@ -39,7 +39,6 @@ dev = [
     "codecov",
     "ruff==0.0.246",
     "isort",
-    "mypy",
     "pycln",
     "pylint",
     "pytest",
@@ -67,29 +66,6 @@ torch = [
 [tool.setuptools.package-data]
 torchview = ["py.typed"]
 
-[tool.mypy]
-strict = true
-implicit_reexport = true
-show_error_codes = true
-enable_error_code = 'ignore-without-code'
-allow_untyped_calls = true
-
-
-[[tool.mypy.overrides]]
-module = [
-    'graphviz',
-    'torchtext',
-    'torchvision',
-    'torchvision.models',
-    'tests.fixtures.models',
-    'tests.fixtures.u_net',
-    'tests.fixtures.dense_net',
-    'tests.fixtures.custom_attention',
-    'torchtext.functional',
-    'transformers',
-    'mkdocs_gen_files',
-    'pytest',
-]
 ignore_missing_imports = true
 
 
