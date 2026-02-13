@@ -11,9 +11,6 @@ on:
   pull_request:
     branches: [main]
 
-env:
-  UV_SYSTEM_PYTHON: 1
-
 jobs:
   configure:
     runs-on: ubuntu-latest
@@ -23,11 +20,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-      - name: Set up Python
-        uses: actions/setup-python@8d9ed9ac5c53483de85588cdf95a591a75ab9f55 # v5.5.0
-        with:
-          python-version: "3.12"
-
       - name: Setup uv
         uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5.4.2
         with:
@@ -35,6 +27,11 @@ jobs:
           cache-dependency-glob: |
             pyproject.toml
             uv.lock
+
+      - name: Install Python for matrix configuration
+        shell: bash
+        run: |
+          uv python install 3.12
 
       - name: Configure matrix
         id: configure
@@ -45,6 +42,8 @@ jobs:
   tests:
     needs: configure
     runs-on: ${{ matrix.os }}
+    env:
+      UV_SYSTEM_PYTHON: 0
     strategy:
       fail-fast: false
       matrix:
@@ -53,11 +52,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-
-      - name: Set up Python for matrix configuration
-        uses: actions/setup-python@8d9ed9ac5c53483de85588cdf95a591a75ab9f55 # v5.5.0
-        with:
-          python-version: "3.12"
 
       - name: Setup uv for matrix configuration
         uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5.4.2
@@ -104,11 +98,6 @@ jobs:
           echo "::notice::dot installed ${DOT_VERSION#dot - }"
           echo "::endgroup::"
 
-      - name: Set up Python for tests
-        uses: actions/setup-python@8d9ed9ac5c53483de85588cdf95a591a75ab9f55 # v5.5.0
-        with:
-          python-version: ${{ steps.set-version.outputs.PYTHON_VERSION }}
-
       - name: Setup uv for tests
         uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5.4.2
         with:
@@ -117,6 +106,11 @@ jobs:
             pyproject.toml
             uv.lock
 
+      - name: Install Python for tests
+        shell: bash
+        run: |
+          uv python install ${{ steps.set-version.outputs.PYTHON_VERSION }}
+
       - name: Install python dependencies
         shell: bash
         run: |
@@ -124,25 +118,25 @@ jobs:
             "torch~=${{ steps.set-version.outputs.TORCH_VERSION }}" \
             "torchvision~=${{ steps.set-version.outputs.TORCHVISION_VERSION }}" \
             "torchtext~=${{ steps.set-version.outputs.TORCHTEXT_VERSION }}"
-          uv sync --group dev --group torch
+          uv sync --python ${{ steps.set-version.outputs.PYTHON_VERSION }} --group dev --group torch
 
       - name: mypy
         if: ${{ steps.set-version.outputs.PYTHON_VERSION == '3.12' }}
         shell: bash
         run: |
-          uv run mypy .
+          uv run --python ${{ steps.set-version.outputs.PYTHON_VERSION }} mypy .
 
       - name: pytest with coverage
         if: ${{ steps.set-version.outputs.PYTHON_VERSION == '3.12' }}
         shell: bash
         run: |
-          uv run pytest --cov=torchview --cov-report= --durations=0
+          uv run --python ${{ steps.set-version.outputs.PYTHON_VERSION }} pytest --cov=torchview --cov-report= --durations=0
 
       - name: pytest
         if: ${{ steps.set-version.outputs.PYTHON_VERSION != '3.12' }}
         shell: bash
         run: |
-          uv run pytest --no-output
+          uv run --python ${{ steps.set-version.outputs.PYTHON_VERSION }} pytest --no-output
 
       - name: codecov
         uses: codecov/codecov-action@ad3126e916f78f00edff4ed0317cf185271ccc2d # 5.4.2
