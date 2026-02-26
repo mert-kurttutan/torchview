@@ -326,6 +326,7 @@ All issues and pull requests are much appreciated! If you are wondering how to b
 * torchview is actively developed using the latest version of Python.
 * Changes should be backward compatible to Python 3.9, and will follow Python's End-of-Life guidance for old versions.
 * Install development dependencies with `uv sync --group dev --group torch` (recommended), or `pip install -e .` plus your dev/test tools.
+* Install git hooks with `uv run prek install`.
 * To run unit tests, run `uv run pytest` (or `pytest` if using pip/venv).
 * To update the expected output files, run `uv run pytest --overwrite` (or `pytest --overwrite`).
 * To skip output file tests, use `uv run pytest --no-output` (or `pytest --no-output`)
