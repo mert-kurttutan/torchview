@@ -319,17 +319,46 @@ model_graph.visual_graph
 
 [^1]: Here, torch-based functions refers to any function that uses only torch functions and modules. This is more general than modules.
 
-## Contributing
+## Contribution
 
-All issues and pull requests are much appreciated! If you are wondering how to build the project:
+All issues and pull requests are much appreciated!
+
+Contributor notes:
 
 * torchview is actively developed using the latest version of Python.
 * Changes should be backward compatible to Python 3.9, and will follow Python's End-of-Life guidance for old versions.
-* Install development dependencies with `uv sync --group dev --group torch` (recommended), or `pip install -e .` plus your dev/test tools.
-* Install git hooks with `uv run prek install`.
-* To run unit tests, run `uv run pytest` (or `pytest` if using pip/venv).
-* To update the expected output files, run `uv run pytest --overwrite` (or `pytest --overwrite`).
-* To skip output file tests, use `uv run pytest --no-output` (or `pytest --no-output`)
+
+### Setup (uv, recommended)
+
+```bash
+uv sync --group dev --group torch
+uv run prek install
+```
+
+### Setup (pip / venv)
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -e .
+# Install dev/test tools as needed (for example: pytest, prek, etc.)
+pip install pytest prek torch torchvision torchtext
+prek install
+```
+
+### Run tests
+
+```bash
+# uv
+uv run pytest
+uv run pytest --overwrite
+uv run pytest --no-output
+
+# pip / venv
+pytest
+pytest --overwrite
+pytest --no-output
+```
 
 ## References
 
