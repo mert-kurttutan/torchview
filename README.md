@@ -1,6 +1,6 @@
 # torchview
 
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-380/)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![PyPI version](https://badge.fury.io/py/torchview.svg)](https://badge.fury.io/py/torchview)
 [![Conda version](https://img.shields.io/conda/vn/conda-forge/torchview)](https://anaconda.org/conda-forge/torchview)
 [![Build Status](https://github.com/mert-kurttutan/torchview/actions/workflows/test.yml/badge.svg)](https://github.com/mert-kurttutan/torchview/actions/workflows/test.yml)
@@ -324,7 +324,7 @@ model_graph.visual_graph
 All issues and pull requests are much appreciated! If you are wondering how to build the project:
 
 * torchview is actively developed using the latest version of Python.
-* Changes should be backward compatible to Python 3.8, and will follow Python's End-of-Life guidance for old versions.
+* Changes should be backward compatible to Python 3.9, and will follow Python's End-of-Life guidance for old versions.
 * Install development dependencies with `uv sync --group dev --group torch` (recommended), or `pip install -e .` plus your dev/test tools.
 * To run unit tests, run `uv run pytest` (or `pytest` if using pip/venv).
 * To update the expected output files, run `uv run pytest --overwrite` (or `pytest --overwrite`).
