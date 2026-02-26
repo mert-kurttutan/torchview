@@ -31,6 +31,10 @@ Supports PyTorch versions $\geq$ 1.7.
 First, you need to install graphviz,
 
 ```Bash
+# uv
+uv add graphviz
+
+# pip
 pip install graphviz
 ```
 
@@ -56,9 +60,13 @@ brew install graphviz
 
 see more details [here](https://graphviz.readthedocs.io/en/stable/manual.html)
 
-Then, continue with installing torchview using pip
+Then, continue with installing torchview using uv (or pip)
 
 ```Bash
+# uv
+uv add torchview
+
+# pip
 pip install torchview
 ```
 
@@ -71,6 +79,10 @@ conda install -c conda-forge torchview
 or if you want most up-to-date version, install directly from repo
 
 ```Bash
+# uv
+uv add git+https://github.com/mert-kurttutan/torchview.git
+
+# pip
 pip install git+https://github.com/mert-kurttutan/torchview.git
 ```
 
@@ -313,10 +325,10 @@ All issues and pull requests are much appreciated! If you are wondering how to b
 
 * torchview is actively developed using the latest version of Python.
 * Changes should be backward compatible to Python 3.8, and will follow Python's End-of-Life guidance for old versions.
-* Run `pip install -r requirements-dev.txt`. We use the latest versions of all dev packages.
-* To run unit tests, run `pytest`.
-* To update the expected output files, run `pytest --overwrite`.
-* To skip output file tests, use `pytest --no-output`
+* Install development dependencies with `uv sync --group dev --group torch` (recommended), or `pip install -e .` plus your dev/test tools.
+* To run unit tests, run `uv run pytest` (or `pytest` if using pip/venv).
+* To update the expected output files, run `uv run pytest --overwrite` (or `pytest --overwrite`).
+* To skip output file tests, use `uv run pytest --no-output` (or `pytest --no-output`)
 
 ## References
 
